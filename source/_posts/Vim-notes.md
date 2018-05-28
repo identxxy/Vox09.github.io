@@ -12,5 +12,5 @@ A good blog [link](http://zhranklin.com/blog/%E6%89%93%E9%80%A0%E4%B8%80%E4%B8%A
 ### search and substitution
 [here](https://harttle.land/2016/08/08/vim-search-in-file.html)
 
-### fold ann unfold
+### fold and unfold
 [here](http://www.cnblogs.com/zlcxbb/p/6442092.html)
