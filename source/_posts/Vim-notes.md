@@ -1,5 +1,5 @@
 ---
-title: Vim-notes
+title: Vim Notes
 tags: vim
 categories: tech
 date: 2018-05-25 16:03:04
@@ -14,3 +14,6 @@ A good blog [link](http://zhranklin.com/blog/%E6%89%93%E9%80%A0%E4%B8%80%E4%B8%A
 
 ### fold and unfold
 [here](http://www.cnblogs.com/zlcxbb/p/6442092.html)
+
+### keyboard remap
+[here](http://yyq123.blogspot.com/2010/12/vim-map.html)
