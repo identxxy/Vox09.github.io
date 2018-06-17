@@ -1,5 +1,5 @@
 ---
-title: Summary_of_Freshman
+title: Summary of Freshman
 categories: life
 password: life0909
 date: 2018-05-23 19:43:36

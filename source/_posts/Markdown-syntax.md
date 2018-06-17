@@ -1,5 +1,5 @@
 ---
-title: Markdown syntax
+title: Markdown Syntax
 categories: tech
 date: 2018-05-25 16:17:53
 tags:
