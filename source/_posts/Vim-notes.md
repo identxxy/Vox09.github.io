@@ -3,7 +3,6 @@ title: Vim Notes
 tags: vim
 categories: tech
 date: 2018-05-25 16:03:04
-top: 1
 ---
 
 ### Neovim and vim-plugin
