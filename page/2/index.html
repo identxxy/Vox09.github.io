@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Cpp," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,13 @@
 
 
 
-<meta name="description" content="About private member1 在C+的类的成员函数中，允许直接访问该类的对象的私有成员变量2 在类的成员函数中可以访问同类型实例的私有变量量3 拷贝构造函数里，可以直接访问另外一个同类对象（引用）的私有成员4 类的成员函数可以直接访问作为其参数的同类型对象的私有成员 Below codes work!!  private:    int data;public:    void lo">
-<meta name="keywords" content="Cpp">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Cpp Notes">
-<meta property="og:url" content="http://github.com/2018/05/27/Cpp-Notes/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Destinxxy">
+<meta property="og:url" content="http://github.com/page/2/index.html">
 <meta property="og:site_name" content="Destinxxy">
-<meta property="og:description" content="About private member1 在C+的类的成员函数中，允许直接访问该类的对象的私有成员变量2 在类的成员函数中可以访问同类型实例的私有变量量3 拷贝构造函数里，可以直接访问另外一个同类对象（引用）的私有成员4 类的成员函数可以直接访问作为其参数的同类型对象的私有成员 Below codes work!!  private:    int data;public:    void lo">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-10-03T02:49:09.014Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cpp Notes">
-<meta name="twitter:description" content="About private member1 在C+的类的成员函数中，允许直接访问该类的对象的私有成员变量2 在类的成员函数中可以访问同类型实例的私有变量量3 拷贝构造函数里，可以直接访问另外一个同类对象（引用）的私有成员4 类的成员函数可以直接访问作为其参数的同类型对象的私有成员 Below codes work!!  private:    int data;public:    void lo">
+<meta name="twitter:title" content="Destinxxy">
 
 
 
@@ -120,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://github.com/2018/05/27/Cpp-Notes/"/>
+  <link rel="canonical" href="http://github.com/page/2/"/>
 
 
 
 
 
-  <title>Cpp Notes | Destinxxy</title>
+  <title>Destinxxy</title>
   
 
 
@@ -145,7 +140,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -238,9 +234,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -253,7 +249,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://github.com/2018/05/27/Cpp-Notes/">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/05/25/Markdown-syntax/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vox09">
@@ -270,7 +266,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Cpp Notes</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/25/Markdown-syntax/" itemprop="url">Markdown Syntax</a></h1>
         
 
         <div class="post-meta">
@@ -282,8 +280,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-27T16:37:08+08:00">
-                2018-05-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-25T16:17:53+08:00">
+                2018-05-25
               </time>
             
 
@@ -342,18 +340,12 @@
       
 
       
-        <h3 id="About-private-member"><a href="#About-private-member" class="headerlink" title="About private member"></a>About private member</h3><p>1 在C+的类的成员函数中，允许直接访问该类的对象的私有成员变量<br>2 在类的成员函数中可以访问同类型实例的私有变量量<br>3 拷贝构造函数里，可以直接访问另外一个同类对象（引用）的私有成员<br>4 类的成员函数可以直接访问作为其参数的同类型对象的私有成员</p>
-<p>Below codes work!!</p>
-<blockquote>
-<p>private:<br>    int data;<br>public:<br>    void lookOtherConst(const A&amp; a){cout&lt;&lt;”other’s private data is “&lt;&lt;a.data&lt;&lt;endl;}<br>    void lookOtherReference(A&amp; a){cout&lt;&lt;”other’s private data is “&lt;&lt;a.data&lt;&lt;endl;}<br>    void lookOther(A a){cout&lt;&lt;”other’s private data is “&lt;&lt;a.data&lt;&lt;endl;}</p>
-</blockquote>
-<h3 id="About-f-cking-const"><a href="#About-f-cking-const" class="headerlink" title="About f*cking const"></a>About f*cking const</h3><p><a href="http://www.cnblogs.com/jiabei521/p/3335676.html" target="_blank" rel="noopener">here</a></p>
-<h3 id="前缀-与-后缀-运算符"><a href="#前缀-与-后缀-运算符" class="headerlink" title="前缀 与 后缀 运算符"></a>前缀 与 后缀 运算符</h3><p><a href="https://msdn.microsoft.com/zh-cn/library/dy3d35h8.aspx" target="_blank" rel="noopener">前缀</a>：<strong>在表达式计算中使用值之前递增或递减</strong>，表达式的值与操作数的值<strong>不同</strong><br><a href="https://msdn.microsoft.com/zh-cn/library/e1e3921c.aspx" target="_blank" rel="noopener">后缀</a>：<strong>在表达式使用值之后递增或递减</strong>， 表达式的值与操作数<strong>相同</strong><br>e.g.</p>
-<blockquote>
-<p>int a=5,b =5;<br>cout&lt;&lt;”a&lt;b++ = “&lt;&lt;bool(a&lt;b++)&lt;&lt;endl;<br>cout&lt;&lt;”a&lt;++b = “&lt;&lt;bool(a&lt;++b)&lt;&lt;endl;</p>
-<p>output:<br>a&lt;b++ = 0<br>a&lt;++b = 1</p>
-</blockquote>
+        
+          
+            <p>A good markdown cheatsheet is <a href="http://xianbai.me/learn-md/index.html" target="_blank" rel="noopener">here</a></p>
 
+          
+        
       
     </div>
     
@@ -368,55 +360,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Cpp/" rel="tag"># Cpp</a>
-          
-        </div>
+
+      
+
       
 
       
       
-        <div class="post-widgets">
-        
-
-        
-
-        
-          
-          <div id="needsharebutton-postbottom">
-            <span class="btn">
-              <i class="fa fa-share-alt" aria-hidden="true"></i>
-            </span>
-          </div>
-        
-        </div>
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/05/25/Markdown-syntax/" rel="next" title="Markdown Syntax">
-                <i class="fa fa-chevron-left"></i> Markdown Syntax
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/08/linux-notes/" rel="prev" title="Linux Notes">
-                Linux Notes <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -426,11 +377,451 @@
   </article>
 
 
+    
+      
 
-    <div class="post-spread">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/05/25/Vim-notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/25/Vim-notes/" itemprop="url">Vim Notes</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-25T16:03:04+08:00">
+                2018-05-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tech/" itemprop="url" rel="index">
+                    <span itemprop="name">tech</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Neovim-and-vim-plugin"><a href="#Neovim-and-vim-plugin" class="headerlink" title="Neovim and vim-plugin"></a>Neovim and vim-plugin</h3><p>A good blog <a href="http://zhranklin.com/blog/%E6%89%93%E9%80%A0%E4%B8%80%E4%B8%AA%E7%8E%B0%E4%BB%A3%E5%8C%96%E7%9A%84vim%E7%BC%96%E8%BE%91%E5%99%A8:%20neovim%20+%20nyaovim%20+%20youcompleteme%20+%20airline#vim-plug%E4%BD%BF%E7%94%A8" target="_blank" rel="noopener">link</a> for both introduction of neovim and vim-plugin.</p>
+<h3 id="search-and-substitution"><a href="#search-and-substitution" class="headerlink" title="search and substitution"></a>search and substitution</h3><p><a href="https://harttle.land/2016/08/08/vim-search-in-file.html" target="_blank" rel="noopener">here</a></p>
+<h3 id="fold-and-unfold"><a href="#fold-and-unfold" class="headerlink" title="fold and unfold"></a>fold and unfold</h3><p><a href="http://www.cnblogs.com/zlcxbb/p/6442092.html" target="_blank" rel="noopener">here</a></p>
+<h3 id="keyboard-remap"><a href="#keyboard-remap" class="headerlink" title="keyboard remap"></a>keyboard remap</h3><p><a href="http://yyq123.blogspot.com/2010/12/vim-map.html" target="_blank" rel="noopener">here</a></p>
+
+          
+        
       
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/05/23/Summary-of-Freshman/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/23/Summary-of-Freshman/" itemprop="url">Summary of Freshman</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-23T19:43:36+08:00">
+                2018-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/life/" itemprop="url" rel="index">
+                    <span itemprop="name">life</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          privately life stuff
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/23/Summary-of-Freshman/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/05/23/Origin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/23/Origin/" itemprop="url">Origin</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-23T19:07:41+08:00">
+                2018-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/life/" itemprop="url" rel="index">
+                    <span itemprop="name">life</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          privately life stuff
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/23/Origin/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -438,10 +829,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -462,17 +849,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -532,22 +910,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#About-private-member"><span class="nav-number">1.</span> <span class="nav-text">About private member</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#About-f-cking-const"><span class="nav-number">2.</span> <span class="nav-text">About f*cking const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前缀-与-后缀-运算符"><span class="nav-number">3.</span> <span class="nav-text">前缀 与 后缀 运算符</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -688,10 +1050,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 

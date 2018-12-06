@@ -178,11 +178,21 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
           </a>
         </li>
       
@@ -225,6 +235,898 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/12/07/Hashing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/07/Hashing/" itemprop="url">Hashing</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-07T02:05:54+08:00">
+                2018-12-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/studyNotes/" itemprop="url" rel="index">
+                    <span itemprop="name">studyNotes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Hash-Table"><a href="#Hash-Table" class="headerlink" title="Hash Table"></a>Hash Table</h1><p>A hash table is an array of some <strong>fixed size</strong>,<br>containing all the data items.<br>Each item has a <strong>key</strong> search is performed based on the keys.<br>Each key is <strong>mapped</strong> into some position in the array in the range 0 to m − 1, where m is the<br>array size.<br>The mapping is called <strong>hash function</strong>.</p>
+<p>Hashing table is a data structure that supports: </p>
+<ol>
+<li>searching</li>
+<li>insertion</li>
+<li>deletion  </li>
+</ol>
+<p>The implementation of hash tables is called <strong>hashing</strong>.<br>Hashing is a technique which allows the executions of above operations in <strong>constant time</strong> on average.<br>Unlike other data structures such as linked list or binary trees, data items are henerally <strong>not</strong> ordered in hash tables.<br>As a consequence, hash tables don’t support the following operations:   </p>
+<ol>
+<li>find_min and find_max</li>
+<li>finding successor and predecessor</li>
+<li>reporting data with a given range</li>
+<li>listing out the data in order</li>
+</ol>
+<h1 id="Hashing-Function"><a href="#Hashing-Function" class="headerlink" title="Hashing Function"></a>Hashing Function</h1><h2 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h2><p>A simple and reasonable strategy: <code>h(k) = k mod m.</code>  </p>
+<p>Its a good practice to set the table size m to a prime number.  </p>
+<blockquote>
+<p>h(key) =(key[0] + 37*key[1] + 37^2*key[2] + … ) mod <strong>m</strong></p>
+</blockquote>
+<h2 id="Handling-collison"><a href="#Handling-collison" class="headerlink" title="Handling collison"></a>Handling collison</h2><p><strong>Make hash table an array of linked lists</strong>  </p>
+<h3 id="Seperate-Chaining"><a href="#Seperate-Chaining" class="headerlink" title="Seperate Chaining"></a>Seperate Chaining</h3><h4 id="Insertion"><a href="#Insertion" class="headerlink" title="Insertion"></a>Insertion</h4><p>To insert a key <strong>k</strong>:  </p>
+<blockquote>
+<p>Compute h(k)<br>If T(h(k)) contains <strong>nullptr</strong> , initial this table entry to point to linked list node of <strong>kk</strong> .<br>If T(h(k)) contains <strong>non-nullptr</strong>, add <strong>k</strong> to the beginning of the list.</p>
+</blockquote>
+<h4 id="Deletion"><a href="#Deletion" class="headerlink" title="Deletion"></a>Deletion</h4><p>To delete a key <strong>k</strong>:  </p>
+<blockquote>
+<p>Compute h(k) to determine which list to traverse.<br>Search for the key <strong>k</strong>, in the list that T(h(k)) points to.<br>Delete the item with key <strong>k</strong> if it is found.  </p>
+</blockquote>
+<h3 id="Open-addressing"><a href="#Open-addressing" class="headerlink" title="Open addressing"></a>Open addressing</h3><p>Instead of putting kys of the same hash table into a chain, open addressing will <strong>relocate</strong> the key k to be inserted if it collides with an existing key.</p>
+<h4 id="Linear-probing"><a href="#Linear-probing" class="headerlink" title="Linear probing"></a>Linear probing</h4><blockquote>
+<p>f(i) = i<br>hi(k) = (hash(k) + i) mod m  </p>
+</blockquote>
+<p>Disadvantage: fall into cluster   </p>
+<h4 id="quadratic-probing"><a href="#quadratic-probing" class="headerlink" title="quadratic probing"></a>quadratic probing</h4><blockquote>
+<p>f(i) = i^2<br>hi(k) = (hash(k) + i^2) mod m  </p>
+</blockquote>
+<p>Disadvantage: second cluster… same key same probe steps.    </p>
+<h4 id="double-hashing"><a href="#double-hashing" class="headerlink" title="double hashing"></a>double hashing</h4><blockquote>
+<p>f (i) = i ×  hash2(k)<br>hi(k) = (hash(k) + i × hash2(k)) mod m</p>
+</blockquote>
+<p>hash2(k) must be <strong>relatively prime</strong> to the table size m.<br>Otherwise, we will only be able to examine a fraction of the table entries.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/12/06/AVL-Trees/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/06/AVL-Trees/" itemprop="url">AVL Trees</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-06T17:06:19+08:00">
+                2018-12-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/studyNotes/" itemprop="url" rel="index">
+                    <span itemprop="name">studyNotes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><em>(All codes below are written by Dr. Desmond)</em></p>
+<h1 id="AVL-Adelson-Velsky-and-Landis-Trees"><a href="#AVL-Adelson-Velsky-and-Landis-Trees" class="headerlink" title="AVL(Adelson-Velsky and Landis) Trees"></a>AVL(Adelson-Velsky and Landis) Trees</h1><p>Every sub-tree of an AVL tree is itself an AVL tree.(An empty tree is an AVL tree too.)<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">AVLNode</span>&#123;</span>  </span><br><span class="line">    T data;  </span><br><span class="line">    <span class="keyword">int</span> height;     <span class="comment">// Important!</span></span><br><span class="line">    AVLNode* left;  </span><br><span class="line">    AVLNode* right;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="AVL-Tree-Searching"><a href="#AVL-Tree-Searching" class="headerlink" title="AVL Tree Searching"></a>AVL Tree Searching</h2><p>same as BST searching</p>
+<h2 id="AVL-Tree-Insertion"><a href="#AVL-Tree-Insertion" class="headerlink" title="AVL Tree Insertion"></a>AVL Tree Insertion</h2><p>Insertion may violate the AVL tree property in 4 cases:</p>
+<ol>
+<li>Insertion into the <strong>right</strong> sub-tree of the <strong>right</strong> child<br>Left(anti-clockwise) rotation [single rotation]  </li>
+<li>Insertion into the <strong>left</strong> sub-tree of the <strong>left</strong> child<br>Right(clockwise) rotation [single rotation]  </li>
+<li>Insertion into the <strong>right</strong> sub-tree of the <strong>left</strong> child<br>Left-right rotation [double rotation]    </li>
+<li>Insertion into the <strong>left</strong> sub-tree of the <strong>right</strong> child<br>Right-left rotation [double rotation]    </li>
+</ol>
+<p><strong>!!! Distinguish L/R of subtree or L/R of child !!!</strong>    </p>
+<p><strong>First insert the node to right place, then balance it by rotation.</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::insert(AVLNode&lt;T&gt;* p, <span class="keyword">const</span> T&amp; d)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>( !p ) <span class="keyword">return</span> <span class="keyword">new</span> AVLNode&lt;T&gt;(d);  <span class="comment">// Empty AVL tree</span></span><br><span class="line">    <span class="keyword">if</span>( d &lt; p-&gt;data )</span><br><span class="line">        p-&gt;left = insert(p-&gt;left, d);   <span class="comment">// Recursion on the left sub-tree</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        p-&gt;right = insert(p-&gt;right, d); <span class="comment">// Recursion on the right sub-tree</span></span><br><span class="line">    <span class="keyword">return</span> balance(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Rotation"><a href="#Rotation" class="headerlink" title="Rotation"></a>Rotation</h3><p>Single rotation operate on the <strong>node</strong>, replace original node by its child<br>Double rotation first operate on the <strong>child</strong>, then on the <strong>node</strong>, replace original node by its grandchild. </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::rotateRight(AVLNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">    AVLNode&lt;T&gt;* pl = p-&gt;left;</span><br><span class="line">    p-&gt;left = pl-&gt;right;</span><br><span class="line">    pl-&gt;right = p;</span><br><span class="line">    updateHeight(p);</span><br><span class="line">    updateHeight(pl);</span><br><span class="line">    <span class="keyword">return</span> pl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::rotateRightLeft(AVLNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">    rotateRight(p-&gt;right);</span><br><span class="line">    <span class="keyword">return</span> rotateLeft(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::balance(AVLNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">    h-&gt;height = max(h-&gt;right-&gt;height,h-&gt;left-&gt;height);</span><br><span class="line">    <span class="comment">// heightDiff() return (right subtree height) - (left subtree height)</span></span><br><span class="line">    <span class="keyword">if</span>( heightDiff(p) == <span class="number">2</span> )&#123;</span><br><span class="line">        <span class="keyword">if</span>( heightDiff(p-&gt;right) &lt; <span class="number">0</span> )  <span class="comment">// if need double rotation</span></span><br><span class="line">            p-&gt;right = rotateRight(p-&gt;right);</span><br><span class="line">        <span class="keyword">return</span> rotateLeft(p);           <span class="comment">// single rotation</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>( heightDiff(p) == <span class="number">-2</span> )&#123;</span><br><span class="line">        <span class="keyword">if</span>( heightDiff(p-&gt;left) &gt; <span class="number">0</span> )   <span class="comment">// if need double rotation</span></span><br><span class="line">            p-&gt;left = rotateLeft(p-&gt;left);</span><br><span class="line">        <span class="keyword">return</span> rotateRight(p);          <span class="comment">// single rotation</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="AVL-Tree-Deletion"><a href="#AVL-Tree-Deletion" class="headerlink" title="AVL Tree Deletion"></a>AVL Tree Deletion</h2><p>The idea is same as BST.<br>When delete node with two children, the following code <strong>delete the node and<br>rise the min node up</strong>.<br>Then balance the whole tree.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::findMin(AVLNode&lt;T&gt;* p) <span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> p-&gt;left ? findMin(p-&gt;left) : p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// NOT delete the Min-node!!</span></span><br><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::removeMin(AVLNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(p-&gt;left == <span class="number">0</span>)                    <span class="comment">// If it's the min node, not return itself</span></span><br><span class="line">        <span class="keyword">return</span> p-&gt;right;                <span class="comment">// Return the second min means removeMin!</span></span><br><span class="line">    p-&gt;left = removeMin(p-&gt;left);       <span class="comment">// Recursion on the left sub-tree</span></span><br><span class="line">    <span class="keyword">return</span> balance(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::remove(AVLNode&lt;T&gt;* p, <span class="keyword">const</span> T&amp; d) </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>( !p ) <span class="keyword">return</span> <span class="number">0</span>;                  <span class="comment">// Item is not found; do nothing</span></span><br><span class="line">    <span class="keyword">if</span>( d &lt; p-&gt;data )</span><br><span class="line">        p-&gt;left = remove(p-&gt;left,d);    <span class="comment">// Recursion on the left sub-tree</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>( d &gt; p-&gt;data )</span><br><span class="line">        p-&gt;right = remove(p-&gt;right,d);  <span class="comment">// Recursion on the right sub-tree</span></span><br><span class="line">    <span class="keyword">else</span> &#123;                              <span class="comment">// Item is found</span></span><br><span class="line">        AVLNode&lt;T&gt;* pl = p-&gt;left;</span><br><span class="line">        AVLNode&lt;T&gt;* pr = p-&gt;right;</span><br><span class="line">        <span class="keyword">delete</span> p;                       <span class="comment">// Remove the node with value d</span></span><br><span class="line">        <span class="keyword">if</span>( !pr ) <span class="keyword">return</span> pl;            <span class="comment">// Return left sub-tree if no right sub-tree</span></span><br><span class="line">        AVLNode&lt;T&gt;* min = findMin(pr);  <span class="comment">// Find min. node of the right sub-tree</span></span><br><span class="line">        min-&gt;right = removeMin(pr);     <span class="comment">// Did NOT delete the min node on right sub-tree </span></span><br><span class="line">        min-&gt;left = pl;</span><br><span class="line">        <span class="keyword">return</span> balance(min);            <span class="comment">// Balance this node</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> balance(p);                  <span class="comment">// Balance this node</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h5><p><code>p-&gt;left = remove(p-&gt;left,d);</code><br>Connect between parent and child. So no need to store parent pointer.<br><code>delete p;</code><br>Truly delete node with required data. But store its left and right nodes.<br>Later return min of right sub-tree to its parent node. No memory leak.<br><code>min-&gt;right = removeMin(pr);</code><br>Return from the second min node and balanced from bottom up to the deleted node’s right child.<br>Did not truly delete the min node. <strong>It should already be stored by <code>findMin()</code> function.</strong></p>
+<p>Also refer <a href="https://blog.csdn.net/u010442302/article/details/52713585" target="_blank" rel="noopener">here</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/12/05/Trees-Binary-Trees-Binary-Search-Trees/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/05/Trees-Binary-Trees-Binary-Search-Trees/" itemprop="url">Trees, Binary Trees, Binary Search Trees</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-05T16:40:12+08:00">
+                2018-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/studyNotes/" itemprop="url" rel="index">
+                    <span itemprop="name">studyNotes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Binary-Tree"><a href="#Binary-Tree" class="headerlink" title="Binary Tree"></a>Binary Tree</h1><p>Inorder traversal<br>preorder traversal<br>postorder traversal  </p>
+<h1 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h1><h2 id="BST-Insertion"><a href="#BST-Insertion" class="headerlink" title="BST Insertion"></a>BST Insertion</h2><p>always insert element at bottom as leaf.<br>remember to check if the element already exists in the tree.</p>
+<h3 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a>Recursion</h3><p><em>First check how many children one node has!! Don’t access <strong>nullptr</strong>!</em></p>
+<table>
+<thead>
+<tr>
+<th><strong>node type</strong></th>
+<th>operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>node with two children:</strong></td>
+<td>recurive left or right</td>
+</tr>
+<tr>
+<td><strong>node with left child:</strong></td>
+<td>recursive right or insert left </td>
+</tr>
+<tr>
+<td><strong>node with right child:</strong></td>
+<td>recursive left or insert right </td>
+</tr>
+<tr>
+<td><strong>node with no child:</strong></td>
+<td>insert left or right</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Non-Recursion"><a href="#Non-Recursion" class="headerlink" title="Non-Recursion"></a>Non-Recursion</h3><blockquote>
+<p>while !nullptr<br>if less p=p-&gt;left<br>else if greater p=p-&gt;right<br>else return // alreay exist!  </p>
+</blockquote>
+<p>Then p = nullptr is the place to insert.<br>Modfy its parent pointer pp to complete the operation.   </p>
+<h2 id="BST-Search"><a href="#BST-Search" class="headerlink" title="BST Search"></a>BST Search</h2><h3 id="Recursion-1"><a href="#Recursion-1" class="headerlink" title="Recursion"></a>Recursion</h3><blockquote>
+<p>if node == nullptr return <strong>false</strong><br>if node-&gt;data == data return <strong>true</strong><br>if less recursive left<br>if greater recursive right  </p>
+</blockquote>
+<h3 id="Non-Recursion-1"><a href="#Non-Recursion-1" class="headerlink" title="Non-Recursion"></a>Non-Recursion</h3><blockquote>
+<p>while !nullptr<br>if less p=p-&gt;left<br>else if greater p=p-&gt;right<br>else return <strong>true</strong><br>return <strong>false</strong>  </p>
+</blockquote>
+<h2 id="BST-deletion"><a href="#BST-deletion" class="headerlink" title="BST deletion"></a>BST deletion</h2><h3 id="Delete-a-node-with-no-child"><a href="#Delete-a-node-with-no-child" class="headerlink" title="Delete a node with no child"></a>Delete a node with no child</h3><blockquote>
+<p>pointer: current, parent    </p>
+</blockquote>
+<p>Simply delete it and make its parent’s original pointer to it <strong>nullptr</strong></p>
+<h3 id="Delete-a-node-with-one-child"><a href="#Delete-a-node-with-one-child" class="headerlink" title="Delete a node with one child"></a>Delete a node with one child</h3><blockquote>
+<p>pointer: current, parent, child    </p>
+</blockquote>
+<p>Pass its poniter to the only child to its parent’s pointer to it.<br>Then delete it.</p>
+<h3 id="Delete-a-node-with-two-children"><a href="#Delete-a-node-with-two-children" class="headerlink" title="Delete a node with two children"></a>Delete a node with two children</h3><blockquote>
+<p>pointer: current, min/max, <strong>parent of min/max</strong>    </p>
+</blockquote>
+<p><strong>Override</strong> its data to the <em>max</em> of <em>left</em> or <em>min</em> of <em>right</em><br><strong>Actually delete</strong> the min/max node of the BST, which has no child </p>
+<h3 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h3><ol>
+<li>search for the node  </li>
+<li>check how many child     </li>
+<li>if no :delete it; parent’s pointer to <strong>nullptr</strong><br> if one: by pass pointer and delete<br> if two: get min/max; <strong>override</strong> data; delete min/max; parent’s pointer to <strong>nullptr</strong>  </li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/12/05/Static-Variables/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/05/Static-Variables/" itemprop="url">Static Variables</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-05T15:56:53+08:00">
+                2018-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/studyNotes/" itemprop="url" rel="index">
+                    <span itemprop="name">studyNotes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Static-variables-are-global-variables"><a href="#Static-variables-are-global-variables" class="headerlink" title="Static variables are global variables"></a>Static variables are global variables</h3><blockquote>
+<p>created only once in a program.</p>
+<p>reside on the static data region of the loaded program.</p>
+<p>have a lifetime across the entire run of a program.</p>
+<p>still may have limited scope: file, function, class.</p>
+</blockquote>
+<h3 id="Static-variables-in-a-function"><a href="#Static-variables-in-a-function" class="headerlink" title="Static variables in a function"></a>Static variables in a function</h3><blockquote>
+<p>initialized only once regardless how many times the function is called.</p>
+<p>retain their values across the function calls.</p>
+<p>can be accessed only inside the function.</p>
+</blockquote>
+<h3 id="Static-variables-in-a-class"><a href="#Static-variables-in-a-class" class="headerlink" title="Static variables in a class"></a>Static variables in a class</h3><blockquote>
+<p>variables in different objects are actually one varibale.</p>
+<p>initailize variable must be done in global scope(<strong>NOT in any function! Not in main(), either</strong>)</p>
+<p><strong>variable exists even if no class object is created.</strong></p>
+</blockquote>
+<h3 id="Static-Member-functions"><a href="#Static-Member-functions" class="headerlink" title="Static Member functions"></a>Static Member functions</h3><blockquote>
+<p>do not have the implicit this pointer like regular non-static member functions.</p>
+<p>may be used even when there are <strong>no</strong> objects of the class!</p>
+<p>can <strong>only</strong> make use of static data members of the class.</p>
+<p>cannot be const nor virtual functions.</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/12/05/Inheritance-and-Polymorphism/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/05/Inheritance-and-Polymorphism/" itemprop="url">Inheritance and Polymorphism</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-05T14:31:16+08:00">
+                2018-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/studyNotes/" itemprop="url" rel="index">
+                    <span itemprop="name">studyNotes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><em>Inheritance</em>:    describe “is-a relationship”<br><em>Polymorphism</em>:   derived class can perform like base class(object,pointer,reference)</p>
+<p><em>Construction Order</em>: from inner to outer<br><em>Destruction Order</em>: from outer to inner</p>
+<h3 id="member-access-control"><a href="#member-access-control" class="headerlink" title="member access control"></a>member access control</h3><p><em>public</em>:   </p>
+<p>member functions of the class(inner)<br>any member funtions of other classes(other class)<br>any global functions(outside)   </p>
+<p><em>protected</em>:</p>
+<p>member functions and <em>friends</em> of the class<br>member functions and <em>friends</em> of its <em>derived classes</em><br><strong>NOT</strong> for outside functions   </p>
+<p><em>private</em>:</p>
+<p>member functions and friends of the class</p>
+<blockquote>
+<p>Without inheritance, private and protected have exactly the same meaning.</p>
+</blockquote>
+<h3 id="public-protected-private-inheritance"><a href="#public-protected-private-inheritance" class="headerlink" title="public protected private inheritance"></a>public protected private inheritance</h3><table>
+<thead>
+<tr>
+<th>inheritance\member</th>
+<th>public</th>
+<th>protected</th>
+<th>private </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public inheritance</td>
+<td>public</td>
+<td>protected</td>
+<td>private </td>
+</tr>
+<tr>
+<td>protected inheritance</td>
+<td>protected</td>
+<td>protected</td>
+<td>private</td>
+</tr>
+<tr>
+<td>private inheritance</td>
+<td>private</td>
+<td>private</td>
+<td>private</td>
+</tr>
+</tbody>
+</table>
+<p>Public inheritance implements the “is-a” relationship</p>
+<p>Private inheritance is similar to “has-a” relationship</p>
+<h3 id="Polymorphism-Dynamic-Binding-amp-Virtual-Function"><a href="#Polymorphism-Dynamic-Binding-amp-Virtual-Function" class="headerlink" title="Polymorphism: Dynamic Binding&amp;Virtual Function"></a>Polymorphism: Dynamic Binding&amp;Virtual Function</h3><p><em>Once a method is declared <strong>virtual</strong> in the base class, it is automatically <strong>virtual</strong> in all directly and indirectly derived classes.</em></p>
+<p><strong>Even if derived classed do not announce it’s virtual functions.</strong></p>
+<p>Virtual destructor can make deleting a base pointer to derived object operate correctly.</p>
+<p>Do not rely on the virtual function mechanism during the execution of<br>a constructor.</p>
+<p>Similarly, if a virtual function is called inside the base class destructor,<br>it represents base class’ virtual function: when a derived class is being<br>deleted, the derived-specific portion has already been deleted before<br>the base class destructor is called.</p>
+<h3 id="Abstract-Base-Class-ABC"><a href="#Abstract-Base-Class-ABC" class="headerlink" title="Abstract Base Class(ABC):"></a>Abstract Base Class(ABC):</h3><p><strong>NO</strong> object of ABC can be created</p>
+<p>Its <strong>derived classes</strong> must implement the pure virtual functions.</p>
+<p>ABC is just an interface.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -603,6 +1505,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/life/" itemprop="url" rel="index">
+                    <span itemprop="name">life</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -965,588 +1889,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://github.com/2018/05/25/Markdown-syntax/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vox09">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Destinxxy">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/25/Markdown-syntax/" itemprop="url">Markdown Syntax</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-25T16:17:53+08:00">
-                2018-05-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tech/" itemprop="url" rel="index">
-                    <span itemprop="name">tech</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>A good markdown cheatsheet is <a href="http://xianbai.me/learn-md/index.html" target="_blank" rel="noopener">here</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://github.com/2018/05/25/Vim-notes/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vox09">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Destinxxy">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/25/Vim-notes/" itemprop="url">Vim Notes</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-25T16:03:04+08:00">
-                2018-05-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tech/" itemprop="url" rel="index">
-                    <span itemprop="name">tech</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Neovim-and-vim-plugin"><a href="#Neovim-and-vim-plugin" class="headerlink" title="Neovim and vim-plugin"></a>Neovim and vim-plugin</h3><p>A good blog <a href="http://zhranklin.com/blog/%E6%89%93%E9%80%A0%E4%B8%80%E4%B8%AA%E7%8E%B0%E4%BB%A3%E5%8C%96%E7%9A%84vim%E7%BC%96%E8%BE%91%E5%99%A8:%20neovim%20+%20nyaovim%20+%20youcompleteme%20+%20airline#vim-plug%E4%BD%BF%E7%94%A8" target="_blank" rel="noopener">link</a> for both introduction of neovim and vim-plugin.</p>
-<h3 id="search-and-substitution"><a href="#search-and-substitution" class="headerlink" title="search and substitution"></a>search and substitution</h3><p><a href="https://harttle.land/2016/08/08/vim-search-in-file.html" target="_blank" rel="noopener">here</a></p>
-<h3 id="fold-and-unfold"><a href="#fold-and-unfold" class="headerlink" title="fold and unfold"></a>fold and unfold</h3><p><a href="http://www.cnblogs.com/zlcxbb/p/6442092.html" target="_blank" rel="noopener">here</a></p>
-<h3 id="keyboard-remap"><a href="#keyboard-remap" class="headerlink" title="keyboard remap"></a>keyboard remap</h3><p><a href="http://yyq123.blogspot.com/2010/12/vim-map.html" target="_blank" rel="noopener">here</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://github.com/2018/05/23/Summary-of-Freshman/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vox09">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Destinxxy">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/23/Summary-of-Freshman/" itemprop="url">Summary of Freshman</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-23T19:43:36+08:00">
-                2018-05-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">life</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          privately life stuff
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/23/Summary-of-Freshman/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://github.com/2018/05/23/Origin/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vox09">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Destinxxy">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/23/Origin/" itemprop="url">Origin</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-23T19:07:41+08:00">
-                2018-05-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">life</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          privately life stuff
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/23/Origin/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1590,7 +1939,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1611,10 +1960,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">5</span>
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
-                
+                </a>
               </div>
             
 
@@ -1714,6 +2063,8 @@
   
 
 
+  
+
 
 
 
@@ -1752,6 +2103,11 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -1822,6 +2178,31 @@
   
 
   
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Wechat,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
   
 
   
