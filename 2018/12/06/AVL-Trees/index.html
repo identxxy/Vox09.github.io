@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh_Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Cpp,Study," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="(All codes below are written by Dr. Desmond) AVL(Adelson-Velsky and Landis) TreesEvery sub-tree of an AVL tree is itself an AVL tree.(An empty tree is an AVL tree too.)123456struct AVLNode&amp;#123;">
+<meta name="keywords" content="Cpp,Study">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AVL Trees">
+<meta property="og:url" content="http://github.com/2018/12/06/AVL-Trees/index.html">
+<meta property="og:site_name" content="Destinxxy">
+<meta property="og:description" content="(All codes below are written by Dr. Desmond) AVL(Adelson-Velsky and Landis) TreesEvery sub-tree of an AVL tree is itself an AVL tree.(An empty tree is an AVL tree too.)123456struct AVLNode&amp;#123;">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:updated_time" content="2018-12-06T19:45:10.520Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AVL Trees">
+<meta name="twitter:description" content="(All codes below are written by Dr. Desmond) AVL(Adelson-Velsky and Landis) TreesEvery sub-tree of an AVL tree is itself an AVL tree.(An empty tree is an AVL tree too.)123456struct AVLNode&amp;#123;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://github.com/2018/12/06/AVL-Trees/"/>
+
+
+
+
+
+  <title>AVL Trees | Destinxxy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Destinxxy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Life should be hard</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/12/06/AVL-Trees/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">AVL Trees</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-06T17:06:19+08:00">
+                2018-12-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/studyNotes/" itemprop="url" rel="index">
+                    <span itemprop="name">studyNotes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><em>(All codes below are written by Dr. Desmond)</em></p>
+<h1 id="AVL-Adelson-Velsky-and-Landis-Trees"><a href="#AVL-Adelson-Velsky-and-Landis-Trees" class="headerlink" title="AVL(Adelson-Velsky and Landis) Trees"></a>AVL(Adelson-Velsky and Landis) Trees</h1><p>Every sub-tree of an AVL tree is itself an AVL tree.(An empty tree is an AVL tree too.)<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">AVLNode</span>&#123;</span>  </span><br><span class="line">    T data;  </span><br><span class="line">    <span class="keyword">int</span> height;     <span class="comment">// Important!</span></span><br><span class="line">    AVLNode* left;  </span><br><span class="line">    AVLNode* right;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="AVL-Tree-Searching"><a href="#AVL-Tree-Searching" class="headerlink" title="AVL Tree Searching"></a>AVL Tree Searching</h2><p>same as BST searching</p>
+<h2 id="AVL-Tree-Insertion"><a href="#AVL-Tree-Insertion" class="headerlink" title="AVL Tree Insertion"></a>AVL Tree Insertion</h2><p>Insertion may violate the AVL tree property in 4 cases:</p>
+<ol>
+<li>Insertion into the <strong>right</strong> sub-tree of the <strong>right</strong> child<br>Left(anti-clockwise) rotation [single rotation]  </li>
+<li>Insertion into the <strong>left</strong> sub-tree of the <strong>left</strong> child<br>Right(clockwise) rotation [single rotation]  </li>
+<li>Insertion into the <strong>right</strong> sub-tree of the <strong>left</strong> child<br>Left-right rotation [double rotation]    </li>
+<li>Insertion into the <strong>left</strong> sub-tree of the <strong>right</strong> child<br>Right-left rotation [double rotation]    </li>
+</ol>
+<p><strong>!!! Distinguish L/R of subtree or L/R of child !!!</strong>    </p>
+<p><strong>First insert the node to right place, then balance it by rotation.</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::insert(AVLNode&lt;T&gt;* p, <span class="keyword">const</span> T&amp; d)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>( !p ) <span class="keyword">return</span> <span class="keyword">new</span> AVLNode&lt;T&gt;(d);  <span class="comment">// Empty AVL tree</span></span><br><span class="line">    <span class="keyword">if</span>( d &lt; p-&gt;data )</span><br><span class="line">        p-&gt;left = insert(p-&gt;left, d);   <span class="comment">// Recursion on the left sub-tree</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        p-&gt;right = insert(p-&gt;right, d); <span class="comment">// Recursion on the right sub-tree</span></span><br><span class="line">    <span class="keyword">return</span> balance(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Rotation"><a href="#Rotation" class="headerlink" title="Rotation"></a>Rotation</h3><p>Single rotation operate on the <strong>node</strong>, replace original node by its child<br>Double rotation first operate on the <strong>child</strong>, then on the <strong>node</strong>, replace original node by its grandchild. </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::rotateRight(AVLNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">    AVLNode&lt;T&gt;* pl = p-&gt;left;</span><br><span class="line">    p-&gt;left = pl-&gt;right;</span><br><span class="line">    pl-&gt;right = p;</span><br><span class="line">    updateHeight(p);</span><br><span class="line">    updateHeight(pl);</span><br><span class="line">    <span class="keyword">return</span> pl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::rotateRightLeft(AVLNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">    rotateRight(p-&gt;right);</span><br><span class="line">    <span class="keyword">return</span> rotateLeft(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::balance(AVLNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">    h-&gt;height = max(h-&gt;right-&gt;height,h-&gt;left-&gt;height);</span><br><span class="line">    <span class="comment">// heightDiff() return (right subtree height) - (left subtree height)</span></span><br><span class="line">    <span class="keyword">if</span>( heightDiff(p) == <span class="number">2</span> )&#123;</span><br><span class="line">        <span class="keyword">if</span>( heightDiff(p-&gt;right) &lt; <span class="number">0</span> )  <span class="comment">// if need double rotation</span></span><br><span class="line">            p-&gt;right = rotateRight(p-&gt;right);</span><br><span class="line">        <span class="keyword">return</span> rotateLeft(p);           <span class="comment">// single rotation</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>( heightDiff(p) == <span class="number">-2</span> )&#123;</span><br><span class="line">        <span class="keyword">if</span>( heightDiff(p-&gt;left) &gt; <span class="number">0</span> )   <span class="comment">// if need double rotation</span></span><br><span class="line">            p-&gt;left = rotateLeft(p-&gt;left);</span><br><span class="line">        <span class="keyword">return</span> rotateRight(p);          <span class="comment">// single rotation</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="AVL-Tree-Deletion"><a href="#AVL-Tree-Deletion" class="headerlink" title="AVL Tree Deletion"></a>AVL Tree Deletion</h2><p>The idea is same as BST.<br>When delete node with two children, the following code <strong>delete the node and<br>rise the min node up</strong>.<br>Then balance the whole tree.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::findMin(AVLNode&lt;T&gt;* p) <span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> p-&gt;left ? findMin(p-&gt;left) : p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// NOT delete the Min-node!!</span></span><br><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::removeMin(AVLNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(p-&gt;left == <span class="number">0</span>)                    <span class="comment">// If it's the min node, not return itself</span></span><br><span class="line">        <span class="keyword">return</span> p-&gt;right;                <span class="comment">// Return the second min means removeMin!</span></span><br><span class="line">    p-&gt;left = removeMin(p-&gt;left);       <span class="comment">// Recursion on the left sub-tree</span></span><br><span class="line">    <span class="keyword">return</span> balance(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::remove(AVLNode&lt;T&gt;* p, <span class="keyword">const</span> T&amp; d) </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>( !p ) <span class="keyword">return</span> <span class="number">0</span>;                  <span class="comment">// Item is not found; do nothing</span></span><br><span class="line">    <span class="keyword">if</span>( d &lt; p-&gt;data )</span><br><span class="line">        p-&gt;left = remove(p-&gt;left,d);    <span class="comment">// Recursion on the left sub-tree</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>( d &gt; p-&gt;data )</span><br><span class="line">        p-&gt;right = remove(p-&gt;right,d);  <span class="comment">// Recursion on the right sub-tree</span></span><br><span class="line">    <span class="keyword">else</span> &#123;                              <span class="comment">// Item is found</span></span><br><span class="line">        AVLNode&lt;T&gt;* pl = p-&gt;left;</span><br><span class="line">        AVLNode&lt;T&gt;* pr = p-&gt;right;</span><br><span class="line">        <span class="keyword">delete</span> p;                       <span class="comment">// Remove the node with value d</span></span><br><span class="line">        <span class="keyword">if</span>( !pr ) <span class="keyword">return</span> pl;            <span class="comment">// Return left sub-tree if no right sub-tree</span></span><br><span class="line">        AVLNode&lt;T&gt;* min = findMin(pr);  <span class="comment">// Find min. node of the right sub-tree</span></span><br><span class="line">        min-&gt;right = removeMin(pr);     <span class="comment">// Did NOT delete the min node on right sub-tree </span></span><br><span class="line">        min-&gt;left = pl;</span><br><span class="line">        <span class="keyword">return</span> balance(min);            <span class="comment">// Balance this node</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> balance(p);                  <span class="comment">// Balance this node</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h5><p><code>p-&gt;left = remove(p-&gt;left,d);</code><br>Connect between parent and child. So no need to store parent pointer.<br><code>delete p;</code><br>Truly delete node with required data. But store its left and right nodes.<br>Later return min of right sub-tree to its parent node. No memory leak.<br><code>min-&gt;right = removeMin(pr);</code><br>Return from the second min node and balanced from bottom up to the deleted node’s right child.<br>Did not truly delete the min node. <strong>It should already be stored by <code>findMin()</code> function.</strong></p>
+<p>Also refer <a href="https://blog.csdn.net/u010442302/article/details/52713585" target="_blank" rel="noopener">here</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Cpp/" rel="tag"># Cpp</a>
+          
+            <a href="/tags/Study/" rel="tag"># Study</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/05/Trees-Binary-Trees-Binary-Search-Trees/" rel="next" title="Trees, Binary Trees, Binary Search Trees">
+                <i class="fa fa-chevron-left"></i> Trees, Binary Trees, Binary Search Trees
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/07/Hashing/" rel="prev" title="Hashing">
+                Hashing <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Vox09</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AVL-Adelson-Velsky-and-Landis-Trees"><span class="nav-number">1.</span> <span class="nav-text">AVL(Adelson-Velsky and Landis) Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AVL-Tree-Searching"><span class="nav-number">1.1.</span> <span class="nav-text">AVL Tree Searching</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AVL-Tree-Insertion"><span class="nav-number">1.2.</span> <span class="nav-text">AVL Tree Insertion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rotation"><span class="nav-number">1.2.1.</span> <span class="nav-text">Rotation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AVL-Tree-Deletion"><span class="nav-number">1.3.</span> <span class="nav-text">AVL Tree Deletion</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Explanation"><span class="nav-number">1.3.0.0.1.</span> <span class="nav-text">Explanation</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vox09</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Wechat,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
