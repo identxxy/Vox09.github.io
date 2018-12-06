@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh_Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Study,Cpp," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Binary TreeInorder traversalpreorder traversalpostorder traversal   Binary Search TreeBST Insertionalways insert element at bottom as leaf.remember to check if the element already exists in the tree.">
+<meta name="keywords" content="Study,Cpp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Trees, Binary Trees, Binary Search Trees">
+<meta property="og:url" content="http://github.com/2018/12/05/Trees-Binary-Trees-Binary-Search-Trees/index.html">
+<meta property="og:site_name" content="Destinxxy">
+<meta property="og:description" content="Binary TreeInorder traversalpreorder traversalpostorder traversal   Binary Search TreeBST Insertionalways insert element at bottom as leaf.remember to check if the element already exists in the tree.">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:updated_time" content="2018-12-06T19:46:09.473Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Trees, Binary Trees, Binary Search Trees">
+<meta name="twitter:description" content="Binary TreeInorder traversalpreorder traversalpostorder traversal   Binary Search TreeBST Insertionalways insert element at bottom as leaf.remember to check if the element already exists in the tree.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://github.com/2018/12/05/Trees-Binary-Trees-Binary-Search-Trees/"/>
+
+
+
+
+
+  <title>Trees, Binary Trees, Binary Search Trees | Destinxxy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Destinxxy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Life should be hard</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/12/05/Trees-Binary-Trees-Binary-Search-Trees/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Trees, Binary Trees, Binary Search Trees</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-05T16:40:12+08:00">
+                2018-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/studyNotes/" itemprop="url" rel="index">
+                    <span itemprop="name">studyNotes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Binary-Tree"><a href="#Binary-Tree" class="headerlink" title="Binary Tree"></a>Binary Tree</h1><p>Inorder traversal<br>preorder traversal<br>postorder traversal  </p>
+<h1 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h1><h2 id="BST-Insertion"><a href="#BST-Insertion" class="headerlink" title="BST Insertion"></a>BST Insertion</h2><p>always insert element at bottom as leaf.<br>remember to check if the element already exists in the tree.</p>
+<h3 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a>Recursion</h3><p><em>First check how many children one node has!! Don’t access <strong>nullptr</strong>!</em></p>
+<table>
+<thead>
+<tr>
+<th><strong>node type</strong></th>
+<th>operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>node with two children:</strong></td>
+<td>recurive left or right</td>
+</tr>
+<tr>
+<td><strong>node with left child:</strong></td>
+<td>recursive right or insert left </td>
+</tr>
+<tr>
+<td><strong>node with right child:</strong></td>
+<td>recursive left or insert right </td>
+</tr>
+<tr>
+<td><strong>node with no child:</strong></td>
+<td>insert left or right</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Non-Recursion"><a href="#Non-Recursion" class="headerlink" title="Non-Recursion"></a>Non-Recursion</h3><blockquote>
+<p>while !nullptr<br>if less p=p-&gt;left<br>else if greater p=p-&gt;right<br>else return // alreay exist!  </p>
+</blockquote>
+<p>Then p = nullptr is the place to insert.<br>Modfy its parent pointer pp to complete the operation.   </p>
+<h2 id="BST-Search"><a href="#BST-Search" class="headerlink" title="BST Search"></a>BST Search</h2><h3 id="Recursion-1"><a href="#Recursion-1" class="headerlink" title="Recursion"></a>Recursion</h3><blockquote>
+<p>if node == nullptr return <strong>false</strong><br>if node-&gt;data == data return <strong>true</strong><br>if less recursive left<br>if greater recursive right  </p>
+</blockquote>
+<h3 id="Non-Recursion-1"><a href="#Non-Recursion-1" class="headerlink" title="Non-Recursion"></a>Non-Recursion</h3><blockquote>
+<p>while !nullptr<br>if less p=p-&gt;left<br>else if greater p=p-&gt;right<br>else return <strong>true</strong><br>return <strong>false</strong>  </p>
+</blockquote>
+<h2 id="BST-deletion"><a href="#BST-deletion" class="headerlink" title="BST deletion"></a>BST deletion</h2><h3 id="Delete-a-node-with-no-child"><a href="#Delete-a-node-with-no-child" class="headerlink" title="Delete a node with no child"></a>Delete a node with no child</h3><blockquote>
+<p>pointer: current, parent    </p>
+</blockquote>
+<p>Simply delete it and make its parent’s original pointer to it <strong>nullptr</strong></p>
+<h3 id="Delete-a-node-with-one-child"><a href="#Delete-a-node-with-one-child" class="headerlink" title="Delete a node with one child"></a>Delete a node with one child</h3><blockquote>
+<p>pointer: current, parent, child    </p>
+</blockquote>
+<p>Pass its poniter to the only child to its parent’s pointer to it.<br>Then delete it.</p>
+<h3 id="Delete-a-node-with-two-children"><a href="#Delete-a-node-with-two-children" class="headerlink" title="Delete a node with two children"></a>Delete a node with two children</h3><blockquote>
+<p>pointer: current, min/max, <strong>parent of min/max</strong>    </p>
+</blockquote>
+<p><strong>Override</strong> its data to the <em>max</em> of <em>left</em> or <em>min</em> of <em>right</em><br><strong>Actually delete</strong> the min/max node of the BST, which has no child </p>
+<h3 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h3><ol>
+<li>search for the node  </li>
+<li>check how many child     </li>
+<li>if no :delete it; parent’s pointer to <strong>nullptr</strong><br> if one: by pass pointer and delete<br> if two: get min/max; <strong>override</strong> data; delete min/max; parent’s pointer to <strong>nullptr</strong>  </li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Study/" rel="tag"># Study</a>
+          
+            <a href="/tags/Cpp/" rel="tag"># Cpp</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/05/Static-Variables/" rel="next" title="Static Variables">
+                <i class="fa fa-chevron-left"></i> Static Variables
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/06/AVL-Trees/" rel="prev" title="AVL Trees">
+                AVL Trees <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Vox09</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Binary-Tree"><span class="nav-number">1.</span> <span class="nav-text">Binary Tree</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Binary-Search-Tree"><span class="nav-number">2.</span> <span class="nav-text">Binary Search Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BST-Insertion"><span class="nav-number">2.1.</span> <span class="nav-text">BST Insertion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Recursion"><span class="nav-number">2.1.1.</span> <span class="nav-text">Recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-Recursion"><span class="nav-number">2.1.2.</span> <span class="nav-text">Non-Recursion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BST-Search"><span class="nav-number">2.2.</span> <span class="nav-text">BST Search</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Recursion-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">Recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-Recursion-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">Non-Recursion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BST-deletion"><span class="nav-number">2.3.</span> <span class="nav-text">BST deletion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-a-node-with-no-child"><span class="nav-number">2.3.1.</span> <span class="nav-text">Delete a node with no child</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-a-node-with-one-child"><span class="nav-number">2.3.2.</span> <span class="nav-text">Delete a node with one child</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-a-node-with-two-children"><span class="nav-number">2.3.3.</span> <span class="nav-text">Delete a node with two children</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Implementation"><span class="nav-number">2.3.4.</span> <span class="nav-text">Implementation</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vox09</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Wechat,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
