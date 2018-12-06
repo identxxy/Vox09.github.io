@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh_Hans">
+<html class="theme-next gemini use-motion" lang="zh_Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -93,7 +93,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -157,7 +157,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">life should be hard</p>
+        <p class="site-subtitle">Life should be hard</p>
       
   </div>
 
@@ -178,7 +178,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/archives/" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -342,49 +342,15 @@
       
         
           
-            <h1 id="Hash-Table"><a href="#Hash-Table" class="headerlink" title="Hash Table"></a>Hash Table</h1><p>A hash table is an array of some <strong>fixed size</strong>,<br>containing all the data items.<br>Each item has a <strong>key</strong> search is performed based on the keys.<br>Each key is <strong>mapped</strong> into some position in the array in the range 0 to m − 1, where m is the<br>array size.<br>The mapping is called <strong>hash function</strong>.</p>
-<p>Hashing table is a data structure that supports: </p>
-<ol>
-<li>searching</li>
-<li>insertion</li>
-<li>deletion  </li>
-</ol>
-<p>The implementation of hash tables is called <strong>hashing</strong>.<br>Hashing is a technique which allows the executions of above operations in <strong>constant time</strong> on average.<br>Unlike other data structures such as linked list or binary trees, data items are henerally <strong>not</strong> ordered in hash tables.<br>As a consequence, hash tables don’t support the following operations:   </p>
-<ol>
-<li>find_min and find_max</li>
-<li>finding successor and predecessor</li>
-<li>reporting data with a given range</li>
-<li>listing out the data in order</li>
-</ol>
-<h1 id="Hashing-Function"><a href="#Hashing-Function" class="headerlink" title="Hashing Function"></a>Hashing Function</h1><h2 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h2><p>A simple and reasonable strategy: <code>h(k) = k mod m.</code>  </p>
-<p>Its a good practice to set the table size m to a prime number.  </p>
-<blockquote>
-<p>h(key) =(key[0] + 37*key[1] + 37^2*key[2] + … ) mod <strong>m</strong></p>
-</blockquote>
-<h2 id="Handling-collison"><a href="#Handling-collison" class="headerlink" title="Handling collison"></a>Handling collison</h2><p><strong>Make hash table an array of linked lists</strong>  </p>
-<h3 id="Seperate-Chaining"><a href="#Seperate-Chaining" class="headerlink" title="Seperate Chaining"></a>Seperate Chaining</h3><h4 id="Insertion"><a href="#Insertion" class="headerlink" title="Insertion"></a>Insertion</h4><p>To insert a key <strong>k</strong>:  </p>
-<blockquote>
-<p>Compute h(k)<br>If T(h(k)) contains <strong>nullptr</strong> , initial this table entry to point to linked list node of <strong>kk</strong> .<br>If T(h(k)) contains <strong>non-nullptr</strong>, add <strong>k</strong> to the beginning of the list.</p>
-</blockquote>
-<h4 id="Deletion"><a href="#Deletion" class="headerlink" title="Deletion"></a>Deletion</h4><p>To delete a key <strong>k</strong>:  </p>
-<blockquote>
-<p>Compute h(k) to determine which list to traverse.<br>Search for the key <strong>k</strong>, in the list that T(h(k)) points to.<br>Delete the item with key <strong>k</strong> if it is found.  </p>
-</blockquote>
-<h3 id="Open-addressing"><a href="#Open-addressing" class="headerlink" title="Open addressing"></a>Open addressing</h3><p>Instead of putting kys of the same hash table into a chain, open addressing will <strong>relocate</strong> the key k to be inserted if it collides with an existing key.</p>
-<h4 id="Linear-probing"><a href="#Linear-probing" class="headerlink" title="Linear probing"></a>Linear probing</h4><blockquote>
-<p>f(i) = i<br>hi(k) = (hash(k) + i) mod m  </p>
-</blockquote>
-<p>Disadvantage: fall into cluster   </p>
-<h4 id="quadratic-probing"><a href="#quadratic-probing" class="headerlink" title="quadratic probing"></a>quadratic probing</h4><blockquote>
-<p>f(i) = i^2<br>hi(k) = (hash(k) + i^2) mod m  </p>
-</blockquote>
-<p>Disadvantage: second cluster… same key same probe steps.    </p>
-<h4 id="double-hashing"><a href="#double-hashing" class="headerlink" title="double hashing"></a>double hashing</h4><blockquote>
-<p>f (i) = i ×  hash2(k)<br>hi(k) = (hash(k) + i × hash2(k)) mod m</p>
-</blockquote>
-<p>hash2(k) must be <strong>relatively prime</strong> to the table size m.<br>Otherwise, we will only be able to examine a fraction of the table entries.</p>
-
-          
+          Hash TableA hash table is an array of some fixed size,containing all the data items.Each item has a key search is performed based on the keys.Each key
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/07/Hashing/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -524,25 +490,16 @@
       
         
           
-            <p><em>(All codes below are written by Dr. Desmond)</em></p>
-<h1 id="AVL-Adelson-Velsky-and-Landis-Trees"><a href="#AVL-Adelson-Velsky-and-Landis-Trees" class="headerlink" title="AVL(Adelson-Velsky and Landis) Trees"></a>AVL(Adelson-Velsky and Landis) Trees</h1><p>Every sub-tree of an AVL tree is itself an AVL tree.(An empty tree is an AVL tree too.)<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">AVLNode</span>&#123;</span>  </span><br><span class="line">    T data;  </span><br><span class="line">    <span class="keyword">int</span> height;     <span class="comment">// Important!</span></span><br><span class="line">    AVLNode* left;  </span><br><span class="line">    AVLNode* right;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="AVL-Tree-Searching"><a href="#AVL-Tree-Searching" class="headerlink" title="AVL Tree Searching"></a>AVL Tree Searching</h2><p>same as BST searching</p>
-<h2 id="AVL-Tree-Insertion"><a href="#AVL-Tree-Insertion" class="headerlink" title="AVL Tree Insertion"></a>AVL Tree Insertion</h2><p>Insertion may violate the AVL tree property in 4 cases:</p>
-<ol>
-<li>Insertion into the <strong>right</strong> sub-tree of the <strong>right</strong> child<br>Left(anti-clockwise) rotation [single rotation]  </li>
-<li>Insertion into the <strong>left</strong> sub-tree of the <strong>left</strong> child<br>Right(clockwise) rotation [single rotation]  </li>
-<li>Insertion into the <strong>right</strong> sub-tree of the <strong>left</strong> child<br>Left-right rotation [double rotation]    </li>
-<li>Insertion into the <strong>left</strong> sub-tree of the <strong>right</strong> child<br>Right-left rotation [double rotation]    </li>
-</ol>
-<p><strong>!!! Distinguish L/R of subtree or L/R of child !!!</strong>    </p>
-<p><strong>First insert the node to right place, then balance it by rotation.</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::insert(AVLNode&lt;T&gt;* p, <span class="keyword">const</span> T&amp; d)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>( !p ) <span class="keyword">return</span> <span class="keyword">new</span> AVLNode&lt;T&gt;(d);  <span class="comment">// Empty AVL tree</span></span><br><span class="line">    <span class="keyword">if</span>( d &lt; p-&gt;data )</span><br><span class="line">        p-&gt;left = insert(p-&gt;left, d);   <span class="comment">// Recursion on the left sub-tree</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        p-&gt;right = insert(p-&gt;right, d); <span class="comment">// Recursion on the right sub-tree</span></span><br><span class="line">    <span class="keyword">return</span> balance(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="Rotation"><a href="#Rotation" class="headerlink" title="Rotation"></a>Rotation</h3><p>Single rotation operate on the <strong>node</strong>, replace original node by its child<br>Double rotation first operate on the <strong>child</strong>, then on the <strong>node</strong>, replace original node by its grandchild. </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::rotateRight(AVLNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">    AVLNode&lt;T&gt;* pl = p-&gt;left;</span><br><span class="line">    p-&gt;left = pl-&gt;right;</span><br><span class="line">    pl-&gt;right = p;</span><br><span class="line">    updateHeight(p);</span><br><span class="line">    updateHeight(pl);</span><br><span class="line">    <span class="keyword">return</span> pl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::rotateRightLeft(AVLNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">    rotateRight(p-&gt;right);</span><br><span class="line">    <span class="keyword">return</span> rotateLeft(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::balance(AVLNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">    h-&gt;height = max(h-&gt;right-&gt;height,h-&gt;left-&gt;height);</span><br><span class="line">    <span class="comment">// heightDiff() return (right subtree height) - (left subtree height)</span></span><br><span class="line">    <span class="keyword">if</span>( heightDiff(p) == <span class="number">2</span> )&#123;</span><br><span class="line">        <span class="keyword">if</span>( heightDiff(p-&gt;right) &lt; <span class="number">0</span> )  <span class="comment">// if need double rotation</span></span><br><span class="line">            p-&gt;right = rotateRight(p-&gt;right);</span><br><span class="line">        <span class="keyword">return</span> rotateLeft(p);           <span class="comment">// single rotation</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>( heightDiff(p) == <span class="number">-2</span> )&#123;</span><br><span class="line">        <span class="keyword">if</span>( heightDiff(p-&gt;left) &gt; <span class="number">0</span> )   <span class="comment">// if need double rotation</span></span><br><span class="line">            p-&gt;left = rotateLeft(p-&gt;left);</span><br><span class="line">        <span class="keyword">return</span> rotateRight(p);          <span class="comment">// single rotation</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="AVL-Tree-Deletion"><a href="#AVL-Tree-Deletion" class="headerlink" title="AVL Tree Deletion"></a>AVL Tree Deletion</h2><p>The idea is same as BST.<br>When delete node with two children, the following code <strong>delete the node and<br>rise the min node up</strong>.<br>Then balance the whole tree.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::findMin(AVLNode&lt;T&gt;* p) <span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> p-&gt;left ? findMin(p-&gt;left) : p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// NOT delete the Min-node!!</span></span><br><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::removeMin(AVLNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(p-&gt;left == <span class="number">0</span>)                    <span class="comment">// If it's the min node, not return itself</span></span><br><span class="line">        <span class="keyword">return</span> p-&gt;right;                <span class="comment">// Return the second min means removeMin!</span></span><br><span class="line">    p-&gt;left = removeMin(p-&gt;left);       <span class="comment">// Recursion on the left sub-tree</span></span><br><span class="line">    <span class="keyword">return</span> balance(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::remove(AVLNode&lt;T&gt;* p, <span class="keyword">const</span> T&amp; d) </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>( !p ) <span class="keyword">return</span> <span class="number">0</span>;                  <span class="comment">// Item is not found; do nothing</span></span><br><span class="line">    <span class="keyword">if</span>( d &lt; p-&gt;data )</span><br><span class="line">        p-&gt;left = remove(p-&gt;left,d);    <span class="comment">// Recursion on the left sub-tree</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>( d &gt; p-&gt;data )</span><br><span class="line">        p-&gt;right = remove(p-&gt;right,d);  <span class="comment">// Recursion on the right sub-tree</span></span><br><span class="line">    <span class="keyword">else</span> &#123;                              <span class="comment">// Item is found</span></span><br><span class="line">        AVLNode&lt;T&gt;* pl = p-&gt;left;</span><br><span class="line">        AVLNode&lt;T&gt;* pr = p-&gt;right;</span><br><span class="line">        <span class="keyword">delete</span> p;                       <span class="comment">// Remove the node with value d</span></span><br><span class="line">        <span class="keyword">if</span>( !pr ) <span class="keyword">return</span> pl;            <span class="comment">// Return left sub-tree if no right sub-tree</span></span><br><span class="line">        AVLNode&lt;T&gt;* min = findMin(pr);  <span class="comment">// Find min. node of the right sub-tree</span></span><br><span class="line">        min-&gt;right = removeMin(pr);     <span class="comment">// Did NOT delete the min node on right sub-tree </span></span><br><span class="line">        min-&gt;left = pl;</span><br><span class="line">        <span class="keyword">return</span> balance(min);            <span class="comment">// Balance this node</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> balance(p);                  <span class="comment">// Balance this node</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h5 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h5><p><code>p-&gt;left = remove(p-&gt;left,d);</code><br>Connect between parent and child. So no need to store parent pointer.<br><code>delete p;</code><br>Truly delete node with required data. But store its left and right nodes.<br>Later return min of right sub-tree to its parent node. No memory leak.<br><code>min-&gt;right = removeMin(pr);</code><br>Return from the second min node and balanced from bottom up to the deleted node’s right child.<br>Did not truly delete the min node. <strong>It should already be stored by <code>findMin()</code> function.</strong></p>
-<p>Also refer <a href="https://blog.csdn.net/u010442302/article/details/52713585" target="_blank" rel="noopener">here</a></p>
-
-          
+          (All codes below are written by Dr. Desmond)
+AVL(Adelson-Velsky and Landis) TreesEvery sub-tree of an AVL tree is itself an AVL tree.(An empty tree is
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/06/AVL-Trees/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -682,64 +639,16 @@
       
         
           
-            <h1 id="Binary-Tree"><a href="#Binary-Tree" class="headerlink" title="Binary Tree"></a>Binary Tree</h1><p>Inorder traversal<br>preorder traversal<br>postorder traversal  </p>
-<h1 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h1><h2 id="BST-Insertion"><a href="#BST-Insertion" class="headerlink" title="BST Insertion"></a>BST Insertion</h2><p>always insert element at bottom as leaf.<br>remember to check if the element already exists in the tree.</p>
-<h3 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a>Recursion</h3><p><em>First check how many children one node has!! Don’t access <strong>nullptr</strong>!</em></p>
-<table>
-<thead>
-<tr>
-<th><strong>node type</strong></th>
-<th>operation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>node with two children:</strong></td>
-<td>recurive left or right</td>
-</tr>
-<tr>
-<td><strong>node with left child:</strong></td>
-<td>recursive right or insert left </td>
-</tr>
-<tr>
-<td><strong>node with right child:</strong></td>
-<td>recursive left or insert right </td>
-</tr>
-<tr>
-<td><strong>node with no child:</strong></td>
-<td>insert left or right</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Non-Recursion"><a href="#Non-Recursion" class="headerlink" title="Non-Recursion"></a>Non-Recursion</h3><blockquote>
-<p>while !nullptr<br>if less p=p-&gt;left<br>else if greater p=p-&gt;right<br>else return // alreay exist!  </p>
-</blockquote>
-<p>Then p = nullptr is the place to insert.<br>Modfy its parent pointer pp to complete the operation.   </p>
-<h2 id="BST-Search"><a href="#BST-Search" class="headerlink" title="BST Search"></a>BST Search</h2><h3 id="Recursion-1"><a href="#Recursion-1" class="headerlink" title="Recursion"></a>Recursion</h3><blockquote>
-<p>if node == nullptr return <strong>false</strong><br>if node-&gt;data == data return <strong>true</strong><br>if less recursive left<br>if greater recursive right  </p>
-</blockquote>
-<h3 id="Non-Recursion-1"><a href="#Non-Recursion-1" class="headerlink" title="Non-Recursion"></a>Non-Recursion</h3><blockquote>
-<p>while !nullptr<br>if less p=p-&gt;left<br>else if greater p=p-&gt;right<br>else return <strong>true</strong><br>return <strong>false</strong>  </p>
-</blockquote>
-<h2 id="BST-deletion"><a href="#BST-deletion" class="headerlink" title="BST deletion"></a>BST deletion</h2><h3 id="Delete-a-node-with-no-child"><a href="#Delete-a-node-with-no-child" class="headerlink" title="Delete a node with no child"></a>Delete a node with no child</h3><blockquote>
-<p>pointer: current, parent    </p>
-</blockquote>
-<p>Simply delete it and make its parent’s original pointer to it <strong>nullptr</strong></p>
-<h3 id="Delete-a-node-with-one-child"><a href="#Delete-a-node-with-one-child" class="headerlink" title="Delete a node with one child"></a>Delete a node with one child</h3><blockquote>
-<p>pointer: current, parent, child    </p>
-</blockquote>
-<p>Pass its poniter to the only child to its parent’s pointer to it.<br>Then delete it.</p>
-<h3 id="Delete-a-node-with-two-children"><a href="#Delete-a-node-with-two-children" class="headerlink" title="Delete a node with two children"></a>Delete a node with two children</h3><blockquote>
-<p>pointer: current, min/max, <strong>parent of min/max</strong>    </p>
-</blockquote>
-<p><strong>Override</strong> its data to the <em>max</em> of <em>left</em> or <em>min</em> of <em>right</em><br><strong>Actually delete</strong> the min/max node of the BST, which has no child </p>
-<h3 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h3><ol>
-<li>search for the node  </li>
-<li>check how many child     </li>
-<li>if no :delete it; parent’s pointer to <strong>nullptr</strong><br> if one: by pass pointer and delete<br> if two: get min/max; <strong>override</strong> data; delete min/max; parent’s pointer to <strong>nullptr</strong>  </li>
-</ol>
-
-          
+          Binary TreeInorder traversalpreorder traversalpostorder traversal  
+Binary Search TreeBST Insertionalways insert element at bottom as leaf.remember to
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/05/Trees-Binary-Trees-Binary-Search-Trees/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -879,30 +788,18 @@
       
         
           
-            <h3 id="Static-variables-are-global-variables"><a href="#Static-variables-are-global-variables" class="headerlink" title="Static variables are global variables"></a>Static variables are global variables</h3><blockquote>
-<p>created only once in a program.</p>
-<p>reside on the static data region of the loaded program.</p>
-<p>have a lifetime across the entire run of a program.</p>
-<p>still may have limited scope: file, function, class.</p>
-</blockquote>
-<h3 id="Static-variables-in-a-function"><a href="#Static-variables-in-a-function" class="headerlink" title="Static variables in a function"></a>Static variables in a function</h3><blockquote>
-<p>initialized only once regardless how many times the function is called.</p>
-<p>retain their values across the function calls.</p>
-<p>can be accessed only inside the function.</p>
-</blockquote>
-<h3 id="Static-variables-in-a-class"><a href="#Static-variables-in-a-class" class="headerlink" title="Static variables in a class"></a>Static variables in a class</h3><blockquote>
-<p>variables in different objects are actually one varibale.</p>
-<p>initailize variable must be done in global scope(<strong>NOT in any function! Not in main(), either</strong>)</p>
-<p><strong>variable exists even if no class object is created.</strong></p>
-</blockquote>
-<h3 id="Static-Member-functions"><a href="#Static-Member-functions" class="headerlink" title="Static Member functions"></a>Static Member functions</h3><blockquote>
-<p>do not have the implicit this pointer like regular non-static member functions.</p>
-<p>may be used even when there are <strong>no</strong> objects of the class!</p>
-<p>can <strong>only</strong> make use of static data members of the class.</p>
-<p>cannot be const nor virtual functions.</p>
-</blockquote>
-
-          
+          Static variables are global variables
+created only once in a program.
+reside on the static data region of the loaded program.
+have a lifetime across t
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/05/Static-Variables/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1042,59 +939,16 @@
       
         
           
-            <p><em>Inheritance</em>:    describe “is-a relationship”<br><em>Polymorphism</em>:   derived class can perform like base class(object,pointer,reference)</p>
-<p><em>Construction Order</em>: from inner to outer<br><em>Destruction Order</em>: from outer to inner</p>
-<h3 id="member-access-control"><a href="#member-access-control" class="headerlink" title="member access control"></a>member access control</h3><p><em>public</em>:   </p>
-<p>member functions of the class(inner)<br>any member funtions of other classes(other class)<br>any global functions(outside)   </p>
-<p><em>protected</em>:</p>
-<p>member functions and <em>friends</em> of the class<br>member functions and <em>friends</em> of its <em>derived classes</em><br><strong>NOT</strong> for outside functions   </p>
-<p><em>private</em>:</p>
-<p>member functions and friends of the class</p>
-<blockquote>
-<p>Without inheritance, private and protected have exactly the same meaning.</p>
-</blockquote>
-<h3 id="public-protected-private-inheritance"><a href="#public-protected-private-inheritance" class="headerlink" title="public protected private inheritance"></a>public protected private inheritance</h3><table>
-<thead>
-<tr>
-<th>inheritance\member</th>
-<th>public</th>
-<th>protected</th>
-<th>private </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>public inheritance</td>
-<td>public</td>
-<td>protected</td>
-<td>private </td>
-</tr>
-<tr>
-<td>protected inheritance</td>
-<td>protected</td>
-<td>protected</td>
-<td>private</td>
-</tr>
-<tr>
-<td>private inheritance</td>
-<td>private</td>
-<td>private</td>
-<td>private</td>
-</tr>
-</tbody>
-</table>
-<p>Public inheritance implements the “is-a” relationship</p>
-<p>Private inheritance is similar to “has-a” relationship</p>
-<h3 id="Polymorphism-Dynamic-Binding-amp-Virtual-Function"><a href="#Polymorphism-Dynamic-Binding-amp-Virtual-Function" class="headerlink" title="Polymorphism: Dynamic Binding&amp;Virtual Function"></a>Polymorphism: Dynamic Binding&amp;Virtual Function</h3><p><em>Once a method is declared <strong>virtual</strong> in the base class, it is automatically <strong>virtual</strong> in all directly and indirectly derived classes.</em></p>
-<p><strong>Even if derived classed do not announce it’s virtual functions.</strong></p>
-<p>Virtual destructor can make deleting a base pointer to derived object operate correctly.</p>
-<p>Do not rely on the virtual function mechanism during the execution of<br>a constructor.</p>
-<p>Similarly, if a virtual function is called inside the base class destructor,<br>it represents base class’ virtual function: when a derived class is being<br>deleted, the derived-specific portion has already been deleted before<br>the base class destructor is called.</p>
-<h3 id="Abstract-Base-Class-ABC"><a href="#Abstract-Base-Class-ABC" class="headerlink" title="Abstract Base Class(ABC):"></a>Abstract Base Class(ABC):</h3><p><strong>NO</strong> object of ABC can be created</p>
-<p>Its <strong>derived classes</strong> must implement the pure virtual functions.</p>
-<p>ABC is just an interface.</p>
-
-          
+          Inheritance:    describe “is-a relationship”Polymorphism:   derived class can perform like base class(object,pointer,reference)
+Construction Order: fr
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/05/Inheritance-and-Polymorphism/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1234,10 +1088,17 @@
       
         
           
-            <h3 id="Memory-detection"><a href="#Memory-detection" class="headerlink" title="Memory detection"></a>Memory detection</h3><h5 id="In-Windows-using-Visual-Studio"><a href="#In-Windows-using-Visual-Studio" class="headerlink" title="In Windows using Visual Studio"></a>In Windows using Visual Studio</h5><p><a href="https://blog.csdn.net/mfcing/article/details/42673393" target="_blank" rel="noopener">here</a></p>
-<h5 id="Open-source-tools"><a href="#Open-source-tools" class="headerlink" title="Open source tools"></a>Open source tools</h5><p><a href="https://blog.csdn.net/youbingchen/article/details/52002778" target="_blank" rel="noopener">here</a></p>
+          Memory detectionIn Windows using Visual Studiohere
+Open source toolshere
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/26/C-Memory-Leak/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1377,46 +1238,15 @@
       
         
           
-            <h2 id="1-Describe-problem-formally"><a href="#1-Describe-problem-formally" class="headerlink" title="1.Describe problem formally"></a>1.Describe problem formally</h2><p>state:<br>initial state:<br>actions:            each state corresponds to a set of available actions<br>transition model:   return the result state of an action from the previous state<br>goal test:<br>path cost:<br><em>the essence of a solution is a sequence of actions that lead from the initial state to the goal state.</em>  </p>
-<h2 id="2-Problem-formulation"><a href="#2-Problem-formulation" class="headerlink" title="2.Problem formulation"></a>2.Problem formulation</h2><p>incremental formulation: e.g. 8-queens puzzle. Initial state: no queen; Action: add a queen.<br>complete-state formulaiton: e.g. 8-queens puzzle. Initial state: 8 queens; Action: move a queen.  </p>
-<h2 id="3-Search"><a href="#3-Search" class="headerlink" title="3.Search"></a>3.Search</h2><p>search algorithms all use a <strong>search</strong> tree data structure with nodes.  </p>
-<h3 id="node"><a href="#node" class="headerlink" title="node"></a>node</h3><p>n.state: correspond state in state space;<br>n.parent: the node in the search tree that generated this node;<br>n.action: the action that was applied to the <em>parent</em> to generate this node;<br>n.path-cost: succeeded from parent;    </p>
-<h3 id="other-concepts"><a href="#other-concepts" class="headerlink" title="other concepts"></a>other concepts</h3><p><strong>expanding</strong>: apply each legal action to the current state, thereby <strong>generating</strong> a new set of states.<br><strong>parent node</strong> ; <strong>child node</strong> ; <strong>leaf node</strong>: a node with no child node<br><strong>frontier(open list)</strong>: the set of all leaf nodes avaiable for expansion<br><strong>explored set(close list)</strong>: the set of expanded nodes<br>the frontier <strong>separates</strong> the state space into explored region and unexplored region<br><strong>repeated state</strong> ; <strong>loopy path</strong>: a special case of the more general concept of <strong>redundant path</strong>  </p>
-<h2 id="4-Uninformed-search-strategies-blind-search"><a href="#4-Uninformed-search-strategies-blind-search" class="headerlink" title="4.Uninformed search strategies(blind search)"></a>4.Uninformed search strategies(blind search)</h2><h3 id="tree-search"><a href="#tree-search" class="headerlink" title="tree search"></a>tree search</h3><p>not rememeber history causes loopy paths which is a special case of redundant path  </p>
-<h3 id="graph-search"><a href="#graph-search" class="headerlink" title="graph search"></a>graph search</h3><p>add explored set(close list) to remember  </p>
-<h3 id="breadth-first-search"><a href="#breadth-first-search" class="headerlink" title="breadth-first search"></a>breadth-first search</h3><p>FIFO queue; expand shallowest node;<br>time complexity: O(b^d) (test while generating) O(b^(d+1)) (test while selected)<br>space complexity: all nodes  </p>
-<h3 id="uniform-cost-search"><a href="#uniform-cost-search" class="headerlink" title="uniform-cost search"></a>uniform-cost search</h3><p>priority queue; expand cheapest node;<br><em>test while selected</em> becasue while generating it may not be the optimal one.<br>time complexity: e be the minimum step-cost,C* be the optimal cost. O(b^floor(1+(C*/c)))<br>space complexity: near nodes  </p>
-<h3 id="depth-first-search"><a href="#depth-first-search" class="headerlink" title="depth-first search"></a>depth-first search</h3><p>LIFO stack; first to deepest node that has no succeesors;<br>common to implement with a recursive function, resursive depth-first search(RDFS)<br>time complexity: O(b^m)<br>space complexity: m is the maximum depth. O(bm)<br>or O(m)( backtracking search in which expanded node remembers which succeessor to generate next)  </p>
-<h3 id="depth-limited-search"><a href="#depth-limited-search" class="headerlink" title="depth-limited search"></a>depth-limited search</h3><p>infinite state space cause depth-first search fall. It can be alleviated by a depth limit l.  </p>
-<h3 id="iterative-deepening-depth-first-search"><a href="#iterative-deepening-depth-first-search" class="headerlink" title="iterative deepening depth-first search"></a>iterative deepening depth-first search</h3><p>often used in combanation with depth-first search to find the best depth limit.<br>gradually increase the depth limit till te goal is found.<br>upper levels generate multiple times: N(IDS) = db+(d-1)b^2+…+(1)b^d  </p>
-<h3 id="bidirectional-search"><a href="#bidirectional-search" class="headerlink" title="bidirectional search"></a>bidirectional search</h3><p>b^(d/2) + b^(d/2) &lt; b^d; but action step must be reversible  </p>
-<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p><img src="/pic/uninformed_search.png" alt="uninformed-search">  </p>
-<h2 id="5-Informed-Heuristic-search"><a href="#5-Informed-Heuristic-search" class="headerlink" title="5.Informed(Heuristic) search"></a>5.Informed(Heuristic) search</h2><h3 id="greedy-best-first-search"><a href="#greedy-best-first-search" class="headerlink" title="greedy best-first search"></a>greedy best-first search</h3><p>evaluates nodes by using just the heuristic function, f(n) = h(n)<br>time complexity: depends on heuristic function, worst O(b^m), m is the maximun depth.<br>space complexity: depends on heuristic function, worst O(b^m), m is the maximun depth.  </p>
-<h3 id="A-search"><a href="#A-search" class="headerlink" title="A* search"></a>A* search</h3><p>f(n) = g(n) + h(n)<br><em>admissible</em> heuristic: never overestimates the cost to reach the goal<br><em>consistent</em> heuristic: the estimated cost of <strong>n</strong> is no greater than <strong>n’</strong><br>tree-search optimal if h(n) is admissible; graph-search optimal if h(n) is consistent<br>absolute error: E=h*-h; reletive error: e=(h*-h)/h<br>time complexity: O(b^E) or O(b^ed)(constant step costs)<br>space complexity: all nodes that f(n) &lt; C*</p>
-<h3 id="Memory-bounded-heurisitc-search"><a href="#Memory-bounded-heurisitc-search" class="headerlink" title="Memory-bounded heurisitc search"></a>Memory-bounded heurisitc search</h3><h4 id="iterative-deepening-A-IDA"><a href="#iterative-deepening-A-IDA" class="headerlink" title="iterative-deepening A*(IDA*)"></a>iterative-deepening A*(IDA*)</h4><p><em>cutoff</em> = f(n) - g(n) - h(n)<br>each iteration cutoff value is the smallest (f-g-h) of any node exceeded the <em>cutoff</em> on the previous iteration<br>too little memory: between iteration, only retains <em>cutoff</em> = f-g-h</p>
-<h4 id="recursive-best-first-search-RBFS"><a href="#recursive-best-first-search-RBFS" class="headerlink" title="recursive best-first search(RBFS)"></a>recursive best-first search(RBFS)</h4><p>use <em>f_limit</em> variable to keep track of f-value<br>use <em>alternative</em> varibale to record the second-lowest f-value among successors (backed-up value)<br>too little memory: each time change mind to <em>alternative</em> path, forget what it have done and regenerate nodes</p>
-<h4 id="MA-memory-bounded-A-and-SMA-simplified-MA"><a href="#MA-memory-bounded-A-and-SMA-simplified-MA" class="headerlink" title="MA*(memory-bounded A*) and SMA*(simplified MA*)"></a>MA*(memory-bounded A*) and SMA*(simplified MA*)</h4><p>SMA* expands the best leaf until memory is full, drops the worst leaf node(highest h),<br>like RBFS, SMA* back up the value of the forgotten node to its parent</p>
-<h3 id="learning-to-search-better"><a href="#learning-to-search-better" class="headerlink" title="learning to search better"></a>learning to search better</h3><p><strong>metalevel state space</strong>: the internal(computational) state of a program that is searching in an<br><strong>object-level state space</strong>: the real world problem</p>
-<h2 id="6-Heuristic-functions"><a href="#6-Heuristic-functions" class="headerlink" title="6. Heuristic functions"></a>6. Heuristic functions</h2><h4 id="generating-admissable-heuristics-from-relaxed-problems"><a href="#generating-admissable-heuristics-from-relaxed-problems" class="headerlink" title="generating admissable heuristics from relaxed problems"></a>generating admissable heuristics from relaxed problems</h4><p>ignore some restriction rules and estimate the cost<br>relaxed problem must be able to solved <strong>without search</strong><br>we can use more than one heuristic function like below:  </p>
-<blockquote>
-<p>h(n) = max{h1(n), h2(n), …, hm(n)}</p>
-</blockquote>
-<h4 id="generating-admissable-heuristics-from-subproblems-Pattern-databases"><a href="#generating-admissable-heuristics-from-subproblems-Pattern-databases" class="headerlink" title="generating admissable heuristics from subproblems: Pattern databases"></a>generating admissable heuristics from subproblems: Pattern databases</h4><p>subproblems: just solve part of the problem like going just half way<br><strong>pattern database</strong>: store these exact solution costs for every posible subproblem instance<br><strong>disjoint pattern database</strong>: only consider partial cost of the subproblem that matters  </p>
-<h4 id="learning-heuristics-from-experience"><a href="#learning-heuristics-from-experience" class="headerlink" title="learning heuristics from experience"></a>learning heuristics from experience</h4><p>Each solution is an example for study.<br>From these examples, a learning algorithm can be used to construct a function h(n)<br>to predict solution costs for other states that arise during search.<br><strong>Inductive learning</strong> works best if supplied with <strong>features</strong> of a state relevant to predicting state’s value<br>the feature is  </p>
-<blockquote>
-<p>x1(n), x2(n), …, xm(n)  </p>
-</blockquote>
-<p>after solved the problem, we found that   </p>
-<blockquote>
-<p>h1(n), h2(n), …, hm(n)  </p>
-</blockquote>
-<p>then we approach is to use a linear combination  </p>
-<blockquote>
-<p>h(n) = c1*x1(n) + c2*x2(n) + … + cm*xm(n) </p>
-</blockquote>
-<h2 id="7-Summary"><a href="#7-Summary" class="headerlink" title="7.Summary"></a>7.Summary</h2><p><img src="/pic/AI-Ch3-summary-1.png" alt="summary-1"><br><img src="/pic/AI-Ch3-summary-2.png" alt="summary-2"></p>
-
-          
+          1.Describe problem formallystate:initial state:actions:            each state corresponds to a set of available actionstransition model:   return the 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/28/AI-Chap-3-Searching/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1556,11 +1386,18 @@
       
         
           
-            <h2 id="Locking-Judge-Show"><a href="#Locking-Judge-Show" class="headerlink" title="Locking Judge Show"></a>Locking Judge Show</h2><p><a href="http://v.youku.com/v_show/id_XODkzODM2NTAw.html?spm=a2hzp.8244740.0.0" target="_blank" rel="noopener">here</a></p>
-<h2 id="Poppin-Semi-final-win"><a href="#Poppin-Semi-final-win" class="headerlink" title="Poppin Semi-final (win)"></a>Poppin Semi-final (win)</h2><p><a href="https://v.youku.com/v_show/id_XODkzODQyOTc2.html?spm=a2hzp.8244740.0.0" target="_blank" rel="noopener">here</a></p>
-<h2 id="Poppin-Final-lose"><a href="#Poppin-Final-lose" class="headerlink" title="Poppin Final (lose)"></a>Poppin Final (lose)</h2><p><a href="https://v.youku.com/v_show/id_XODkzODQyMTI4.html?spm=a2hzp.8244740.0.0" target="_blank" rel="noopener">here</a></p>
+          Locking Judge Showhere
+Poppin Semi-final (win)here
+Poppin Final (lose)here
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/18/Dancing-Video/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1700,10 +1537,17 @@
       
         
           
-            <h3 id="Keyboard"><a href="#Keyboard" class="headerlink" title="Keyboard"></a>Keyboard</h3><p><a href="https://blog.csdn.net/alangdangjia/article/details/27697721" target="_blank" rel="noopener">here</a></p>
-<h3 id="About-finding-files"><a href="#About-finding-files" class="headerlink" title="About finding files"></a>About finding files</h3><p><a href="https://blog.csdn.net/windone0109/article/details/2817792" target="_blank" rel="noopener">here</a></p>
+          Keyboardhere
+About finding fileshere
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/08/linux-notes/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1843,19 +1687,16 @@
       
         
           
-            <h3 id="About-private-member"><a href="#About-private-member" class="headerlink" title="About private member"></a>About private member</h3><p>1 在C+的类的成员函数中，允许直接访问该类的对象的私有成员变量<br>2 在类的成员函数中可以访问同类型实例的私有变量量<br>3 拷贝构造函数里，可以直接访问另外一个同类对象（引用）的私有成员<br>4 类的成员函数可以直接访问作为其参数的同类型对象的私有成员</p>
-<p>Below codes work!!</p>
-<blockquote>
-<p>private:<br>    int data;<br>public:<br>    void lookOtherConst(const A&amp; a){cout&lt;&lt;”other’s private data is “&lt;&lt;a.data&lt;&lt;endl;}<br>    void lookOtherReference(A&amp; a){cout&lt;&lt;”other’s private data is “&lt;&lt;a.data&lt;&lt;endl;}<br>    void lookOther(A a){cout&lt;&lt;”other’s private data is “&lt;&lt;a.data&lt;&lt;endl;}</p>
-</blockquote>
-<h3 id="About-f-cking-const"><a href="#About-f-cking-const" class="headerlink" title="About f*cking const"></a>About f*cking const</h3><p><a href="http://www.cnblogs.com/jiabei521/p/3335676.html" target="_blank" rel="noopener">here</a></p>
-<h3 id="前缀-与-后缀-运算符"><a href="#前缀-与-后缀-运算符" class="headerlink" title="前缀 与 后缀 运算符"></a>前缀 与 后缀 运算符</h3><p><a href="https://msdn.microsoft.com/zh-cn/library/dy3d35h8.aspx" target="_blank" rel="noopener">前缀</a>：<strong>在表达式计算中使用值之前递增或递减</strong>，表达式的值与操作数的值<strong>不同</strong><br><a href="https://msdn.microsoft.com/zh-cn/library/e1e3921c.aspx" target="_blank" rel="noopener">后缀</a>：<strong>在表达式使用值之后递增或递减</strong>， 表达式的值与操作数<strong>相同</strong><br>e.g.</p>
-<blockquote>
-<p>int a=5,b =5;<br>cout&lt;&lt;”a&lt;b++ = “&lt;&lt;bool(a&lt;b++)&lt;&lt;endl;<br>cout&lt;&lt;”a&lt;++b = “&lt;&lt;bool(a&lt;++b)&lt;&lt;endl;</p>
-<p>output:<br>a&lt;b++ = 0<br>a&lt;++b = 1</p>
-</blockquote>
-
-          
+          About private member1 在C+的类的成员函数中，允许直接访问该类的对象的私有成员变量2 在类的成员函数中可以访问同类型实例的私有变量量3 拷贝构造函数里，可以直接访问另外一个同类对象（引用）的私有成员4 类的成员函数可以直接访问作为其参数的同类型对象的私有成员
+Below cod
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/27/Cpp-Notes/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1961,7 +1802,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1971,6 +1812,16 @@
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -2016,7 +1867,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
@@ -2122,6 +1973,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
 
