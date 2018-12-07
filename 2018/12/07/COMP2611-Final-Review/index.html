@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Cpp," />
+  <meta name="keywords" content="MIPS,assemble," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Memory detectionIn Windows using Visual Studiohere Open source toolshere">
-<meta name="keywords" content="Cpp">
+<meta name="description" content="PipelineStages:IF : Fetch the instructions from meomryID : Instruction decode &amp;amp; register readEX : Perform ALU operationMEM : Memory access (if necessary)WB : Write result back to register Register">
+<meta name="keywords" content="MIPS,assemble">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ Memory Leak">
-<meta property="og:url" content="http://github.com/2018/11/26/C-Memory-Leak/index.html">
+<meta property="og:title" content="COMP2611 Final Review">
+<meta property="og:url" content="http://github.com/2018/12/07/COMP2611-Final-Review/index.html">
 <meta property="og:site_name" content="Destinxxy">
-<meta property="og:description" content="Memory detectionIn Windows using Visual Studiohere Open source toolshere">
+<meta property="og:description" content="PipelineStages:IF : Fetch the instructions from meomryID : Instruction decode &amp;amp; register readEX : Perform ALU operationMEM : Memory access (if necessary)WB : Write result back to register Register">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-11-25T18:44:07.198Z">
+<meta property="og:updated_time" content="2018-12-07T16:02:07.754Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ Memory Leak">
-<meta name="twitter:description" content="Memory detectionIn Windows using Visual Studiohere Open source toolshere">
+<meta name="twitter:title" content="COMP2611 Final Review">
+<meta name="twitter:description" content="PipelineStages:IF : Fetch the instructions from meomryID : Instruction decode &amp;amp; register readEX : Perform ALU operationMEM : Memory access (if necessary)WB : Write result back to register Register">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://github.com/2018/11/26/C-Memory-Leak/"/>
+  <link rel="canonical" href="http://github.com/2018/12/07/COMP2611-Final-Review/"/>
 
 
 
 
 
-  <title>C++ Memory Leak | Destinxxy</title>
+  <title>COMP2611 Final Review | Destinxxy</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://github.com/2018/11/26/C-Memory-Leak/">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/12/07/COMP2611-Final-Review/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vox09">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C++ Memory Leak</h1>
+          <h1 class="post-title" itemprop="name headline">COMP2611 Final Review</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-26T02:40:12+08:00">
-                2018-11-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-07T16:02:45+08:00">
+                2018-12-07
               </time>
             
 
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tech/" itemprop="url" rel="index">
-                    <span itemprop="name">tech</span>
+                  <a href="/categories/studyNotes/" itemprop="url" rel="index">
+                    <span itemprop="name">studyNotes</span>
                   </a>
                 </span>
 
@@ -342,8 +342,70 @@
       
 
       
-        <h3 id="Memory-detection"><a href="#Memory-detection" class="headerlink" title="Memory detection"></a>Memory detection</h3><h5 id="In-Windows-using-Visual-Studio"><a href="#In-Windows-using-Visual-Studio" class="headerlink" title="In Windows using Visual Studio"></a>In Windows using Visual Studio</h5><p><a href="https://blog.csdn.net/mfcing/article/details/42673393" target="_blank" rel="noopener">here</a></p>
-<h5 id="Open-source-tools"><a href="#Open-source-tools" class="headerlink" title="Open source tools"></a>Open source tools</h5><p><a href="https://blog.csdn.net/youbingchen/article/details/52002778" target="_blank" rel="noopener">here</a></p>
+        <h2 id="Pipeline"><a href="#Pipeline" class="headerlink" title="Pipeline"></a>Pipeline</h2><h3 id="Stages"><a href="#Stages" class="headerlink" title="Stages:"></a>Stages:</h3><p><strong>IF</strong> : Fetch the instructions from meomry<br><strong>ID</strong> : Instruction decode &amp; register read<br><strong>EX</strong> : Perform ALU operation<br><strong>MEM</strong> : Memory access (if necessary)<br><strong>WB</strong> : Write result back to register</p>
+<h3 id="Registers"><a href="#Registers" class="headerlink" title="Registers:"></a>Registers:</h3><p>located between the stages:<br>​    IF/ID, ID/EX, EX/MEM, MEM/WB</p>
+<h3 id="Control"><a href="#Control" class="headerlink" title="Control:"></a>Control:</h3><p><strong>IF</strong> : no control signals<br><strong>ID</strong> : no control signals<br><strong>EX</strong> : <em>RegDst, ALUOP, ALUSrc</em><br><strong>MEM</strong> : <em>Branch, MemRead, MemWrite</em><br><strong>WB</strong> : <em>MenToReg, RegWrite</em></p>
+<h3 id="Hazards"><a href="#Hazards" class="headerlink" title="Hazards"></a>Hazards</h3><p>cause: Data dependence and Control dependence.<br>types: Structural hazards, Data hazards, Control hazards</p>
+<h4 id="Structural-hazards"><a href="#Structural-hazards" class="headerlink" title="Structural hazards"></a>Structural hazards</h4><p>Conflict for use of memory(MEM/IF) and registers(WB/ID).</p>
+<p>Solution:</p>
+<ol>
+<li>separate instruction and data memories</li>
+<li><strong>Fact: Register very fast.</strong> Registers can Write during 1st half of clock cycle and Read during 2nd half.  </li>
+</ol>
+<h4 id="Data-hazards"><a href="#Data-hazards" class="headerlink" title="Data hazards"></a>Data hazards</h4><blockquote>
+<p>add $s0, $t0, $t1<br>sub $t2, $s0, $t3  </p>
+</blockquote>
+<p>Solution:</p>
+<ol>
+<li><p>Forwarding (partial, can’t solve below code)</p>
+<blockquote>
+<p>lw $s0, 20$(t1)<br>sub $t2, $s0, $t3</p>
+</blockquote>
+</li>
+<li><p>Scheduling (assume forwarding is used)</p>
+</li>
+</ol>
+<h4 id="Control-hazards"><a href="#Control-hazards" class="headerlink" title="Control hazards"></a>Control hazards</h4><p>When we need to <code>beq</code> , <code>bne</code> operations</p>
+<p>Solution:</p>
+<ol>
+<li>Fetch instruction after branch. If wrong, flush them away.</li>
+<li>Add comparator to compare earlier</li>
+</ol>
+<h3 id="Datapath-with-Hazards"><a href="#Datapath-with-Hazards" class="headerlink" title="Datapath with Hazards"></a>Datapath with Hazards</h3><h4 id="Data-forwarding"><a href="#Data-forwarding" class="headerlink" title="Data forwarding"></a>Data forwarding</h4><p>Two types forwarding: EX/MEM -&gt; ID/EX        and        MEM/WB -&gt; ID/EX<br>Using two <strong>multiplexers</strong> to decide what is the input of operands A and B of the ALU.<br>note: A is for Rs. B is for Rt.</p>
+<p>EX forwarding:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0) </span><br><span class="line">and (EX/MEM.RegisterRd = ID/EX.RegisterRs )) </span><br><span class="line">	ForwardA = 10 </span><br><span class="line">if (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0) </span><br><span class="line">and (EX/MEM.RegisterRd = ID/EX.RegisterRt )) </span><br><span class="line">	ForwardB = 10</span><br></pre></td></tr></table></figure></p>
+<p>MEM forwarding (only when <strong>NOT</strong> EX forwarding ):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if (MEM/WB.RegWrite and (MEM/WB.RegisterRd ≠ 0) </span><br><span class="line">and not (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0) </span><br><span class="line">		and (EX/MEM.RegisterRd = ID/EX.RegisterRs ))</span><br><span class="line">and (MEM/WB.RegisterRd = ID/EX.RegisterRs )) </span><br><span class="line">	ForwardA = 01 </span><br><span class="line">if (MEM/WB.RegWrite and (MEM/WB.RegisterRd ≠ 0) </span><br><span class="line">and not (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0) </span><br><span class="line">		and (EX/MEM.RegisterRd = ID/EX.RegisterRt ))</span><br><span class="line">and (MEM/WB.RegisterRd = ID/EX.RegisterRt )) </span><br><span class="line">	ForwardB = 01</span><br></pre></td></tr></table></figure></p>
+<h4 id="Load-use-detection"><a href="#Load-use-detection" class="headerlink" title="Load-use detection"></a>Load-use detection</h4><p>When Load-use hazard occur, we can do nothing but stall a clock cycle.<br>To detect it:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Load-use hazard = ID/EX.MemRead and </span><br><span class="line">((ID/EX.RegisterRt = IF/ID.RegisterRs ) or </span><br><span class="line">(ID/EX.RegisterRt = IF/ID.RegisterRt ))</span><br></pre></td></tr></table></figure>
+<h4 id="How-to-Stall"><a href="#How-to-Stall" class="headerlink" title="How to Stall"></a>How to Stall</h4><ol>
+<li>Force control values in ID/EX register to 0 :<br>​    EX, MEM and WB do EX, MEM and WB do nop (no -operation)</li>
+<li>Prevent update of PC and IF/ID register<br>Using instruction is decoded again<br>Following instruction is fetched again<br>1-cycle stall allows MEM to read data for <code>lw</code> (with forwarding)</li>
+</ol>
+<h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><p>RAM(Random Access Memory) technology includes two types:</p>
+<ol>
+<li>Static RAM – mostly used for <strong>cache</strong><br>0.5ns-2.5ns, $2000 -$5000 per GB<br>consists only <strong>Transistors</strong></li>
+<li>Dynamic RAM(DRAM) – mostly used for <strong>main memory</strong><br> 50ns - 70ns, $20-$75 per GB<br> consists of <strong>Transistor</strong> and <strong>Capacitor</strong></li>
+</ol>
+<p>Magnetic disk: 5ms - 20ms, $0.2-$2 per GB</p>
+<h3 id="Disk-Sectors-and-Accesses"><a href="#Disk-Sectors-and-Accesses" class="headerlink" title="Disk Sectors and Accesses"></a>Disk Sectors and Accesses</h3><p><strong>Each sector records:</strong><br>Sector ID<br>Data (512 bytes, 4096 bytes proposed)<br>Error correcting code (ECC)<br>Synchronization fields and gaps</p>
+<p><strong>Access to a sector involves:</strong><br>Queuing delay if other accesses are pending<br>Seek: move the heads<br>Rotational latency<br>Data transfer<br>Controller overhead</p>
+<h3 id="Principle-of-Locality"><a href="#Principle-of-Locality" class="headerlink" title="Principle of Locality"></a>Principle of Locality</h3><blockquote>
+<p>Programs access a small proportion of their address space at any time</p>
+</blockquote>
+<ol>
+<li><p><strong>Temporal locality</strong></p>
+<p>Items accessed recently are likely to be accessed again soon</p>
+</li>
+<li><p><strong>Spatial locality</strong><br>Items near those accessed recently are likely to be accessed soon</p>
+</li>
+</ol>
+<p><strong>This property is the KEY to memory hierarchy!</strong></p>
+<h3 id="Memory-Hierachy"><a href="#Memory-Hierachy" class="headerlink" title="Memory Hierachy"></a>Memory Hierachy</h3><p>Initially,<br>Instructions and data are loaded into <strong>DRAM</strong> from disk.</p>
+<p>Upon first access,<br>A copy of the referenced instruction or data item is kept in <strong>cache</strong> </p>
+<p>In subsequent accesses,<br>First, look for the requested item in the cache<br>​    If the item is in the cache, return the item to the CPU<br>​    If NOT in the cache, look it up in the memory</p>
+<p>We can say:</p>
+<blockquote>
+<p>If not found in this level, look it up at next level until found<br>Keep (cache) a copy of the found item at this level after use</p>
+</blockquote>
 
       
     </div>
@@ -361,7 +423,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Cpp/" rel="tag"># Cpp</a>
+            <a href="/tags/MIPS/" rel="tag"># MIPS</a>
+          
+            <a href="/tags/assemble/" rel="tag"># assemble</a>
           
         </div>
       
@@ -389,8 +453,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/28/AI-Chap-3-Searching/" rel="next" title="AI Chap.3 Searching">
-                <i class="fa fa-chevron-left"></i> AI Chap.3 Searching
+              <a href="/2018/12/07/Hashing/" rel="next" title="Hashing">
+                <i class="fa fa-chevron-left"></i> Hashing
               </a>
             
           </div>
@@ -398,10 +462,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/05/Inheritance-and-Polymorphism/" rel="prev" title="Inheritance and Polymorphism">
-                Inheritance and Polymorphism <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -543,7 +603,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Memory-detection"><span class="nav-number">1.</span> <span class="nav-text">Memory detection</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#In-Windows-using-Visual-Studio"><span class="nav-number">1.0.1.</span> <span class="nav-text">In Windows using Visual Studio</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Open-source-tools"><span class="nav-number">1.0.2.</span> <span class="nav-text">Open source tools</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pipeline"><span class="nav-number">1.</span> <span class="nav-text">Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stages"><span class="nav-number">1.1.</span> <span class="nav-text">Stages:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Registers"><span class="nav-number">1.2.</span> <span class="nav-text">Registers:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Control"><span class="nav-number">1.3.</span> <span class="nav-text">Control:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hazards"><span class="nav-number">1.4.</span> <span class="nav-text">Hazards</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Structural-hazards"><span class="nav-number">1.4.1.</span> <span class="nav-text">Structural hazards</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-hazards"><span class="nav-number">1.4.2.</span> <span class="nav-text">Data hazards</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Control-hazards"><span class="nav-number">1.4.3.</span> <span class="nav-text">Control hazards</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Datapath-with-Hazards"><span class="nav-number">1.5.</span> <span class="nav-text">Datapath with Hazards</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-forwarding"><span class="nav-number">1.5.1.</span> <span class="nav-text">Data forwarding</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Load-use-detection"><span class="nav-number">1.5.2.</span> <span class="nav-text">Load-use detection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#How-to-Stall"><span class="nav-number">1.5.3.</span> <span class="nav-text">How to Stall</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Memory"><span class="nav-number">2.</span> <span class="nav-text">Memory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Disk-Sectors-and-Accesses"><span class="nav-number">2.1.</span> <span class="nav-text">Disk Sectors and Accesses</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Principle-of-Locality"><span class="nav-number">2.2.</span> <span class="nav-text">Principle of Locality</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Memory-Hierachy"><span class="nav-number">2.3.</span> <span class="nav-text">Memory Hierachy</span></a></li></ol></li></ol></div>
             
 
           </div>
