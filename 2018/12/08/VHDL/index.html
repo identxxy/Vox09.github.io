@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="VHDL  Entity Identify a distinct logic block • Consists of the input and output ports (I/O pins) • Each port can have several variables 1234entity nand2 isport (a,b : in std_logic;		y : out std_logic">
+<meta name="description" content="VHDL  Entity Identify a distinct logic block  Consists of the input and output ports (I/O pins) Each port can have several variables  1234entity nand2 isport (a,b : in std_logic;		y : out std_logic);">
 <meta name="keywords" content="VHDL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VHDL">
 <meta property="og:url" content="http://github.com/2018/12/08/VHDL/index.html">
 <meta property="og:site_name" content="Destinxxy">
-<meta property="og:description" content="VHDL  Entity Identify a distinct logic block • Consists of the input and output ports (I/O pins) • Each port can have several variables 1234entity nand2 isport (a,b : in std_logic;		y : out std_logic">
+<meta property="og:description" content="VHDL  Entity Identify a distinct logic block  Consists of the input and output ports (I/O pins) Each port can have several variables  1234entity nand2 isport (a,b : in std_logic;		y : out std_logic);">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-12-08T14:30:17.965Z">
+<meta property="og:updated_time" content="2018-12-08T14:55:32.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VHDL">
-<meta name="twitter:description" content="VHDL  Entity Identify a distinct logic block • Consists of the input and output ports (I/O pins) • Each port can have several variables 1234entity nand2 isport (a,b : in std_logic;		y : out std_logic">
+<meta name="twitter:description" content="VHDL  Entity Identify a distinct logic block  Consists of the input and output ports (I/O pins) Each port can have several variables  1234entity nand2 isport (a,b : in std_logic;		y : out std_logic);">
 
 
 
@@ -378,24 +378,34 @@
       
         <h2 id="vhdl"><a class="markdownIt-Anchor" href="#vhdl"></a> VHDL</h2>
 <h3 id="entity"><a class="markdownIt-Anchor" href="#entity"></a> Entity</h3>
-<p>Identify a distinct logic block<br>
-• Consists of the input and output ports (I/O pins)<br>
-• Each port can have several variables</p>
+<p>Identify a distinct logic block</p>
+<ul>
+<li>Consists of the input and output ports (I/O pins)</li>
+<li>Each port can have several variables</li>
+</ul>
 <figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">entity</span> nand2 <span class="keyword">is</span></span><br><span class="line"><span class="keyword">port</span> (a,b : <span class="keyword">in</span> <span class="built_in">std_logic</span>;</span><br><span class="line">		y : <span class="keyword">out</span> <span class="built_in">std_logic</span>);</span><br><span class="line"><span class="keyword">end</span> nand2;</span><br></pre></td></tr></table></figure>
-<p>• Ports can be in (read), out (write), inout (bi-directional)<br>
-• Std_logic is the type of signal being carried at the ports</p>
+<ul>
+<li>Ports can be in (read), out (write), inout (bi-directional)</li>
+<li>Std_logic is the type of signal being carried at the ports</li>
+</ul>
 <blockquote>
-<p>• Std_logic can have values such as ‘0’, ‘1’, ‘X’, ‘Z’, ‘-’ and others.<br>
-(’ z ’ means high impedance (tristate))</p>
+<ul>
+<li>Std_logic can have values such as ‘0’, ‘1’, ‘X’, ‘Z’, ‘-’ and others.<br>
+(’ z ’ means high impedance (tristate))</li>
+</ul>
 </blockquote>
-<p>• Another signal type is “bit” which only assumes binary values of ‘0’ and ‘1’.</p>
+<ul>
+<li>Another signal type is “bit” which only assumes binary values of ‘0’ and ‘1’.</li>
+</ul>
 <h3 id="architecture"><a class="markdownIt-Anchor" href="#architecture"></a> Architecture</h3>
 <p>Follow immediately after the entity declaration,<br>
-to define the internal operation (function) of the logic module<br>
-• Defines the relationship between the input and output signals<br>
-• May have <strong>internal signals</strong> in the definition<br>
-• AN entity can have <strong>several</strong> different architecture specifications<br>
-to describe different views or different levels</p>
+to define the internal operation (function) of the logic module</p>
+<ul>
+<li>Defines the relationship between the input and output signals</li>
+<li>May have <strong>internal signals</strong> in the definition</li>
+<li>AN entity can have <strong>several</strong> different architecture specifications<br>
+to describe different views or different levels</li>
+</ul>
 <figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">entity</span> inverter_gate <span class="keyword">is</span></span><br><span class="line">	<span class="keyword">port</span> (A: <span class="keyword">in</span> <span class="built_in">std_logic</span>;</span><br><span class="line">		Z: <span class="keyword">out</span> <span class="built_in">std_logic</span>);</span><br><span class="line"><span class="keyword">end</span> inverter_gate;</span><br><span class="line"><span class="keyword">architecture</span> DATAFLOW <span class="keyword">of</span> inverter_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">        z &lt;= <span class="keyword">not</span> A <span class="keyword">after</span> <span class="number">10</span> ns;</span><br><span class="line"><span class="keyword">end</span> DATAFLOW;</span><br></pre></td></tr></table></figure>
 <figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Entity</span> OR3 <span class="keyword">is</span></span><br><span class="line"><span class="keyword">port</span> (I1,I2,I3: <span class="keyword">in</span> <span class="built_in">std_logic</span>; O: <span class="keyword">out</span> <span class="built_in">std_logic</span>);</span><br><span class="line"><span class="keyword">end</span> OR3;</span><br><span class="line"><span class="keyword">architecture</span> BEHAVIOR <span class="keyword">of</span> OR3 <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	O &lt;= I1 <span class="keyword">or</span> I2 <span class="keyword">or</span> I3;</span><br><span class="line"><span class="keyword">end</span> BEHAVIOR;</span><br></pre></td></tr></table></figure>
 <h4 id="internal-signals"><a class="markdownIt-Anchor" href="#internal-signals"></a> Internal signals</h4>
@@ -562,7 +572,7 @@ Signals must be declared outside the process.</p>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
