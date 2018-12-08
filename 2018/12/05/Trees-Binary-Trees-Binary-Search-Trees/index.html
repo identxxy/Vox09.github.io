@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Cpp,Study," />
+  <meta name="keywords" content="Study,Cpp," />
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="Binary TreeInorder traversalpreorder traversalpostorder traversal   Binary Search TreeBST Insertionalways insert element at bottom as leaf.remember to check if the element already exists in the tree.">
-<meta name="keywords" content="Cpp,Study">
+<meta name="keywords" content="Study,Cpp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Trees, Binary Trees, Binary Search Trees">
 <meta property="og:url" content="http://github.com/2018/12/05/Trees-Binary-Trees-Binary-Search-Trees/index.html">
@@ -376,9 +376,9 @@
       
 
       
-        <h1 id="Binary-Tree"><a href="#Binary-Tree" class="headerlink" title="Binary Tree"></a>Binary Tree</h1><p>Inorder traversal<br>preorder traversal<br>postorder traversal  </p>
-<h1 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h1><h2 id="BST-Insertion"><a href="#BST-Insertion" class="headerlink" title="BST Insertion"></a>BST Insertion</h2><p>always insert element at bottom as leaf.<br>remember to check if the element already exists in the tree.</p>
-<h3 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a>Recursion</h3><p><em>First check how many children one node has!! Don’t access <strong>nullptr</strong>!</em></p>
+        <h1><span id="binary-tree">Binary Tree</span></h1><p>Inorder traversal<br>preorder traversal<br>postorder traversal  </p>
+<h1><span id="binary-search-tree">Binary Search Tree</span></h1><h2><span id="bst-insertion">BST Insertion</span></h2><p>always insert element at bottom as leaf.<br>remember to check if the element already exists in the tree.</p>
+<h3><span id="recursion">Recursion</span></h3><p><em>First check how many children one node has!! Don’t access <strong>nullptr</strong>!</em></p>
 <table>
 <thead>
 <tr>
@@ -405,32 +405,32 @@
 </tr>
 </tbody>
 </table>
-<h3 id="Non-Recursion"><a href="#Non-Recursion" class="headerlink" title="Non-Recursion"></a>Non-Recursion</h3><blockquote>
+<h3><span id="non-recursion">Non-Recursion</span></h3><blockquote>
 <p>while !nullptr<br>if less p=p-&gt;left<br>else if greater p=p-&gt;right<br>else return // alreay exist!  </p>
 </blockquote>
 <p>Then p = nullptr is the place to insert.<br>Modfy its parent pointer pp to complete the operation.   </p>
-<h2 id="BST-Search"><a href="#BST-Search" class="headerlink" title="BST Search"></a>BST Search</h2><h3 id="Recursion-1"><a href="#Recursion-1" class="headerlink" title="Recursion"></a>Recursion</h3><blockquote>
+<h2><span id="bst-search">BST Search</span></h2><h3><span id="recursion">Recursion</span></h3><blockquote>
 <p>if node == nullptr return <strong>false</strong><br>if node-&gt;data == data return <strong>true</strong><br>if less recursive left<br>if greater recursive right  </p>
 </blockquote>
-<h3 id="Non-Recursion-1"><a href="#Non-Recursion-1" class="headerlink" title="Non-Recursion"></a>Non-Recursion</h3><blockquote>
+<h3><span id="non-recursion">Non-Recursion</span></h3><blockquote>
 <p>while !nullptr<br>if less p=p-&gt;left<br>else if greater p=p-&gt;right<br>else return <strong>true</strong><br>return <strong>false</strong>  </p>
 </blockquote>
-<h2 id="BST-deletion"><a href="#BST-deletion" class="headerlink" title="BST deletion"></a>BST deletion</h2><h3 id="Delete-a-node-with-no-child"><a href="#Delete-a-node-with-no-child" class="headerlink" title="Delete a node with no child"></a>Delete a node with no child</h3><blockquote>
+<h2><span id="bst-deletion">BST deletion</span></h2><h3><span id="delete-a-node-with-no-child">Delete a node with no child</span></h3><blockquote>
 <p>pointer: current, parent    </p>
 </blockquote>
 <p>Simply delete it and make its parent’s original pointer to it <strong>nullptr</strong></p>
-<h3 id="Delete-a-node-with-one-child"><a href="#Delete-a-node-with-one-child" class="headerlink" title="Delete a node with one child"></a>Delete a node with one child</h3><blockquote>
+<h3><span id="delete-a-node-with-one-child">Delete a node with one child</span></h3><blockquote>
 <p>pointer: current, parent, child    </p>
 </blockquote>
 <p>Pass its poniter to the only child to its parent’s pointer to it.<br>Then delete it.</p>
-<h3 id="Delete-a-node-with-two-children"><a href="#Delete-a-node-with-two-children" class="headerlink" title="Delete a node with two children"></a>Delete a node with two children</h3><blockquote>
+<h3><span id="delete-a-node-with-two-children">Delete a node with two children</span></h3><blockquote>
 <p>pointer: current, min/max, <strong>parent of min/max</strong>    </p>
 </blockquote>
 <p><strong>Override</strong> its data to the <em>max</em> of <em>left</em> or <em>min</em> of <em>right</em><br><strong>Actually delete</strong> the min/max node of the BST, which has no child </p>
-<h3 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h3><ol>
+<h3><span id="implementation">Implementation</span></h3><ol>
 <li>search for the node  </li>
 <li>check how many child     </li>
-<li>if no :delete it; parent’s pointer to <strong>nullptr</strong><br> if one: by pass pointer and delete<br> if two: get min/max; <strong>override</strong> data; delete min/max; parent’s pointer to <strong>nullptr</strong>  </li>
+<li>if no :delete it; parent’s pointer to <strong>nullptr</strong><br> if one: by pass pointer and delete<br> if two: get min/max; <strong>override</strong> data; delete min/max; parent’s pointer to <strong>nullptr</strong></li>
 </ol>
 
       
@@ -449,9 +449,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Cpp/" rel="tag"># Cpp</a>
-          
             <a href="/tags/Study/" rel="tag"># Study</a>
+          
+            <a href="/tags/Cpp/" rel="tag"># Cpp</a>
           
         </div>
       
@@ -633,7 +633,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Binary-Tree"><span class="nav-number">1.</span> <span class="nav-text">Binary Tree</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Binary-Search-Tree"><span class="nav-number">2.</span> <span class="nav-text">Binary Search Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BST-Insertion"><span class="nav-number">2.1.</span> <span class="nav-text">BST Insertion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Recursion"><span class="nav-number">2.1.1.</span> <span class="nav-text">Recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-Recursion"><span class="nav-number">2.1.2.</span> <span class="nav-text">Non-Recursion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BST-Search"><span class="nav-number">2.2.</span> <span class="nav-text">BST Search</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Recursion-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">Recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-Recursion-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">Non-Recursion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BST-deletion"><span class="nav-number">2.3.</span> <span class="nav-text">BST deletion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-a-node-with-no-child"><span class="nav-number">2.3.1.</span> <span class="nav-text">Delete a node with no child</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-a-node-with-one-child"><span class="nav-number">2.3.2.</span> <span class="nav-text">Delete a node with one child</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-a-node-with-two-children"><span class="nav-number">2.3.3.</span> <span class="nav-text">Delete a node with two children</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Implementation"><span class="nav-number">2.3.4.</span> <span class="nav-text">Implementation</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Binary Tree</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Binary Search Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">BST Insertion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.1.</span> <span class="nav-text">Recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.2.</span> <span class="nav-text">Non-Recursion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text">BST Search</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.1.</span> <span class="nav-text">Recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.2.</span> <span class="nav-text">Non-Recursion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.3.</span> <span class="nav-text">BST deletion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.3.1.</span> <span class="nav-text">Delete a node with no child</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.3.2.</span> <span class="nav-text">Delete a node with one child</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.3.3.</span> <span class="nav-text">Delete a node with two children</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.3.4.</span> <span class="nav-text">Implementation</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

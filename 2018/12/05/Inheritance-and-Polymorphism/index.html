@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Cpp,Study," />
+  <meta name="keywords" content="Study,Cpp," />
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="Inheritance:    describe “is-a relationship”Polymorphism:   derived class can perform like base class(object,pointer,reference) Construction Order: from inner to outerDestruction Order: from outer to">
-<meta name="keywords" content="Cpp,Study">
+<meta name="keywords" content="Study,Cpp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Inheritance and Polymorphism">
 <meta property="og:url" content="http://github.com/2018/12/05/Inheritance-and-Polymorphism/index.html">
@@ -378,7 +378,7 @@
       
         <p><em>Inheritance</em>:    describe “is-a relationship”<br><em>Polymorphism</em>:   derived class can perform like base class(object,pointer,reference)</p>
 <p><em>Construction Order</em>: from inner to outer<br><em>Destruction Order</em>: from outer to inner</p>
-<h3 id="member-access-control"><a href="#member-access-control" class="headerlink" title="member access control"></a>member access control</h3><p><em>public</em>:   </p>
+<h3><span id="member-access-control">member access control</span></h3><p><em>public</em>:   </p>
 <p>member functions of the class(inner)<br>any member funtions of other classes(other class)<br>any global functions(outside)   </p>
 <p><em>protected</em>:</p>
 <p>member functions and <em>friends</em> of the class<br>member functions and <em>friends</em> of its <em>derived classes</em><br><strong>NOT</strong> for outside functions   </p>
@@ -387,7 +387,7 @@
 <blockquote>
 <p>Without inheritance, private and protected have exactly the same meaning.</p>
 </blockquote>
-<h3 id="public-protected-private-inheritance"><a href="#public-protected-private-inheritance" class="headerlink" title="public protected private inheritance"></a>public protected private inheritance</h3><table>
+<h3><span id="public-protected-private-inheritance">public protected private inheritance</span></h3><table>
 <thead>
 <tr>
 <th>inheritance\member</th>
@@ -419,12 +419,12 @@
 </table>
 <p>Public inheritance implements the “is-a” relationship</p>
 <p>Private inheritance is similar to “has-a” relationship</p>
-<h3 id="Polymorphism-Dynamic-Binding-amp-Virtual-Function"><a href="#Polymorphism-Dynamic-Binding-amp-Virtual-Function" class="headerlink" title="Polymorphism: Dynamic Binding&amp;Virtual Function"></a>Polymorphism: Dynamic Binding&amp;Virtual Function</h3><p><em>Once a method is declared <strong>virtual</strong> in the base class, it is automatically <strong>virtual</strong> in all directly and indirectly derived classes.</em></p>
+<h3><span id="polymorphism-dynamic-bindingampvirtual-function">Polymorphism: Dynamic Binding&amp;Virtual Function</span></h3><p><em>Once a method is declared <strong>virtual</strong> in the base class, it is automatically <strong>virtual</strong> in all directly and indirectly derived classes.</em></p>
 <p><strong>Even if derived classed do not announce it’s virtual functions.</strong></p>
 <p>Virtual destructor can make deleting a base pointer to derived object operate correctly.</p>
 <p>Do not rely on the virtual function mechanism during the execution of<br>a constructor.</p>
 <p>Similarly, if a virtual function is called inside the base class destructor,<br>it represents base class’ virtual function: when a derived class is being<br>deleted, the derived-specific portion has already been deleted before<br>the base class destructor is called.</p>
-<h3 id="Abstract-Base-Class-ABC"><a href="#Abstract-Base-Class-ABC" class="headerlink" title="Abstract Base Class(ABC):"></a>Abstract Base Class(ABC):</h3><p><strong>NO</strong> object of ABC can be created</p>
+<h3><span id="abstract-base-classabc">Abstract Base Class(ABC):</span></h3><p><strong>NO</strong> object of ABC can be created</p>
 <p>Its <strong>derived classes</strong> must implement the pure virtual functions.</p>
 <p>ABC is just an interface.</p>
 
@@ -444,9 +444,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Cpp/" rel="tag"># Cpp</a>
-          
             <a href="/tags/Study/" rel="tag"># Study</a>
+          
+            <a href="/tags/Cpp/" rel="tag"># Cpp</a>
           
         </div>
       
@@ -628,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#member-access-control"><span class="nav-number">1.</span> <span class="nav-text">member access control</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#public-protected-private-inheritance"><span class="nav-number">2.</span> <span class="nav-text">public protected private inheritance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Polymorphism-Dynamic-Binding-amp-Virtual-Function"><span class="nav-number">3.</span> <span class="nav-text">Polymorphism: Dynamic Binding&amp;Virtual Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract-Base-Class-ABC"><span class="nav-number">4.</span> <span class="nav-text">Abstract Base Class(ABC):</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">member access control</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">public protected private inheritance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">Polymorphism: Dynamic Binding&amp;Virtual Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">Abstract Base Class(ABC):</span></a></li></ol></div>
             
 
           </div>

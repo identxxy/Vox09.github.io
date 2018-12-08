@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Cpp,Study," />
+  <meta name="keywords" content="Study,Cpp," />
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="Hash TableA hash table is an array of some fixed size,containing all the data items.Each item has a key search is performed based on the keys.Each key is mapped into some position in the array in the">
-<meta name="keywords" content="Cpp,Study">
+<meta name="keywords" content="Study,Cpp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hashing">
 <meta property="og:url" content="http://github.com/2018/12/07/Hashing/index.html">
@@ -376,7 +376,7 @@
       
 
       
-        <h1 id="Hash-Table"><a href="#Hash-Table" class="headerlink" title="Hash Table"></a>Hash Table</h1><p>A hash table is an array of some <strong>fixed size</strong>,<br>containing all the data items.<br>Each item has a <strong>key</strong> search is performed based on the keys.<br>Each key is <strong>mapped</strong> into some position in the array in the range 0 to m − 1, where m is the<br>array size.<br>The mapping is called <strong>hash function</strong>.</p>
+        <h1><span id="hash-table">Hash Table</span></h1><p>A hash table is an array of some <strong>fixed size</strong>,<br>containing all the data items.<br>Each item has a <strong>key</strong> search is performed based on the keys.<br>Each key is <strong>mapped</strong> into some position in the array in the range 0 to m − 1, where m is the<br>array size.<br>The mapping is called <strong>hash function</strong>.</p>
 <p>Hashing table is a data structure that supports: </p>
 <ol>
 <li>searching</li>
@@ -390,30 +390,30 @@
 <li>reporting data with a given range</li>
 <li>listing out the data in order</li>
 </ol>
-<h1 id="Hashing-Function"><a href="#Hashing-Function" class="headerlink" title="Hashing Function"></a>Hashing Function</h1><h2 id="Design"><a href="#Design" class="headerlink" title="Design"></a>Design</h2><p>A simple and reasonable strategy: <code>h(k) = k mod m.</code>  </p>
+<h1><span id="hashing-function">Hashing Function</span></h1><h2><span id="design">Design</span></h2><p>A simple and reasonable strategy: <code>h(k) = k mod m.</code>  </p>
 <p>Its a good practice to set the table size m to a prime number.  </p>
 <blockquote>
 <p>h(key) =(key[0] + 37*key[1] + 37^2*key[2] + … ) mod <strong>m</strong></p>
 </blockquote>
-<h2 id="Handling-collison"><a href="#Handling-collison" class="headerlink" title="Handling collison"></a>Handling collison</h2><p><strong>Make hash table an array of linked lists</strong>  </p>
-<h3 id="Seperate-Chaining"><a href="#Seperate-Chaining" class="headerlink" title="Seperate Chaining"></a>Seperate Chaining</h3><h4 id="Insertion"><a href="#Insertion" class="headerlink" title="Insertion"></a>Insertion</h4><p>To insert a key <strong>k</strong>:  </p>
+<h2><span id="handling-collison">Handling collison</span></h2><p><strong>Make hash table an array of linked lists</strong>  </p>
+<h3><span id="seperate-chaining">Seperate Chaining</span></h3><h4><span id="insertion">Insertion</span></h4><p>To insert a key <strong>k</strong>:  </p>
 <blockquote>
 <p>Compute h(k)<br>If T(h(k)) contains <strong>nullptr</strong> , initial this table entry to point to linked list node of <strong>kk</strong> .<br>If T(h(k)) contains <strong>non-nullptr</strong>, add <strong>k</strong> to the beginning of the list.</p>
 </blockquote>
-<h4 id="Deletion"><a href="#Deletion" class="headerlink" title="Deletion"></a>Deletion</h4><p>To delete a key <strong>k</strong>:  </p>
+<h4><span id="deletion">Deletion</span></h4><p>To delete a key <strong>k</strong>:  </p>
 <blockquote>
 <p>Compute h(k) to determine which list to traverse.<br>Search for the key <strong>k</strong>, in the list that T(h(k)) points to.<br>Delete the item with key <strong>k</strong> if it is found.  </p>
 </blockquote>
-<h3 id="Open-addressing"><a href="#Open-addressing" class="headerlink" title="Open addressing"></a>Open addressing</h3><p>Instead of putting kys of the same hash table into a chain, open addressing will <strong>relocate</strong> the key k to be inserted if it collides with an existing key.</p>
-<h4 id="Linear-probing"><a href="#Linear-probing" class="headerlink" title="Linear probing"></a>Linear probing</h4><blockquote>
+<h3><span id="open-addressing">Open addressing</span></h3><p>Instead of putting kys of the same hash table into a chain, open addressing will <strong>relocate</strong> the key k to be inserted if it collides with an existing key.</p>
+<h4><span id="linear-probing">Linear probing</span></h4><blockquote>
 <p>f(i) = i<br>hi(k) = (hash(k) + i) mod m  </p>
 </blockquote>
 <p>Disadvantage: fall into cluster   </p>
-<h4 id="quadratic-probing"><a href="#quadratic-probing" class="headerlink" title="quadratic probing"></a>quadratic probing</h4><blockquote>
+<h4><span id="quadratic-probing">quadratic probing</span></h4><blockquote>
 <p>f(i) = i^2<br>hi(k) = (hash(k) + i^2) mod m  </p>
 </blockquote>
 <p>Disadvantage: second cluster… same key same probe steps.    </p>
-<h4 id="double-hashing"><a href="#double-hashing" class="headerlink" title="double hashing"></a>double hashing</h4><blockquote>
+<h4><span id="double-hashing">double hashing</span></h4><blockquote>
 <p>f (i) = i ×  hash2(k)<br>hi(k) = (hash(k) + i × hash2(k)) mod m</p>
 </blockquote>
 <p>hash2(k) must be <strong>relatively prime</strong> to the table size m.<br>Otherwise, we will only be able to examine a fraction of the table entries.</p>
@@ -434,9 +434,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Cpp/" rel="tag"># Cpp</a>
-          
             <a href="/tags/Study/" rel="tag"># Study</a>
+          
+            <a href="/tags/Cpp/" rel="tag"># Cpp</a>
           
         </div>
       
@@ -618,7 +618,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hash-Table"><span class="nav-number">1.</span> <span class="nav-text">Hash Table</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hashing-Function"><span class="nav-number">2.</span> <span class="nav-text">Hashing Function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Design"><span class="nav-number">2.1.</span> <span class="nav-text">Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Handling-collison"><span class="nav-number">2.2.</span> <span class="nav-text">Handling collison</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Seperate-Chaining"><span class="nav-number">2.2.1.</span> <span class="nav-text">Seperate Chaining</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Insertion"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">Insertion</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Deletion"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">Deletion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Open-addressing"><span class="nav-number">2.2.2.</span> <span class="nav-text">Open addressing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Linear-probing"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">Linear probing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#quadratic-probing"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">quadratic probing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#double-hashing"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">double hashing</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Hash Table</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Hashing Function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text">Handling collison</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.1.</span> <span class="nav-text">Seperate Chaining</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">Insertion</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">Deletion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.2.</span> <span class="nav-text">Open addressing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">Linear probing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">quadratic probing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">double hashing</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
