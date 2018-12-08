@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh_Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="MIPS,assemble," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Arithmetic for Computers  Overflow Detection Multiplication Division   Pipeline  Stages: Registers: Control: Hazards:  Structural hazards Data hazards Control hazards   Datapath with Hazards  Data fo">
+<meta name="keywords" content="MIPS,assemble">
+<meta property="og:type" content="article">
+<meta property="og:title" content="COMP2611 Final Review">
+<meta property="og:url" content="http://github.com/2018/12/07/COMP2611-Final-Review/index.html">
+<meta property="og:site_name" content="Destinxxy">
+<meta property="og:description" content="Arithmetic for Computers  Overflow Detection Multiplication Division   Pipeline  Stages: Registers: Control: Hazards:  Structural hazards Data hazards Control hazards   Datapath with Hazards  Data fo">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:image" content="http://github.com/assets/COMP2611-Final-Review/1544252231121.png">
+<meta property="og:image" content="http://github.com/assets/COMP2611-Final-Review/1544252074288.png">
+<meta property="og:image" content="http://github.com/assets/COMP2611-Final-Review/1544252200005.png">
+<meta property="og:image" content="http://github.com/assets/COMP2611-Final-Review/1544252118812.png">
+<meta property="og:updated_time" content="2018-12-08T14:38:12.706Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="COMP2611 Final Review">
+<meta name="twitter:description" content="Arithmetic for Computers  Overflow Detection Multiplication Division   Pipeline  Stages: Registers: Control: Hazards:  Structural hazards Data hazards Control hazards   Datapath with Hazards  Data fo">
+<meta name="twitter:image" content="http://github.com/assets/COMP2611-Final-Review/1544252231121.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://github.com/2018/12/07/COMP2611-Final-Review/"/>
+
+
+
+
+
+  <title>COMP2611 Final Review | Destinxxy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Destinxxy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Life should be hard</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/12/07/COMP2611-Final-Review/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">COMP2611 Final Review</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-07T16:02:45+08:00">
+                2018-12-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/School-Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">School Notes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><ul class="markdownIt-TOC">
+<li><a href="#arithmetic-for-computers">Arithmetic for Computers</a>
+<ul>
+<li><a href="#overflow-detection">Overflow Detection</a></li>
+<li><a href="#multiplication">Multiplication</a></li>
+<li><a href="#division">Division</a></li>
+</ul>
+</li>
+<li><a href="#pipeline">Pipeline</a>
+<ul>
+<li><a href="#stages">Stages:</a></li>
+<li><a href="#registers">Registers:</a></li>
+<li><a href="#control">Control:</a></li>
+<li><a href="#hazards">Hazards:</a>
+<ul>
+<li><a href="#structural-hazards">Structural hazards</a></li>
+<li><a href="#data-hazards">Data hazards</a></li>
+<li><a href="#control-hazards">Control hazards</a></li>
+</ul>
+</li>
+<li><a href="#datapath-with-hazards">Datapath with Hazards</a>
+<ul>
+<li><a href="#data-forwarding">Data forwarding</a></li>
+<li><a href="#load-use-detection">Load-use detection</a></li>
+<li><a href="#how-to-stall">How to Stall</a></li>
+<li><a href="#data-hazard-when-branch">Data Hazard when branch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#memory">Memory</a>
+<ul>
+<li><a href="#disk-sectors-and-accesses">Disk Sectors and Accesses</a></li>
+<li><a href="#principle-of-locality">Principle of Locality</a></li>
+<li><a href="#memory-hierachy">Memory Hierachy</a></li>
+<li><a href="#cache">Cache</a>
+<ul>
+<li><a href="#direct-mapped-cache">Direct Mapped Cache</a></li>
+<li><a href="#tags-and-valid-bits">Tags and Valid Bits</a></li>
+<li><a href="#associate-cache">Associate Cache</a></li>
+<li><a href="#block-replacement">Block Replacement</a></li>
+<li><a href="#deal-with-dirty-data">Deal with Dirty Data</a>
+<ul>
+<li><a href="#write-back">Write-back</a></li>
+<li><a href="#write-through">Write-through</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</p>
+<h2 id="arithmetic-for-computers"><a class="markdownIt-Anchor" href="#arithmetic-for-computers"></a> Arithmetic for Computers</h2>
+<h3 id="overflow-detection"><a class="markdownIt-Anchor" href="#overflow-detection"></a> Overflow Detection</h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Sign bit of X</th>
+<th>Sign Bit of Y</th>
+<th>Sign Bit of Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X+Y</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>X+Y</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>X-Y</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>X-Y</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="multiplication"><a class="markdownIt-Anchor" href="#multiplication"></a> Multiplication</h3>
+<p><img src="/assets/COMP2611-Final-Review/1544252231121.png" alt="1544252231121"></p>
+<p><img src="/assets/COMP2611-Final-Review/1544252074288.png" alt="1544252074288"></p>
+<h3 id="division"><a class="markdownIt-Anchor" href="#division"></a> Division</h3>
+<p><img src="/assets/COMP2611-Final-Review/1544252200005.png" alt="1544252200005"></p>
+<p><img src="/assets/COMP2611-Final-Review/1544252118812.png" alt="1544252118812"></p>
+<h2 id="pipeline"><a class="markdownIt-Anchor" href="#pipeline"></a> Pipeline</h2>
+<h3 id="stages"><a class="markdownIt-Anchor" href="#stages"></a> Stages:</h3>
+<p><strong>IF</strong> : Fetch the instructions from meomry<br>
+<strong>ID</strong> : Instruction decode &amp; register read<br>
+<strong>EX</strong> : Perform ALU operation<br>
+<strong>MEM</strong> : Memory access (if necessary)<br>
+<strong>WB</strong> : Write result back to register</p>
+<h3 id="registers"><a class="markdownIt-Anchor" href="#registers"></a> Registers:</h3>
+<p>located between the stages:<br>
+​	IF/ID, ID/EX, EX/MEM, MEM/WB</p>
+<h3 id="control"><a class="markdownIt-Anchor" href="#control"></a> Control:</h3>
+<p><strong>IF</strong> : no control signals<br>
+<strong>ID</strong> : no control signals<br>
+<strong>EX</strong> : <em>RegDst, ALUOP, ALUSrc</em><br>
+<strong>MEM</strong> : <em>Branch, MemRead, MemWrite</em><br>
+<strong>WB</strong> : <em>MenToReg, RegWrite</em></p>
+<h3 id="hazards"><a class="markdownIt-Anchor" href="#hazards"></a> Hazards:</h3>
+<p>cause: Data dependence and Control dependence.<br>
+types: Structural hazards, Data hazards, Control hazards</p>
+<h4 id="structural-hazards"><a class="markdownIt-Anchor" href="#structural-hazards"></a> Structural hazards</h4>
+<p>Conflict for use of memory(MEM/IF) and registers(WB/ID).</p>
+<p>Solution:</p>
+<ol>
+<li>separate instruction and data memories</li>
+<li><strong>Fact: Register very fast.</strong> Registers can Write during 1st half of clock cycle and Read during 2nd half.</li>
+</ol>
+<h4 id="data-hazards"><a class="markdownIt-Anchor" href="#data-hazards"></a> Data hazards</h4>
+<blockquote>
+<p>add $s0, $t0, $t1<br>
+sub $t2, $s0, $t3</p>
+</blockquote>
+<p>Solution:</p>
+<ol>
+<li>
+<p>Forwarding (partial, can’t solve below code)</p>
+<blockquote>
+<p>lw <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mn>0</mn><mo separator="true">,</mo><mn>2</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">s0, 20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord mathit">s</span><span class="mord">0</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mord">0</span></span></span></span>(t1)<br>
+sub $t2, $s0, $t3</p>
+</blockquote>
+</li>
+<li>
+<p>Scheduling (assume forwarding is used)</p>
+</li>
+</ol>
+<h4 id="control-hazards"><a class="markdownIt-Anchor" href="#control-hazards"></a> Control hazards</h4>
+<p>When we need to <code>beq</code> , <code>bne</code> operations</p>
+<p>Solution:</p>
+<ol>
+<li>Fetch instruction after branch. If wrong, flush them away.</li>
+<li>Add comparator to compare earlier</li>
+</ol>
+<h3 id="datapath-with-hazards"><a class="markdownIt-Anchor" href="#datapath-with-hazards"></a> Datapath with Hazards</h3>
+<h4 id="data-forwarding"><a class="markdownIt-Anchor" href="#data-forwarding"></a> Data forwarding</h4>
+<p>Two types forwarding: EX/MEM -&gt; ID/EX		and		MEM/WB -&gt; ID/EX<br>
+Using two <strong>multiplexers</strong> to decide what is the input of operands A and B of the ALU.<br>
+note: A is for Rs. B is for Rt.</p>
+<p>EX forwarding:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0) </span><br><span class="line">and (EX/MEM.RegisterRd = ID/EX.RegisterRs )) </span><br><span class="line">	ForwardA = 10 </span><br><span class="line">if (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0) </span><br><span class="line">and (EX/MEM.RegisterRd = ID/EX.RegisterRt )) </span><br><span class="line">	ForwardB = 10</span><br></pre></td></tr></table></figure>
+<p>MEM forwarding (only when <strong>NOT</strong> EX forwarding ):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if (MEM/WB.RegWrite and (MEM/WB.RegisterRd ≠ 0) </span><br><span class="line">and not (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0) </span><br><span class="line">		and (EX/MEM.RegisterRd = ID/EX.RegisterRs ))</span><br><span class="line">and (MEM/WB.RegisterRd = ID/EX.RegisterRs )) </span><br><span class="line">	ForwardA = 01 </span><br><span class="line">if (MEM/WB.RegWrite and (MEM/WB.RegisterRd ≠ 0) </span><br><span class="line">and not (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0) </span><br><span class="line">		and (EX/MEM.RegisterRd = ID/EX.RegisterRt ))</span><br><span class="line">and (MEM/WB.RegisterRd = ID/EX.RegisterRt )) </span><br><span class="line">	ForwardB = 01</span><br></pre></td></tr></table></figure>
+<h4 id="load-use-detection"><a class="markdownIt-Anchor" href="#load-use-detection"></a> Load-use detection</h4>
+<p>When Load-use hazard occur, we can do nothing but stall a clock cycle.<br>
+To detect it:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Load-use hazard = ID/EX.MemRead and </span><br><span class="line">((ID/EX.RegisterRt = IF/ID.RegisterRs ) or </span><br><span class="line">(ID/EX.RegisterRt = IF/ID.RegisterRt ))</span><br></pre></td></tr></table></figure>
+<h4 id="how-to-stall"><a class="markdownIt-Anchor" href="#how-to-stall"></a> How to Stall</h4>
+<ol>
+<li>Force control values in ID/EX register to 0 :<br>
+​	EX, MEM and WB do EX, MEM and WB do nop (no -operation)</li>
+<li>Prevent update of PC and IF/ID register<br>
+Using instruction is decoded again<br>
+Following instruction is fetched again<br>
+1-cycle stall allows MEM to read data for <code>lw</code> (with forwarding)</li>
+</ol>
+<h4 id="data-hazard-when-branch"><a class="markdownIt-Anchor" href="#data-hazard-when-branch"></a> Data Hazard when branch</h4>
+<p>In pipeline datapath, branch target address calculation is executed in <strong>another ALU NOT in EXE stage</strong>. It is <strong>executed during ID staged.</strong></p>
+<p>ID Stage: Target address calculator, Register file, Register comparator.</p>
+<blockquote>
+<p>add $1, $2, $3<br>
+add $4, $5, $6<br>
+add $7, $8, $9	# another instruction<br>
+beq $1, $4, target</p>
+</blockquote>
+<p>Can resolve using forwarding. From <strong>MEM/WB</strong> and <strong>EXE/MEM</strong> to <strong>ID</strong></p>
+<blockquote>
+<p>add $1, $2, $3<br>
+add $4, $5, $6<br>
+beq stalled…<br>
+beq $1, $4, target</p>
+</blockquote>
+<p>Need one cycle stalled.</p>
+<blockquote>
+<p>lw $1,addr	<br>
+beq stalled…<br>
+beq stalled…<br>
+beq $1, $0, target</p>
+</blockquote>
+<p>Need two cycles stalled.</p>
+<h2 id="memory"><a class="markdownIt-Anchor" href="#memory"></a> Memory</h2>
+<p>RAM(Random Access Memory) technology includes two types:</p>
+<ol>
+<li>Static RAM – mostly used for <strong>cache</strong><br>
+0.5ns-2.5ns, $2000 -$5000 per GB<br>
+consists only <strong>Transistors</strong></li>
+<li>Dynamic RAM(DRAM) – mostly used for <strong>main memory</strong><br>
+50ns - 70ns, $20-$75 per GB<br>
+consists of <strong>Transistor</strong> and <strong>Capacitor</strong></li>
+</ol>
+<p>Magnetic disk: 5ms - 20ms, $0.2-$2 per GB</p>
+<h3 id="disk-sectors-and-accesses"><a class="markdownIt-Anchor" href="#disk-sectors-and-accesses"></a> Disk Sectors and Accesses</h3>
+<p><strong>Each sector records:</strong><br>
+Sector ID<br>
+Data (512 bytes, 4096 bytes proposed)<br>
+Error correcting code (ECC)<br>
+Synchronization fields and gaps</p>
+<p><strong>Access to a sector involves:</strong><br>
+Queuing delay if other accesses are pending<br>
+Seek: move the heads<br>
+Rotational latency<br>
+Data transfer<br>
+Controller overhead</p>
+<h3 id="principle-of-locality"><a class="markdownIt-Anchor" href="#principle-of-locality"></a> Principle of Locality</h3>
+<blockquote>
+<p>Programs access a small proportion of their address space at any time</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>Temporal locality</strong></p>
+<p>Items accessed recently are likely to be accessed again soon</p>
+</li>
+<li>
+<p><strong>Spatial locality</strong><br>
+Items near those accessed recently are likely to be accessed soon</p>
+</li>
+</ol>
+<p><strong>This property is the KEY to memory hierarchy!</strong></p>
+<h3 id="memory-hierachy"><a class="markdownIt-Anchor" href="#memory-hierachy"></a> Memory Hierachy</h3>
+<p>Initially,<br>
+Instructions and data are loaded into <strong>DRAM</strong> from disk.</p>
+<p>Upon first access,<br>
+A copy of the referenced instruction or data item is kept in <strong>cache</strong></p>
+<p>In subsequent accesses,<br>
+First, look for the requested item in the cache<br>
+​	If the item is in the cache, return the item to the CPU<br>
+​	If NOT in the cache, look it up in the memory</p>
+<p>We can say:</p>
+<blockquote>
+<p>If not found in this level, look it up at next level until found<br>
+Keep (cache) a copy of the found item at this level after use</p>
+</blockquote>
+<h3 id="cache"><a class="markdownIt-Anchor" href="#cache"></a> Cache</h3>
+<p><strong>Each memory locations is mapped to ONE location in the cache.</strong></p>
+<p>Three basic organizations:</p>
+<ol>
+<li>Direct-mapped( one memory block to one possible cache block)</li>
+<li>Set-mapped( one memory block to one set of possible cache blocks)</li>
+<li>Fully-mapped( one memory block to all possible cache blocks)</li>
+</ol>
+<h4 id="direct-mapped-cache"><a class="markdownIt-Anchor" href="#direct-mapped-cache"></a> Direct Mapped Cache</h4>
+<p>If the number of cache blocks (N) is a power of 2; <strong>N=2^m</strong><br>
+cache_location = the low-order <strong>m</strong> bits of block address<br>
+e.g. map the value1200 to a 8 blocks, 32 byte/block cache.</p>
+<blockquote>
+<p>Block address = 1200/32 = 37<br>
+Block number = 37 % 8 = 5</p>
+</blockquote>
+<p>Disadvantage:<br>
+block access sequence: 100011, 001011, 100011<br>
+later arrival will <strong>kill out</strong> previous one. called <strong>cache conflict.</strong></p>
+<h4 id="tags-and-valid-bits"><a class="markdownIt-Anchor" href="#tags-and-valid-bits"></a> Tags and Valid Bits</h4>
+<p><strong>Tags:</strong> decide which particular block is stored in a cache location.<br>
+Store block address as well as the data.<br>
+Only need the high-order bits.<br>
+<strong>tags size= original address size- block size- blocks number(binary) - 1(valid bit)</strong></p>
+<p><strong>Valid Bits:</strong> decide whether the data exists. Initially 0.</p>
+<p>Consider a direct-mapped cache with 8 cache frames and a block size of 32 bytes</p>
+<table>
+<thead>
+<tr>
+<th>Memory (byte) address generated by CPU</th>
+<th>Block address</th>
+<th>Hit or miss</th>
+<th>Assigned cache block</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0010 1100 0010</td>
+<td>0010 110</td>
+<td>Miss</td>
+<td>110</td>
+</tr>
+<tr>
+<td>0011 0100 0000</td>
+<td>0011 010</td>
+<td>Miss</td>
+<td>010</td>
+</tr>
+<tr>
+<td>0010 1100 0100</td>
+<td>0010 110</td>
+<td>Hit</td>
+<td>110</td>
+</tr>
+<tr>
+<td>0010 1100 0010</td>
+<td>0010 110</td>
+<td>Hit</td>
+<td>110</td>
+</tr>
+<tr>
+<td>0010 0000 1000</td>
+<td>0010 000</td>
+<td>Miss</td>
+<td>000</td>
+</tr>
+<tr>
+<td>0000 0110 0000</td>
+<td>0000 011</td>
+<td>Miss</td>
+<td>011</td>
+</tr>
+<tr>
+<td>0010 0001 0000</td>
+<td>0010 000</td>
+<td>Hit</td>
+<td>000</td>
+</tr>
+<tr>
+<td>0010 0100 0001</td>
+<td>0010 010</td>
+<td>Miss</td>
+<td>010</td>
+</tr>
+</tbody>
+</table>
+<h4 id="associate-cache"><a class="markdownIt-Anchor" href="#associate-cache"></a> Associate Cache</h4>
+<p>Fully associative(FA):<br>
+Each block can be placed <strong>anywhere</strong> in the cache.<br>
+pros: No cache conflict. But still have misses due to size.<br>
+cons: Costly (hardware and time)</p>
+<p>N-way Set associative(SA):<br>
+Each block can be placed in a <strong>certain number(N)</strong> of cache locations.<br>
+A good compromise between DM &amp; FA</p>
+<h4 id="block-replacement"><a class="markdownIt-Anchor" href="#block-replacement"></a> Block Replacement</h4>
+<ol>
+<li>Random</li>
+<li>Least recently used(LRU):<br>
+Upon miss:<br>
+Replace the LRU with missed address -&gt; Move the miss address to MRU position<br>
+Upon hit:<br>
+Move the hit address to MRU position -&gt; Pack the rest</li>
+</ol>
+<h4 id="deal-with-dirty-data"><a class="markdownIt-Anchor" href="#deal-with-dirty-data"></a> Deal with Dirty Data</h4>
+<h5 id="write-back"><a class="markdownIt-Anchor" href="#write-back"></a> Write-back</h5>
+<p>CPU only write  to cache.<br>
+CPU can write individual words at the rate of the cache.<br>
+Multiple writes to a block are merged into one write to main memory.<br>
+<em>more and more caches use this strategy.</em></p>
+<h5 id="write-through"><a class="markdownIt-Anchor" href="#write-through"></a> Write-through</h5>
+<p>CPU write both on cache and memory.(memory always up-to-date)</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MIPS/" rel="tag"># MIPS</a>
+          
+            <a href="/tags/assemble/" rel="tag"># assemble</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/07/Hashing/" rel="next" title="Hashing">
+                <i class="fa fa-chevron-left"></i> Hashing
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/08/VHDL/" rel="prev" title="VHDL">
+                VHDL <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Vox09</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#arithmetic-for-computers"><span class="nav-number">1.</span> <span class="nav-text"> Arithmetic for Computers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#overflow-detection"><span class="nav-number">1.1.</span> <span class="nav-text"> Overflow Detection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#multiplication"><span class="nav-number">1.2.</span> <span class="nav-text"> Multiplication</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#division"><span class="nav-number">1.3.</span> <span class="nav-text"> Division</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pipeline"><span class="nav-number">2.</span> <span class="nav-text"> Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#stages"><span class="nav-number">2.1.</span> <span class="nav-text"> Stages:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#registers"><span class="nav-number">2.2.</span> <span class="nav-text"> Registers:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#control"><span class="nav-number">2.3.</span> <span class="nav-text"> Control:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hazards"><span class="nav-number">2.4.</span> <span class="nav-text"> Hazards:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#structural-hazards"><span class="nav-number">2.4.1.</span> <span class="nav-text"> Structural hazards</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#data-hazards"><span class="nav-number">2.4.2.</span> <span class="nav-text"> Data hazards</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#control-hazards"><span class="nav-number">2.4.3.</span> <span class="nav-text"> Control hazards</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#datapath-with-hazards"><span class="nav-number">2.5.</span> <span class="nav-text"> Datapath with Hazards</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#data-forwarding"><span class="nav-number">2.5.1.</span> <span class="nav-text"> Data forwarding</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#load-use-detection"><span class="nav-number">2.5.2.</span> <span class="nav-text"> Load-use detection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#how-to-stall"><span class="nav-number">2.5.3.</span> <span class="nav-text"> How to Stall</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#data-hazard-when-branch"><span class="nav-number">2.5.4.</span> <span class="nav-text"> Data Hazard when branch</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#memory"><span class="nav-number">3.</span> <span class="nav-text"> Memory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#disk-sectors-and-accesses"><span class="nav-number">3.1.</span> <span class="nav-text"> Disk Sectors and Accesses</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#principle-of-locality"><span class="nav-number">3.2.</span> <span class="nav-text"> Principle of Locality</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#memory-hierachy"><span class="nav-number">3.3.</span> <span class="nav-text"> Memory Hierachy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cache"><span class="nav-number">3.4.</span> <span class="nav-text"> Cache</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#direct-mapped-cache"><span class="nav-number">3.4.1.</span> <span class="nav-text"> Direct Mapped Cache</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tags-and-valid-bits"><span class="nav-number">3.4.2.</span> <span class="nav-text"> Tags and Valid Bits</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#associate-cache"><span class="nav-number">3.4.3.</span> <span class="nav-text"> Associate Cache</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#block-replacement"><span class="nav-number">3.4.4.</span> <span class="nav-text"> Block Replacement</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#deal-with-dirty-data"><span class="nav-number">3.4.5.</span> <span class="nav-text"> Deal with Dirty Data</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#write-back"><span class="nav-number">3.4.5.1.</span> <span class="nav-text"> Write-back</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#write-through"><span class="nav-number">3.4.5.2.</span> <span class="nav-text"> Write-through</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vox09</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Wechat,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
