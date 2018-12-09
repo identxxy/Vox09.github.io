@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Static variables are global variables  created only once in a program. reside on the static data region of the loaded program. have a lifetime across the entire run of a program. still may have limit">
+<meta name="description" content="Static variables  Global Scope  created only once in a program. reside on the static data region of the loaded program. have a lifetime across the entire run of a program. still may have limited scop">
 <meta name="keywords" content="Cpp,static variable">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Static Variables">
 <meta property="og:url" content="http://github.com/2018/12/05/Static-Variables/index.html">
 <meta property="og:site_name" content="Destinxxy">
-<meta property="og:description" content="Static variables are global variables  created only once in a program. reside on the static data region of the loaded program. have a lifetime across the entire run of a program. still may have limit">
+<meta property="og:description" content="Static variables  Global Scope  created only once in a program. reside on the static data region of the loaded program. have a lifetime across the entire run of a program. still may have limited scop">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-12-08T14:24:49.816Z">
+<meta property="og:updated_time" content="2018-12-09T06:05:55.850Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Static Variables">
-<meta name="twitter:description" content="Static variables are global variables  created only once in a program. reside on the static data region of the loaded program. have a lifetime across the entire run of a program. still may have limit">
+<meta name="twitter:description" content="Static variables  Global Scope  created only once in a program. reside on the static data region of the loaded program. have a lifetime across the entire run of a program. still may have limited scop">
 
 
 
@@ -376,32 +376,68 @@
       
 
       
-        <h3 id="static-variables-are-global-variables"><a class="markdownIt-Anchor" href="#static-variables-are-global-variables"></a> Static variables are global variables</h3>
+        <h2 id="static-variables"><a class="markdownIt-Anchor" href="#static-variables"></a> Static variables</h2>
+<h3 id="global-scope"><a class="markdownIt-Anchor" href="#global-scope"></a> Global Scope</h3>
+<ul>
+<li>created only once in a program.</li>
+<li>reside on the static data region of the loaded program.</li>
+<li>have a lifetime across the entire run of a program.</li>
+<li>still may have limited scope: file, function, class.</li>
+</ul>
+<h3 id="function-scope"><a class="markdownIt-Anchor" href="#function-scope"></a> Function Scope</h3>
+<ul>
+<li>initialized only once regardless how many times the function is called.</li>
+<li>retain their values across the function calls.</li>
+<li>can be accessed <strong>only inside the function.</strong></li>
+</ul>
+<h3 id="class-scope"><a class="markdownIt-Anchor" href="#class-scope"></a> Class Scope</h3>
+<ul>
+<li>
+<p>variables in different objects are actually one variable.</p>
+</li>
+<li>
+<p>initialize variable must be done in <strong>global scope</strong><br>
+<strong>cannot initialize it inside the class.</strong></p>
 <blockquote>
-<p>created only once in a program.</p>
-<p>reside on the static data region of the loaded program.</p>
-<p>have a lifetime across the entire run of a program.</p>
-<p>still may have limited scope: file, function, class.</p>
+<p><strong>NOT in any function! Not in main(), either!</strong><br>
+<strong>NO</strong> keyword <code>static</code><br>
+e.g.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="class"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><span class="keyword">static</span> <span class="keyword">int</span> a;&#125;;</span><br><span class="line">&gt; <span class="keyword">int</span> A::a = <span class="number">10</span>;</span><br><span class="line">&gt; <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h3 id="static-variables-in-a-function"><a class="markdownIt-Anchor" href="#static-variables-in-a-function"></a> Static variables in a function</h3>
-<blockquote>
-<p>initialized only once regardless how many times the function is called.</p>
-<p>retain their values across the function calls.</p>
-<p>can be accessed only inside the function.</p>
-</blockquote>
-<h3 id="static-variables-in-a-class"><a class="markdownIt-Anchor" href="#static-variables-in-a-class"></a> Static variables in a class</h3>
-<blockquote>
-<p>variables in different objects are actually one varibale.</p>
-<p>initailize variable must be done in global scope(<strong>NOT in any function! Not in main(), either</strong>)</p>
+</li>
+<li>
 <p><strong>variable exists even if no class object is created.</strong></p>
-</blockquote>
-<h3 id="static-member-functions"><a class="markdownIt-Anchor" href="#static-member-functions"></a> Static Member functions</h3>
-<blockquote>
+</li>
+</ul>
+<h2 id="static-functions"><a class="markdownIt-Anchor" href="#static-functions"></a> Static Functions</h2>
+<h3 id="global-functions"><a class="markdownIt-Anchor" href="#global-functions"></a> Global Functions</h3>
+<ul>
+<li>almost same as <a href="#global-scope">static variables</a>.</li>
+</ul>
+<h3 id="member-functions"><a class="markdownIt-Anchor" href="#member-functions"></a> Member Functions</h3>
+<ul>
+<li>
 <p>do not have the implicit this pointer like regular non-static member functions.</p>
+</li>
+<li>
 <p>may be used even when there are <strong>no</strong> objects of the class!</p>
+</li>
+<li>
 <p>can <strong>only</strong> make use of static data members of the class.</p>
-<p>cannot be const nor virtual functions.</p>
+</li>
+<li>
+<p>cannot be <code>const</code> nor <code>virtual</code> functions.</p>
+</li>
+<li>
+<p>can be defined outside the class declaration</p>
+<blockquote>
+<p><strong>NO</strong> keyword <code>static</code></p>
+<p>e.g.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="class"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>;&#125;;</span><br><span class="line">&gt; <span class="keyword">void</span> A::f()&#123;&#125;</span><br><span class="line">&gt; <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
+<blockquote></blockquote>
+</li>
+</ul>
 
       
     </div>
@@ -603,7 +639,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#static-variables-are-global-variables"><span class="nav-number">1.</span> <span class="nav-text"> Static variables are global variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-variables-in-a-function"><span class="nav-number">2.</span> <span class="nav-text"> Static variables in a function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-variables-in-a-class"><span class="nav-number">3.</span> <span class="nav-text"> Static variables in a class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-member-functions"><span class="nav-number">4.</span> <span class="nav-text"> Static Member functions</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#static-variables"><span class="nav-number">1.</span> <span class="nav-text"> Static variables</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#global-scope"><span class="nav-number">1.1.</span> <span class="nav-text"> Global Scope</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#function-scope"><span class="nav-number">1.2.</span> <span class="nav-text"> Function Scope</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#class-scope"><span class="nav-number">1.3.</span> <span class="nav-text"> Class Scope</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static-functions"><span class="nav-number">2.</span> <span class="nav-text"> Static Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#global-functions"><span class="nav-number">2.1.</span> <span class="nav-text"> Global Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#member-functions"><span class="nav-number">2.2.</span> <span class="nav-text"> Member Functions</span></a></li></ol></li></ol></div>
             
 
           </div>

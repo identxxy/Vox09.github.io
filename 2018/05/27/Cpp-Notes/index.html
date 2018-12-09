@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="About private member 1 在C+的类的成员函数中，允许直接访问该类的对象的私有成员变量 2 在类的成员函数中可以访问同类型实例的私有变量量 3 拷贝构造函数里，可以直接访问另外一个同类对象（引用）的私有成员 4 类的成员函数可以直接访问作为其参数的同类型对象的私有成员 Below codes work!!  private: ​    int data; public: ​">
+<meta name="description" content="About private member 1 在C+的类的成员函数中，允许直接访问该类的对象的私有成员变量 2 在类的成员函数中可以访问同类型实例的私有变量量 3 拷贝构造函数里，可以直接访问另外一个同类对象（引用）的私有成员 4 类的成员函数可以直接访问作为其参数的同类型对象的私有成员 Below codes work!! 123456789101112private:     int dat">
 <meta name="keywords" content="Cpp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cpp Notes">
 <meta property="og:url" content="http://github.com/2018/05/27/Cpp-Notes/index.html">
 <meta property="og:site_name" content="Destinxxy">
-<meta property="og:description" content="About private member 1 在C+的类的成员函数中，允许直接访问该类的对象的私有成员变量 2 在类的成员函数中可以访问同类型实例的私有变量量 3 拷贝构造函数里，可以直接访问另外一个同类对象（引用）的私有成员 4 类的成员函数可以直接访问作为其参数的同类型对象的私有成员 Below codes work!!  private: ​    int data; public: ​">
+<meta property="og:description" content="About private member 1 在C+的类的成员函数中，允许直接访问该类的对象的私有成员变量 2 在类的成员函数中可以访问同类型实例的私有变量量 3 拷贝构造函数里，可以直接访问另外一个同类对象（引用）的私有成员 4 类的成员函数可以直接访问作为其参数的同类型对象的私有成员 Below codes work!! 123456789101112private:     int dat">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-12-08T14:21:39.375Z">
+<meta property="og:updated_time" content="2018-12-09T06:42:23.457Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cpp Notes">
-<meta name="twitter:description" content="About private member 1 在C+的类的成员函数中，允许直接访问该类的对象的私有成员变量 2 在类的成员函数中可以访问同类型实例的私有变量量 3 拷贝构造函数里，可以直接访问另外一个同类对象（引用）的私有成员 4 类的成员函数可以直接访问作为其参数的同类型对象的私有成员 Below codes work!!  private: ​    int data; public: ​">
+<meta name="twitter:description" content="About private member 1 在C+的类的成员函数中，允许直接访问该类的对象的私有成员变量 2 在类的成员函数中可以访问同类型实例的私有变量量 3 拷贝构造函数里，可以直接访问另外一个同类对象（引用）的私有成员 4 类的成员函数可以直接访问作为其参数的同类型对象的私有成员 Below codes work!! 123456789101112private:     int dat">
 
 
 
@@ -382,28 +382,14 @@
 3 拷贝构造函数里，可以直接访问另外一个同类对象（引用）的私有成员<br>
 4 类的成员函数可以直接访问作为其参数的同类型对象的私有成员</p>
 <p>Below codes work!!</p>
-<blockquote>
-<p>private:<br>
-​    int data;<br>
-public:<br>
-​    void lookOtherConst(const A&amp; a){cout&lt;&lt;&quot;other’s private data is &quot;&lt;&lt;a.data&lt;&lt;endl;}<br>
-​    void lookOtherReference(A&amp; a){cout&lt;&lt;&quot;other’s private data is &quot;&lt;&lt;a.data&lt;&lt;endl;}<br>
-​    void lookOther(A a){cout&lt;&lt;&quot;other’s private data is &quot;&lt;&lt;a.data&lt;&lt;endl;}</p>
-</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span>:</span><br><span class="line">     <span class="keyword">int</span> data;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">     <span class="function"><span class="keyword">void</span> <span class="title">lookOtherConst</span><span class="params">(<span class="keyword">const</span> A&amp; a)</span></span>&#123;</span><br><span class="line">         <span class="built_in">cout</span>&lt;&lt;<span class="string">"other's private data is "</span>&lt;&lt; 	</span><br><span class="line">             a.data &lt;&lt;<span class="built_in">endl</span>;&#125;</span><br><span class="line">     <span class="function"><span class="keyword">void</span> <span class="title">lookOtherReference</span><span class="params">(A&amp; a)</span></span>&#123;</span><br><span class="line">         <span class="built_in">cout</span>&lt;&lt;<span class="string">"other's private data is "</span></span><br><span class="line">             &lt;&lt;a.data&lt;&lt;<span class="built_in">endl</span>;&#125;</span><br><span class="line">     <span class="function"><span class="keyword">void</span> <span class="title">lookOther</span><span class="params">(A a)</span></span>&#123;</span><br><span class="line">     <span class="built_in">cout</span>&lt;&lt;<span class="string">"other's private data is "</span></span><br><span class="line">         &lt;&lt;a.data&lt;&lt;<span class="built_in">endl</span>;&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="about-fcking-const"><a class="markdownIt-Anchor" href="#about-fcking-const"></a> About f*cking const</h3>
 <p><a href="http://www.cnblogs.com/jiabei521/p/3335676.html" target="_blank" rel="noopener">here</a></p>
 <h3 id="前缀-与-后缀-运算符"><a class="markdownIt-Anchor" href="#前缀-与-后缀-运算符"></a> 前缀 与 后缀 运算符</h3>
 <p><a href="https://msdn.microsoft.com/zh-cn/library/dy3d35h8.aspx" target="_blank" rel="noopener">前缀</a>：<strong>在表达式计算中使用值之前递增或递减</strong>，表达式的值与操作数的值<strong>不同</strong><br>
 <a href="https://msdn.microsoft.com/zh-cn/library/e1e3921c.aspx" target="_blank" rel="noopener">后缀</a>：<strong>在表达式使用值之后递增或递减</strong>， 表达式的值与操作数<strong>相同</strong><br>
 e.g.</p>
-<blockquote>
-<p>int a=5,b =5;<br>
-cout&lt;&lt;&quot;a&lt;b++ = &quot;&lt;&lt;bool(a&lt;b++)&lt;&lt;endl;<br>
-cout&lt;&lt;&quot;a&lt;++b = &quot;&lt;&lt;bool(a&lt;++b)&lt;&lt;endl;</p>
-<p>output:<br>
-a&lt;b++ = 0<br>
-a&lt;++b = 1</p>
-</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">5</span>,b =<span class="number">5</span>;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"a&lt;b++ = "</span>&lt;&lt;<span class="keyword">bool</span>(a&lt;b++)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"a&lt;++b = "</span>&lt;&lt;<span class="keyword">bool</span>(a&lt;++b)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">output:</span><br><span class="line">a&lt;b++ = <span class="number">0</span> </span><br><span class="line">a&lt;++b = <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
