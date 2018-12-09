@@ -229,6 +229,10 @@ We can say:
 
 **Each memory locations is mapped to ONE location in the cache.**
 
+> average latency = hit + miss = r*t1 + ((1-r)t1 + rt2) = t1 + (1-r)t2
+> **NOT** r*t1 + (1-r)t2
+
+
 Three basic organizations:
 
 1. Direct-mapped( one memory block to one possible cache block)
