@@ -1,7 +1,8 @@
 ---
 title: AVL Trees
 date: 2018-12-06 17:06:19
-tags:study,Cpp
+categories: I don't know about C++
+tags: [data structure, Cpp]
 ---
 *(All codes below are written by Dr. Desmond)*
 # AVL(Adelson-Velsky and Landis) Trees

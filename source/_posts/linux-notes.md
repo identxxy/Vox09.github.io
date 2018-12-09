@@ -1,6 +1,6 @@
 ---
 title: Linux Notes
-categories: tech
+categories: Linux Is Not UniX
 date: 2018-06-08 18:52:59
 tags: linux
 ---

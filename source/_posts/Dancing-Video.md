@@ -1,7 +1,8 @@
 ---
 title: Dancing Video
 date: 2018-06-18 01:34:30
-tags: life, dance
+categories: life
+tags: [life, dance]
 ---
 
 ## Locking Judge Show

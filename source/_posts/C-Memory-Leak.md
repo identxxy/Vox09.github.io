@@ -1,8 +1,8 @@
 ---
 title: C++ Memory Leak
-categories: tech
+categories: I don't know about C++
 date: 2018-11-26 02:40:12
-tags: Cpp
+tags: [memory, Cpp]
 ---
 
 ### Memory detection

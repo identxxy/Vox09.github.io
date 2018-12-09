@@ -1,8 +1,11 @@
 ---
 title: Inheritance and Polymorphism
 date: 2018-12-05 14:31:16
-tags: Study,Cpp
+categories: I don't know about C++
+tags: [Cpp] 
 ---
+## Inheritance 
+
 _Inheritance_:    describe "is-a relationship"  
 _Polymorphism_:   derived class can perform like base class(object,pointer,reference)
 
@@ -10,6 +13,7 @@ _Construction Order_: from inner to outer
 _Destruction Order_: from outer to inner
 
 ### member access control
+
 _public_:   
 
 member functions of the class(inner)    
@@ -39,7 +43,10 @@ Public inheritance implements the "is-a" relationship
 
 Private inheritance is similar to "has-a" relationship
 
-### Polymorphism: Dynamic Binding&Virtual Function
+## Polymorphism
+
+###  Dynamic Binding&Virtual Function
+
 *Once a method is declared __virtual__ in the base class, it is automatically __virtual__ in all directly and indirectly derived classes.*
 
 **Even if derived classed do not announce it's virtual functions.**

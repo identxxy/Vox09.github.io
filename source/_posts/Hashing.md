@@ -1,7 +1,8 @@
 ---
 title: Hashing
 date: 2018-12-07 02:05:54
-tags:study, cpp
+categories: School Notes
+tags: [data structure, hashing]
 ---
 
 # Hash Table

@@ -1,7 +1,8 @@
 ---
 title: 'Trees, Binary Trees, Binary Search Trees'
 date: 2018-12-05 16:40:12
-tags:
+categories: I don't know about C++
+tags: [data structure, Cpp]
 ---
 # Binary Tree
 Inorder traversal  
