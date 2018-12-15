@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Destinxxy">
 <meta property="og:description" content="Inheritance Inheritance:    describe “is-a relationship” Polymorphism:   derived class can perform like base class(object,pointer,reference) Construction Order: from inner to outer Destruction Order:">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-12-08T14:28:34.641Z">
+<meta property="og:updated_time" content="2018-12-11T05:05:50.777Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Inheritance and Polymorphism">
 <meta name="twitter:description" content="Inheritance Inheritance:    describe “is-a relationship” Polymorphism:   derived class can perform like base class(object,pointer,reference) Construction Order: from inner to outer Destruction Order:">
@@ -379,8 +379,8 @@
         <h2 id="inheritance"><a class="markdownIt-Anchor" href="#inheritance"></a> Inheritance</h2>
 <p><em>Inheritance</em>:    describe “is-a relationship”<br>
 <em>Polymorphism</em>:   derived class can perform like base class(object,pointer,reference)</p>
-<p><em>Construction Order</em>: from inner to outer<br>
-<em>Destruction Order</em>: from outer to inner</p>
+<p><strong><em>Construction Order</em>: from inner to outer<br>
+<em>Destruction Order</em>: from outer to inner</strong></p>
 <h3 id="member-access-control"><a class="markdownIt-Anchor" href="#member-access-control"></a> member access control</h3>
 <p><em>public</em>:</p>
 <p>member functions of the class(inner)<br>
@@ -428,6 +428,8 @@ member functions and <em>friends</em> of its <em>derived classes</em><br>
 </table>
 <p>Public inheritance implements the “is-a” relationship</p>
 <p>Private inheritance is similar to “has-a” relationship</p>
+<h3 id="friend"><a class="markdownIt-Anchor" href="#friend"></a> Friend</h3>
+<p>friend of <code>Base</code> is not friend of <code>Derived</code></p>
 <h2 id="polymorphism"><a class="markdownIt-Anchor" href="#polymorphism"></a> Polymorphism</h2>
 <h3 id="dynamic-bindingvirtual-function"><a class="markdownIt-Anchor" href="#dynamic-bindingvirtual-function"></a> Dynamic Binding&amp;Virtual Function</h3>
 <p><em>Once a method is declared <strong>virtual</strong> in the base class, it is automatically <strong>virtual</strong> in all directly and indirectly derived classes.</em></p>
@@ -577,7 +579,7 @@ the base class destructor is called.</p>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -588,7 +590,7 @@ the base class destructor is called.</p>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -599,7 +601,7 @@ the base class destructor is called.</p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -642,7 +644,7 @@ the base class destructor is called.</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#inheritance"><span class="nav-number">1.</span> <span class="nav-text"> Inheritance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#member-access-control"><span class="nav-number">1.1.</span> <span class="nav-text"> member access control</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#public-protected-private-inheritance"><span class="nav-number">1.2.</span> <span class="nav-text"> public protected private inheritance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#polymorphism"><span class="nav-number">2.</span> <span class="nav-text"> Polymorphism</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dynamic-bindingvirtual-function"><span class="nav-number">2.1.</span> <span class="nav-text"> Dynamic Binding&amp;Virtual Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract-base-classabc"><span class="nav-number">2.2.</span> <span class="nav-text"> Abstract Base Class(ABC):</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#inheritance"><span class="nav-number">1.</span> <span class="nav-text"> Inheritance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#member-access-control"><span class="nav-number">1.1.</span> <span class="nav-text"> member access control</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#public-protected-private-inheritance"><span class="nav-number">1.2.</span> <span class="nav-text"> public protected private inheritance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#friend"><span class="nav-number">1.3.</span> <span class="nav-text"> Friend</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#polymorphism"><span class="nav-number">2.</span> <span class="nav-text"> Polymorphism</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dynamic-bindingvirtual-function"><span class="nav-number">2.1.</span> <span class="nav-text"> Dynamic Binding&amp;Virtual Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract-base-classabc"><span class="nav-number">2.2.</span> <span class="nav-text"> Abstract Base Class(ABC):</span></a></li></ol></li></ol></div>
             
 
           </div>

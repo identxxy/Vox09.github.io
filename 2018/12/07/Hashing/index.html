@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Destinxxy">
 <meta property="og:description" content="Hash Table A hash table is an array of some fixed size, containing all the data items. Each item has a key search is performed based on the keys. Each key is mapped into some position in the array in">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-12-08T14:35:59.286Z">
+<meta property="og:updated_time" content="2018-12-11T05:10:06.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hashing">
 <meta name="twitter:description" content="Hash Table A hash table is an array of some fixed size, containing all the data items. Each item has a key search is performed based on the keys. Each key is mapped into some position in the array in">
@@ -391,7 +391,7 @@ The mapping is called <strong>hash function</strong>.</p>
 </ol>
 <p>The implementation of hash tables is called <strong>hashing</strong>.<br>
 Hashing is a technique which allows the executions of above operations in <strong>constant time</strong> on average.<br>
-Unlike other data structures such as linked list or binary trees, data items are henerally <strong>not</strong> ordered in hash tables.<br>
+Unlike other data structures such as linked list or binary trees, data items are generally <strong>not</strong> ordered in hash tables.<br>
 As a consequence, hash tables don’t support the following operations:</p>
 <ol>
 <li>find_min and find_max</li>
@@ -406,25 +406,25 @@ As a consequence, hash tables don’t support the following operations:</p>
 <blockquote>
 <p>h(key) =(key[0] + 37*key[1] + 37^2*key[2] + … ) mod <strong>m</strong></p>
 </blockquote>
-<h2 id="handling-collison"><a class="markdownIt-Anchor" href="#handling-collison"></a> Handling collison</h2>
+<h2 id="handling-collision"><a class="markdownIt-Anchor" href="#handling-collision"></a> Handling collision</h2>
 <p><strong>Make hash table an array of linked lists</strong></p>
 <h3 id="seperate-chaining"><a class="markdownIt-Anchor" href="#seperate-chaining"></a> Seperate Chaining</h3>
 <h4 id="insertion"><a class="markdownIt-Anchor" href="#insertion"></a> Insertion</h4>
 <p>To insert a key <strong>k</strong>:</p>
 <blockquote>
 <p>Compute h(k)<br>
-If T(h(k)) contains <strong>nullptr</strong> , initial this table entry to point to linked list node of <strong>kk</strong> .<br>
-If T(h(k)) contains <strong>non-nullptr</strong>, add <strong>k</strong> to the beginning of the list.</p>
+If T(h(k)) contains <code>nullptr</code> , initial this table entry to point to linked list node of <code>kk</code> .<br>
+If T(h(k)) contains <code>non-nullptr</code>, add <code>k</code> to the beginning of the list.</p>
 </blockquote>
 <h4 id="deletion"><a class="markdownIt-Anchor" href="#deletion"></a> Deletion</h4>
 <p>To delete a key <strong>k</strong>:</p>
 <blockquote>
 <p>Compute h(k) to determine which list to traverse.<br>
-Search for the key <strong>k</strong>, in the list that T(h(k)) points to.<br>
-Delete the item with key <strong>k</strong> if it is found.</p>
+Search for the key <code>k</code>, in the list that T(h(k)) points to.<br>
+Delete the item with key <code>k</code> if it is found.</p>
 </blockquote>
 <h3 id="open-addressing"><a class="markdownIt-Anchor" href="#open-addressing"></a> Open addressing</h3>
-<p>Instead of putting kys of the same hash table into a chain, open addressing will <strong>relocate</strong> the key k to be inserted if it collides with an existing key.</p>
+<p>Instead of putting keys of the same hash table into a chain, open addressing will <strong>relocate</strong> the key k to be inserted if it collides with an existing key.</p>
 <h4 id="linear-probing"><a class="markdownIt-Anchor" href="#linear-probing"></a> Linear probing</h4>
 <blockquote>
 <p>f(i) = i<br>
@@ -433,16 +433,16 @@ hi(k) = (hash(k) + i) mod m</p>
 <p>Disadvantage: fall into cluster</p>
 <h4 id="quadratic-probing"><a class="markdownIt-Anchor" href="#quadratic-probing"></a> quadratic probing</h4>
 <blockquote>
-<p>f(i) = i^2<br>
-hi(k) = (hash(k) + i^2) mod m</p>
+<p>f(i) = i<sup>2</sup><br>
+hi(k) = (hash(k) + i<sup>2</sup>) mod m</p>
 </blockquote>
 <p>Disadvantage: second cluster… same key same probe steps.</p>
 <h4 id="double-hashing"><a class="markdownIt-Anchor" href="#double-hashing"></a> double hashing</h4>
 <blockquote>
 <p>f (i) = i ×  hash2(k)<br>
-hi(k) = (hash(k) + i × hash2(k)) mod m</p>
+h<sub>i</sub>(k) = (hash(k) + i × hash<sub>2</sub>(k)) mod m</p>
 </blockquote>
-<p>hash2(k) must be <strong>relatively prime</strong> to the table size m.<br>
+<p>hash<sub>2</sub>(k) must be <strong>relatively prime</strong> to the table size m.<br>
 Otherwise, we will only be able to examine a fraction of the table entries.</p>
 
       
@@ -580,7 +580,7 @@ Otherwise, we will only be able to examine a fraction of the table entries.</p>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -591,7 +591,7 @@ Otherwise, we will only be able to examine a fraction of the table entries.</p>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -602,7 +602,7 @@ Otherwise, we will only be able to examine a fraction of the table entries.</p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -645,7 +645,7 @@ Otherwise, we will only be able to examine a fraction of the table entries.</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hash-table"><span class="nav-number">1.</span> <span class="nav-text"> Hash Table</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hashing-function"><span class="nav-number">2.</span> <span class="nav-text"> Hashing Function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#design"><span class="nav-number">2.1.</span> <span class="nav-text"> Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#handling-collison"><span class="nav-number">2.2.</span> <span class="nav-text"> Handling collison</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#seperate-chaining"><span class="nav-number">2.2.1.</span> <span class="nav-text"> Seperate Chaining</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#insertion"><span class="nav-number">2.2.1.1.</span> <span class="nav-text"> Insertion</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#deletion"><span class="nav-number">2.2.1.2.</span> <span class="nav-text"> Deletion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#open-addressing"><span class="nav-number">2.2.2.</span> <span class="nav-text"> Open addressing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#linear-probing"><span class="nav-number">2.2.2.1.</span> <span class="nav-text"> Linear probing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#quadratic-probing"><span class="nav-number">2.2.2.2.</span> <span class="nav-text"> quadratic probing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#double-hashing"><span class="nav-number">2.2.2.3.</span> <span class="nav-text"> double hashing</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hash-table"><span class="nav-number">1.</span> <span class="nav-text"> Hash Table</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hashing-function"><span class="nav-number">2.</span> <span class="nav-text"> Hashing Function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#design"><span class="nav-number">2.1.</span> <span class="nav-text"> Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#handling-collision"><span class="nav-number">2.2.</span> <span class="nav-text"> Handling collision</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#seperate-chaining"><span class="nav-number">2.2.1.</span> <span class="nav-text"> Seperate Chaining</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#insertion"><span class="nav-number">2.2.1.1.</span> <span class="nav-text"> Insertion</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#deletion"><span class="nav-number">2.2.1.2.</span> <span class="nav-text"> Deletion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#open-addressing"><span class="nav-number">2.2.2.</span> <span class="nav-text"> Open addressing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#linear-probing"><span class="nav-number">2.2.2.1.</span> <span class="nav-text"> Linear probing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#quadratic-probing"><span class="nav-number">2.2.2.2.</span> <span class="nav-text"> quadratic probing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#double-hashing"><span class="nav-number">2.2.2.3.</span> <span class="nav-text"> double hashing</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
