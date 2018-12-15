@@ -9,8 +9,8 @@ tags: [Cpp]
 _Inheritance_:    describe "is-a relationship"  
 _Polymorphism_:   derived class can perform like base class(object,pointer,reference)
 
-_Construction Order_: from inner to outer   
-_Destruction Order_: from outer to inner
+**_Construction Order_: from inner to outer   
+_Destruction Order_: from outer to inner**
 
 ### member access control
 
@@ -33,6 +33,7 @@ member functions and friends of the class
 > Without inheritance, private and protected have exactly the same meaning.
 
 ### public protected private inheritance
+
 inheritance\member     |public     |protected  |private 
 -----------------------|-----------|-----------|--------
 public inheritance     |public     |protected  |private 
@@ -42,6 +43,10 @@ private inheritance    |private    |private    |private
 Public inheritance implements the "is-a" relationship
 
 Private inheritance is similar to "has-a" relationship
+
+### Friend
+
+friend of `Base` is not friend of `Derived`
 
 ## Polymorphism
 
@@ -62,6 +67,7 @@ deleted, the derived-specific portion has already been deleted before
 the base class destructor is called.
 
 ### Abstract Base Class(ABC):
+
 **NO** object of ABC can be created
 
 Its **derived classes** must implement the pure virtual functions.
