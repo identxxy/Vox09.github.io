@@ -79,18 +79,23 @@
 
 
 
-<meta name="description" content="Shortest Paths All algorithms, except Dijkstra, allow negative weights, but there can NOT be negative cycle.  Bellman-Ford Algorithm  Dijkstra Algorithm NOT allow negative weights.  Floyd-Warshall Al">
+<meta name="description" content="Algorithm Comments Graph Rep Running time Space Used     Bellman-Ford Single-Source Adj List 𝑂(𝑉𝐸) 𝑂(𝑉)   [In DAG Out DAG](#Shortest-Paths in-a-DAG) Single-Source DAG Adj List 𝑂(𝑉+𝐸) 𝑂(𝑉)">
 <meta name="keywords" content="searching,algorithm,graph">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Destinxxy">
+<meta property="og:title" content="Shortest Paths and Flow">
 <meta property="og:url" content="http://github.com/2018/12/15/Shortest-Paths-and-Flow/index.html">
 <meta property="og:site_name" content="Destinxxy">
-<meta property="og:description" content="Shortest Paths All algorithms, except Dijkstra, allow negative weights, but there can NOT be negative cycle.  Bellman-Ford Algorithm  Dijkstra Algorithm NOT allow negative weights.  Floyd-Warshall Al">
+<meta property="og:description" content="Algorithm Comments Graph Rep Running time Space Used     Bellman-Ford Single-Source Adj List 𝑂(𝑉𝐸) 𝑂(𝑉)   [In DAG Out DAG](#Shortest-Paths in-a-DAG) Single-Source DAG Adj List 𝑂(𝑉+𝐸) 𝑂(𝑉)">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-12-15T13:30:15.931Z">
+<meta property="og:image" content="http://github.com/2018/12/15/assets/Shortest-Paths-and-Flow/1544956501161.png">
+<meta property="og:image" content="http://github.com/2018/12/15/assets/Shortest-Paths-and-Flow/1544967538439.png">
+<meta property="og:image" content="http://github.com/2018/12/15/assets/Shortest-Paths-and-Flow/1544967564935.png">
+<meta property="og:image" content="http://github.com/2018/12/15/assets/Shortest-Paths-and-Flow/1544967760217.png">
+<meta property="og:updated_time" content="2018-12-16T14:01:57.474Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Destinxxy">
-<meta name="twitter:description" content="Shortest Paths All algorithms, except Dijkstra, allow negative weights, but there can NOT be negative cycle.  Bellman-Ford Algorithm  Dijkstra Algorithm NOT allow negative weights.  Floyd-Warshall Al">
+<meta name="twitter:title" content="Shortest Paths and Flow">
+<meta name="twitter:description" content="Algorithm Comments Graph Rep Running time Space Used     Bellman-Ford Single-Source Adj List 𝑂(𝑉𝐸) 𝑂(𝑉)   [In DAG Out DAG](#Shortest-Paths in-a-DAG) Single-Source DAG Adj List 𝑂(𝑉+𝐸) 𝑂(𝑉)">
+<meta name="twitter:image" content="http://github.com/2018/12/15/assets/Shortest-Paths-and-Flow/1544956501161.png">
 
 
 
@@ -126,7 +131,7 @@
 
 
 
-  <title> | Destinxxy</title>
+  <title>Shortest Paths and Flow | Destinxxy</title>
   
 
 
@@ -186,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Accueil
           </a>
         </li>
       
@@ -229,7 +234,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Search
+            recherche
           </a>
         </li>
       
@@ -304,7 +309,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Shortest Paths and Flow</h1>
         
 
         <div class="post-meta">
@@ -314,7 +319,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-15T21:18:00+08:00">
                 2018-12-15
@@ -376,16 +381,193 @@
       
 
       
-        <h1 id="shortest-paths"><a class="markdownIt-Anchor" href="#shortest-paths"></a> Shortest Paths</h1>
+        <table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Comments</th>
+<th>Graph Rep</th>
+<th>Running time</th>
+<th>Space Used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#Bellman-ford-algorithm">Bellman-Ford</a></td>
+<td>Single-Source</td>
+<td>Adj List</td>
+<td>𝑂(𝑉𝐸)</td>
+<td>𝑂(𝑉)</td>
+</tr>
+<tr>
+<td>[In DAG Out DAG](#Shortest-Paths in-a-DAG)</td>
+<td>Single-Source DAG</td>
+<td>Adj List</td>
+<td>𝑂(𝑉+𝐸)</td>
+<td>𝑂(𝑉)</td>
+</tr>
+<tr>
+<td><a href="#Dijkstra-Algorithm">Dijkstra</a></td>
+<td>Single-Source<br>Non-Neg Weights</td>
+<td>Adj List</td>
+<td>𝑂((𝑉 + 𝐸)log𝑉)</td>
+<td>𝑂(𝑉)</td>
+</tr>
+<tr>
+<td><a href="#First-DP-Formulation">All-pairs 1</a></td>
+<td>All-Pairs</td>
+<td>Adj Matrix</td>
+<td>𝑂(𝑉<sup>4</sup>)</td>
+<td>𝑂(𝑉<sup>2</sup>)</td>
+</tr>
+<tr>
+<td><a href="#Second-DP-Formulation">All-pairs 2</a></td>
+<td>All-Pairs</td>
+<td>Adj Matrix</td>
+<td>𝑂(𝑉<sup>3</sup>log𝑉)</td>
+<td>𝑂(𝑉<sup>2</sup>)</td>
+</tr>
+<tr>
+<td><a href="#Floyd-Warshall">Floyd-Warshall</a></td>
+<td>All-Pairs</td>
+<td>Adj Matrix</td>
+<td>𝑂(𝑉<sup>3</sup>)</td>
+<td>𝑂(𝑉<sup>2</sup>)</td>
+</tr>
+</tbody>
+</table>
+<h1 id="shortest-paths"><a class="markdownIt-Anchor" href="#shortest-paths"></a> Shortest Paths</h1>
+<blockquote>
 <p>All algorithms, except <strong>Dijkstra</strong>, allow <strong>negative weights</strong>,<br>
 but there can <em>NOT</em> be <strong>negative cycle</strong>.</p>
-<h2 id="bellman-ford-algorithm"><a class="markdownIt-Anchor" href="#bellman-ford-algorithm"></a> Bellman-Ford Algorithm</h2>
-<h2 id="dijkstra-algorithm"><a class="markdownIt-Anchor" href="#dijkstra-algorithm"></a> Dijkstra Algorithm</h2>
+</blockquote>
+<p><strong>Shortest path problem:</strong> Find the shortest path from <code>s</code> to <code>t</code>.</p>
+<p><strong>Single-source shortest path:</strong> Find the shortest path from <code>s</code> to every node.</p>
+<p><strong>Lemma (Cut and Paste Argument):</strong></p>
+<blockquote>
+<p>Let 𝑃 = (𝑠, … , 𝑢, … , 𝑡) be the shortest 𝑠 − 𝑡 path.  The n the subpaths 𝑃<sub>1</sub> = (𝑠, … , 𝑢) and 𝑃2= (𝑢, . . 𝑡) must also be, respectively, shortest 𝑠 − 𝑢 and 𝑢 − 𝑡 paths.</p>
+</blockquote>
+<p><strong>Relaxation:</strong></p>
+<blockquote>
+<p>Let v.d be the shortest distance found so far from the starting node s to node v, and v.p be the last node in the current shortest path from s to node v.</p>
+<p><img src="../assets/Shortest-Paths-and-Flow/1544956501161.png" alt="1544956501161"></p>
+</blockquote>
+<h2 id="single-source-shortest-path"><a class="markdownIt-Anchor" href="#single-source-shortest-path"></a> Single Source Shortest Path</h2>
+<p>Let <code>ss(s,v)</code> store shortest path distance from <code>s</code> to <code>v</code></p>
+<h3 id="bellman-ford-algorithm"><a class="markdownIt-Anchor" href="#bellman-ford-algorithm"></a> Bellman-Ford Algorithm</h3>
+<h3 id="proof"><a class="markdownIt-Anchor" href="#proof"></a> Proof</h3>
+<h3 id="dijkstra-algorithm"><a class="markdownIt-Anchor" href="#dijkstra-algorithm"></a> Dijkstra Algorithm</h3>
 <p><em>NOT</em> allow <strong>negative</strong> weights.</p>
-<h2 id="floyd-warshall-algorithm"><a class="markdownIt-Anchor" href="#floyd-warshall-algorithm"></a> Floyd-Warshall Algorithm</h2>
-<p>All-pairs shortest paths</p>
+<p>Maintain a set of <strong>explored nodes</strong> <code>S</code> for which we know <code>u.d = ss(s,u)</code>by variable <code>status</code><br>
+Initialize <code>S = {s}</code>, <code>s.d = 0</code>, <code>v.d = inf</code></p>
+<p>Use a **Min priority queue **<code>Q</code> on <code>V</code> with <code>d</code> as key</p>
+<h4 id="key-lemma"><a class="markdownIt-Anchor" href="#key-lemma"></a> Key Lemma</h4>
+<blockquote>
+<p>If all edges leaving <code>S</code> are relaxed, then <code>v.d = ss(s,v)</code>,where <code>v</code> is the vertex in <code>V-S</code> with the minimum <code>v.d</code></p>
+<p>So this <code>v</code> can be added to <code>S</code>, then repeat</p>
+</blockquote>
+<h4 id="pseudocode"><a class="markdownIt-Anchor" href="#pseudocode"></a> pseudocode</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Dijkstra(G,s):</span><br><span class="line">for each node n in V do</span><br><span class="line">	n.d = inf, n.p = nil, n.status = unknown</span><br><span class="line">s.d = 0</span><br><span class="line">create a min priority queue Q onV with d as key</span><br><span class="line">while Q not empty	% E times</span><br><span class="line">	u = Extract-Min(Q) % O(logV) time</span><br><span class="line">	u.status = over</span><br><span class="line">	for each un in Adj(u) do</span><br><span class="line">		if un.status = unknown then</span><br><span class="line">			Relax(u,un)</span><br><span class="line">			Decrease-Key(Q,un,un.d)</span><br></pre></td></tr></table></figure>
+<p>Running time: 𝑂(𝐸log𝑉)<br>
+Very similar to <a href="./Minimum-Spanning-Tree#Prim's-Algorithm">Prim’s algorithm</a></p>
+<h2 id="all-pairs-shortest-paths"><a class="markdownIt-Anchor" href="#all-pairs-shortest-paths"></a> All-Pairs Shortest Paths</h2>
+<p><strong>Input</strong>:</p>
+<ul>
+<li>Directed graph <code>G = (V,E)</code></li>
+<li>Weight <code>w(e)</code> = length of edge <code>e</code></li>
+</ul>
+<p><strong>Output:</strong></p>
+<ul>
+<li><code>ss(u,v)</code>, for all pairs of nodes <code>u</code>, <code>v</code></li>
+<li>A data structure from which the shortest path from <code>𝑢</code> to <code>𝑣</code> can be extracted efficiently, for any pair of nodes <code>𝑢</code>, <code>𝑣</code>
+<ul>
+<li>Note: Storing all shortest paths explicitly for all pairs requires 𝑂(𝑉<sup>3</sup>) space.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Graph Representation:</strong></p>
+<ul>
+<li>Assume adjacency matrix:
+<ul>
+<li><code>𝑤(𝑢, 𝑣)</code> can be extracted in 𝑂(1) time.</li>
+<li><code>𝑤(𝑢, 𝑢)= 0</code>, <code>𝑤(𝑢, 𝑣)= ∞</code>if there is no edge from <code>𝑢</code> to <code>𝑣</code>.</li>
+</ul>
+</li>
+<li>If the graph is stored in adjacency lists format, can convert to adjacency matrix in 𝑂(𝑉2) time.</li>
+</ul>
+<h3 id="using-previous-algorithms"><a class="markdownIt-Anchor" href="#using-previous-algorithms"></a> Using Previous Algorithms</h3>
+<p>NOT negative cost edges: <a href="#Dijkstra-algorithm">Dijkstra’s algorithm</a><br>
+Running time: 𝑂(𝐸 log 𝑉), totally 𝑂(𝑉𝐸 log 𝑉)<br>
+Space: 𝑂 (𝑛<sup>3</sup> log 𝑛 ) for <a href="https://en.wikipedia.org/wiki/Dense_graph" target="_blank" rel="noopener">dense graphs</a></p>
+<p>HAVE negative cost edges: <a href="#Bellman-Ford-Algorithm">Bellman-Ford</a><br>
+Running time: 𝑂(𝑉𝐸), totally 𝑂(𝑉<sup>2</sup>𝐸)<br>
+Space: 𝑂 (𝑛<sup>4</sup>) for <a href="https://en.wikipedia.org/wiki/Dense_graph" target="_blank" rel="noopener">dense graphs</a></p>
+<hr>
+<h3 id="first-dp-formulation"><a class="markdownIt-Anchor" href="#first-dp-formulation"></a> First DP Formulation</h3>
+<h4 id="define"><a class="markdownIt-Anchor" href="#define"></a> Define</h4>
+<p><code>d(i,j,m)</code> = length of the shortest path from <code>i</code> to <code>j</code> that <strong>contains at most <code>m</code> edges</strong>.<br>
+Use <code>D[m]</code> to denote the matrix <code>[d(i,j,m)]</code><br>
+<img src="../assets/Shortest-Paths-and-Flow/1544967538439.png" alt="1544967538439"></p>
+<h4 id="recurrence-essentially-the-same-as-in-bellman-ford"><a class="markdownIt-Anchor" href="#recurrence-essentially-the-same-as-in-bellman-ford"></a> Recurrence( essentially the same as in <a href="#Bellman-Ford-Algorithm">Bellman-Ford</a>):</h4>
+<blockquote>
+<p>d(i,j,m)  = min { d(i,k,m-1) + w(k,j) }	k from 1 to n<br>
+initially d(i,j,1) = w(i,j)</p>
+</blockquote>
+<h4 id="pseudocode-2"><a class="markdownIt-Anchor" href="#pseudocode-2"></a> pseudocode</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Slow-All-Pairs-Shortest-Paths(G):</span><br><span class="line">d(i,j,1) = w(i,j) for all 1&lt;=i,j&lt;=n</span><br><span class="line">for m = 2 to n-1</span><br><span class="line">	let D[m] be a new n*n matrix</span><br><span class="line">	for i = 1 to n</span><br><span class="line">		for j = 1 to n</span><br><span class="line">			d(i,j,m) = inf</span><br><span class="line">			for l =1 to n</span><br><span class="line">				if d(i,k,m-1) + w(k,j) &lt; d(i,j,m) then</span><br><span class="line">					d(i,j,m) = d(i,k,m-1) + w(k,j)</span><br><span class="line">return D[n-1]</span><br></pre></td></tr></table></figure>
+<p>Running time: 𝑂(𝑛<sup>4</sup>)<br>
+Space: 𝑂(𝑛<sup>3</sup>) can be improved to 𝑂(𝑛<sup>2</sup>)</p>
+<hr>
+<h3 id="second-dp-formulation"><a class="markdownIt-Anchor" href="#second-dp-formulation"></a> Second DP Formulation</h3>
+<h4 id="observation"><a class="markdownIt-Anchor" href="#observation"></a> Observation</h4>
+<p>To compute <code>d(i,j,m)</code>, instead of looking at the last stop before <code>j</code>, we look at the <em>middle point</em>. This cuts down the problem size by half. Thus, to calculate <code>D[1]</code>,<code>D[2]</code>,<code>D[4]</code>,<code>D[8]</code>,…</p>
+<p><em>Note that overshooting <code>D[n-1]</code> is OK. Since <code>D[n']</code> , <code>n'&gt;n -1</code> has the shortest paths with up to <code>n'</code> edges. It will not miss any shortest path with up to n-1 edges.</em></p>
+<h4 id="recurrence"><a class="markdownIt-Anchor" href="#recurrence"></a> Recurrence</h4>
+<blockquote>
+<p>d(i,j,2s)  = min { d(i,k,s) + d(k,j,s) }	k from 1 to n<br>
+initially d(i,j,1) = w(i,j)</p>
+</blockquote>
+<h4 id="analyze"><a class="markdownIt-Anchor" href="#analyze"></a> Analyze</h4>
+<p>Running time: 𝑂(𝑛<sup>3</sup>) for each matrix , totally 𝑂(𝑛<sup>3</sup>log𝑛)</p>
+<hr>
+<h3 id="floyd-warshall"><a class="markdownIt-Anchor" href="#floyd-warshall"></a> Floyd-Warshall</h3>
+<h4 id="define-2"><a class="markdownIt-Anchor" href="#define-2"></a> Define</h4>
+<p><code>d(i,j,k)</code> = length of the shortest path from <code>i</code> to <code>j</code> that all intermediate vertices on the path (if any) are <strong>in the set <code>{1,2,...,k}</code></strong><br>
+<img src="../assets/Shortest-Paths-and-Flow/1544967564935.png" alt="1544967564935"></p>
+<h4 id="observation-2"><a class="markdownIt-Anchor" href="#observation-2"></a> Observation</h4>
+<p>When computing <code>d(i,j,k)</code> there are two cases:</p>
+<ol>
+<li><code>k</code> is not a node on the shortest path from <code>i</code> to <code>j</code><br>
+=&gt; then the path uses only vertices in <code>{1,2,...,k-1}</code></li>
+<li><code>k</code> is an intermediate node on the shortest path from <code>i</code> to <code>j</code><br>
+=&gt; path can be spilt into shortest subpath from <code>i</code> to <code>k</code> and a subpath from <code>k</code> to <code>j</code><br>
+Both subpaths use only vertices in <code>{1,2,...,k-1}</code></li>
+</ol>
+<h4 id="recurrence-2"><a class="markdownIt-Anchor" href="#recurrence-2"></a> Recurrence</h4>
+<p><img src="../assets/Shortest-Paths-and-Flow/1544967760217.png" alt="1544967760217"></p>
+<h4 id="pseudocode-3"><a class="markdownIt-Anchor" href="#pseudocode-3"></a> pseudocode</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Floyd-Warshall(G):</span><br><span class="line">d(i,j,0) = w(i,j) for all 1&lt;=i,j&lt;=n</span><br><span class="line">for k=1 to n</span><br><span class="line">	let D[k] be a new n*n matrix</span><br><span class="line">	for i = 1 to n</span><br><span class="line">		for j = 1 to n</span><br><span class="line">			if d(i,k,k-1) + d(k,j,k-1) &lt; d(i,j,k-1) then</span><br><span class="line">				d(i,j,k) = d(i,k,k-1) + d(k,j,k-1)</span><br><span class="line">			else </span><br><span class="line">				d(i,j,k) = d(i,j,k-1)</span><br><span class="line">return D[n]</span><br></pre></td></tr></table></figure>
+<p>Running time: 𝑂(𝑛<sup>3</sup>)<br>
+Space: 𝑂(𝑛<sup>3</sup>) but can be improved to 𝑂(𝑛<sup>2</sup>)<br>
+Surprising discovery: If we just drop all third dimension. i.e. the algorithm just uses n*n array <code>D</code>, the algorithm still works!</p>
+<hr>
 <h1 id="flow"><a class="markdownIt-Anchor" href="#flow"></a> Flow</h1>
-<h2 id="ford-fulkerson-algorithm"><a class="markdownIt-Anchor" href="#ford-fulkerson-algorithm"></a> Ford Fulkerson Algorithm</h2>
+<p><strong>Input:</strong> A directed connected graph <code>𝐺 =(𝑉, 𝐸)</code> , where</p>
+<ul>
+<li>every edge <code>𝑒 ∈ 𝐸</code> has a <strong>capacity</strong> <code>𝑐(𝑒)</code>;</li>
+<li>a source vertex <code>𝑠</code> and a target vertex <code>𝑡</code>.</li>
+</ul>
+<p><strong>Output:</strong> A <strong>flow</strong> <code>𝑓: 𝐸 → 𝐑</code> from <code>𝑠</code> to <code>𝑡</code>, such that</p>
+<ul>
+<li>For each <code>𝑒 ∈ 𝐸, 0 ≤ 𝑓(𝑒) ≤ 𝑐(𝑒)</code> (capacity)</li>
+<li>For each <code>𝒗 ∈ 𝑽 − {𝒔, 𝒕}</code>, <code>sumOut( 𝒇(𝒆) ) = sumInto( 𝒇(𝒆) )</code>(conservation)</li>
+</ul>
+<h3 id="ford-fulkerson-algorithm"><a class="markdownIt-Anchor" href="#ford-fulkerson-algorithm"></a> Ford Fulkerson Algorithm</h3>
+<h2 id="applications"><a class="markdownIt-Anchor" href="#applications"></a> Applications</h2>
+<h3 id="edge-disjoint-paths"><a class="markdownIt-Anchor" href="#edge-disjoint-paths"></a> Edge-Disjoint Paths</h3>
+<h3 id="circulations-with-demands"><a class="markdownIt-Anchor" href="#circulations-with-demands"></a> Circulations with Demands</h3>
+<h3 id="maximum-bipartite-matching"><a class="markdownIt-Anchor" href="#maximum-bipartite-matching"></a> Maximum Bipartite Matching</h3>
+<h3 id="baseball-eliination"><a class="markdownIt-Anchor" href="#baseball-eliination"></a> Baseball Eliination</h3>
 
       
     </div>
@@ -497,10 +679,10 @@ but there can <em>NOT</em> be <strong>negative cycle</strong>.</p>
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Table Des Matières
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Ensemble
           </li>
         </ul>
       
@@ -520,8 +702,8 @@ but there can <em>NOT</em> be <strong>negative cycle</strong>.</p>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">articles</span>
                 </a>
               </div>
             
@@ -585,7 +767,7 @@ but there can <em>NOT</em> be <strong>negative cycle</strong>.</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#shortest-paths"><span class="nav-number">1.</span> <span class="nav-text"> Shortest Paths</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bellman-ford-algorithm"><span class="nav-number">1.1.</span> <span class="nav-text"> Bellman-Ford Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dijkstra-algorithm"><span class="nav-number">1.2.</span> <span class="nav-text"> Dijkstra Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#floyd-warshall-algorithm"><span class="nav-number">1.3.</span> <span class="nav-text"> Floyd-Warshall Algorithm</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#flow"><span class="nav-number">2.</span> <span class="nav-text"> Flow</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ford-fulkerson-algorithm"><span class="nav-number">2.1.</span> <span class="nav-text"> Ford Fulkerson Algorithm</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#shortest-paths"><span class="nav-number">1.</span> <span class="nav-text"> Shortest Paths</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#single-source-shortest-path"><span class="nav-number">1.1.</span> <span class="nav-text"> Single Source Shortest Path</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bellman-ford-algorithm"><span class="nav-number">1.1.1.</span> <span class="nav-text"> Bellman-Ford Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proof"><span class="nav-number">1.1.2.</span> <span class="nav-text"> Proof</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dijkstra-algorithm"><span class="nav-number">1.1.3.</span> <span class="nav-text"> Dijkstra Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#key-lemma"><span class="nav-number">1.1.3.1.</span> <span class="nav-text"> Key Lemma</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pseudocode"><span class="nav-number">1.1.3.2.</span> <span class="nav-text"> pseudocode</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#all-pairs-shortest-paths"><span class="nav-number">1.2.</span> <span class="nav-text"> All-Pairs Shortest Paths</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#using-previous-algorithms"><span class="nav-number">1.2.1.</span> <span class="nav-text"> Using Previous Algorithms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#first-dp-formulation"><span class="nav-number">1.2.2.</span> <span class="nav-text"> First DP Formulation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#define"><span class="nav-number">1.2.2.1.</span> <span class="nav-text"> Define</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#recurrence-essentially-the-same-as-in-bellman-ford"><span class="nav-number">1.2.2.2.</span> <span class="nav-text"> Recurrence( essentially the same as in Bellman-Ford):</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pseudocode-2"><span class="nav-number">1.2.2.3.</span> <span class="nav-text"> pseudocode</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#second-dp-formulation"><span class="nav-number">1.2.3.</span> <span class="nav-text"> Second DP Formulation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#observation"><span class="nav-number">1.2.3.1.</span> <span class="nav-text"> Observation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#recurrence"><span class="nav-number">1.2.3.2.</span> <span class="nav-text"> Recurrence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#analyze"><span class="nav-number">1.2.3.3.</span> <span class="nav-text"> Analyze</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#floyd-warshall"><span class="nav-number">1.2.4.</span> <span class="nav-text"> Floyd-Warshall</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#define-2"><span class="nav-number">1.2.4.1.</span> <span class="nav-text"> Define</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#observation-2"><span class="nav-number">1.2.4.2.</span> <span class="nav-text"> Observation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#recurrence-2"><span class="nav-number">1.2.4.3.</span> <span class="nav-text"> Recurrence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pseudocode-3"><span class="nav-number">1.2.4.4.</span> <span class="nav-text"> pseudocode</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#flow"><span class="nav-number">2.</span> <span class="nav-text"> Flow</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ford-fulkerson-algorithm"><span class="nav-number">2.0.1.</span> <span class="nav-text"> Ford Fulkerson Algorithm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#applications"><span class="nav-number">2.1.</span> <span class="nav-text"> Applications</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#edge-disjoint-paths"><span class="nav-number">2.1.1.</span> <span class="nav-text"> Edge-Disjoint Paths</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#circulations-with-demands"><span class="nav-number">2.1.2.</span> <span class="nav-text"> Circulations with Demands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#maximum-bipartite-matching"><span class="nav-number">2.1.3.</span> <span class="nav-text"> Maximum Bipartite Matching</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#baseball-eliination"><span class="nav-number">2.1.4.</span> <span class="nav-text"> Baseball Eliination</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -623,7 +805,7 @@ but there can <em>NOT</em> be <strong>negative cycle</strong>.</p>
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">Thème &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
