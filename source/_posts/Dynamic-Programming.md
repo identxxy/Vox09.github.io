@@ -14,9 +14,7 @@ Main idea of DP:
 
 3. Compute the value of an optimal solution (usually bottom-up)
 
-
-
-[TOC]
+@[TOC]
 
 # One-Dimension
 
@@ -176,7 +174,7 @@ v~i~ + **maximum** XV of capacity j-w~i~
 ***WRONG: This may pick the same item more than once!
 Thus, both in v~i~ and V[j-w(i)]!***
 
-New def: let V[i,j] be the largest obtained value with capacity j, choosing *ONLY from the first i items.
+New def: let V[i,j] be the largest obtained value with capacity j, choosing *ONLY* from the first i items.
 Below formula truly reflect <u>whether</u>. Left is NOT, right is YES.
 
 > V[i,j] = max{V[i-1,j], v~i~ + V[i-1,j-w(i)]} 	i from i to n
