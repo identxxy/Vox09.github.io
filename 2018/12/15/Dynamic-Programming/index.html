@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="algorithm,DP," />
+  <meta name="keywords" content="DP,algorithm," />
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="Main idea of DP:   Analyze the structure of an optimal solution   Recursively define the value of an optimal solution   Compute the value of an optimal solution (usually bottom-up)    Stairs Climbing">
-<meta name="keywords" content="algorithm,DP">
+<meta name="keywords" content="DP,algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dynamic Programming">
 <meta property="og:url" content="http://github.com/2018/12/15/Dynamic-Programming/index.html">
@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://github.com/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_09.png">
 <meta property="og:image" content="http://github.com/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_12.png">
 <meta property="og:image" content="http://github.com/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_13.png">
-<meta property="og:updated_time" content="2018-12-16T05:23:14.739Z">
+<meta property="og:updated_time" content="2018-12-17T13:18:22.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dynamic Programming">
 <meta name="twitter:description" content="Main idea of DP:   Analyze the structure of an optimal solution   Recursively define the value of an optimal solution   Compute the value of an optimal solution (usually bottom-up)    Stairs Climbing">
@@ -644,7 +644,7 @@ v<sub>i</sub> + <strong>maximum</strong> XV of capacity j-w<sub>i</sub><br>
 </blockquote>
 <p><em><strong>WRONG: This may pick the same item more than once!<br>
 Thus, both in v<sub>i</sub> and V[j-w(i)]!</strong></em></p>
-<p>New def: let V[i,j] be the largest obtained value with capacity j, choosing *ONLY from the first i items.<br>
+<p>New def: let V[i,j] be the largest obtained value with capacity j, choosing <em>ONLY</em> from the first i items.<br>
 Below formula truly reflect <u>whether</u>. Left is NOT, right is YES.</p>
 <blockquote>
 <p>V[i,j] = max{V[i-1,j], v<sub>i</sub> + V[i-1,j-w(i)]} 	i from i to n</p>
@@ -934,9 +934,9 @@ Space 𝑂(𝑛<sup>2</sup>)</p>
       
         <div class="post-tags">
           
-            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
-          
             <a href="/tags/DP/" rel="tag"># DP</a>
+          
+            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
           
         </div>
       
