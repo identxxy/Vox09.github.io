@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh_Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="algorithm,DP," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Main idea of DP:   Analyze the structure of an optimal solution   Recursively define the value of an optimal solution   Compute the value of an optimal solution (usually bottom-up)    Stairs Climbing">
+<meta name="keywords" content="algorithm,DP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dynamic Programming">
+<meta property="og:url" content="http://github.com/2018/12/15/Dynamic-Programming/index.html">
+<meta property="og:site_name" content="Destinxxy">
+<meta property="og:description" content="Main idea of DP:   Analyze the structure of an optimal solution   Recursively define the value of an optimal solution   Compute the value of an optimal solution (usually bottom-up)    Stairs Climbing">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:image" content="http://github.com/assets/Dynamic-Programming/1544897951063.png">
+<meta property="og:image" content="http://github.com/assets/Dynamic-Programming/1544897610939.png">
+<meta property="og:image" content="http://github.com/assets/Dynamic-Programming/1544898031881.png">
+<meta property="og:image" content="http://github.com/assets/Dynamic-Programming/BST-k.png">
+<meta property="og:image" content="http://github.com/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_02.png">
+<meta property="og:image" content="http://github.com/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_03-1544905264572.png">
+<meta property="og:image" content="http://github.com/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_04.png">
+<meta property="og:image" content="http://github.com/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_05.png">
+<meta property="og:image" content="http://github.com/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_07.png">
+<meta property="og:image" content="http://github.com/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_09.png">
+<meta property="og:image" content="http://github.com/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_12.png">
+<meta property="og:image" content="http://github.com/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_13.png">
+<meta property="og:updated_time" content="2019-03-12T15:04:59.130Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dynamic Programming">
+<meta name="twitter:description" content="Main idea of DP:   Analyze the structure of an optimal solution   Recursively define the value of an optimal solution   Compute the value of an optimal solution (usually bottom-up)    Stairs Climbing">
+<meta name="twitter:image" content="http://github.com/assets/Dynamic-Programming/1544897951063.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://github.com/2018/12/15/Dynamic-Programming/"/>
+
+
+
+
+
+  <title>Dynamic Programming | Destinxxy</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh_Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Destinxxy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Life should be hard</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/12/15/Dynamic-Programming/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Dynamic Programming</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-15T20:48:57+08:00">
+                2018-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm-and-Graph/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm and Graph</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Main idea of DP:</p>
+<ol>
+<li>
+<p>Analyze the structure of an optimal solution</p>
+</li>
+<li>
+<p>Recursively define the value of an optimal solution</p>
+</li>
+<li>
+<p>Compute the value of an optimal solution (usually bottom-up)</p>
+</li>
+</ol>
+<p><ul class="markdownIt-TOC">
+<li><a href="#stairs-climbing-1d">Stairs Climbing 1D</a>
+<ul>
+<li><a href="#recurrence">Recurrence</a></li>
+<li><a href="#base-case">Base case</a></li>
+<li><a href="#pseudo-code">pseudo-code</a></li>
+<li><a href="#analyze">Analyze</a></li>
+</ul>
+</li>
+<li><a href="#rod-cutting-problem">Rod Cutting Problem</a>
+<ul>
+<li><a href="#recurrence-2">Recurrence</a></li>
+<li><a href="#base-case-2">Base case</a></li>
+<li><a href="#pseudo-code-2">pseudo-code</a></li>
+<li><a href="#analysize">Analysize</a></li>
+</ul>
+</li>
+<li><a href="#weighted-interval-scheduling-1d">Weighted Interval Scheduling 1D</a>
+<ul>
+<li><a href="#recurrence-3">Recurrence</a></li>
+<li><a href="#base-case-3">Base case</a></li>
+<li><a href="#pseudo-code-3">pseudo-code</a></li>
+<li><a href="#analyze-2">Analyze</a></li>
+</ul>
+</li>
+<li><a href="#the-01-knapsack-problem">The 0/1 Knapsack Problem</a>
+<ul>
+<li><a href="#recurrence-4">Recurrence</a></li>
+<li><a href="#base-case-4">Base case</a></li>
+<li><a href="#pseudo-code-4">pseudo-code</a></li>
+<li><a href="#analyze-3">Analyze</a></li>
+</ul>
+</li>
+<li><a href="#longest-common-subsequence-lcs">Longest Common Subsequence LCS</a>
+<ul>
+<li><a href="#recurrence-5">Recurrence</a></li>
+<li><a href="#base-case-5">Base case</a></li>
+<li><a href="#pseudo-code-5">pseudo-code</a></li>
+<li><a href="#analyze-4">Analyze</a></li>
+</ul>
+</li>
+<li><a href="#longest-common-substring">Longest Common Substring</a>
+<ul>
+<li><a href="#recurrence-6">Recurrence</a></li>
+<li><a href="#base-case-6">Base case</a></li>
+<li><a href="#pseudo-code-6">pseudo-code</a></li>
+<li><a href="#analyze-5">Analyze</a></li>
+</ul>
+</li>
+<li><a href="#longest-palindromic-substring">Longest Palindromic Substring</a>
+<ul>
+<li><a href="#recurrence-7">Recurrence</a></li>
+<li><a href="#base">Base</a></li>
+<li><a href="#pseudo-code-7">pseudo-code</a></li>
+<li><a href="#analyze-6">Analyze</a></li>
+</ul>
+</li>
+<li><a href="#optimal-bst">Optimal BST</a>
+<ul>
+<li><a href="#recurrence-8">Recurrence</a></li>
+<li><a href="#base-2">Base</a></li>
+<li><a href="#pseudo-code-8">pseudo-code</a></li>
+<li><a href="#analyze-7">Analyze</a></li>
+</ul>
+</li>
+</ul>
+</p>
+<h1 id="one-dimension"><a class="markdownIt-Anchor" href="#one-dimension"></a> One-Dimension</h1>
+<h2 id="stairs-climbing-1d"><a class="markdownIt-Anchor" href="#stairs-climbing-1d"></a> Stairs Climbing 1D</h2>
+<blockquote>
+<p>You can  climb 1 or 2 stairs with one step.<br>
+How many different ways can you climb <strong>n</strong> stairs?</p>
+</blockquote>
+<h3 id="recurrence"><a class="markdownIt-Anchor" href="#recurrence"></a> Recurrence</h3>
+<blockquote>
+<p>F(n) = F(n-1) + F(n-2)</p>
+</blockquote>
+<h3 id="base-case"><a class="markdownIt-Anchor" href="#base-case"></a> Base case</h3>
+<blockquote>
+<p>F(1) = 1, F(2) = 2</p>
+</blockquote>
+<h3 id="pseudo-code"><a class="markdownIt-Anchor" href="#pseudo-code"></a> pseudo-code</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">F(n):</span><br><span class="line">allocate an array A of size n</span><br><span class="line">A[1] = 1</span><br><span class="line">A[2] = 2</span><br><span class="line">for i=3 to n</span><br><span class="line">	A[i] = A[i-1] + A[i-2]</span><br><span class="line">return A[n]</span><br></pre></td></tr></table></figure>
+<h3 id="analyze"><a class="markdownIt-Anchor" href="#analyze"></a> Analyze</h3>
+<p>Running time: Θ(𝑛)<br>
+Space: Θ(𝑛) but can be improved to Θ(1) by freeing array.</p>
+<h2 id="rod-cutting-problem"><a class="markdownIt-Anchor" href="#rod-cutting-problem"></a> Rod Cutting Problem</h2>
+<blockquote>
+<p>Given a rod of length <strong>n</strong> and prices <strong>p<sub>i</sub></strong> for i = 1,…,n, where <strong>p<sub>i</sub></strong> is the price of a rod of length <strong>i</strong> . Find a way to cut the rod to maximize total revenue.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>length i</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>price p<sub>i</sub></td>
+<td>1</td>
+<td>5</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>17</td>
+<td>17</td>
+<td>20</td>
+<td>24</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<h3 id="recurrence-2"><a class="markdownIt-Anchor" href="#recurrence-2"></a> Recurrence</h3>
+<p>total <strong>optimal</strong> revenue is price of cut rod and <strong>optimal</strong> revenue of remaining rood.</p>
+<blockquote>
+<p>r<sub>n</sub> = max{p<sub>n</sub>, p<sub>1</sub> + r<sub>n-1</sub>, p<sub>2</sub> + r<sub>n-2</sub>, …, p<sub>n-1</sub>+r<sub>1</sub>}</p>
+</blockquote>
+<h3 id="base-case-2"><a class="markdownIt-Anchor" href="#base-case-2"></a> Base case</h3>
+<p>Define <strong>r<sub>n</sub></strong> be the maximum revenue obtainable from cutting a rod of length <strong>n</strong>.</p>
+<blockquote>
+<p>r<sub>1</sub> = p<sub>1</sub></p>
+</blockquote>
+<h3 id="pseudo-code-2"><a class="markdownIt-Anchor" href="#pseudo-code-2"></a> pseudo-code</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">cutRod(n):</span><br><span class="line">let r[0...n] and s[0...n] be new arrays</span><br><span class="line">r[0] = 0 </span><br><span class="line">for j=1 to n		% every optimal length</span><br><span class="line">	q = -inf</span><br><span class="line">	for i =1 to j 	% every cut length</span><br><span class="line">		if q &lt; p[i] + r[j-i] then</span><br><span class="line">			q = p[i]+r[j-i]</span><br><span class="line">			% keep track the optimal cut length</span><br><span class="line">			s[j] = i</span><br><span class="line">	r[j] = q</span><br><span class="line">j = n </span><br><span class="line">while j&gt;0 do </span><br><span class="line">	print s[j]</span><br><span class="line">	j = j-s[j]</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>i</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p[i]</td>
+<td>0</td>
+<td>1</td>
+<td>5</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>17</td>
+<td>17</td>
+<td>20</td>
+<td>24</td>
+<td>30</td>
+</tr>
+<tr>
+<td>r[i]</td>
+<td>0</td>
+<td>1</td>
+<td>5</td>
+<td>8</td>
+<td>9</td>
+<td>13</td>
+<td>17</td>
+<td>18</td>
+<td>22</td>
+<td>25</td>
+<td>30</td>
+</tr>
+<tr>
+<td>s[i]</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>6</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<h3 id="analysize"><a class="markdownIt-Anchor" href="#analysize"></a> Analysize</h3>
+<p>Running time: Θ(𝑛<sup>2</sup>)<br>
+Space: Θ(𝑛)</p>
+<h2 id="weighted-interval-scheduling-1d"><a class="markdownIt-Anchor" href="#weighted-interval-scheduling-1d"></a> Weighted Interval Scheduling 1D</h2>
+<blockquote>
+<p>Jobs <strong>j</strong> starts at <strong>s<sub>j</sub></strong>, finish at <strong>f<sub>j</sub></strong> and has weight(value) <strong>v<sub>j</sub></strong>.<br>
+Two jobs compatible if they don’t overlap.<br>
+Goal: find maximum-weight subset if mutually compatible jobs.</p>
+</blockquote>
+<h3 id="recurrence-3"><a class="markdownIt-Anchor" href="#recurrence-3"></a> Recurrence</h3>
+<p>Firstly, label all jobs by <strong>finishing time</strong>.</p>
+<p><strong>Maximum</strong> subset is either<br>
+DO take this job and <strong>maximum</strong> subset of <em>compatible</em> jobs set<br>
+NOT take this job and <strong>maximum</strong> subset of <em>remaining</em> jobs</p>
+<blockquote>
+<p>V[j] = max{v<sub>j</sub> + V[c(j)], V[j-1]}</p>
+</blockquote>
+<p>function <code>c(j)</code> return the largest index i&lt;j such that job i is compatible job j.</p>
+<h3 id="base-case-3"><a class="markdownIt-Anchor" href="#base-case-3"></a> Base case</h3>
+<p>The goal is to find a subset of a set.</p>
+<blockquote>
+<p>We start from a <strong>empty set</strong>.</p>
+</blockquote>
+<h3 id="pseudo-code-3"><a class="markdownIt-Anchor" href="#pseudo-code-3"></a> pseudo-code</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">schedule():</span><br><span class="line">sort all jobs by finish time</span><br><span class="line">V[0] = 0</span><br><span class="line">for i = 1 to n</span><br><span class="line">	% DO take job j</span><br><span class="line">	if V[i] + V[c(i)] &gt; V[j-1] then</span><br><span class="line">		V[i] = value[i] + V[c(i)]</span><br><span class="line">		keep[i] = 1</span><br><span class="line">	% NOT take job j</span><br><span class="line">	else </span><br><span class="line">		V[i] = V[i-1]</span><br><span class="line">		keep[i] = 0 </span><br><span class="line">i = n</span><br><span class="line">while i &gt; 0 do</span><br><span class="line">	if keep[i] =1 then print i, i = c(i)</span><br><span class="line">	else i = i-1</span><br></pre></td></tr></table></figure>
+<h3 id="analyze-2"><a class="markdownIt-Anchor" href="#analyze-2"></a> Analyze</h3>
+<p>Running time: Θ(𝑛log𝑛)<br>
+Space: Θ(𝑛)</p>
+<h1 id="two-dimension"><a class="markdownIt-Anchor" href="#two-dimension"></a> Two-Dimension</h1>
+<p>Sometimes sub-problem also need to use 1D-DP to solve.<br>
+Sometimes there are two variables that requires a 2D array.</p>
+<h2 id="the-01-knapsack-problem"><a class="markdownIt-Anchor" href="#the-01-knapsack-problem"></a> The 0/1 Knapsack Problem</h2>
+<blockquote>
+<p>A set of <strong>n</strong> items, where item <strong>i</strong> has weight <strong>w<sub>i</sub></strong> and value <strong>v<sub>i</sub></strong> ,and a knapsack with capacity <strong>W</strong>.<br>
+Find <strong>x<sub>1</sub>,… ,x<sub>n</sub></strong> (either 0 or 1) such that<br>
+sum(<strong>x<sub>i</sub>w<sub>i</sub></strong>) &lt;= **W ** and <strong>V</strong>=sum(<strong>x<sub>i</sub>v<sub>i</sub></strong>) is maximum</p>
+</blockquote>
+<h3 id="recurrence-4"><a class="markdownIt-Anchor" href="#recurrence-4"></a> Recurrence</h3>
+<p>Start to put items into the knapsack.<strong>–1D</strong></p>
+<p><strong>Maximum</strong> V of capacity W is the max among <u>whether</u> take each item.<br>
+v<sub>i</sub> + <strong>maximum</strong> XV of capacity j-w<sub>i</sub><br>
+<em>We found it necessary to consider capacity of knapsack.</em><strong>–2D</strong></p>
+<blockquote>
+<p>V[j] = max{v(i) + V[j-w(i)]}	i from 1 to n</p>
+</blockquote>
+<p><em><strong>WRONG: This may pick the same item more than once!<br>
+Thus, both in v<sub>i</sub> and V[j-w(i)]!</strong></em></p>
+<p>New def: let V[i,j] be the largest obtained value with capacity j, choosing <em>ONLY</em> from the first i items.<br>
+Below formula truly reflect <u>whether</u>. Left is NOT, right is YES.</p>
+<blockquote>
+<p>V[i,j] = max{V[i-1,j], v<sub>i</sub> + V[i-1,j-w(i)]} 	i from i to n</p>
+</blockquote>
+<h3 id="base-case-4"><a class="markdownIt-Anchor" href="#base-case-4"></a> Base case</h3>
+<blockquote>
+<p>We start from <strong>take nothing</strong>: i= 0, V[0,j] = 0<br>
+and <strong>empty knapsack</strong> j =0, V[i,0] = 0</p>
+</blockquote>
+<h3 id="pseudo-code-4"><a class="markdownIt-Anchor" href="#pseudo-code-4"></a> pseudo-code</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let V[0...n,0...W] and keep[0...n,0...W] be new arrays of all 0	</span><br><span class="line">for i = 1 to n do		% put things</span><br><span class="line">	for j = 1 to W do 	% each capacity</span><br><span class="line">		if w[i]&lt;=j and v[i]+V[i-1,j-w[i]] &gt; V[i-1,j] then</span><br><span class="line">			V[i,j] = v[i]+V[i-1,j]</span><br><span class="line">			keep[i,j] = 1</span><br><span class="line">		else </span><br><span class="line">			V[i,j] = V[i-1,j]</span><br><span class="line">			keelp[i,j] = 0</span><br><span class="line">K = W</span><br><span class="line">for i = n downto 1 do </span><br><span class="line">	if keep[i,K] = 1 then </span><br><span class="line">		print i</span><br><span class="line">		K = K-w[i]</span><br></pre></td></tr></table></figure>
+<p>input:</p>
+<table>
+<thead>
+<tr>
+<th>i</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v<sub>i</sub></td>
+<td>10</td>
+<td>40</td>
+<td>30</td>
+<td>50</td>
+</tr>
+<tr>
+<td>w<sub>i</sub></td>
+<td>5</td>
+<td>4</td>
+<td>6</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>running:</p>
+<table>
+<thead>
+<tr>
+<th>V[i,j]</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i=0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>40</td>
+<td>50</td>
+<td>70</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>50</td>
+<td>50</td>
+<td>50</td>
+<td>50</td>
+<td>90</td>
+<td>90</td>
+<td>90</td>
+<td>90</td>
+</tr>
+</tbody>
+</table>
+<h3 id="analyze-3"><a class="markdownIt-Anchor" href="#analyze-3"></a> Analyze</h3>
+<p>Running time: Θ(𝑛𝑊)<br>
+Space: Θ(𝑛𝑊)<br>
+without <code>keep</code> array can be improved to Θ(𝑛+𝑊).</p>
+<h2 id="longest-common-subsequence-lcs"><a class="markdownIt-Anchor" href="#longest-common-subsequence-lcs"></a> Longest Common Subsequence LCS</h2>
+<blockquote>
+<p>Given two sequences <strong>X</strong> = (x<sub>1</sub>,x<sub>2</sub>,…,x<sub>m</sub>) and <strong>Y</strong> = (y<sub>1</sub>,y<sub>2</sub>,…,y<sub>n</sub>), we say that <strong>Z</strong> is a common subsequence of <strong>X</strong> and <strong>Y</strong> if <strong>Z</strong> has a strictly increasing sequence of indices i and j of both <strong>X</strong> and <strong>Y</strong> such that we have x<sub>ip</sub>= y<sub>jp</sub> = z<sub>p</sub>  for all p = 1, 2, … , k. The goal is to find the longest common subsequence of <strong>X</strong> and <strong>Y</strong>.</p>
+<p><img src="/assets/Dynamic-Programming/1544897951063.png" alt="1544897951063"></p>
+</blockquote>
+<h3 id="recurrence-5"><a class="markdownIt-Anchor" href="#recurrence-5"></a> Recurrence</h3>
+<p>Let c[i,j] be the length of the <strong>longest</strong> common subsequence of X[1…i] and Y[1…j].<br>
+So we need <strong>2D</strong> that i for X and j for Y.</p>
+<p>Firstly, go through i, and then go through j<br>
+If X[i] = Y[j], we match.<br>
+c[i,j] = 1 + the <strong>longest</strong> common subsequence of X[1…i-1] and Y[1…j-1].<br>
+else , it’s max of<br>
+the <strong>longest</strong> common subsequence of X[1…i-1] and Y[1…j] and<br>
+the <strong>longest</strong> common subsequence of X[1…i] and Y[1…j-1]</p>
+<blockquote>
+<p>If X[i] = Y[j] , c[i,j] = max{ c[i,i-1], c[i-1,j]  }</p>
+<p>else c[i,j]= c[i-1,j-1] +1</p>
+</blockquote>
+<h3 id="base-case-5"><a class="markdownIt-Anchor" href="#base-case-5"></a> Base case</h3>
+<blockquote>
+<p>c[0,j] =0<br>
+c[i,0] = 0</p>
+</blockquote>
+<h3 id="pseudo-code-5"><a class="markdownIt-Anchor" href="#pseudo-code-5"></a> pseudo-code</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">LSC(X,Y):</span><br><span class="line">let c[0...m,0...n] and b[0...m,0...n] be new arrys of all 0</span><br><span class="line">for i=1 to m</span><br><span class="line">	for j=1 to n</span><br><span class="line">		if X(i) = Y(i) then</span><br><span class="line">			c[i,j] = c[i-1,j-1]+1</span><br><span class="line">			b[i,j] = &quot;↖&quot;</span><br><span class="line">		else if c[i-1,j] &gt;= c[i,j-1] then</span><br><span class="line">			c[i,j] = c[i-1,j]</span><br><span class="line">			b[i,j] = &quot;↑&quot;</span><br><span class="line">		else</span><br><span class="line">			c[i,j] = c[i,j-1]</span><br><span class="line">			b[i,j] = &quot;←&quot;</span><br><span class="line">Print-LCS(b,m,n)</span><br><span class="line"></span><br><span class="line">Print-LCS(b,i,j):</span><br><span class="line">	if i=0 or j=0 then return </span><br><span class="line">	if b[i,j]=&quot;↖&quot; then</span><br><span class="line">		Print-LCS (b,i−1,j−1)</span><br><span class="line">		print X(i)</span><br><span class="line">	else if 𝑏[𝑖,𝑗]=&quot;↑&quot;</span><br><span class="line">		Print-LCS( b,i−1,j)</span><br><span class="line">	else Print-LCS( b,i,j−1)</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/Dynamic-Programming/1544897610939.png" alt="1544897610939"></p>
+<h3 id="analyze-4"><a class="markdownIt-Anchor" href="#analyze-4"></a> Analyze</h3>
+<p>Running time: Θ(𝑚𝑛)<br>
+Space: Θ(𝑚𝑛)<br>
+without <code>b</code> array can be improved to Θ(𝑚+𝑛).</p>
+<h2 id="longest-common-substring"><a class="markdownIt-Anchor" href="#longest-common-substring"></a> Longest Common Substring</h2>
+<blockquote>
+<p>Given two strings <strong>X</strong> = x<sub>1</sub>x<sub>2</sub>…x<sub>m</sub> and <strong>Y</strong> = y<sub>1</sub>y<sub>2</sub>…y<sub>m</sub>, we wish to find their longest common substring <strong>Z</strong>, that is, the largest <strong>k</strong> for which there are indices 𝑖  and 𝑗 with<br>
+x<sub>i</sub>x<sub>i+1</sub>…x<sub>i+k-1</sub> = y<sub>j</sub>y<sub>j+1</sub>…y<sub>j-k-1</sub></p>
+<p><img src="/assets/Dynamic-Programming/1544898031881.png" alt="1544898031881"></p>
+</blockquote>
+<h3 id="recurrence-6"><a class="markdownIt-Anchor" href="#recurrence-6"></a> Recurrence</h3>
+<p>Let d[i,j] keep track of k, the <strong>longest</strong> string length of X[1…i] Y[1…j].<br>
+Firstly go through X and then Y so we need <strong>2D</strong></p>
+<p>If X(i) = Y(j), d[i,j] = 1 +  the <strong>longest</strong> string length of X[1…i-1] Y[1…j-1].<br>
+else it’s 0!</p>
+<blockquote>
+<p>If X(i) = Y(j), d[i,j] = 1 + d[i-1.j-1]<br>
+else d[i,j] = 0</p>
+</blockquote>
+<h3 id="base-case-6"><a class="markdownIt-Anchor" href="#base-case-6"></a> Base case</h3>
+<blockquote>
+<p>d[0,j] = 0, d[i,0]= 0</p>
+</blockquote>
+<h3 id="pseudo-code-6"><a class="markdownIt-Anchor" href="#pseudo-code-6"></a> pseudo-code</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let d[0...m,0...n] be a new array of all 0</span><br><span class="line">length = 0, endIndex = 0</span><br><span class="line">for i = 1 to m</span><br><span class="line">	for j = 1 to n</span><br><span class="line">		if X(i) = Y(i) then </span><br><span class="line">			d[i,j] = d[i-1,j-1] + 1</span><br><span class="line">			if d[i,j] &gt; length then </span><br><span class="line">				length = d[i,j]</span><br><span class="line">				endIndex = i</span><br><span class="line">for i = endIndex - length + to endIndex</span><br><span class="line">	print X(i)</span><br></pre></td></tr></table></figure>
+<h3 id="analyze-5"><a class="markdownIt-Anchor" href="#analyze-5"></a> Analyze</h3>
+<p>Running time: Θ(𝑚𝑛)<br>
+Space: Θ(𝑚𝑛) but can be improved to Θ(𝑚+𝑛).</p>
+<h1 id="over-intervals"><a class="markdownIt-Anchor" href="#over-intervals"></a> Over Intervals</h1>
+<ul>
+<li>Goal is to find optimal (min or max ) solution on problem with
+<ul>
+<li>Problem of size n</li>
+<li><em>Ordered</em> input of items 1,2,…n</li>
+</ul>
+</li>
+<li>Define substructures as
+<ul>
+<li><em>Ordered</em> input of items i…j</li>
+<li>Problem of size j-i+1</li>
+</ul>
+</li>
+<li>Recurrence gives optimal solution of subproblem<br>
+as function of optimal solution of smaller subproblems</li>
+<li>Algorithm fills in DP table from smallest to largest problem size</li>
+<li>Often, final subproblem filled is solution for original problem<br>
+Sometimes, solution of original problem is  min/max over table values</li>
+</ul>
+<h2 id="longest-palindromic-substring"><a class="markdownIt-Anchor" href="#longest-palindromic-substring"></a> Longest Palindromic Substring</h2>
+<p>A palindrome is a string that reads the same backward or forward.</p>
+<blockquote>
+<p>Given a string <strong>X</strong> = x<sub>1</sub>x<sub>2</sub>…x<sub>n</sub>, find the longest palindromic substring.</p>
+<p>Ex:<br>
+X =ACCABA<br>
+Palindromic substrings: CC, ACCA ABA<br>
+Longest palindromic substrings: ACCA</p>
+</blockquote>
+<h3 id="recurrence-7"><a class="markdownIt-Anchor" href="#recurrence-7"></a> Recurrence</h3>
+<p>Let p[i,j] be <em>true</em> if and only if X[i…j] is a palindrome.<br>
+Obviously, we need <strong>2D</strong>, though i &lt;= j. It’s like a half plane.</p>
+<p>If X[i] = X[j], p[i,j] is <strong>true</strong> iff p[i+1,j-1] is <strong>true</strong>.</p>
+<blockquote>
+<p>If X(i) = X(j), p[i,j] = p[i+1,j-1]</p>
+</blockquote>
+<p>Order: from <strong>(i,j)</strong> to <strong>(i+1,j-1)</strong> it’s a <strong>diagonal</strong> path.</p>
+<h3 id="base"><a class="markdownIt-Anchor" href="#base"></a> Base</h3>
+<blockquote>
+<p>If i = j, p[i,j] = true</p>
+</blockquote>
+<h3 id="pseudo-code-7"><a class="markdownIt-Anchor" href="#pseudo-code-7"></a> pseudo-code</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">let p[0...n,0...n] be a new array of all false</span><br><span class="line">max = 1 </span><br><span class="line">for i = 1 to n-1 do </span><br><span class="line">	p[i,i] = true</span><br><span class="line">	if X(i) = X(i+1) then </span><br><span class="line">		p[i,i+1] = true</span><br><span class="line">		max = 2</span><br><span class="line">% updating along diagonal</span><br><span class="line">% started from the third diagonal</span><br><span class="line">for k = 3 to n do</span><br><span class="line">	for i = 1 to n-k+1 do</span><br><span class="line">		j = i+k-1</span><br><span class="line">		if p[i+1,j-1] = true and X(i) = X(j) then</span><br><span class="line">			p[i,j] = true</span><br><span class="line">			max = k</span><br><span class="line">return max</span><br></pre></td></tr></table></figure>
+<h3 id="analyze-6"><a class="markdownIt-Anchor" href="#analyze-6"></a> Analyze</h3>
+<p>Running time: 𝑂(𝑛<sup>2</sup>)<br>
+Space: 𝑂(𝑛<sup>2</sup>) but can be improved to 𝑂(𝑛)</p>
+<h2 id="optimal-bst"><a class="markdownIt-Anchor" href="#optimal-bst"></a> Optimal BST</h2>
+<blockquote>
+<p>Given <strong>n</strong> keys a<sub>1</sub> &lt; a<sub>2</sub> &lt; … &lt; a<sub>n</sub>, with weights f(a<sub>1</sub>), … , f(a<sub>n</sub>), find a binary search tree <strong>T</strong> on these <strong>n</strong> keys such that<br>
+<strong>B(T)</strong> = sum{ f(a<sub>i</sub>)*(d(a<sub>i</sub>)+1) } i from 1 to n<br>
+is minimized, where d(a<sub>i</sub>) is the depth of a<sub>i</sub>.</p>
+</blockquote>
+<h3 id="recurrence-8"><a class="markdownIt-Anchor" href="#recurrence-8"></a> Recurrence</h3>
+<p>Let T<sub>i,j</sub> be some tree on the subset of nodes a<sub>i</sub> &lt; a<sub>i+1</sub> &lt; … &lt; a<sub>j</sub><br>
+Define w[i,j] = f(a<sub>i</sub>) + … + f(a<sub>j</sub>)<br>
+The cost is defined as B(T<sub>i,j</sub>) = sum{ f(a<sub>i</sub>)*(d(a<sub>i</sub>)+1) } from i to j<br>
+Define e[i,j] = optimal value of B(T<sub>i,j</sub>)</p>
+<p>The <strong>optimal</strong> cost of T<sub>i,j</sub> is<br>
+The <strong>optimal</strong> cost of left subtree + The <strong>optimal</strong> cost of right subtree + root’s weight</p>
+<blockquote>
+<p>e[i,j] = e[i,k-1 + e[k+1,j] +w[i,j]</p>
+</blockquote>
+<p>To find <strong>k</strong>, try every value between <strong>i</strong> and <strong>j</strong> to figure out the min.</p>
+<blockquote>
+<p>e[i,j] = min{ e[i,k-1 + e[k+1,j] +w[i,j] } for i&lt;=k&lt;=j</p>
+</blockquote>
+<p>Order: (i,j) (i,k-1) (k+1,j)<img src="/assets/Dynamic-Programming/BST-k.png" alt="my"></p>
+<h3 id="base-2"><a class="markdownIt-Anchor" href="#base-2"></a> Base</h3>
+<blockquote>
+<p>e[i,j]= 0 for i&gt;j<br>
+e[i,i] = f(a<sub>i</sub>) for all i</p>
+</blockquote>
+<h3 id="pseudo-code-8"><a class="markdownIt-Anchor" href="#pseudo-code-8"></a> pseudo-code</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Optimal-BST(a,n):</span><br><span class="line">let e[1...n,1...n],w[1...n,1...n],root[1...n,1...n] be new arrays of all 0</span><br><span class="line">for i = 1 to n </span><br><span class="line">	w[i,i] = f(a(i))</span><br><span class="line">	for j = i + 1 to n</span><br><span class="line">		% complete the w[] table</span><br><span class="line">		w[i,j] = w[i,j-1] + f(a(i))</span><br><span class="line">for l = 1 to n</span><br><span class="line">	for i = 1 to n-l+1</span><br><span class="line">		j = i+l-1</span><br><span class="line">		e[i,j] = inf</span><br><span class="line">		% find k minimizes e[]</span><br><span class="line">		for k = i to j</span><br><span class="line">			t = e[i,k-1]+e[k+1,j]+w[i,j]</span><br><span class="line">			if t &lt; e[i,j] then</span><br><span class="line">				e[i,j] = t</span><br><span class="line">				root[i,j] = k</span><br><span class="line">return Construct-BST(root,1,n)</span><br><span class="line"></span><br><span class="line">Construct-BST(root,i,j):</span><br><span class="line">if i &gt; j then return nil</span><br><span class="line">create a node z</span><br><span class="line">z.key = a[root[i,j]]</span><br><span class="line">z.left = Construct-BST(root,i,root[i,j]-1)</span><br><span class="line">z.right = COnstruct-BST(root,root[i,j]+1,j)</span><br><span class="line">return z</span><br></pre></td></tr></table></figure>
+<h3 id="analyze-7"><a class="markdownIt-Anchor" href="#analyze-7"></a> Analyze</h3>
+<p>Running time: Optimal 𝑂(𝑛<sup>3</sup>) Construct 𝑂(𝑛<sup>2</sup>)<br>
+Space 𝑂(𝑛<sup>2</sup>)</p>
+<p><img src="/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_02.png" alt="13_BST_页面_02"><br>
+<img src="/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_03-1544905264572.png" alt="13_BST_页面_03"><img src="/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_04.png" alt="13_BST_页面_04"><br>
+<img src="/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_05.png" alt="13_BST_页面_05"><br>
+<img src="/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_07.png" alt="13_BST_页面_07"><br>
+<img src="/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_09.png" alt="13_BST_页面_09"><br>
+<img src="/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_12.png" alt="13_BST_页面_12"><br>
+<img src="/assets/Dynamic-Programming/13_BST_%E9%A1%B5%E9%9D%A2_13.png" alt="13_BST_页面_13"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+          
+            <a href="/tags/DP/" rel="tag"># DP</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/08/Finite-State-Machine/" rel="next" title="Finite State Machine">
+                <i class="fa fa-chevron-left"></i> Finite State Machine
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/15/Graph-Basic-and-Algorithm/" rel="prev" title="Graph Basic and Algorithm">
+                Graph Basic and Algorithm <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Vox09</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#one-dimension"><span class="nav-number">1.</span> <span class="nav-text"> One-Dimension</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#stairs-climbing-1d"><span class="nav-number">1.1.</span> <span class="nav-text"> Stairs Climbing 1D</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#recurrence"><span class="nav-number">1.1.1.</span> <span class="nav-text"> Recurrence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base-case"><span class="nav-number">1.1.2.</span> <span class="nav-text"> Base case</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pseudo-code"><span class="nav-number">1.1.3.</span> <span class="nav-text"> pseudo-code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#analyze"><span class="nav-number">1.1.4.</span> <span class="nav-text"> Analyze</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rod-cutting-problem"><span class="nav-number">1.2.</span> <span class="nav-text"> Rod Cutting Problem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#recurrence-2"><span class="nav-number">1.2.1.</span> <span class="nav-text"> Recurrence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base-case-2"><span class="nav-number">1.2.2.</span> <span class="nav-text"> Base case</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pseudo-code-2"><span class="nav-number">1.2.3.</span> <span class="nav-text"> pseudo-code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#analysize"><span class="nav-number">1.2.4.</span> <span class="nav-text"> Analysize</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weighted-interval-scheduling-1d"><span class="nav-number">1.3.</span> <span class="nav-text"> Weighted Interval Scheduling 1D</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#recurrence-3"><span class="nav-number">1.3.1.</span> <span class="nav-text"> Recurrence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base-case-3"><span class="nav-number">1.3.2.</span> <span class="nav-text"> Base case</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pseudo-code-3"><span class="nav-number">1.3.3.</span> <span class="nav-text"> pseudo-code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#analyze-2"><span class="nav-number">1.3.4.</span> <span class="nav-text"> Analyze</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#two-dimension"><span class="nav-number">2.</span> <span class="nav-text"> Two-Dimension</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#the-01-knapsack-problem"><span class="nav-number">2.1.</span> <span class="nav-text"> The 0/1 Knapsack Problem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#recurrence-4"><span class="nav-number">2.1.1.</span> <span class="nav-text"> Recurrence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base-case-4"><span class="nav-number">2.1.2.</span> <span class="nav-text"> Base case</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pseudo-code-4"><span class="nav-number">2.1.3.</span> <span class="nav-text"> pseudo-code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#analyze-3"><span class="nav-number">2.1.4.</span> <span class="nav-text"> Analyze</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#longest-common-subsequence-lcs"><span class="nav-number">2.2.</span> <span class="nav-text"> Longest Common Subsequence LCS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#recurrence-5"><span class="nav-number">2.2.1.</span> <span class="nav-text"> Recurrence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base-case-5"><span class="nav-number">2.2.2.</span> <span class="nav-text"> Base case</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pseudo-code-5"><span class="nav-number">2.2.3.</span> <span class="nav-text"> pseudo-code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#analyze-4"><span class="nav-number">2.2.4.</span> <span class="nav-text"> Analyze</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#longest-common-substring"><span class="nav-number">2.3.</span> <span class="nav-text"> Longest Common Substring</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#recurrence-6"><span class="nav-number">2.3.1.</span> <span class="nav-text"> Recurrence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base-case-6"><span class="nav-number">2.3.2.</span> <span class="nav-text"> Base case</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pseudo-code-6"><span class="nav-number">2.3.3.</span> <span class="nav-text"> pseudo-code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#analyze-5"><span class="nav-number">2.3.4.</span> <span class="nav-text"> Analyze</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#over-intervals"><span class="nav-number">3.</span> <span class="nav-text"> Over Intervals</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#longest-palindromic-substring"><span class="nav-number">3.1.</span> <span class="nav-text"> Longest Palindromic Substring</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#recurrence-7"><span class="nav-number">3.1.1.</span> <span class="nav-text"> Recurrence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base"><span class="nav-number">3.1.2.</span> <span class="nav-text"> Base</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pseudo-code-7"><span class="nav-number">3.1.3.</span> <span class="nav-text"> pseudo-code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#analyze-6"><span class="nav-number">3.1.4.</span> <span class="nav-text"> Analyze</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optimal-bst"><span class="nav-number">3.2.</span> <span class="nav-text"> Optimal BST</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#recurrence-8"><span class="nav-number">3.2.1.</span> <span class="nav-text"> Recurrence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base-2"><span class="nav-number">3.2.2.</span> <span class="nav-text"> Base</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pseudo-code-8"><span class="nav-number">3.2.3.</span> <span class="nav-text"> pseudo-code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#analyze-7"><span class="nav-number">3.2.4.</span> <span class="nav-text"> Analyze</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vox09</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Wechat,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
