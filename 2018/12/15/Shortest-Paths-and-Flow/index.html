@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="algorithm,searching,graph," />
+  <meta name="keywords" content="searching,algorithm,graph," />
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="Algorithm Comments Graph Rep Running time Space Used     Bellman-Ford Single-Source Adj List 𝑂(𝑉𝐸) 𝑂(𝑉)   In DAG Out DAG Single-Source DAG Adj List 𝑂(𝑉+𝐸) 𝑂(𝑉)   Dijkstra Single-SourceNon">
-<meta name="keywords" content="algorithm,searching,graph">
+<meta name="keywords" content="searching,algorithm,graph">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shortest Paths and Flow">
 <meta property="og:url" content="http://github.com/2018/12/15/Shortest-Paths-and-Flow/index.html">
@@ -103,7 +103,7 @@
 <meta property="og:image" content="http://github.com/assets/Shortest-Paths-and-Flow/1544973114900.png">
 <meta property="og:image" content="http://github.com/assets/Shortest-Paths-and-Flow/1544973389780.png">
 <meta property="og:image" content="http://github.com/assets/Shortest-Paths-and-Flow/1544973553493.png">
-<meta property="og:updated_time" content="2018-12-17T13:31:37.948Z">
+<meta property="og:updated_time" content="2019-03-12T15:04:59.179Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shortest Paths and Flow">
 <meta name="twitter:description" content="Algorithm Comments Graph Rep Running time Space Used     Bellman-Ford Single-Source Adj List 𝑂(𝑉𝐸) 𝑂(𝑉)   In DAG Out DAG Single-Source DAG Adj List 𝑂(𝑉+𝐸) 𝑂(𝑉)   Dijkstra Single-SourceNon">
@@ -203,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Accueil
           </a>
         </li>
       
@@ -246,7 +246,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Search
+            recherche
           </a>
         </li>
       
@@ -331,7 +331,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-15T21:18:00+08:00">
                 2018-12-15
@@ -495,7 +495,7 @@ Space: Θ(𝑉)</p>
 <p>ss(s,n) = min { ss(s,u) + w(u,n)  } u in V, (u,v) in Es</p>
 </blockquote>
 <p>Unlike <a href="#bellman-ford-algorithm">Bellman-Ford</a>, each edge will only be relaxed once.</p>
-<p>We need to ensure that when  <code>n</code> is processed, ALL <code>u</code> with <code>(u,n)</code> in <code>E</code> have already been processed. We can do that by processing <code>n</code> (also <code>ss(s,n)</code>) in the <a href="./Graph-Basic-and-Algorithm/#topological-sort">topological</a> order of the nodes.</p>
+<p>We need to ensure that when  <code>n</code> is processed, ALL <code>u</code> with <code>(u,n)</code> in <code>E</code> have already been processed. We can do that by processing <code>n</code> (also <code>ss(s,n)</code>) in the <a href="../Graph-Basic-and-Algorithm/#topological-sort">topological</a> order of the nodes.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DAG-Shortest-Path(G,s)</span><br><span class="line">topologically sort the vertices of G</span><br><span class="line">for each vertex n in V</span><br><span class="line">	n.d = inf</span><br><span class="line">	n.p = nil</span><br><span class="line">s.d = 0</span><br><span class="line">for each vertex u in topological order </span><br><span class="line">	for each vertex un in Adj(u)</span><br><span class="line">		Relax(u,un)</span><br></pre></td></tr></table></figure>
 <p>Running time: Θ(𝑉+𝐸)</p>
 <p><img src="/assets/Shortest-Paths-and-Flow/1545052561597.png" alt="1545052561597"></p>
@@ -503,7 +503,7 @@ Space: Θ(𝑉)</p>
 <p><em>NOT</em> allow <strong>negative</strong> weights.</p>
 <p>Maintain a set of <strong>explored nodes</strong> <code>S</code> for which we know <code>u.d = ss(s,u)</code>by variable <code>status</code><br>
 Initialize <code>S = {s}</code>, <code>s.d = 0</code>, <code>v.d = inf</code></p>
-<p>Use a **Min priority queue **<code>Q</code> on <code>V</code> with <code>d</code> as key</p>
+<p>Use a <strong>Min priority queue</strong><code>Q</code> on <code>V</code> with <code>d</code> as key</p>
 <h4 id="key-lemma"><a class="markdownIt-Anchor" href="#key-lemma"></a> Key Lemma</h4>
 <blockquote>
 <p>If all edges leaving <code>S</code> are relaxed, then <code>v.d = ss(s,v)</code>,where <code>v</code> is the vertex in <code>V-S</code> with the minimum <code>v.d</code></p>
@@ -512,7 +512,7 @@ Initialize <code>S = {s}</code>, <code>s.d = 0</code>, <code>v.d = inf</code></p
 <h4 id="pseudocode"><a class="markdownIt-Anchor" href="#pseudocode"></a> pseudocode</h4>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Dijkstra(G,s):</span><br><span class="line">for each node n in V do</span><br><span class="line">	n.d = inf, n.p = nil, n.status = unknown</span><br><span class="line">s.d = 0</span><br><span class="line">create a min priority queue Q onV with d as key</span><br><span class="line">while Q not empty	% E times</span><br><span class="line">	u = Extract-Min(Q) % O(logV) time</span><br><span class="line">	u.status = over</span><br><span class="line">	for each un in Adj(u) do</span><br><span class="line">		if un.status = unknown then</span><br><span class="line">			Relax(u,un)</span><br><span class="line">			Decrease-Key(Q,un,un.d)</span><br></pre></td></tr></table></figure>
 <p>Running time: 𝑂(𝐸log𝑉)<br>
-Very similar to <a href="./Minimum-Spanning-Tree/#Prim's-Algorithm">Prim’s algorithm</a></p>
+Very similar to <a href="../Minimum-Spanning-Tree/#prims-algorithm">Prim’s algorithm</a></p>
 <p><img src="/assets/Shortest-Paths-and-Flow/1545052597485.png" alt="1545052597485"></p>
 <h2 id="all-pairs-shortest-paths"><a class="markdownIt-Anchor" href="#all-pairs-shortest-paths"></a> All-Pairs Shortest Paths</h2>
 <p><strong>Input</strong>:</p>
@@ -540,10 +540,10 @@ Very similar to <a href="./Minimum-Spanning-Tree/#Prim's-Algorithm">Prim’s alg
 <li>If the graph is stored in adjacency lists format, can convert to adjacency matrix in 𝑂(𝑉2) time.</li>
 </ul>
 <h3 id="using-previous-algorithms"><a class="markdownIt-Anchor" href="#using-previous-algorithms"></a> Using Previous Algorithms</h3>
-<p>NOT negative cost edges: <a href="#Dijkstra-algorithm">Dijkstra’s algorithm</a><br>
+<p>NOT negative cost edges: <a href="#dijkstra-algorithm">Dijkstra’s algorithm</a><br>
 Running time: 𝑂(𝐸 log 𝑉), totally 𝑂(𝑉𝐸 log 𝑉)<br>
 Space: 𝑂 (𝑛<sup>3</sup> log 𝑛 ) for <a href="https://en.wikipedia.org/wiki/Dense_graph" target="_blank" rel="noopener">dense graphs</a></p>
-<p>HAVE negative cost edges: <a href="#Bellman-Ford-Algorithm">Bellman-Ford</a><br>
+<p>HAVE negative cost edges: <a href="#bellman-ford-algorithm">Bellman-Ford</a><br>
 Running time: 𝑂(𝑉𝐸), totally 𝑂(𝑉<sup>2</sup>𝐸)<br>
 Space: 𝑂 (𝑛<sup>4</sup>) for <a href="https://en.wikipedia.org/wiki/Dense_graph" target="_blank" rel="noopener">dense graphs</a></p>
 <hr>
@@ -552,7 +552,7 @@ Space: 𝑂 (𝑛<sup>4</sup>) for <a href="https://en.wikipedia.org/wiki/Dense_
 <p><code>d(i,j,m)</code> = length of the shortest path from <code>i</code> to <code>j</code> that <strong>contains at most <code>m</code> edges</strong>.<br>
 Use <code>D[m]</code> to denote the matrix <code>[d(i,j,m)]</code><br>
 <img src="/assets/Shortest-Paths-and-Flow/1544967538439.png" alt="1544967538439"></p>
-<h4 id="recurrence-essentially-the-same-as-in-bellman-ford"><a class="markdownIt-Anchor" href="#recurrence-essentially-the-same-as-in-bellman-ford"></a> Recurrence( essentially the same as in <a href="#Bellman-Ford-Algorithm">Bellman-Ford</a>):</h4>
+<h4 id="recurrence-essentially-the-same-as-in-bellman-ford"><a class="markdownIt-Anchor" href="#recurrence-essentially-the-same-as-in-bellman-ford"></a> Recurrence( essentially the same as in <a href="bellman-ford-algorithm">Bellman-Ford</a>):</h4>
 <blockquote>
 <p>d(i,j,m)  = min { d(i,k,m-1) + w(k,j) }	k from 1 to n<br>
 initially d(i,j,1) = w(i,j)</p>
@@ -715,9 +715,9 @@ every other matching Mʹ satisfies |Mʹ | ≤ M.</p>
       
         <div class="post-tags">
           
-            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
-          
             <a href="/tags/searching/" rel="tag"># searching</a>
+          
+            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
           
             <a href="/tags/graph/" rel="tag"># graph</a>
           
@@ -756,6 +756,10 @@ every other matching Mʹ satisfies |Mʹ | ≤ M.</p>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/30/private/Micro-Economics/" rel="prev" title="Micro Economics">
+                Micro Economics <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -809,10 +813,10 @@ every other matching Mʹ satisfies |Mʹ | ≤ M.</p>
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Table Des Matières
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Ensemble
           </li>
         </ul>
       
@@ -832,8 +836,8 @@ every other matching Mʹ satisfies |Mʹ | ≤ M.</p>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">articles</span>
                 </a>
               </div>
             
@@ -854,7 +858,7 @@ every other matching Mʹ satisfies |Mʹ | ≤ M.</p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -917,7 +921,7 @@ every other matching Mʹ satisfies |Mʹ | ≤ M.</p>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -935,7 +939,7 @@ every other matching Mʹ satisfies |Mʹ | ≤ M.</p>
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">Thème &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
