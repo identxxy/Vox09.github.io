@@ -89,3 +89,9 @@ encrypt:
 # Table of Content
 toc:
   maxDepth: 3   
+
+math:
+  engine: 'mathjax'
+  mathjax: 
+    src: custom_mathjax_source
+    config: 
