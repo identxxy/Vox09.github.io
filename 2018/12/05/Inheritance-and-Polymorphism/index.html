@@ -374,9 +374,9 @@
       
 
       
-        <h2><span id="inheritance">Inheritance</span></h2><p>_Inheritance_:    describe “is-a relationship”<br>_Polymorphism_:   derived class can perform like base class(object,pointer,reference)</p>
+        <h2 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h2><p>_Inheritance_:    describe “is-a relationship”<br>_Polymorphism_:   derived class can perform like base class(object,pointer,reference)</p>
 <p><strong>_Construction Order_: from inner to outer<br>_Destruction Order_: from outer to inner</strong></p>
-<h3><span id="member-access-control">member access control</span></h3><p>_public_:   </p>
+<h3 id="member-access-control"><a href="#member-access-control" class="headerlink" title="member access control"></a>member access control</h3><p>_public_:   </p>
 <p>member functions of the class(inner)<br>any member funtions of other classes(other class)<br>any global functions(outside)   </p>
 <p>_protected_:</p>
 <p>member functions and _friends_ of the class<br>member functions and _friends_ of its _derived classes_<br><strong>NOT</strong> for outside functions   </p>
@@ -385,7 +385,7 @@
 <blockquote>
 <p>Without inheritance, private and protected have exactly the same meaning.</p>
 </blockquote>
-<h3><span id="public-protected-private-inheritance">public protected private inheritance</span></h3><div class="table-container">
+<h3 id="public-protected-private-inheritance"><a href="#public-protected-private-inheritance" class="headerlink" title="public protected private inheritance"></a>public protected private inheritance</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -419,13 +419,13 @@
 </div>
 <p>Public inheritance implements the “is-a” relationship</p>
 <p>Private inheritance is similar to “has-a” relationship</p>
-<h3><span id="friend">Friend</span></h3><p>friend of <code>Base</code> is not friend of <code>Derived</code></p>
-<h2><span id="polymorphism">Polymorphism</span></h2><h3><span id="dynamic-bindingampvirtual-function">Dynamic Binding&amp;Virtual Function</span></h3><p><em>Once a method is declared <strong>virtual</strong> in the base class, it is automatically <strong>virtual</strong> in all directly and indirectly derived classes.</em></p>
+<h3 id="Friend"><a href="#Friend" class="headerlink" title="Friend"></a>Friend</h3><p>friend of <code>Base</code> is not friend of <code>Derived</code></p>
+<h2 id="Polymorphism"><a href="#Polymorphism" class="headerlink" title="Polymorphism"></a>Polymorphism</h2><h3 id="Dynamic-Binding-amp-Virtual-Function"><a href="#Dynamic-Binding-amp-Virtual-Function" class="headerlink" title="Dynamic Binding&amp;Virtual Function"></a>Dynamic Binding&amp;Virtual Function</h3><p><em>Once a method is declared <strong>virtual</strong> in the base class, it is automatically <strong>virtual</strong> in all directly and indirectly derived classes.</em></p>
 <p><strong>Even if derived classed do not announce it’s virtual functions.</strong></p>
 <p>Virtual destructor can make deleting a base pointer to derived object operate correctly.</p>
 <p>Do not rely on the virtual function mechanism during the execution of<br>a constructor.</p>
 <p>Similarly, if a virtual function is called inside the base class destructor,<br>it represents base class’ virtual function: when a derived class is being<br>deleted, the derived-specific portion has already been deleted before<br>the base class destructor is called.</p>
-<h3><span id="abstract-base-classabc">Abstract Base Class(ABC):</span></h3><p><strong>NO</strong> object of ABC can be created</p>
+<h3 id="Abstract-Base-Class-ABC"><a href="#Abstract-Base-Class-ABC" class="headerlink" title="Abstract Base Class(ABC):"></a>Abstract Base Class(ABC):</h3><p><strong>NO</strong> object of ABC can be created</p>
 <p>Its <strong>derived classes</strong> must implement the pure virtual functions.</p>
 <p>ABC is just an interface.</p>
 
@@ -598,7 +598,7 @@
             <div class="links-of-author motion-element">
                 
                   <span class="links-of-author-item">
-                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                    <a href="https://github.com/vox09" target="_blank" title="GitHub">
                       
                         <i class="fa fa-fw fa-github"></i>GitHub</a>
                   </span>
@@ -627,7 +627,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Inheritance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">member access control</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">public protected private inheritance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.3.</span> <span class="nav-text">Friend</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Polymorphism</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">Dynamic Binding&amp;Virtual Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text">Abstract Base Class(ABC):</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Inheritance"><span class="nav-number">1.</span> <span class="nav-text">Inheritance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#member-access-control"><span class="nav-number">1.1.</span> <span class="nav-text">member access control</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#public-protected-private-inheritance"><span class="nav-number">1.2.</span> <span class="nav-text">public protected private inheritance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Friend"><span class="nav-number">1.3.</span> <span class="nav-text">Friend</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Polymorphism"><span class="nav-number">2.</span> <span class="nav-text">Polymorphism</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dynamic-Binding-amp-Virtual-Function"><span class="nav-number">2.1.</span> <span class="nav-text">Dynamic Binding&amp;Virtual Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract-Base-Class-ABC"><span class="nav-number">2.2.</span> <span class="nav-text">Abstract Base Class(ABC):</span></a></li></ol></li></ol></div>
             
 
           </div>

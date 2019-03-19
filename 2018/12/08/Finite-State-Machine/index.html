@@ -377,7 +377,7 @@
       
 
       
-        <h2><span id="state-machine">State Machine</span></h2><ul>
+        <h2 id="State-Machine"><a href="#State-Machine" class="headerlink" title="State Machine"></a>State Machine</h2><ul>
 <li><strong>State</strong>: A set of particular condition that the machine is in at a specific time</li>
 <li>FSM is a generic synchronous sequential circuit</li>
 <li>FSM has finite state memory, inputs &amp; outputs</li>
@@ -389,16 +389,16 @@
 </ul>
 </li>
 </ul>
-<h3><span id="state-equations">State equations</span></h3><p>Describe the behavior of a clocked sequential circuit algebraically.<br>e.g.</p>
+<h3 id="State-equations"><a href="#State-equations" class="headerlink" title="State equations"></a>State equations</h3><p>Describe the behavior of a clocked sequential circuit algebraically.<br>e.g.</p>
 <blockquote>
 <p>A(t+1) = D~A~(t) = A(t)x(t) + B(t)x(t)<br>Simple form:<br>A(t+1) = Ax + Bx    or A^+^ = Ax + Bx</p>
 </blockquote>
-<h3><span id="state-diagram-and-transition-tables">State Diagram and Transition Tables</span></h3><p><img src="/assets/Finite-State-Machine/1544317606823.png" alt="1544317606823"></p>
+<h3 id="State-Diagram-and-Transition-Tables"><a href="#State-Diagram-and-Transition-Tables" class="headerlink" title="State Diagram and Transition Tables"></a>State Diagram and Transition Tables</h3><p><img src="/assets/Finite-State-Machine/1544317606823.png" alt="1544317606823"></p>
 <p>The diagram is a <strong>Mealy Machine</strong></p>
-<h2><span id="moore-machine-vs-mealy-machine">Moore Machine vs. Mealy Machine</span></h2><h3><span id="moore-machine">Moore Machine</span></h3><p>The output value is inside the state bubbles.<br>Outputs are function <strong>solely</strong> of the current states.<br>Outputs change <strong>synchronously</strong> with states.</p>
-<h3><span id="mealy-machine">Mealy Machine</span></h3><p>The output value is on the transition edge.<br>Outputs depend on state <strong>AND</strong> inputs<br>Change of inputs causes an <strong>immediate change</strong> of outputs.</p>
-<h3><span id="example">Example</span></h3><p><img src="/assets/Finite-State-Machine/1544320429228.png" alt="1544320429228"></p>
-<h2><span id="basic-design-steps-of-fsm">Basic Design Steps of FSM</span></h2><ol>
+<h2 id="Moore-Machine-vs-Mealy-Machine"><a href="#Moore-Machine-vs-Mealy-Machine" class="headerlink" title="Moore Machine vs. Mealy Machine"></a>Moore Machine vs. Mealy Machine</h2><h3 id="Moore-Machine"><a href="#Moore-Machine" class="headerlink" title="Moore Machine"></a>Moore Machine</h3><p>The output value is inside the state bubbles.<br>Outputs are function <strong>solely</strong> of the current states.<br>Outputs change <strong>synchronously</strong> with states.</p>
+<h3 id="Mealy-Machine"><a href="#Mealy-Machine" class="headerlink" title="Mealy Machine"></a>Mealy Machine</h3><p>The output value is on the transition edge.<br>Outputs depend on state <strong>AND</strong> inputs<br>Change of inputs causes an <strong>immediate change</strong> of outputs.</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p><img src="/assets/Finite-State-Machine/1544320429228.png" alt="1544320429228"></p>
+<h2 id="Basic-Design-Steps-of-FSM"><a href="#Basic-Design-Steps-of-FSM" class="headerlink" title="Basic Design Steps of FSM"></a>Basic Design Steps of FSM</h2><ol>
 <li>Understand the Specifications<br>with a block diagram</li>
 <li>Obtain an abstract specification of the FSM<br>in state-transition diagram or table</li>
 <li>Perform state reduction<br><a href="#equivalent-states">equivalent states</a> can be merged</li>
@@ -414,11 +414,11 @@
 <li><a href="#fsm-implementation-procedure">Implement the FSM</a><br>design of next-state and output logic</li>
 <li>Happy DEBUGGING!!</li>
 </ol>
-<h2><span id="fsm-implementation-procedure">FSM Implementation Procedure</span></h2><ol>
+<h2 id="FSM-Implementation-Procedure"><a href="#FSM-Implementation-Procedure" class="headerlink" title="FSM Implementation Procedure"></a>FSM Implementation Procedure</h2><ol>
 <li><p>Start with a state diagram (bubble diagram)<br> Describes the Finite State Machine according to the specification</p>
 </li>
 <li><p>Reduce the number of states if necessary/possible<br>(state reduction)</p>
-<h5><span id="equivalent-states">equivalent-states</span></h5><blockquote>
+<h5 id="equivalent-states"><a href="#equivalent-states" class="headerlink" title="equivalent-states"></a>equivalent-states</h5><blockquote>
 <p>Two internal states are said to be <strong>equivalent</strong><br>if for each input combination they give exactly the <strong>same output AND send the circuit to the same(equivalent) state.</strong></p>
 </blockquote>
 </li>
@@ -605,7 +605,7 @@
             <div class="links-of-author motion-element">
                 
                   <span class="links-of-author-item">
-                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                    <a href="https://github.com/vox09" target="_blank" title="GitHub">
                       
                         <i class="fa fa-fw fa-github"></i>GitHub</a>
                   </span>
@@ -634,7 +634,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">State Machine</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">State equations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">State Diagram and Transition Tables</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Moore Machine vs. Mealy Machine</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">Moore Machine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text">Mealy Machine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.3.</span> <span class="nav-text">Example</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">Basic Design Steps of FSM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">FSM Implementation Procedure</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">equivalent-states</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#State-Machine"><span class="nav-number">1.</span> <span class="nav-text">State Machine</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#State-equations"><span class="nav-number">1.1.</span> <span class="nav-text">State equations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#State-Diagram-and-Transition-Tables"><span class="nav-number">1.2.</span> <span class="nav-text">State Diagram and Transition Tables</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Moore-Machine-vs-Mealy-Machine"><span class="nav-number">2.</span> <span class="nav-text">Moore Machine vs. Mealy Machine</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Moore-Machine"><span class="nav-number">2.1.</span> <span class="nav-text">Moore Machine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mealy-Machine"><span class="nav-number">2.2.</span> <span class="nav-text">Mealy Machine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">2.3.</span> <span class="nav-text">Example</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-Design-Steps-of-FSM"><span class="nav-number">3.</span> <span class="nav-text">Basic Design Steps of FSM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FSM-Implementation-Procedure"><span class="nav-number">4.</span> <span class="nav-text">FSM Implementation Procedure</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#equivalent-states"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">equivalent-states</span></a></li></ol></li></ol></div>
             
 
           </div>
