@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Destinxxy">
 <meta property="og:description" content="Fundamental SignalsCTComplex Exponentiale^{st} = e^{(\sigma+j\omega)t} = e^{\sigma t}e^{j\omega t}​Where $e^{\sigma t}​$ is purely real. $\sigma&amp;gt;0​$ amplitude grows, $\sigma&amp;lt;0​$ amplitude decays">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2019-03-19T15:02:04.814Z">
+<meta property="og:updated_time" content="2019-03-19T18:08:34.808Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Signal and System">
 <meta name="twitter:description" content="Fundamental SignalsCTComplex Exponentiale^{st} = e^{(\sigma+j\omega)t} = e^{\sigma t}e^{j\omega t}​Where $e^{\sigma t}​$ is purely real. $\sigma&amp;gt;0​$ amplitude grows, $\sigma&amp;lt;0​$ amplitude decays">
@@ -411,8 +411,8 @@
 <li><strong>Causality</strong>: does not depend on future</li>
 <li><strong>Stability</strong>: BIBO(Bounded-Input Bounded Output)</li>
 <li><strong>Invertibility</strong>: distinct inputs lead to distinct outputs</li>
-<li><a href="#time_invariance">Time-invariant</a></li>
-<li><a href="#Linearity">Linearity</a></li>
+<li><a href="#time-invariance">Time-invariant</a></li>
+<li><a href="#linearity">Linearity</a></li>
 </ol>
 <h3><span id="time-invariance">Time Invariance</span></h3><p>Shifted input shifted output.</p>
 <p>Operation of time does not depends on time.</p>
@@ -442,15 +442,15 @@
 <p>DT formula $y[n] = \sum_{k=-\infty}^{\infty} x(k\Delta)\delta_\Delta(n)\Delta​$<br>CT formula $y(t) = \int_{-\infty}^{\infty}x(\tau)\delta(t-\tau)d\tau​$</p>
 <h2><span id="properties-and-characterization-of-lti-systems">Properties and characterization of LTI Systems</span></h2><p>Convolution/LTI properties: </p>
 <ol>
-<li>commutative $x(t) <em> h(t) = h(t) </em> x(t)​$</li>
-<li>distributive $x(t) <em>\{h_1(t) + h_2(t)\} = x(t)</em>h_1(t) +x(t) *h_2(t)$</li>
-<li>associative$\{x(t)<em>h_1(t)\}</em>h_2(t) = x(t)<em>\{h_1(t)</em>h_2(t)\}$</li>
+<li>commutative $x(t) \ast h(t) = h(t) \ast x(t)​$</li>
+<li>distributive $x(t) \ast\{h_1(t) + h_2(t)\} = x(t)\ast h_1(t) +x(t) \ast h_2(t)​$</li>
+<li>associative$\{x(t)\ast h_1(t)\}\ast h_2(t) = x(t)<em>\{h_1(t)</em>h_2(t)\}$</li>
 </ol>
 <p>Charactering LTI system by Impulse Responses:</p>
 <ol>
 <li>Memoryles &lt;=&gt; $h[n] = 0 ​$ for $n\ne0​$</li>
-<li>Causality &lt;=&gt; $h[n] =0$ for $n\lt0$</li>
-<li>Stability &lt;=&gt;impulse response is <em>absolute integrable/summable</em><br> $\int_{-\infty}^{\infty}\left|h(t)\right|dt \lt \infty$ or $\sum_{n=-\infty}^{\infty}\left|h(t)\right|dt \lt \infty$ </li>
+<li>Causality &lt;=&gt; $h[n] =0​$ for $n\lt0​$</li>
+<li>Stability &lt;=&gt;impulse response is <em>absolute integrable/summable</em><br> $\int_{-\infty}^{\infty}\left|h(t)\right|dt \lt \infty​$ or $\sum_{n=-\infty}^{\infty}\left|h(t)\right|dt \lt \infty​$ </li>
 </ol>
 <h2><span id="system-function-and-frequency-response">System Function and Frequency Response</span></h2><script type="math/tex; mode=display">y[n] = \sum_{k=-\infty}^\infty h[k]x[n-k] = H(z)x[n] \\ H(z) = \sum_{k=-\infty}^{\infty} h[k]z^{-k}</script><script type="math/tex; mode=display">y(t) = \int_{\tau=-\infty}^\infty h(\tau)x(t-\tau) = H(s)x(t) \\H(s) = \int_{-\infty}^{\infty}h(\tau)e^{-s\tau}d\tau</script><p>$z^n $/$ e^{sn}$ is an <strong>eigenfunction</strong> of DT/CT LTI systems. $H(z)$ or $H(s)$ is the <strong>eigenvalue</strong> that depends on the complex frequency $z$. They are also called <strong>system function</strong> of CT/DT LTI systems.</p>
 <p>$H(s)$ is a <em>Laplace Transform</em> of the CT impulse response $h(t)$<br>$H(z)$ is a <em>z-transform</em> of the DT impulse response $h[n]$ </p>
@@ -640,7 +640,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -651,7 +651,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
