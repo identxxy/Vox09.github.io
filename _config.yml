@@ -93,5 +93,5 @@ toc:
 math:
   engine: 'mathjax'
   mathjax: 
-    src: custom_mathjax_source
-    config: 
+    src: ../MathJax
+    config: ../MathJax/config 
