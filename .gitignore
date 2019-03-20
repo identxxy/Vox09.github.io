@@ -6,6 +6,3 @@ node_modules/
 public/
 .deploy*/
 *.swp
-themes/
-
-themes/next
