@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Fundamental SignalsCTComplex Exponentiale^{st} = e^{(\sigma+j\omega)t} = e^{\sigma t}e^{j\omega t}​Where $e^{\sigma t}​$ is purely real. $\sigma&amp;gt;0​$ amplitude grows, $\sigma&amp;lt;0​$ amplitude decays">
+<meta name="keywords" content="signal,system,Fourier">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Signal and System">
+<meta property="og:url" content="http://github.com/2019/03/19/Signal and System/index.html">
+<meta property="og:site_name" content="Destinxxy">
+<meta property="og:description" content="Fundamental SignalsCTComplex Exponentiale^{st} = e^{(\sigma+j\omega)t} = e^{\sigma t}e^{j\omega t}​Where $e^{\sigma t}​$ is purely real. $\sigma&amp;gt;0​$ amplitude grows, $\sigma&amp;lt;0​$ amplitude decays">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-03-19T18:15:31.839Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Signal and System">
+<meta name="twitter:description" content="Fundamental SignalsCTComplex Exponentiale^{st} = e^{(\sigma+j\omega)t} = e^{\sigma t}e^{j\omega t}​Where $e^{\sigma t}​$ is purely real. $\sigma&amp;gt;0​$ amplitude grows, $\sigma&amp;lt;0​$ amplitude decays">
+
+
+
+
+
+
+  <link rel="canonical" href="http://github.com/2019/03/19/Signal and System/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Signal and System | Destinxxy</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Destinxxy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Life should be hard</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2019/03/19/Signal and System/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Signal and System
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-03-19 23:00:00" itemprop="dateCreated datePublished" datetime="2019-03-19T23:00:00+08:00">2019-03-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-03-20 02:15:31" itemprop="dateModified" datetime="2019-03-20T02:15:31+08:00">2019-03-20</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Signal-is-Everything/" itemprop="url" rel="index"><span itemprop="name">Signal is Everything</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Fundamental-Signals"><a href="#Fundamental-Signals" class="headerlink" title="Fundamental Signals"></a>Fundamental Signals</h1><h2 id="CT"><a href="#CT" class="headerlink" title="CT"></a>CT</h2><h3 id="Complex-Exponential"><a href="#Complex-Exponential" class="headerlink" title="Complex Exponential"></a>Complex Exponential</h3><script type="math/tex; mode=display">e^{st} = e^{(\sigma+j\omega)t} = e^{\sigma t}e^{j\omega t}​</script><p>Where $e^{\sigma t}​$ is purely real. $\sigma&gt;0​$ amplitude grows, $\sigma&lt;0​$ amplitude decays.<br>$e^{j\omega t}​$ is purely imaginary and called <strong>Complex Sinusoids</strong></p>
+<p>$e^{st}u(t)$ is <strong>right-sided</strong> complex exponential<br>$e^{st}u(it)$ is <strong>left-sided</strong> complex exponential</p>
+<h3 id="Unit-Function"><a href="#Unit-Function" class="headerlink" title="Unit Function"></a>Unit Function</h3><p>$ u(t) = 1$ when $t\ge 0$<br>$ u(t) = 0$ when $t\lt 0$</p>
+<h3 id="Impulse-Signal"><a href="#Impulse-Signal" class="headerlink" title="Impulse Signal"></a>Impulse Signal</h3><p>Denoted by $\delta(t)$</p>
+<script type="math/tex; mode=display">u(t) = \int_{-\infty}^{t} \delta(\tau)d\tau \\ \delta(t) = {du(t)\over dt}</script><ol>
+<li>Zero everywhere else, infinite at $t=0​$</li>
+<li>Unit total area $\int_{-\infty}^{\infty} \delta(t)dt = 1​$</li>
+<li>Integral is the unit step  $u(t) = \int_{-\infty}^{\infty} \delta(\tau)d\tau​$</li>
+<li>Scaled impulse k$\delta(t)$ has total area k.  $\int_{-\infty}^{\infty} k\delta(t)dt = k\int_{-\infty}^{\infty}\delta(t)dt = k $</li>
+<li>Sampling property $x(t)\delta(t) = x(0)\delta(t)$</li>
+<li>Sifting property  $\int_{-\infty}^{\infty}x(t)\delta(t-t_0)dt = x(t_0)$</li>
+<li>Infinite energy. Therefore $\delta(t)$ is an idealization that cannot physically exist.</li>
+<li>Time Scaling corresponds to Magnitude Scaling $\delta(\alpha t) = {\delta(t)\over \left|{\alpha}\right|}$</li>
+</ol>
+<h2 id="DT"><a href="#DT" class="headerlink" title="DT"></a>DT</h2><h3 id="Real-Exponential"><a href="#Real-Exponential" class="headerlink" title="Real Exponential"></a>Real Exponential</h3><p>$ \alpha^n = e^{\alpha n} $ where $\alpha = e^a$</p>
+<p>$\alpha&gt;1$ growing exponential<br>$0&lt;\alpha&lt;1$ decaying exponential<br>$-1&lt;\alpha&lt;0$ decaying oscillating<br>$\alpha&lt;-1$ growing oscillating</p>
+<h3 id="Real-Sinusoids"><a href="#Real-Sinusoids" class="headerlink" title="Real Sinusoids"></a>Real Sinusoids</h3><p>$cos(\omega n) = cos(2\pi fn)$</p>
+<ol>
+<li>Periodic only if its ordinary frequency $f$ is rational number</li>
+<li>$f$ and $f\pm m(integer)$ are the same frequency.<br> $\omega$ and $\omega\pm m2\pi$ are the same frequency</li>
+<li><em>The fastest rate at which a DT signal can oscillate is at an ordinary frequency of $f={1\over2}$ or angular frequency of $\omega = \pi$</em></li>
+</ol>
+<h3 id="Complex-Exponential-1"><a href="#Complex-Exponential-1" class="headerlink" title="Complex Exponential"></a>Complex Exponential</h3><p>$z^n$ where $z = e^s = e^{\sigma + j\omega} = e^\sigma e^{j\omega}$</p>
+<p>$z^n = \left|z\right|^n e^{j\omega n}$<br>$\left|z\right|^n$is real exponential $ e^{j\omega n}$ is <strong>complex sinusoid</strong></p>
+<h3 id="Complex-Sinusoid"><a href="#Complex-Sinusoid" class="headerlink" title="Complex Sinusoid"></a>Complex Sinusoid</h3><p>$x[n] = e^{j\omega n} = cos \omega n + j sin \omega n$</p>
+<ol>
+<li>Periodic <strong>iff</strong> $\omega = {m2\pi \over N}$</li>
+<li>$e^{j\omega n} = e^{j(\omega +2k\pi)n}$ frequency is periodic for DT signal, and the highest angular frequency is $\pi$</li>
+</ol>
+<p><strong>CT and DT Complex Frequency $z = e^s$</strong></p>
+<h3 id="Impulse-Signal-and-Unit-Function"><a href="#Impulse-Signal-and-Unit-Function" class="headerlink" title="Impulse Signal and Unit Function"></a>Impulse Signal and Unit Function</h3><p>$u[n] = 1$ when $n\ge 0$<br>$u[n] = 0$ when $n\lt 0$</p>
+<p>$\delta[0] = 1$ other place 0.<br>Property same as CT.</p>
+<h1 id="System"><a href="#System" class="headerlink" title="System"></a>System</h1><h2 id="Basic-System-Characterization"><a href="#Basic-System-Characterization" class="headerlink" title="Basic System Characterization"></a>Basic System Characterization</h2><ol>
+<li><strong>Memoryless</strong>: instantaneous </li>
+<li><strong>Causality</strong>: does not depend on future</li>
+<li><strong>Stability</strong>: BIBO(Bounded-Input Bounded Output)</li>
+<li><strong>Invertibility</strong>: distinct inputs lead to distinct outputs</li>
+<li><a href="#time-invariance">Time-invariant</a></li>
+<li><a href="#linearity">Linearity</a></li>
+</ol>
+<h3 id="Time-Invariance"><a href="#Time-Invariance" class="headerlink" title="Time Invariance"></a>Time Invariance</h3><p>Shifted input shifted output.</p>
+<p>Operation of time does not depends on time.</p>
+<p>$ y(t) = \int_{t-3}^{t+2} x(\tau)d\tau$  <strong>YES</strong> : 3 time before and 2 later<br>$ y(t) = \int_{0}^{t} x(\tau)d\tau$  <strong>NO</strong>:  has a beginning point 0</p>
+<h3 id="Linearity"><a href="#Linearity" class="headerlink" title="Linearity"></a>Linearity</h3><ol>
+<li>Additive property: $x_1(t) \to x_2(t) = y_1(t) \to y_2(t)$</li>
+<li>Homogeneity (scaling): $ax_1(t) \to ay_1(t)$</li>
+</ol>
+<p><strong>Elementary Linear Operation:</strong></p>
+<ol>
+<li><em>Differentiation and integration:</em> $x^{(k)}(t)$ ( LTI! )</li>
+<li><em>Time shifting:</em>$x(t-\tau)$ ( LTI! )</li>
+<li>Multiply by a function: $g(t)x(t)$ ( not TI unless $g(t)$ is constant)</li>
+<li>time reversal, time scaling ( not TI because there is a origin)</li>
+</ol>
+<h2 id="Impulse-Response"><a href="#Impulse-Response" class="headerlink" title="Impulse Response"></a>Impulse Response</h2><p>Denoted by $h(t)$ or $h[n]$</p>
+<p>If the output of a system is given by convolving the input with a $h[n]$, then the system is LTI! <strong>Convolution is LTI</strong></p>
+<p>Typical Examples:</p>
+<ol>
+<li>$h[n] = \delta[n]$ identity function. Do nothing.</li>
+<li>$h[n] = \delta[n-m]​$ delay system. Delay the input by m.</li>
+<li>$h[n] = \delta[n]+0.3\delta[n-4]$ echo system. With echo volume 0.3.</li>
+<li>$h[n] = u[n]$ first sum system. $y[n] = \sum_{-\infty}^n x[k]$</li>
+<li>$h[n] = {1\over 3} (u[n] - u[n-3]) = {1\over 3}(h[n] + h[h-1] + h[n-2])$ window smoother.</li>
+<li>$h[n] = \delta[n] -\delta[n-1]$ first difference system.</li>
+</ol>
+<p>DT formula $y[n] = \sum_{k=-\infty}^{\infty} x(k\Delta)\delta_\Delta(n)\Delta​$<br>CT formula $y(t) = \int_{-\infty}^{\infty}x(\tau)\delta(t-\tau)d\tau​$</p>
+<h2 id="Properties-and-characterization-of-LTI-Systems"><a href="#Properties-and-characterization-of-LTI-Systems" class="headerlink" title="Properties and characterization of LTI Systems"></a>Properties and characterization of LTI Systems</h2><p>Convolution/LTI properties: </p>
+<ol>
+<li>commutative $x(t) \ast h(t) = h(t) \ast x(t)​$</li>
+<li>distributive $x(t) \ast\{h_1(t) + h_2(t)\} = x(t)\ast h_1(t) +x(t) \ast h_2(t)​$</li>
+<li>associative$\{x(t)\ast h_1(t)\}\ast h_2(t) = x(t)<em>\{h_1(t)</em>h_2(t)\}$</li>
+</ol>
+<p>Charactering LTI system by Impulse Responses:</p>
+<ol>
+<li>Memoryles &lt;=&gt; $h[n] = 0 ​$ for $n\ne0​$</li>
+<li>Causality &lt;=&gt; $h[n] =0​$ for $n\lt0​$</li>
+<li>Stability &lt;=&gt;impulse response is <em>absolute integrable/summable</em><br> $\int_{-\infty}^{\infty}\left|h(t)\right|dt \lt \infty​$ or $\sum_{n=-\infty}^{\infty}\left|h(t)\right|dt \lt \infty​$ </li>
+</ol>
+<h2 id="System-Function-and-Frequency-Response"><a href="#System-Function-and-Frequency-Response" class="headerlink" title="System Function and Frequency Response"></a>System Function and Frequency Response</h2><script type="math/tex; mode=display">y[n] = \sum_{k=-\infty}^\infty h[k]x[n-k] = H(z)x[n] \\ H(z) = \sum_{k=-\infty}^{\infty} h[k]z^{-k}</script><script type="math/tex; mode=display">y(t) = \int_{\tau=-\infty}^\infty h(\tau)x(t-\tau) = H(s)x(t) \\H(s) = \int_{-\infty}^{\infty}h(\tau)e^{-s\tau}d\tau</script><p>$z^n $/$ e^{sn}$ is an <strong>eigenfunction</strong> of DT/CT LTI systems. $H(z)$ or $H(s)$ is the <strong>eigenvalue</strong> that depends on the complex frequency $z$. They are also called <strong>system function</strong> of CT/DT LTI systems.</p>
+<p>$H(s)$ is a <em>Laplace Transform</em> of the CT impulse response $h(t)$<br>$H(z)$ is a <em>z-transform</em> of the DT impulse response $h[n]$ </p>
+<p><strong>For LTI System</strong>, the eigenvalue at different oscillation frequency $\omega$ is called <strong>frequency response</strong></p>
+<script type="math/tex; mode=display">H(s)e^{st} = H(j\omega)e^{j\omega t}</script><p> where $H(j\omega)$ is the cross-section of $H(s)$ along $j\omega$ axis.</p>
+<script type="math/tex; mode=display">H(z)z^{n} = H(e^{j\omega})e^{j\omega n}</script><p> where $H(e^{j\omega})$is the value of system function $H(z)$ along the unit circle $z=e^{j\omega}$</p>
+<h1 id="Fourier-Series"><a href="#Fourier-Series" class="headerlink" title="Fourier Series"></a>Fourier Series</h1><h2 id="CTFS"><a href="#CTFS" class="headerlink" title="CTFS"></a>CTFS</h2><script type="math/tex; mode=display">x(t) = \sum_{k=-\infty}^{\infty} a_ke^{jk{2\pi\over T}t}</script><p>The <strong>Synthesis Equation</strong>: any T-periodic functions can be expressed by many <em>Sinusoids</em> </p>
+<script type="math/tex; mode=display">a_k = {1\over T}\int_Tx(t)e^{-jk\omega_0t}dt</script><p>The <strong>Analysis Equation</strong>: calculate the coefficients of each <em>Sinusoids</em></p>
+<h3 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h3><ol>
+<li><p><strong>Linearity</strong><br>  $a_k$ for $x(t)$, $b_k$for $y(t)$, then $g(t) = Ax(t) + By(t)$ has $c_k = Aa_k +Bb_k$</p>
+</li>
+<li><p><strong>Time Shifting</strong><br>  $y(t) = x(t-t_0)$ has $b_k = e^{-j k \omega_0t_0}a_k$</p>
+</li>
+<li><p>Time reversal<br>  $y(t) = x(-t)$ has $b_k = a_{-k}$</p>
+</li>
+<li><p>Time scaling<br>  $y(t) = x(at)$ has $b_k = a_k$</p>
+</li>
+<li><p>Multiplication<br>  $a_k$ for $x(t)$, $b_k$for $y(t)$, then $g(t) =x(t)y(t)$ has $c_k = \int_{n=-\infty}^{\infty}a_nb_{k-n}$</p>
+</li>
+<li><p>Conjugation and conjugate symmetry<br>  $x^c(t)$ has $a^c_{-k}$</p>
+</li>
+<li><p>Differentiation<br>  $y(t) = {dx(t) \over dt}​$ has $b_k = jk\omega_0a_k​$</p>
+</li>
+<li><p><strong>Parseval’s relation</strong>: The average power in a periodic equals the sum of the powers in all of its harmonics<br>  ${1\over T}\int_0^T\left|x(t)\right|^2dt = \sum_{k=-\infty}^\infty \left|a_k\right|^2$</p>
+</li>
+</ol>
+<h2 id="DTFS"><a href="#DTFS" class="headerlink" title="DTFS"></a>DTFS</h2><p>$\omega_0 =  {2\pi\over N}$ is the <strong>fundamental frequency</strong><br>$f_0 = {1 \over N}$ is the <strong>fundamental frequency in ordinary frequency</strong></p>
+<p>In DT, there are only N distinct harmonics with period N!</p>
+<script type="math/tex; mode=display">x[n] = \sum_{k=0}^{N-1}a_k e^{jk({2\pi\over N})n}</script><p>the <strong>Synthesis equation</strong>: a weighted sum of N complex sinusoids.</p>
+<script type="math/tex; mode=display">a_k = {1 \over  N}\sum_{n=0}^{N-1}x[n]e^{-jk({2\pi \over N})n}</script><p>the <strong>analysis equation</strong> calculates the FS coefficients which are the weights for the harmonics.</p>
+<p>==<strong>IMPORTANT NOTE</strong>==:<br><em>for N is even, $a_{N\over 2} $ is definitely <strong>real</strong>. It has no conjugates.</em> </p>
+<h3 id="Properties-1"><a href="#Properties-1" class="headerlink" title="Properties"></a>Properties</h3><ol>
+<li><p><strong>Frequency Shifting</strong><br>$y[n] =e^{jM({w\pi \over N})n}x[n]​$ has $b_k =a_{k-M}​$</p>
+</li>
+<li><p><strong>Multiplication</strong><br>Multiply two DT periodic signals &lt;=&gt; <em>periodic convolution</em> of their DTFS coefficients. $x[n]$ and $y[n]$ are both N-periodic.</p>
+<p>$g[n] = x[n]y[n]$ has $c_k=\sum_{l\in N}a_lb_{k-l} = \sum_{l=m}^{m+N-1} a_lb_{k-l}$<br>for <em>periodic convolution</em> we sum only over one period.</p>
+</li>
+<li><p>Periodic Convolution<br>$g[n] = \sum_{r\in N}x[r]y[n-r]​$ has $c_k = Na_kb_k​$</p>
+</li>
+<li><p>First Difference<br>$x[n] -x[n-1]​$ has $a_k(1-e^{-jk({2\pi\over N})})​$</p>
+</li>
+<li><p><strong>Parseval’s Theorem</strong><br>${1\over N}\sum_{n\in N}\left|x[n]\right|^2 = \sum_{k\in N}\left|a_k\right|^2$</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div>Talk is cheap. Show me the money.</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.jpg" alt="Vox09 WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.jpg" alt="Vox09 Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/signal/" rel="tag"># signal</a>
+          
+            <a href="/tags/system/" rel="tag"># system</a>
+          
+            <a href="/tags/Fourier/" rel="tag"># Fourier</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/15/Shortest-Paths-and-Flow/" rel="next" title="Shortest Paths and Flow">
+                <i class="fa fa-chevron-left"></i> Shortest Paths and Flow
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/21/Probability/" rel="prev" title="Probability">
+                Probability <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Vox09</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/vox09" title="GitHub &rarr; https://github.com/vox09"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Fundamental-Signals"><span class="nav-text">Fundamental Signals</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CT"><span class="nav-text">CT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Complex-Exponential"><span class="nav-text">Complex Exponential</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unit-Function"><span class="nav-text">Unit Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Impulse-Signal"><span class="nav-text">Impulse Signal</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DT"><span class="nav-text">DT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Real-Exponential"><span class="nav-text">Real Exponential</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Real-Sinusoids"><span class="nav-text">Real Sinusoids</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complex-Exponential-1"><span class="nav-text">Complex Exponential</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complex-Sinusoid"><span class="nav-text">Complex Sinusoid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Impulse-Signal-and-Unit-Function"><span class="nav-text">Impulse Signal and Unit Function</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System"><span class="nav-text">System</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-System-Characterization"><span class="nav-text">Basic System Characterization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Time-Invariance"><span class="nav-text">Time Invariance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linearity"><span class="nav-text">Linearity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Impulse-Response"><span class="nav-text">Impulse Response</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties-and-characterization-of-LTI-Systems"><span class="nav-text">Properties and characterization of LTI Systems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#System-Function-and-Frequency-Response"><span class="nav-text">System Function and Frequency Response</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fourier-Series"><span class="nav-text">Fourier Series</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CTFS"><span class="nav-text">CTFS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties"><span class="nav-text">Properties</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DTFS"><span class="nav-text">DTFS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties-1"><span class="nav-text">Properties</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vox09</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.0.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#more");
+  
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
