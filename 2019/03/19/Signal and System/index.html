@@ -97,14 +97,14 @@
 
 
   <meta name="description" content="Fundamental SignalsCTComplex Exponentiale^{st} = e^{(\sigma+j\omega)t} = e^{\sigma t}e^{j\omega t}​Where $e^{\sigma t}​$ is purely real. $\sigma&amp;gt;0​$ amplitude grows, $\sigma&amp;lt;0​$ amplitude decays">
-<meta name="keywords" content="signal,system,Fourier">
+<meta name="keywords" content="Fourier,signal,system">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Signal and System">
 <meta property="og:url" content="http://github.com/2019/03/19/Signal and System/index.html">
 <meta property="og:site_name" content="Destinxxy">
 <meta property="og:description" content="Fundamental SignalsCTComplex Exponentiale^{st} = e^{(\sigma+j\omega)t} = e^{\sigma t}e^{j\omega t}​Where $e^{\sigma t}​$ is purely real. $\sigma&amp;gt;0​$ amplitude grows, $\sigma&amp;lt;0​$ amplitude decays">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-19T18:15:31.839Z">
+<meta property="og:updated_time" content="2019-03-21T13:50:22.259Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Signal and System">
 <meta name="twitter:description" content="Fundamental SignalsCTComplex Exponentiale^{st} = e^{(\sigma+j\omega)t} = e^{\sigma t}e^{j\omega t}​Where $e^{\sigma t}​$ is purely real. $\sigma&amp;gt;0​$ amplitude grows, $\sigma&amp;lt;0​$ amplitude decays">
@@ -418,7 +418,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-20 02:15:31" itemprop="dateModified" datetime="2019-03-20T02:15:31+08:00">2019-03-20</time>
+                <time title="Modified: 2019-03-21 21:50:22" itemprop="dateModified" datetime="2019-03-21T21:50:22+08:00">2019-03-21</time>
               
             
           </span>
@@ -560,50 +560,24 @@
 <p><strong>For LTI System</strong>, the eigenvalue at different oscillation frequency $\omega$ is called <strong>frequency response</strong></p>
 <script type="math/tex; mode=display">H(s)e^{st} = H(j\omega)e^{j\omega t}</script><p> where $H(j\omega)$ is the cross-section of $H(s)$ along $j\omega$ axis.</p>
 <script type="math/tex; mode=display">H(z)z^{n} = H(e^{j\omega})e^{j\omega n}</script><p> where $H(e^{j\omega})$is the value of system function $H(z)$ along the unit circle $z=e^{j\omega}$</p>
-<h1 id="Fourier-Series"><a href="#Fourier-Series" class="headerlink" title="Fourier Series"></a>Fourier Series</h1><h2 id="CTFS"><a href="#CTFS" class="headerlink" title="CTFS"></a>CTFS</h2><script type="math/tex; mode=display">x(t) = \sum_{k=-\infty}^{\infty} a_ke^{jk{2\pi\over T}t}</script><p>The <strong>Synthesis Equation</strong>: any T-periodic functions can be expressed by many <em>Sinusoids</em> </p>
-<script type="math/tex; mode=display">a_k = {1\over T}\int_Tx(t)e^{-jk\omega_0t}dt</script><p>The <strong>Analysis Equation</strong>: calculate the coefficients of each <em>Sinusoids</em></p>
-<h3 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h3><ol>
-<li><p><strong>Linearity</strong><br>  $a_k$ for $x(t)$, $b_k$for $y(t)$, then $g(t) = Ax(t) + By(t)$ has $c_k = Aa_k +Bb_k$</p>
-</li>
-<li><p><strong>Time Shifting</strong><br>  $y(t) = x(t-t_0)$ has $b_k = e^{-j k \omega_0t_0}a_k$</p>
-</li>
-<li><p>Time reversal<br>  $y(t) = x(-t)$ has $b_k = a_{-k}$</p>
-</li>
-<li><p>Time scaling<br>  $y(t) = x(at)$ has $b_k = a_k$</p>
-</li>
-<li><p>Multiplication<br>  $a_k$ for $x(t)$, $b_k$for $y(t)$, then $g(t) =x(t)y(t)$ has $c_k = \int_{n=-\infty}^{\infty}a_nb_{k-n}$</p>
-</li>
-<li><p>Conjugation and conjugate symmetry<br>  $x^c(t)$ has $a^c_{-k}$</p>
-</li>
-<li><p>Differentiation<br>  $y(t) = {dx(t) \over dt}​$ has $b_k = jk\omega_0a_k​$</p>
-</li>
-<li><p><strong>Parseval’s relation</strong>: The average power in a periodic equals the sum of the powers in all of its harmonics<br>  ${1\over T}\int_0^T\left|x(t)\right|^2dt = \sum_{k=-\infty}^\infty \left|a_k\right|^2$</p>
-</li>
-</ol>
-<h2 id="DTFS"><a href="#DTFS" class="headerlink" title="DTFS"></a>DTFS</h2><p>$\omega_0 =  {2\pi\over N}$ is the <strong>fundamental frequency</strong><br>$f_0 = {1 \over N}$ is the <strong>fundamental frequency in ordinary frequency</strong></p>
-<p>In DT, there are only N distinct harmonics with period N!</p>
-<script type="math/tex; mode=display">x[n] = \sum_{k=0}^{N-1}a_k e^{jk({2\pi\over N})n}</script><p>the <strong>Synthesis equation</strong>: a weighted sum of N complex sinusoids.</p>
-<script type="math/tex; mode=display">a_k = {1 \over  N}\sum_{n=0}^{N-1}x[n]e^{-jk({2\pi \over N})n}</script><p>the <strong>analysis equation</strong> calculates the FS coefficients which are the weights for the harmonics.</p>
-<p>==<strong>IMPORTANT NOTE</strong>==:<br><em>for N is even, $a_{N\over 2} $ is definitely <strong>real</strong>. It has no conjugates.</em> </p>
-<h3 id="Properties-1"><a href="#Properties-1" class="headerlink" title="Properties"></a>Properties</h3><ol>
-<li><p><strong>Frequency Shifting</strong><br>$y[n] =e^{jM({w\pi \over N})n}x[n]​$ has $b_k =a_{k-M}​$</p>
-</li>
-<li><p><strong>Multiplication</strong><br>Multiply two DT periodic signals &lt;=&gt; <em>periodic convolution</em> of their DTFS coefficients. $x[n]$ and $y[n]$ are both N-periodic.</p>
-<p>$g[n] = x[n]y[n]$ has $c_k=\sum_{l\in N}a_lb_{k-l} = \sum_{l=m}^{m+N-1} a_lb_{k-l}$<br>for <em>periodic convolution</em> we sum only over one period.</p>
-</li>
-<li><p>Periodic Convolution<br>$g[n] = \sum_{r\in N}x[r]y[n-r]​$ has $c_k = Na_kb_k​$</p>
-</li>
-<li><p>First Difference<br>$x[n] -x[n-1]​$ has $a_k(1-e^{-jk({2\pi\over N})})​$</p>
-</li>
-<li><p><strong>Parseval’s Theorem</strong><br>${1\over N}\sum_{n\in N}\left|x[n]\right|^2 = \sum_{k\in N}\left|a_k\right|^2$</p>
-</li>
-</ol>
 
       
     </div>
 
     
       
+
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\2019\03\21\Fourier-Transform\" rel="bookmark">Fourier Transform</a></div>
+      
+    </li>
+  
+  </ul>
 
 
     
@@ -658,11 +632,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/Fourier/" rel="tag"># Fourier</a>
+          
             <a href="/tags/signal/" rel="tag"># signal</a>
           
             <a href="/tags/system/" rel="tag"># system</a>
-          
-            <a href="/tags/Fourier/" rel="tag"># Fourier</a>
           
         </div>
       
@@ -685,8 +659,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/21/Probability/" rel="prev" title="Probability">
-                Probability <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/21/Fourier-Transform/" rel="prev" title="Fourier Transform">
+                Fourier Transform <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -756,7 +730,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -791,7 +765,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -852,7 +828,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">22</span>
+                      
+                    
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -905,7 +883,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Fundamental-Signals"><span class="nav-text">Fundamental Signals</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CT"><span class="nav-text">CT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Complex-Exponential"><span class="nav-text">Complex Exponential</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unit-Function"><span class="nav-text">Unit Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Impulse-Signal"><span class="nav-text">Impulse Signal</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DT"><span class="nav-text">DT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Real-Exponential"><span class="nav-text">Real Exponential</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Real-Sinusoids"><span class="nav-text">Real Sinusoids</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complex-Exponential-1"><span class="nav-text">Complex Exponential</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complex-Sinusoid"><span class="nav-text">Complex Sinusoid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Impulse-Signal-and-Unit-Function"><span class="nav-text">Impulse Signal and Unit Function</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System"><span class="nav-text">System</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-System-Characterization"><span class="nav-text">Basic System Characterization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Time-Invariance"><span class="nav-text">Time Invariance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linearity"><span class="nav-text">Linearity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Impulse-Response"><span class="nav-text">Impulse Response</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties-and-characterization-of-LTI-Systems"><span class="nav-text">Properties and characterization of LTI Systems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#System-Function-and-Frequency-Response"><span class="nav-text">System Function and Frequency Response</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fourier-Series"><span class="nav-text">Fourier Series</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CTFS"><span class="nav-text">CTFS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties"><span class="nav-text">Properties</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DTFS"><span class="nav-text">DTFS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties-1"><span class="nav-text">Properties</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Fundamental-Signals"><span class="nav-text">Fundamental Signals</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CT"><span class="nav-text">CT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Complex-Exponential"><span class="nav-text">Complex Exponential</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unit-Function"><span class="nav-text">Unit Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Impulse-Signal"><span class="nav-text">Impulse Signal</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DT"><span class="nav-text">DT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Real-Exponential"><span class="nav-text">Real Exponential</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Real-Sinusoids"><span class="nav-text">Real Sinusoids</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complex-Exponential-1"><span class="nav-text">Complex Exponential</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complex-Sinusoid"><span class="nav-text">Complex Sinusoid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Impulse-Signal-and-Unit-Function"><span class="nav-text">Impulse Signal and Unit Function</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System"><span class="nav-text">System</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-System-Characterization"><span class="nav-text">Basic System Characterization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Time-Invariance"><span class="nav-text">Time Invariance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linearity"><span class="nav-text">Linearity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Impulse-Response"><span class="nav-text">Impulse Response</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties-and-characterization-of-LTI-Systems"><span class="nav-text">Properties and characterization of LTI Systems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#System-Function-and-Frequency-Response"><span class="nav-text">System Function and Frequency Response</span></a></li></ol></li></ol></div>
             
 
           </div>
