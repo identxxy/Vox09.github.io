@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Random Experiments random experimentan experimental procedure and one or more measurements or observations. sample spacethe set of all possible outcomes. discrete sample space if the number of outcome">
+<meta name="keywords" content="probability">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Probability">
+<meta property="og:url" content="http://github.com/2019/03/21/Probability/index.html">
+<meta property="og:site_name" content="Destinxxy">
+<meta property="og:description" content="Random Experiments random experimentan experimental procedure and one or more measurements or observations. sample spacethe set of all possible outcomes. discrete sample space if the number of outcome">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-03-25T14:09:29.569Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Probability">
+<meta name="twitter:description" content="Random Experiments random experimentan experimental procedure and one or more measurements or observations. sample spacethe set of all possible outcomes. discrete sample space if the number of outcome">
+
+
+
+
+
+
+  <link rel="canonical" href="http://github.com/2019/03/21/Probability/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Probability | Destinxxy</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Destinxxy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Life should be hard</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2019/03/21/Probability/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Probability
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-03-21 23:00:00" itemprop="dateCreated datePublished" datetime="2019-03-21T23:00:00+08:00">2019-03-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-03-25 22:09:29" itemprop="dateModified" datetime="2019-03-25T22:09:29+08:00">2019-03-25</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Matters-All-THings/" itemprop="url" rel="index"><span itemprop="name">Matters All THings</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Random-Experiments"><a href="#Random-Experiments" class="headerlink" title="Random Experiments"></a>Random Experiments</h1><ol>
+<li><strong>random experiment</strong><br>an experimental procedure and one or more measurements or observations.</li>
+<li><strong>sample space</strong><br>the set of all possible outcomes.<ul>
+<li>discrete sample space if the number of outcomes is countable</li>
+<li>continuous sample space if not countable</li>
+</ul>
+</li>
+<li><strong>event</strong><br>certain conditions for an outcome. It can be represented by a <em>subset</em> A of the <em>sample space</em> S<ul>
+<li>An event A <em>occurs</em> if the outcome is a member of A.</li>
+<li>the <em>certain event</em>, S, consists of all outcomes.</li>
+<li>the <em>null event</em>, $\phi​$, contains no outcomes.</li>
+<li>An <em>elementary event</em> contains only one outcome.</li>
+</ul>
+</li>
+</ol>
+<p>the set of all possible outcomes.</p>
+<h2 id="Replacement-and-Ordering"><a href="#Replacement-and-Ordering" class="headerlink" title="Replacement and Ordering"></a>Replacement and Ordering</h2><p>We can choose $k$ objects from a set $A$ that has $n$ members in<br>different ways</p>
+<p>Replacement:</p>
+<ul>
+<li><em>With replacement</em>: after selecting an object and noting its identity, the object is put back before the next selection.</li>
+<li><em>Without replacement</em>: the object is not put back before the next selection.</li>
+</ul>
+<p>Ordering:</p>
+<ul>
+<li><em>With ordering</em>: the order in which we draw the objects is recorded</li>
+<li><em>Without ordering</em>: only the identity and number of times each object is drawn is important</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Replacement</th>
+<th>ordering</th>
+<th>number of outcomes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Y</td>
+<td>N</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Y</td>
+<td>$n^k$</td>
+</tr>
+<tr>
+<td>N</td>
+<td>N</td>
+<td>${n\choose k}={n!\over (n-k)! k!}$</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Y</td>
+<td>${n\choose k}k!={n!\over(n-k)!}$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note: when with replacement and without ordering, outcomes are <strong>NOT</strong> equally probable. There are two ways to choose a same object. But they counts the same outcome.</p>
+<h2 id="Sequential-Experiments"><a href="#Sequential-Experiments" class="headerlink" title="Sequential Experiments"></a>Sequential Experiments</h2><p>Experiments that involve <strong>repetitions</strong> or <strong>multiple participants</strong> can often be viewed as a <em>sequence of sub-experiments.</em><br>The sub-experiments can be <strong>identical</strong> or <strong>non-identical</strong>, <strong>dependent</strong> or <strong>independent</strong>. The individual sample spaces can be identical or non-identical.<br>If the experiments are identical, the individual sample spaces are identical but not vice versa.</p>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><ol>
+<li>Tossing a coin <em>n</em> times:<ul>
+<li>repetition</li>
+<li>independent</li>
+<li>identical sub-experiments</li>
+<li>identical individual sample spaces</li>
+</ul>
+</li>
+<li>Checking the number of students sleeping in class:<ul>
+<li>multiple participants</li>
+<li>independent? (maybe not. Others sleep then I sleep)</li>
+<li>identical individual sample spaces</li>
+<li>non-identical sub-experiments (Dalaos do not sleep but I do)</li>
+</ul>
+</li>
+</ol>
+<h1 id="Mean-and-Moments"><a href="#Mean-and-Moments" class="headerlink" title="Mean and Moments"></a>Mean and Moments</h1><h2 id="Discrete-RV"><a href="#Discrete-RV" class="headerlink" title="Discrete RV"></a>Discrete RV</h2><h3 id="Mean"><a href="#Mean" class="headerlink" title="Mean"></a>Mean</h3><p>Expectation/Mean of a RV (if the sum below converges absolutely)</p>
+<script type="math/tex; mode=display">m_X = E[X]=\sum_{x\in S_x}xp_X(x) = \sum_k x_kp_X(x_k)​</script><p>Expectation/Mean of a function of a RV $Z=g(x)​$</p>
+<script type="math/tex; mode=display">E[Z]=E[g(x)]=\sum_k g(x_k)p_X(x_k)​</script><p><strong>IMPORTANT</strong><br>$E[ag(X)+bh(x)+c]\\ = aE[g(X)]+bE[h(X)]+c\\ \ne ag(E[X])+bh(E[X])+c$</p>
+<h3 id="Variance"><a href="#Variance" class="headerlink" title="Variance"></a>Variance</h3><script type="math/tex; mode=display">Var[X] = E[D^2]=E[(X-E[X])^2]\\Std[X]=\sqrt {Var[X]}</script><p>Useful formula<br>$Var[X] = E[X^2]-(E[X])^2 \\Var[cX] = c^2Var[X]$</p>
+<h3 id="Moments"><a href="#Moments" class="headerlink" title="Moments"></a>Moments</h3><p>The <em>Mean</em> and <em>variance</em> are examples of the moments of a RV.</p>
+<p>The $n^{th}$ <strong>moment</strong> of a RV<br>$E[X^n] = \sum_kx_k^np_X(x_k)$</p>
+<p>The $n^{th}$ <strong>central moment</strong> of a RV<br>$E[(X-E[X])^n] = \sum_k(x_k-E[X])^np_X(x_k)$</p>
+<p>Important moments:<br>1st moment, $E[X]$ is the <em>Mean</em><br>2nd central moment, $E[(x-E[x])^2]$ is the <em>variance</em></p>
+<h2 id="Continuous-RV"><a href="#Continuous-RV" class="headerlink" title="Continuous RV"></a>Continuous RV</h2><h3 id="Mean-1"><a href="#Mean-1" class="headerlink" title="Mean"></a>Mean</h3><p>Expectation/Mean of a continuous RV(if the integral below converges absolutely)</p>
+<script type="math/tex; mode=display">E[X]=\int_{-\infty}^\infty xf_X(x)​</script><p>Expectation/Mean of a function of a continuous RV</p>
+<script type="math/tex; mode=display">E[Y] = \int_{-\infty}^\infty g(x)f_X(x)dx</script><p><strong>Linearity of Expectation</strong><br>Generally $E[\sum_i a_ig_i(X)]=\sum_i a_iE[g_i(X)] \ne \sum a_ig_i(E[X])$<br>if $g_i$ are <strong>all linear</strong>, the the tree above equal.</p>
+<h3 id="Variance-1"><a href="#Variance-1" class="headerlink" title="Variance"></a>Variance</h3><p>sometime denoted as $\sigma_x^2$<br>All same as <a href="#Variance">Variance in discrete RV</a></p>
+<h3 id="Moments-1"><a href="#Moments-1" class="headerlink" title="Moments"></a>Moments</h3><p>The $n^{th}$ <strong>moment</strong> of a RV<br>$E[X^n] = \int_{-\infty}^\infty x^nf_X(x)$</p>
+<p>The $n^{th}$ <strong>central moment</strong> of a RV<br>$E[(X-E[X])^n] = \int_{-\infty}^\infty(x-E[X])^nf_X(x_k)$</p>
+<p>Important moments:<br>1st moment, $E[X]$ is the <em>Mean</em><br>2nd central moment, $E[(x-E[x])^2]$ is the <em>variance</em></p>
+<h3 id="Minimum-Mean-Squared-Error-Estimation"><a href="#Minimum-Mean-Squared-Error-Estimation" class="headerlink" title="Minimum Mean Squared Error Estimation"></a>Minimum Mean Squared Error Estimation</h3><script type="math/tex; mode=display">MSE(c) = E[(X-c)^2]=\int_{-\infty}^\infty(x-c)^2f_X(x)dx</script><p>Thus, the best guess is $c=E[X]$! Also, the variance is ten the <em>minimum</em> mean squared error associated with the best guess.</p>
+<h1 id="Random-Variables"><a href="#Random-Variables" class="headerlink" title="Random Variables"></a>Random Variables</h1><h2 id="Discrete-RV-1"><a href="#Discrete-RV-1" class="headerlink" title="Discrete RV"></a>Discrete RV</h2><p>We often use probability mass function(<strong>PMF</strong>)  to describe the property of a Discrete RV. It is like a <em>histogram</em>.</p>
+<p>The summation of <strong>PMF</strong>, is called the cumulative distribution(<strong>CDF</strong>). </p>
+<p><strong>CDF</strong> of discrete RV is discrete. It is like a series of stairs that always jumping up. Each edge contains the beginning point but exclude the ending point.</p>
+<p>Discrete RV also have probability density function(<strong>PDF</strong>). It is similar to <strong>PMF</strong>, just substitute the bar in histogram with a peak\arrow ($\delta(x-x_k)$) at the left point of an edge.</p>
+<h3 id="Bernoulli"><a href="#Bernoulli" class="headerlink" title="Bernoulli"></a>Bernoulli</h3><p>X only take two values, either 1 or 0.</p>
+<script type="math/tex; mode=display">P_X[0] = 1-p\quad P_X[1] = p​</script><p>Mean $E[X]=p​$<br>Variance $Var[X] = p(1-p)​$</p>
+<p>Usage:</p>
+<ul>
+<li>Single coin toss</li>
+<li>Occurrence of an event of interest</li>
+</ul>
+<h3 id="Binomial"><a href="#Binomial" class="headerlink" title="Binomial"></a>Binomial</h3><p>The number of times that an event occurs.</p>
+<script type="math/tex; mode=display">P_X[k]={n\choose k} p^k(1-p)^{n-k}\quad\text{for k = 0,1,2...}</script><p>Mean $E[X] = np​$<br>Variance $Var[X]=np(1-p)​$</p>
+<p>Usage:</p>
+<ul>
+<li>Multiple coin flips</li>
+<li>Occurrence of a property in individuals of a population(e.g. bit errors in a transmission)</li>
+</ul>
+<p>When $n\to\infty$ , turn to <a href="#Poisson">Poisson RV</a></p>
+<h3 id="Geometric"><a href="#Geometric" class="headerlink" title="Geometric"></a>Geometric</h3><p>Suppose a random experiment is repeated, In each repeat, it occurs independently and with probability $p$</p>
+<h4 id="Trials"><a href="#Trials" class="headerlink" title="Trials"></a>Trials</h4><p>The number of trials <strong>until</strong> the first success occurs.</p>
+<script type="math/tex; mode=display">P_X[k]=(1-p)^{k-1}p\quad\text{for k = 1,2,...}​</script><p>Mean $E[X]={1 \over p}$<br>Variance $Var[X] = {1-p\over p^2}​$</p>
+<h4 id="Failures"><a href="#Failures" class="headerlink" title="Failures"></a>Failures</h4><p>The number of failures <strong>before</strong> the first success, $X’ = X-1​$ is also a geometric RV.</p>
+<script type="math/tex; mode=display">P_{X’}[k]=(1-p)^kp\quad\text{for k = 0,1,2...}​</script><p>Mean $E[X‘]={1-p \over p}$<br>Variance $Var[M’]={1-p\over p^2}$</p>
+<p>Usage:</p>
+<ul>
+<li>Number of transmissions required until an error free transmission. </li>
+</ul>
+<p><strong>Memoryless property:</strong><br>No matter how hard you ever tried, the probability to succeed remains the same.</p>
+<h3 id="Uniform-discrete"><a href="#Uniform-discrete" class="headerlink" title="Uniform(discrete)"></a>Uniform(discrete)</h3><p>Values in a set of integers are with equal probability. </p>
+<script type="math/tex; mode=display">S_X=\{0,1,2...,M-1\}\\ P_X[k]={1\over M}\quad \text{for k }\in S_x​</script><p>Mean $E[X] = {M-1\over 2}={b-a\over 2}​$<br>Variance $Var[X]={M^2-1\over 12}={(b-a+1)^2-1\over12}​$ </p>
+<h3 id="Poisson"><a href="#Poisson" class="headerlink" title="Poisson"></a>Poisson</h3><p>The number of occurrences of an event in a certain interval of time or space.</p>
+<script type="math/tex; mode=display">P_X[k]={\alpha^k \over k!}e^{-\alpha}\quad \text{for k=0,1,2...}​</script><p>The parameter $\alpha​$ is the average number of events in the interval.</p>
+<p>Mean $E[N]=\alpha$<br>Variance $Var[N]=\alpha$</p>
+<p>Usage:</p>
+<ul>
+<li>Number of hits on a website in one hour</li>
+<li>number of particles emitted by a radioactive mass in a fixed time period</li>
+</ul>
+<p>Relationship with <a href="#Binomial">Binomial RV</a>:<br>For a Binomial random variable with $p = {\alpha\over n}$:<br>$p_0=(1-p)^n = (1-{\alpha\over n})^n \to e^{-\alpha} \quad\text{as}\ n\to\infty$<br>${p_{k+1}\over p_k} = {(n-k)p\over(k+1)(1-p)}={(1-k/n)\alpha\over(k+1)(1-\alpha/n)}$<br>when$n\to\infty\quad{p_{k+1}\over p_k}={\alpha\over k+1}​$</p>
+<h2 id="Continuous-RV-1"><a href="#Continuous-RV-1" class="headerlink" title="Continuous RV"></a>Continuous RV</h2><p>For continuous, probability density function(<strong>PDF</strong>) is like <strong>PMF</strong> for discrete RV.</p>
+<p>The integral of <strong>PDF</strong>, is called the cumulative distribution function(<strong>CDF</strong>).</p>
+<p><strong>CDF</strong> of continuous RV is usually continuous, which means for any point $x=a\quad P[X=a] = 0​$. If there is a jump (discontinuous point) in CDF at $x=b​$, then it must be a discrete point where $P[X=b] = const​$. </p>
+<h3 id="Uniform-continuous"><a href="#Uniform-continuous" class="headerlink" title="Uniform(continuous)"></a>Uniform(continuous)</h3><p>Intervals of the same length on the domain have the same probability. </p>
+<script type="math/tex; mode=display">S_X=[a,b]\\ f_X(x)={1\over {b-a}}\quad \text{for x }\in S_x\\ F_X(x)={x-a\over {b-a}}\quad \text{for x }\in S_x</script><p>Mean $E[X] = {a+b\over 2}​$<br>Variance $Var[X]={(b-a)^2\over 12}​$ </p>
+<h3 id="Exponential"><a href="#Exponential" class="headerlink" title="Exponential"></a>Exponential</h3><p>The length of time that wait next train.</p>
+<script type="math/tex; mode=display">f_X(x)=\lambda e^{-\lambda x}\quad\text{when }x\gt 0\\ F_X(x)=1-e^{-\lambda x}\quad\text{when }x\gt 0​</script><p>Mean $E[X]={1\over\lambda}​$<br>Variance $Var[X] = {1\over \lambda^2}​$</p>
+<p><strong>Memoryless property:</strong><br>No matter how hard you ever wait, the probability to meet the right one remains the same.</p>
+<h3 id="Gaussian-Normal"><a href="#Gaussian-Normal" class="headerlink" title="Gaussian(Normal)"></a>Gaussian(Normal)</h3><p>Variables that tend to occur around a certain value,m , the mean.</p>
+<script type="math/tex; mode=display">f_X= {1\over \sqrt{2\pi}\sigma}e^{-(x-m)^2\over 2\sigma^2}\ ​</script><p>we define the CDF of the”normalized” Gaussian with mean m=0 and standard deviation $\sigma=1​$ as </p>
+<script type="math/tex; mode=display">\Phi(x)={1\over \sqrt{2\pi}}\int_{-\infty}^x e^{-t^2 \over 2}dt​</script><p>Then the CDF of a Gaussian RV, $X​$, with mean $m​$ and standard deviation $\sigma​$ is</p>
+<script type="math/tex; mode=display">F_X(x)=\Phi({x-m\over \sigma})={1\over \sqrt{2\pi}}\int_{-\infty}^{x-m\over\sigma} e^{-t^2 \over 2}dt​</script><p> <strong>Q-function</strong><br>$Q(x) = 1-\Phi(x)=P[X&gt;x]$<br>By symmetry, $Q(0)={1\over 2}$ and $Q(x)=\Phi(-x)$</p>
+<h2 id="Transformation"><a href="#Transformation" class="headerlink" title="Transformation"></a>Transformation</h2><p>Given a random variable $X$ with known distribution and a real valued<br>function $g(x)$, such that $Y = g(X)$ is also a random variable. Find the<br>distribution of $Y$.</p>
+<h3 id="Key-idea"><a href="#Key-idea" class="headerlink" title="Key idea"></a>Key idea</h3><p>To find  <strong>equivalent</strong> events in X for suitably defined events in Y.</p>
+<h3 id="Approaches"><a href="#Approaches" class="headerlink" title="Approaches"></a>Approaches</h3><ol>
+<li>If Y is <em>Discrete</em>, find the <strong>PMF</strong> at the possible values of Y<br>$p_Y(k) = P[Y=k]=P[\{X:g(X)=k\}]$</li>
+<li>If Y is <em>continuous</em>, there are two approaches:<ul>
+<li>Find the <strong>CDF</strong> of Y<br>$F_Y(y)=P[Y\le y]=P[\{X:g(X)\le y\}]$</li>
+<li>Find the <strong>PDF</strong> of Y<br>$f_Y(y_0)=\sum_{x:g(x)=y}{f_X(x_)\over |g’(x)|}$<br><strong>VERY USEFUL</strong>    $\uparrow\uparrow\uparrow\uparrow\uparrow​$</li>
+</ul>
+</li>
+</ol>
+<h1 id="Conditional-Probability"><a href="#Conditional-Probability" class="headerlink" title="Conditional Probability"></a>Conditional Probability</h1><h2 id="Exclusive-and-Independent"><a href="#Exclusive-and-Independent" class="headerlink" title="Exclusive and Independent"></a>Exclusive and Independent</h2><ul>
+<li>Mutually Exclusive $P[A\cap B] = 0\quad P[A\cup B]=P[A]+P[B]​$</li>
+<li>Independent<br>$P[A\cap B] = P[A]P[B] \quad P[A|B] = P[A]$<br>Dependent<br>$P[A\cap B] = P[A]P[B|A] = P[B]P[A|B]\quad P[A|B]={P[A\cap B]\over P[B]}​$</li>
+</ul>
+<h2 id="Total-Probability-Theorem"><a href="#Total-Probability-Theorem" class="headerlink" title="Total Probability Theorem:"></a>Total Probability Theorem:</h2><p>If $B_1,B_2,B_3…B_n$ partition the sample space, then for any event A,</p>
+<script type="math/tex; mode=display">P[A] = \sum_{i=1}^n P[A|B_i]P[B_i]​</script><p>This theorem lets us spilt the problem of computing the probability of A into smaller(easier) sub-problems!</p>
+<h2 id="Bayes-Rule"><a href="#Bayes-Rule" class="headerlink" title="Bayes Rule"></a>Bayes Rule</h2><p>If $B_1,B_2,B_3…B_n$ be a partition of the sample space S, For an event A,</p>
+<script type="math/tex; mode=display">P[B_j|A]={P[A\cap B_j]\over P[A]} = {P[A|B_j]P[B_j] \over \sum_{k=1}^n P[A|B_k]P[B_k]}</script><p>Bayes’ Rule lets us <em>switch</em> which event is the conditioning event.</p>
+<h2 id="PMF-PDF-CDF"><a href="#PMF-PDF-CDF" class="headerlink" title="PMF PDF CDF"></a>PMF PDF CDF</h2><p><strong>PMF</strong>  $p_X(x|C)=P[X=x|C] = {P[\{X=x\}\cap C]\over P[C]}$</p>
+<p><strong>PDF</strong>  $F_X(x|C)={P[\{X\le x\}\cap C]\over P[C]}$<br>Using conditioning $F_X(x) = \sum_iF_X(x|B_i)P[B_i]$</p>
+<p><strong>CDF</strong>  $f_X(x|C)={d\over dx}F_X(x|C)$<br>Using conditioning $f_X(x)=\sum_if_x(x|B_i)P[B_i]$</p>
+<h2 id="Mean-and-Variance"><a href="#Mean-and-Variance" class="headerlink" title="Mean and Variance"></a>Mean and Variance</h2><p>Mean</p>
+<script type="math/tex; mode=display">m_{X|B}=E[X|B] = \sum_{x\in S_X}xp_X(x|B)=\sum_k x_kp_X(x_k|B)</script><p>Variance</p>
+<script type="math/tex; mode=display">Var[X|B]=E[X^2|B]-m^2_{X|B}</script><p>Using conditioning to compute expectation</p>
+<script type="math/tex; mode=display">E[X] = \sum_i E[X|B_i]P[B_i]</script>
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div>Talk is cheap. Show me the money.</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.jpg" alt="Vox09 WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/alipay.jpg" alt="Vox09 Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/probability/" rel="tag"># probability</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/21/Fourier-Transform/" rel="next" title="Fourier Transform">
+                <i class="fa fa-chevron-left"></i> Fourier Transform
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Vox09</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/vox09" title="GitHub &rarr; https://github.com/vox09"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Random-Experiments"><span class="nav-text">Random Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Replacement-and-Ordering"><span class="nav-text">Replacement and Ordering</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sequential-Experiments"><span class="nav-text">Sequential Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Examples"><span class="nav-text">Examples</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mean-and-Moments"><span class="nav-text">Mean and Moments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Discrete-RV"><span class="nav-text">Discrete RV</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mean"><span class="nav-text">Mean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Variance"><span class="nav-text">Variance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Moments"><span class="nav-text">Moments</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Continuous-RV"><span class="nav-text">Continuous RV</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mean-1"><span class="nav-text">Mean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Variance-1"><span class="nav-text">Variance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Moments-1"><span class="nav-text">Moments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Minimum-Mean-Squared-Error-Estimation"><span class="nav-text">Minimum Mean Squared Error Estimation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Random-Variables"><span class="nav-text">Random Variables</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Discrete-RV-1"><span class="nav-text">Discrete RV</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bernoulli"><span class="nav-text">Bernoulli</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Binomial"><span class="nav-text">Binomial</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Geometric"><span class="nav-text">Geometric</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Trials"><span class="nav-text">Trials</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Failures"><span class="nav-text">Failures</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Uniform-discrete"><span class="nav-text">Uniform(discrete)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Poisson"><span class="nav-text">Poisson</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Continuous-RV-1"><span class="nav-text">Continuous RV</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Uniform-continuous"><span class="nav-text">Uniform(continuous)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Exponential"><span class="nav-text">Exponential</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gaussian-Normal"><span class="nav-text">Gaussian(Normal)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transformation"><span class="nav-text">Transformation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Key-idea"><span class="nav-text">Key idea</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Approaches"><span class="nav-text">Approaches</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conditional-Probability"><span class="nav-text">Conditional Probability</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Exclusive-and-Independent"><span class="nav-text">Exclusive and Independent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Total-Probability-Theorem"><span class="nav-text">Total Probability Theorem:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayes-Rule"><span class="nav-text">Bayes Rule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PMF-PDF-CDF"><span class="nav-text">PMF PDF CDF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mean-and-Variance"><span class="nav-text">Mean and Variance</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vox09</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.0.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#more");
+  
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
