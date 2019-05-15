@@ -7,3 +7,4 @@ public/
 .deploy*/
 *.swp
 themes/next/*
+!themes/next/_config.yml
