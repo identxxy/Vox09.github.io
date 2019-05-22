@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="First OrderLinearfirst order linear equation standard form: {dy\over dt}+p(t)y=g(t)​In some cases it is possible to solve a first order linear equation immediately byintegrating the equation.Unfortuna">
+  <meta name="description" content="First OrderLinearfirst order linear equation standard form: {dy\over dt}+p(t)y=g(t)In some cases it is possible to solve a first order linear equation immediately byintegrating the equation.Unfortunat">
 <meta name="keywords" content="ODE">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Differential Equation">
 <meta property="og:url" content="http://github.com/2019/04/10/Differential-Equation/index.html">
 <meta property="og:site_name" content="Destinxxy">
-<meta property="og:description" content="First OrderLinearfirst order linear equation standard form: {dy\over dt}+p(t)y=g(t)​In some cases it is possible to solve a first order linear equation immediately byintegrating the equation.Unfortuna">
+<meta property="og:description" content="First OrderLinearfirst order linear equation standard form: {dy\over dt}+p(t)y=g(t)In some cases it is possible to solve a first order linear equation immediately byintegrating the equation.Unfortunat">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-10T15:23:24.175Z">
+<meta property="og:updated_time" content="2019-05-22T04:11:33.297Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Differential Equation">
-<meta name="twitter:description" content="First OrderLinearfirst order linear equation standard form: {dy\over dt}+p(t)y=g(t)​In some cases it is possible to solve a first order linear equation immediately byintegrating the equation.Unfortuna">
+<meta name="twitter:description" content="First OrderLinearfirst order linear equation standard form: {dy\over dt}+p(t)y=g(t)In some cases it is possible to solve a first order linear equation immediately byintegrating the equation.Unfortunat">
 
 
 
@@ -378,12 +378,24 @@
                 
               
 
-              <time title="Created: 2019-04-10 23:00:00 / Modified: 23:23:24" itemprop="dateCreated datePublished" datetime="2019-04-10T23:00:00+08:00">2019-04-10</time>
+              <time title="Created: 2019-04-10 23:00:00" itemprop="dateCreated datePublished" datetime="2019-04-10T23:00:00+08:00">2019-04-10</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-22 12:11:33" itemprop="dateModified" datetime="2019-05-22T12:11:33+08:00">2019-05-22</time>
               
             
           </span>
@@ -436,7 +448,7 @@
 
       
         <h2 id="First-Order"><a href="#First-Order" class="headerlink" title="First Order"></a>First Order</h2><h3 id="Linear"><a href="#Linear" class="headerlink" title="Linear"></a>Linear</h3><p><strong>first order linear equation</strong> standard form:</p>
-<script type="math/tex; mode=display">{dy\over dt}+p(t)y=g(t)​</script><p>In some cases it is possible to solve a first order linear equation immediately by<br>integrating the equation.<br>Unfortunately, most of them should use a method called <strong>integrating factor</strong>. </p>
+<script type="math/tex; mode=display">{dy\over dt}+p(t)y=g(t)</script><p>In some cases it is possible to solve a first order linear equation immediately by<br>integrating the equation.<br>Unfortunately, most of them should use a method called <strong>integrating factor</strong>. </p>
 <script type="math/tex; mode=display">\mu(t){dy\over dt}+\mu(t)p(t)y=\mu(t)g(t)</script><p>where ${d\mu\over dt}=p(t)\mu(t)$ so that $\mu(t)=ce^{G(t)}$ where $G(t) = \int g(t)$</p>
 <h3 id="Separable"><a href="#Separable" class="headerlink" title="Separable"></a>Separable</h3><script type="math/tex; mode=display">M(x)dx+N(y)dy=0</script><p>We can directly integral both sides to get the solution.</p>
 <h2 id="Second-Order-Linear"><a href="#Second-Order-Linear" class="headerlink" title="Second Order Linear"></a>Second Order Linear</h2><script type="math/tex; mode=display">{d^2y\over dt^2}=f(t,y,{dy\over dt})</script><p><strong>Linear</strong> if $f(t,y,{dy\over dt})=g(t)-p(t){dy\over dt} -q(t)y$</p>
@@ -447,7 +459,10 @@
 <p>The distribution of the roots have three conditions</p>
 <ol>
 <li>Two distinct real roots. Just exponential function </li>
-<li>Two distinct complex roots. By, Euler’s formula, exponential of complex number is Sinusoids.</li>
+<li>Two distinct complex roots. By, Euler’s formula, exponential of complex number is Sinusoids.<ul>
+<li>Its real part $u$ and its imaginary part $v$ are also solutions of it. We need to express<br>$y=c_1u+c_2v$</li>
+</ul>
+</li>
 <li>Two identical real roots$r_0$. Then the solution is $y_1=e^{r_0t}\quad y_t=te^{r_0t}$.<br> We can get this result by assume $y_2=v(t)y_1$ and finally we can find $v(t)=c_1+c_2t$</li>
 </ol>
 <h4 id="Wronskian"><a href="#Wronskian" class="headerlink" title="Wronskian"></a>Wronskian</h4><p>When given a initial point $y_0$, we have the equations: </p>
@@ -455,11 +470,11 @@
 <script type="math/tex; mode=display">W=\begin{vmatrix}y_1&y_2\\y_1’&y_2’\end{vmatrix} = y_1y_2’+y_1’y_2</script><p>It is a function of independent variable t. Thus, different t correspond to different W.</p>
 <p>If at a point $t=t_0\quad W(t_0)\ne0$ the solution is unique. The constants are</p>
 <script type="math/tex; mode=display">c_1={\begin{vmatrix}y_0&y_2(t_0)\\y_0’&y_2’(t_0)\end{vmatrix} \over W(t_0)} \quad c_2={-\begin{vmatrix}y_0&y_1(t_0)\\y_0’&y_1’(t_0)\end{vmatrix}\over W(t_0)}</script><p>For the equation $y_0=c_1y_1+c_2y_2$</p>
-<p>If at a point $t=t_0\quad W(t_0)=0​$ the initial conditions cannot be satisfied not matter how $c_1​$ and $c_2​$ are chosen. </p>
-<p>$y=c_1y_1(t)+c_2y_2(t)​$ is called the <strong>general solution</strong>.$y_1​$ and $y_2​$ are said to form a <strong>fundamental set of solutions</strong> if <em>Wronskian</em> is nonzero.</p>
-<h4 id="Abel-Theorem"><a href="#Abel-Theorem" class="headerlink" title="Abel Theorem"></a>Abel Theorem</h4><p>If $y_1​$ and $y_2​$ are solutions of </p>
-<script type="math/tex; mode=display">L[y]=y’’+p(t)y’+q(t)y=0​</script><p>Where p and q are <strong>continuous</strong> on an open interval $I​$, then the Wronskian is given by</p>
-<script type="math/tex; mode=display">W(y_1,y_2)(t)=c e^{-\int p(t)dt}​</script><p>Therefore, $W(y_1,y_2)(t)​$ is either zero or else is never zero for all t in the interval.</p>
+<p>If at a point $t=t_0\quad W(t_0)=0$ the initial conditions cannot be satisfied not matter how $c_1$ and $c_2$ are chosen. </p>
+<p>$y=c_1y_1(t)+c_2y_2(t)$ is called the <strong>general solution</strong>.$y_1$ and $y_2$ are said to form a <strong>fundamental set of solutions</strong> if <em>Wronskian</em> is nonzero.</p>
+<h4 id="Abel-Theorem"><a href="#Abel-Theorem" class="headerlink" title="Abel Theorem"></a>Abel Theorem</h4><p>If $y_1$ and $y_2$ are solutions of </p>
+<script type="math/tex; mode=display">L[y]=y’’+p(t)y’+q(t)y=0</script><p>Where p and q are <strong>continuous</strong> on an open interval $I$, then the Wronskian is given by</p>
+<script type="math/tex; mode=display">W(y_1,y_2)(t)=c e^{-\int p(t)dt}</script><p>Therefore, $W(y_1,y_2)(t)$ is either zero or else is never zero for all t in the interval.</p>
 <h3 id="Nonhomogeneous-Equations"><a href="#Nonhomogeneous-Equations" class="headerlink" title="Nonhomogeneous Equations"></a>Nonhomogeneous Equations</h3><p>A nonhomogenous equation is</p>
 <script type="math/tex; mode=display">L[y]=y’’+p(t)y’+q(t)y=g(t)\ne 0</script><p>We can solve it by thee steps:</p>
 <ol>
@@ -467,7 +482,62 @@
 <li>Find some single solution $Y(t)$ of the nonhomogenous equation. Often this solution is referred to as a particular solution.</li>
 <li>Form the sum of the functions found in steps 1 and 2.</li>
 </ol>
-<h4 id="Method-of-Undetermined-Coefficients"><a href="#Method-of-Undetermined-Coefficients" class="headerlink" title="Method of Undetermined Coefficients"></a>Method of Undetermined Coefficients</h4><p>Make an initial assumption about the form of the particular solution $Y(t)$. But with the coefficients left unspecified.<br>e.g. for $y’’-3y’-4y=3e^{2t}$  we guess that $Y(t)=Ae^{2t}$ and finally obtain $A=-{1\over 2}​$</p>
+<h4 id="Method-of-Undetermined-Coefficients"><a href="#Method-of-Undetermined-Coefficients" class="headerlink" title="Method of Undetermined Coefficients"></a>Method of Undetermined Coefficients</h4><p>Make an initial assumption about the form of the particular solution $Y(t)$. But with the coefficients left unspecified.<br>e.g. for $y’’-3y’-4y=3e^{2t}$  we guess that $Y(t)=Ae^{2t}$ and finally obtain $A=-{1\over 2}$</p>
+<ul>
+<li>==<strong>VERY IMPORTANT</strong>==<br>If one of the terms of our first guess $Y(t)$ is included in the general solution to the corresponding homogeneous equation, try $tY,t^2Y,…$ and so on.</li>
+</ul>
+<h2 id="Series-Solutions-of-Second-Order-Linear-Equation"><a href="#Series-Solutions-of-Second-Order-Linear-Equation" class="headerlink" title="Series Solutions of Second Order Linear Equation"></a>Series Solutions of Second Order Linear Equation</h2><p>We now consider the second order linear equations when the coefficients are functions of the independent variable.</p>
+<script type="math/tex; mode=display">P(x){d^2y \over dx^2 }+ Q(x){dy\over dx} +R(x)y =0</script><p>A point $x_0$ where $Q(x_0)\over P(x_0)$ is analytic is called an <strong>ordinary point</strong>, otherwise is called <strong>singular point.</strong></p>
+<h3 id="Solutions-near-ordinary-point"><a href="#Solutions-near-ordinary-point" class="headerlink" title="Solutions near ordinary point"></a>Solutions near ordinary point</h3><ol>
+<li>set $y=\sum_{n=0}^\infty a_nx^n$ Then we have the kth derivative  $y^{(k)}=\sum_{n=k}^\infty n(n-1)…(n-k+1)a_nx^{n-k}$ </li>
+<li>substitute the series for the original function to get the <strong>recurrence relation</strong> of the coefficients $a_n$<ul>
+<li>Usually we need to shift the index of summation by replacing $n$ by $n-sth$</li>
+</ul>
+</li>
+<li>The two initial items are the arbitrary coefficients<script type="math/tex; mode=display">y=a_0y_1+a_1y_2=a_0\sum...+a_1\sum...</script>where $y_1,y_2$are two power series solutions that are analytic at $x_0$. The radius of convergence for each of the series solutions $y_1$ and $y_2$ is at least as the minimum of the <strong>radii of convergence</strong> of the series for $Q\over P$ and $R \over P$</li>
+</ol>
+<h3 id="Solutions-near-singular-point"><a href="#Solutions-near-singular-point" class="headerlink" title="Solutions near singular point"></a>Solutions near singular point</h3><p>We first consider a relatively simple differential equation that  has a singular point, Euler equation, singular point at $x=0$.</p>
+<h4 id="Euler-equation"><a href="#Euler-equation" class="headerlink" title="Euler equation"></a>Euler equation</h4><script type="math/tex; mode=display">L[y]=x^2y''+\alpha xy' +\beta y = 0</script><p>set $y=x^r$ we can obtain $r_1,r_2={-(\alpha-1)\pm\sqrt{(\alpha-1)^2-4\beta}\over 2}$<br>Three possibilities:</p>
+<ol>
+<li>Real, distinct roots $y=c_1x^{r_1}+c_2x^{r_2}$</li>
+<li>Equal roots $y=(c_1+c_2lnx)x^{r_1}$</li>
+<li>Complex roots $y=c_1x^\lambda cos(\mu lnx)+c_2x^\lambda sin(\mu lnx)$</li>
+</ol>
+<h4 id="Regular-singular-point"><a href="#Regular-singular-point" class="headerlink" title="Regular singular point"></a>Regular singular point</h4><script type="math/tex; mode=display">P(x)y'' +Q(x)y' +R(x)y=0</script><p>where $x_0$ is a singular point. This means that $P(x_0)=0$ and that at least one of $Q$ and $R$ is not zero at $a_0$</p>
+<ul>
+<li>weak singularities<br>$\lim_{x\to x_0}(x-x_0){Q(x)\over P(x)}$ is finite and $\lim_{x\to x_0}(x-x_0)^2{R(x)\over P(x)}$ is finite</li>
+</ul>
+<p>This means the singularity in $Q/P$ can be no worse than $(x-x_0)^{-1}$ and the singularity in $R/P$ can be no worse than $(x-x_0)^{-2}$. Such a point is called a <strong>regular singular point</strong>. Otherwise, called <strong>irregular singular point</strong>.</p>
+<h2 id="Laplace-Transform"><a href="#Laplace-Transform" class="headerlink" title="Laplace Transform"></a><strong>Laplace Transform</strong></h2><p>Among the tools that are very useful for solving linear differential equations are <strong>integral transforms</strong>.<br>An integral transform is a relation of the form</p>
+<script type="math/tex; mode=display">F(s)=\int_\alpha^\beta K(s,t)f(t)dy</script><p>where $K(s,t)$ is given function, called the <strong>kernel</strong> of the transformation.</p>
+<p>When $K(s,t)=e^{-st}$ the transform is called <strong>Laplace transforms</strong>.</p>
+<script type="math/tex; mode=display">\mathcal L\{f^{(n)}(t)\}=s^n\mathcal L\{f(t)\}-s^{n-1}f(0)-...-sf^{(n-2)}(0)-f^{(n-1)}(0)</script><h3 id="Procedure"><a href="#Procedure" class="headerlink" title="Procedure"></a>Procedure</h3><p>To solve a second order linear equation with constant coefficients</p>
+<script type="math/tex; mode=display">ay''+by'+cy=f(t)</script><p>By Laplace transform, we have $a[s^2Y(s)-sy(0)-y’(0)]+b[sY(s)-y(0)]+cY(s)=F(x)$<br>where the $F(s)$ is the transform of $f(t)$. Then we find that</p>
+<p>$Y(s)={(as+b)y(0)+ay’(0)+F(s)\over as^2+bs+c}$</p>
+<p>Then the $y(t)$ whose LT is $Y(t)$ is the solution</p>
+<h3 id="Unit-step-function"><a href="#Unit-step-function" class="headerlink" title="Unit step function"></a>Unit step function</h3><script type="math/tex; mode=display">\mathcal L\{u(t-c)\}=\int_c^\infty e^{-st}dt={e^{-cs}\over s}\quad s>0</script><p>If $F(s)=\mathcal L\{f(t)\}$ exists for $s&gt;a\ge0$, and if $c$ is a constant, then</p>
+<script type="math/tex; mode=display">\mathcal L\{e^{ct}f(t)\}=F(s-c), \quad s>a+c</script><p>Conversely, if $f(t)=\mathcal L^{-1}\{F(s-c\}$, then $e^{ct}f(t)=\mathcal L^{-1}\{F(s-c)\}$</p>
+<h2 id="Systems-of-First-Order-Linear-Equations"><a href="#Systems-of-First-Order-Linear-Equations" class="headerlink" title="Systems of First Order Linear Equations"></a>Systems of First Order Linear Equations</h2><p>Systems of a homogeneous linear equations with constant coefficients are of the form<br>$\boldsymbol{x}’=A\boldsymbol x$     where  $A$ is a constant $n \times n$ matrix.</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><ol>
+<li>By setting $\boldsymbol x =\xi e^{rt}$, we can get $r\xi e^{rt}=A\xi e^{rt}$. Therefore, $(A-r\boldsymbol I)\xi=0$.<br>where $\boldsymbol I$ is the $n\times n$ identity matrix.</li>
+<li><p>Solve $det(A-r\boldsymbol I) = 0 $<br>We got $r$, the  <strong>eigenvalues</strong> of $A$. Each one correspond to a constant <strong>eigenvectors</strong> $\xi^{(i)}$</p>
+<ul>
+<li>For <em>phase  portrait</em>, $r<0$ means toward vector $\xi^{(i)}$, $r>0$ means outward direction.</0$></li>
+</ul>
+</li>
+<li><p>Possibilities of eigenvalues</p>
+<ol>
+<li><p>All eigenvalues are real and different from each other.<br>$\boldsymbol x = c_1\xi^{(1)}e^{r_1t}+…+c_n\xi^{(n)}e^{r_nt}$</p>
+</li>
+<li><p>Some eigenvalues occur in complex conjugate pairs.<br>$\boldsymbol x^{(1)}(t)=\xi^{(1)}e^{r_1t}\quad \boldsymbol x^{(2)}(t)=\bar\xi^{(1)}e^{\bar r_1t}$</p>
+<p>if $r_1 = \lambda +\mu \quad\xi = \boldsymbol a +i\boldsymbol b$, we can write $\boldsymbol x^{(1)}(t)=\boldsymbol u(t) + i\boldsymbol v(t)$<br>$\boldsymbol  u(t) = e^{\lambda t}(\boldsymbol  a cos \mu t-\boldsymbol  b sin \mu t)\\\boldsymbol  v(t) = e^{\lambda t}(\boldsymbol  a sin\mu t+\boldsymbol  b cos\mu t)$</p>
+<p>Then the general solution is<br>$\boldsymbol x= c_1\boldsymbol u(t) +c_2\boldsymbol v(t) +c_3\xi^{(3)}e^{r_3t}+…+c_n\xi^{(n)}e^{r_nt}$</p>
+</li>
+<li><p>Some eigenvalues, either real or complex, are repeated.<br>TBC…</p>
+</li>
+</ol>
+</li>
+</ol>
 
       
     </div>
@@ -769,7 +839,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#First-Order"><span class="nav-text">First Order</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linear"><span class="nav-text">Linear</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Separable"><span class="nav-text">Separable</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Second-Order-Linear"><span class="nav-text">Second Order Linear</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Homogenous-Equation"><span class="nav-text">Homogenous Equation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Constant-Coefficients"><span class="nav-text">Constant Coefficients</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Wronskian"><span class="nav-text">Wronskian</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Abel-Theorem"><span class="nav-text">Abel Theorem</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nonhomogeneous-Equations"><span class="nav-text">Nonhomogeneous Equations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Method-of-Undetermined-Coefficients"><span class="nav-text">Method of Undetermined Coefficients</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#First-Order"><span class="nav-text">First Order</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linear"><span class="nav-text">Linear</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Separable"><span class="nav-text">Separable</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Second-Order-Linear"><span class="nav-text">Second Order Linear</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Homogenous-Equation"><span class="nav-text">Homogenous Equation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Constant-Coefficients"><span class="nav-text">Constant Coefficients</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Wronskian"><span class="nav-text">Wronskian</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Abel-Theorem"><span class="nav-text">Abel Theorem</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nonhomogeneous-Equations"><span class="nav-text">Nonhomogeneous Equations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Method-of-Undetermined-Coefficients"><span class="nav-text">Method of Undetermined Coefficients</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Series-Solutions-of-Second-Order-Linear-Equation"><span class="nav-text">Series Solutions of Second Order Linear Equation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Solutions-near-ordinary-point"><span class="nav-text">Solutions near ordinary point</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solutions-near-singular-point"><span class="nav-text">Solutions near singular point</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Euler-equation"><span class="nav-text">Euler equation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Regular-singular-point"><span class="nav-text">Regular singular point</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Laplace-Transform"><span class="nav-text">Laplace Transform</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Procedure"><span class="nav-text">Procedure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unit-step-function"><span class="nav-text">Unit step function</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Systems-of-First-Order-Linear-Equations"><span class="nav-text">Systems of First Order Linear Equations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-text">Solution</span></a></li></ol></li></ol></div>
             
 
           </div>
