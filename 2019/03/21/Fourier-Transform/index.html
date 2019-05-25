@@ -96,22 +96,23 @@
 
 
 
-  <meta name="description" content="Fourier SeriesCTFSSynthesis Equationany T-periodic functions can be expressed by many Sinusoids x(t) = \sum_{k=-\infty}^{\infty} a_ke^{jk{2\pi\over T}t}​Analysis Equation CTcalculate the coefficients">
+  <meta name="description" content="Fourier SeriesCTFSany T-periodic functions can be expressed by many Sinusoids $\omega_0 =  {2\pi\over T}$ is the fundamental frequency$f_0 = {1 \over T}$ is the fundamental frequency in ordinary frequ">
 <meta name="keywords" content="math,Fourier">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Fourier Transform">
 <meta property="og:url" content="http://github.com/2019/03/21/Fourier-Transform/index.html">
 <meta property="og:site_name" content="Destinxxy">
-<meta property="og:description" content="Fourier SeriesCTFSSynthesis Equationany T-periodic functions can be expressed by many Sinusoids x(t) = \sum_{k=-\infty}^{\infty} a_ke^{jk{2\pi\over T}t}​Analysis Equation CTcalculate the coefficients">
+<meta property="og:description" content="Fourier SeriesCTFSany T-periodic functions can be expressed by many Sinusoids $\omega_0 =  {2\pi\over T}$ is the fundamental frequency$f_0 = {1 \over T}$ is the fundamental frequency in ordinary frequ">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://github.com/assets/Fourier-Transform/1553178838039.png">
 <meta property="og:image" content="http://github.com/assets/Fourier-Transform/1553178876038.png">
 <meta property="og:image" content="http://github.com/assets/Fourier-Transform/1553176610644.png">
 <meta property="og:image" content="http://github.com/assets/Fourier-Transform/1553185006641.png">
-<meta property="og:updated_time" content="2019-04-09T15:16:59.370Z">
+<meta property="og:image" content="http://github.com/2019/03/21/Fourier-Transform/assets/Fourier-Transform/1558628800557.png">
+<meta property="og:updated_time" content="2019-05-24T15:03:18.541Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fourier Transform">
-<meta name="twitter:description" content="Fourier SeriesCTFSSynthesis Equationany T-periodic functions can be expressed by many Sinusoids x(t) = \sum_{k=-\infty}^{\infty} a_ke^{jk{2\pi\over T}t}​Analysis Equation CTcalculate the coefficients">
+<meta name="twitter:description" content="Fourier SeriesCTFSany T-periodic functions can be expressed by many Sinusoids $\omega_0 =  {2\pi\over T}$ is the fundamental frequency$f_0 = {1 \over T}$ is the fundamental frequency in ordinary frequ">
 <meta name="twitter:image" content="http://github.com/assets/Fourier-Transform/1553178838039.png">
 
 
@@ -400,7 +401,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-09 23:16:59" itemprop="dateModified" datetime="2019-04-09T23:16:59+08:00">2019-04-09</time>
+                <time title="Modified: 2019-05-24 23:03:18" itemprop="dateModified" datetime="2019-05-24T23:03:18+08:00">2019-05-24</time>
               
             
           </span>
@@ -452,25 +453,79 @@
       
 
       
-        <h2 id="Fourier-Series"><a href="#Fourier-Series" class="headerlink" title="Fourier Series"></a>Fourier Series</h2><h3 id="CTFS"><a href="#CTFS" class="headerlink" title="CTFS"></a>CTFS</h3><h4 id="Synthesis-Equation"><a href="#Synthesis-Equation" class="headerlink" title="Synthesis Equation"></a>Synthesis Equation</h4><p>any T-periodic functions can be expressed by many <em>Sinusoids</em></p>
-<script type="math/tex; mode=display">x(t) = \sum_{k=-\infty}^{\infty} a_ke^{jk{2\pi\over T}t}​</script><h4 id="Analysis-Equation-CT"><a href="#Analysis-Equation-CT" class="headerlink" title="Analysis Equation CT"></a>Analysis Equation CT</h4><p>calculate the coefficients of each <em>Sinusoids</em></p>
-<script type="math/tex; mode=display">a_k = {1\over T}\int_{t\in T}x(t)e^{-jk\omega_0t}dt</script><h4 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h4><p>the analysis equation is a <strong>normalized inner product</strong> that computes a <strong>projection coefficient</strong> that specifies how much $x(t)$ projecting on $e^{jk\omega_0t}$ . The Projection is<br><img src="/assets/Fourier-Transform/1553178838039.png" alt="1553178838039"><br>The normalization process is<br><img src="/assets/Fourier-Transform/1553178876038.png" alt="1553178876038"></p>
-<h3 id="DTFS"><a href="#DTFS" class="headerlink" title="DTFS"></a>DTFS</h3><p>$\omega_0 =  {2\pi\over N}$ is the <strong>fundamental frequency</strong><br>$f_0 = {1 \over N}​$ is the <strong>fundamental frequency in ordinary frequency</strong></p>
-<p>In DT, there are only N distinct harmonics with period N!</p>
-<h4 id="Synthesis-Equation-1"><a href="#Synthesis-Equation-1" class="headerlink" title="Synthesis Equation"></a>Synthesis Equation</h4><p>a weighted sum of N complex sinusoids.</p>
-<script type="math/tex; mode=display">x[n] = \sum_{k=0}^{N-1}a_k e^{jk({2\pi\over N})n}</script><h4 id="Analysis-Equation-DT"><a href="#Analysis-Equation-DT" class="headerlink" title="Analysis Equation DT"></a>Analysis Equation DT</h4><p>calculates the FS coefficients which are the weights for the harmonics.</p>
-<script type="math/tex; mode=display">a_k = {1 \over  N}\sum_{n=0}^{N-1}x[n]e^{-jk({2\pi \over N})n}</script><p>==<strong>IMPORTANT NOTE</strong>==:<br><em>for N is even, $a_{N\over 2} ​$ is definitely <strong>real</strong>. It has no conjugates.</em> </p>
+        <h2 id="Fourier-Series"><a href="#Fourier-Series" class="headerlink" title="Fourier Series"></a>Fourier Series</h2><h3 id="CTFS"><a href="#CTFS" class="headerlink" title="CTFS"></a>CTFS</h3><p>any <strong>T-periodic</strong> functions can be expressed by many <em>Sinusoids</em></p>
+<p>$\omega_0 =  {2\pi\over T}$ is the <em>fundamental frequency</em><br>$f_0 = {1 \over T}$ is the <em>fundamental frequency in ordinary frequency</em></p>
+<ul>
+<li>Synthesis Equation<br>A weighted sum of infinite Sinusoids<script type="math/tex; mode=display">x(t) =\sum_{k=-\infty}^{\infty} a_ke^{jk\omega_0t}</script></li>
+<li>Analysis Equation CT<br>calculate the coefficients of each <em>Sinusoids</em><script type="math/tex; mode=display">a_k = {1\over T}\int_0^Tx(t)e^{-jk\omega_0t}dt</script>The coefficient $a_k$ is aperiodic.</li>
+<li>Intuition<br>the analysis equation is a <strong>normalized inner product</strong> that computes a <strong>projection coefficient</strong> that specifies how much $x(t)$ projecting on $e^{jk\omega_0t}$ . </li>
+<li>The Projection is<br><img src="/assets/Fourier-Transform/1553178838039.png" alt="1553178838039"></li>
+<li><p>The normalization process is<br>  <img src="/assets/Fourier-Transform/1553178876038.png" alt="1553178876038"></p>
+</li>
+<li><p>Tricks</p>
+<blockquote>
+<p>$2Acos\omega t\to a_{\omega\over\omega_0}=A\quad a_{-\omega\over\omega_0}=A$<br>$2Asin\omega t\to a_{\omega\over\omega_0}=-jA\quad a_{-\omega\over\omega_0}=jA$</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="DTFS"><a href="#DTFS" class="headerlink" title="DTFS"></a>DTFS</h3><p>any <strong>N-periodic</strong> signal can be expressed by N distinct harmonics.</p>
+<p>$\omega_0 =  {2\pi\over N}$ is the <em>fundamental frequency</em>, <strong>must contain</strong> $\pi$ otherwise not periodic<br>$f_0 = {1 \over N}$ is the <em>fundamental frequency in ordinary frequency</em></p>
+<ul>
+<li><p>Synthesis Equation<br>a weighted sum of N complex sinusoids.</p>
+<script type="math/tex; mode=display">x[n] = \sum_{k=0}^{N-1} a_ke^{jk\omega_0n}</script></li>
+<li><p>Analysis Equation DT<br>calculates the FS coefficients which are the weights for the harmonics.</p>
+<script type="math/tex; mode=display">a_k = {1 \over  N}\sum_{n=0}^{N-1}x[n]e^{-jk\omega_0n}</script><p><strong>The coefficient $a_k$ is $N$ periodic</strong></p>
+</li>
+</ul>
+<p>==<strong>IMPORTANT NOTE</strong>==:<br><em>for N is even, $a_{N\over 2} $ is definitely <strong>real</strong>. It has no conjugates.</em> </p>
+<blockquote>
+<p>i.e. $N=4$ The DTFS of $2cos({2\pi\over4}n)+2cos({2\pi\over2}n)$ is<br> $a_{-1}=1,a_0=0,a_1=1,a_2=2$</p>
+</blockquote>
 <h3 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h3><p><img src="/assets/Fourier-Transform/1553176610644.png" alt="1553176610644"></p>
 <h2 id="Fourier-Transform"><a href="#Fourier-Transform" class="headerlink" title="Fourier Transform"></a>Fourier Transform</h2><p><strong>Regarding aperiodic signals as periodic signals in the limit of period T going to infinity.</strong></p>
-<p>Recall that $a_k = {1\over T}\int_{t\in T}x(t)e^{-jk\omega_0t}dt$ is the <strong>projection coefficient</strong> that $x(t)$ on $e^{-jk\omega_0t}$.<br>However, when $T\to\infty\quad a_k\to0$, so we define $X_T(j\omega)=\int_{-T/2}^{T/2}x(t)e^{-j\omega t}dt$.<br>Therefore, $X_T(j{k2\pi\over T}) = Ta_k$ . We rewrite the <a href="#Synthesis-Equation">Synthesis Equation</a> with $\omega_0={2\pi\over T}$ :</p>
+<h2 id="CTFT"><a href="#CTFT" class="headerlink" title="CTFT"></a>CTFT</h2><p>Recall that $a_k = {1\over T}\int_{t\in T}x(t)e^{-jk\omega_0t}dt$ is the <strong>projection coefficient</strong> that $x(t)$ on $e^{-jk\omega_0t}$.<br>However, when $T\to\infty\quad a_k\to0$, so we define $X_T(j\omega)=\int_{-T/2}^{T/2}x(t)e^{-j\omega t}dt$.<br>Therefore, $X_T(j{k2\pi\over T}) = Ta_k$ . We rewrite the Synthesis Equation with $\omega_0={2\pi\over T}$ :</p>
 <script type="math/tex; mode=display">x(t) = \sum_{k=-\infty}^{\infty}{\omega_0\over 2\pi}X_T(jk\omega_0) e^{jk\omega_0t}</script><p>as $T\to\infty\quad \omega_0\to0$, we can rewrite it in integral form.</p>
-<h4 id="Synthesis-Equation-2"><a href="#Synthesis-Equation-2" class="headerlink" title="Synthesis Equation"></a>Synthesis Equation</h4><p>consider the signal as a superposition of complex sinusoids with <em>density</em></p>
-<script type="math/tex; mode=display">x(t) = {1\over 2\pi}\int_{-\infty}^\infty X(j\omega)e^{j\omega t}d\omega = \mathcal{F}^{-1}\{X(j\omega)\} ​</script><h4 id="Analysis-Equation"><a href="#Analysis-Equation" class="headerlink" title="Analysis Equation"></a>Analysis Equation</h4><p>calculate the <em>density</em> of complex sinusoids with different frequency</p>
-<script type="math/tex; mode=display">X(j\omega)=\int_{-\infty}^{\infty}x(t)e^{-j\omega t}dt = \mathcal{F}\{x(t)\}​</script><h4 id="Duality-property"><a href="#Duality-property" class="headerlink" title="Duality property"></a>Duality property</h4><p>There is symmetry in the FT(Fourier Transform) and IFT(Inverse Fourier Transform) integrals.<br>They are identical except for a factor $2\pi​$ and a change in sign.</p>
-<h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h4><h5 id="Window"><a href="#Window" class="headerlink" title="Window"></a>Window</h5><p>$x(t) = \text{window width }2T_1 \iff X(j\omega) = {2sin\omega T_1\over \omega}$</p>
-<h5 id="Complex-Sinusoid"><a href="#Complex-Sinusoid" class="headerlink" title="Complex Sinusoid"></a>Complex Sinusoid</h5><p>$x(t) = e^{j\omega_0t} \iff X(j\omega) = 2\pi\delta(\omega-\omega_0)​$</p>
-<h5 id="Periodic-Signal"><a href="#Periodic-Signal" class="headerlink" title="Periodic Signal"></a>Periodic Signal</h5><p>FT integral of a FS sum equals the sum of a FT integral.</p>
-<script type="math/tex; mode=display">X(j\omega) = \int_{-\infty}^{\infty}(\sum_{k=-\infty}^\infty a_ke^{jk\omega_0t})e^{-j\omega t}dt = \sum_{k=-\infty}^\infty a_k\int_{-\infty}^{\infty}e^{jk\omega_0t}e^{-j\omega t}dt = \sum_{k=-\infty}^\infty a_k2\pi\delta(\omega-k\omega_0)</script><h4 id="Property"><a href="#Property" class="headerlink" title="Property"></a>Property</h4><p><img src="/assets/Fourier-Transform/1553185006641.png" alt="1553185006641"></p>
+<ul>
+<li><p>Synthesis Equation<br>consider the signal as a superposition of complex sinusoids with <em>density</em></p>
+<script type="math/tex; mode=display">x(t) = {1\over 2\pi}\int_{-\infty}^\infty X(j\omega)e^{j\omega t}d\omega = \mathcal{F}^{-1}\{X(j\omega)\}</script></li>
+<li><p>Analysis Equation<br>calculate the <em>density</em> of complex sinusoids with different frequency</p>
+<script type="math/tex; mode=display">X(j\omega)=\int_{-\infty}^{\infty}x(t)e^{-j\omega t}dt = \mathcal{F}\{x(t)\}</script></li>
+<li><p>Duality property<br>There is symmetry in the FT(Fourier Transform) and IFT(Inverse Fourier Transform) integrals.<br>They are identical except for a factor $2\pi$ and a change in sign.</p>
+</li>
+<li><p>Examples</p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li><p>Window<br>$x(t) = \text{window width }2T_1 \iff X(j\omega) = {2sin\omega T_1\over \omega}$</p>
+</li>
+<li><p>Complex Sinusoid<br>$x(t) = e^{j\omega_0t} \iff X(j\omega) = 2\pi\delta(\omega-\omega_0)$</p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>Periodic Signal<br>FT integral of a FS sum equals the sum of a FT integral.</p>
+<script type="math/tex; mode=display">X(j\omega) = \int_{-\infty}^{\infty}(\sum_{k=-\infty}^\infty a_ke^{jk\omega_0t})e^{-j\omega t}dt \\= \sum_{k=-\infty}^\infty a_k\int_{-\infty}^{\infty}e^{jk\omega_0t}e^{-j\omega t}dt \\=2\pi \sum_{k=-\infty}^\infty a_k\delta(\omega-k\omega_0)\\=2\pi a_{\omega\over\omega_0}</script><ul>
+<li><p>It is discrete(including $\delta()$ )</p>
+</li>
+<li><p>The value is $2\pi$ the CTFS </p>
+</li>
+</ul>
+</li>
+<li><p>Periodic Extension<br>  FS coefficients of the <em>periodic extension</em> of a signal are the sample values of the signal’s FT (scaled by $1/T$)<br>  $a_k={1\over T}X(jk\omega_0)$</p>
+</li>
+</ul>
+<h2 id="DTFT"><a href="#DTFT" class="headerlink" title="DTFT"></a>DTFT</h2><p><strong>DTFT must be $2\pi$-periodic</strong> </p>
+<ul>
+<li>Synthesis Equation<br>consider the signal as a superposition of complex sinusoids with <em>density</em><script type="math/tex; mode=display">x[n] = {1\over 2\pi}\int_{2\pi} X(e^{j\omega})e^{j\omega n}d\omega = \mathcal{F}^{-1}\{X(e^{j\omega})\}</script></li>
+<li>Analysis Equation<br>calculate the <em>density</em> of complex sinusoids with different frequency<script type="math/tex; mode=display">X(e^{j\omega})=\sum_{n=-\infty}^{\infty}x[n]e^{-j\omega n}dt = \mathcal{F}\{x[n]\}</script></li>
+<li>Periodic Signal<br>$X(e^{j\omega})=2\pi\delta(\omega-\omega_0)$ for $0\le\omega&lt;2\pi$</li>
+</ul>
+<h2 id="DFT"><a href="#DFT" class="headerlink" title="DFT"></a>DFT</h2><p><strong>DFT is the same as  DTFS</strong>, except for a scaling factor</p>
+<p>DTFS</p>
+<script type="math/tex; mode=display">a_k = {1 \over  N}\sum_{n=0}^{N-1}x[n]e^{-jk\omega_0n}</script><script type="math/tex; mode=display">x[n] = \sum_{k=0}^{N-1} a_ke^{jk\omega_0n}</script><p>DFT</p>
+<script type="math/tex; mode=display">X[k] = \sum_{n=0}^{N-1}x[n]e^{-jk\omega_0n}</script><script type="math/tex; mode=display">x[n] = {1 \over  N}\sum_{k=0}^{N-1} X[k]e^{jk\omega_0n}</script><h2 id="Property"><a href="#Property" class="headerlink" title="Property"></a>Property</h2><p>For CTFT<img src="/assets/Fourier-Transform/1553185006641.png" alt="1553185006641"></p>
+<p>For DTFT<img src="assets/Fourier-Transform/1558628800557.png" alt="1558628800557"></p>
 
       
     </div>
@@ -542,7 +597,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/19/Signal and System/" rel="next" title="Signal and System">
+              <a href="/2019/03/19/Signal-and-System/" rel="next" title="Signal and System">
                 <i class="fa fa-chevron-left"></i> Signal and System
               </a>
             
@@ -778,7 +833,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fourier-Series"><span class="nav-text">Fourier Series</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CTFS"><span class="nav-text">CTFS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Synthesis-Equation"><span class="nav-text">Synthesis Equation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Analysis-Equation-CT"><span class="nav-text">Analysis Equation CT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Intuition"><span class="nav-text">Intuition</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DTFS"><span class="nav-text">DTFS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Synthesis-Equation-1"><span class="nav-text">Synthesis Equation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Analysis-Equation-DT"><span class="nav-text">Analysis Equation DT</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties"><span class="nav-text">Properties</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fourier-Transform"><span class="nav-text">Fourier Transform</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Synthesis-Equation-2"><span class="nav-text">Synthesis Equation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Analysis-Equation"><span class="nav-text">Analysis Equation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Duality-property"><span class="nav-text">Duality property</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Examples"><span class="nav-text">Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Window"><span class="nav-text">Window</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Complex-Sinusoid"><span class="nav-text">Complex Sinusoid</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Periodic-Signal"><span class="nav-text">Periodic Signal</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Property"><span class="nav-text">Property</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fourier-Series"><span class="nav-text">Fourier Series</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CTFS"><span class="nav-text">CTFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DTFS"><span class="nav-text">DTFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties"><span class="nav-text">Properties</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fourier-Transform"><span class="nav-text">Fourier Transform</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CTFT"><span class="nav-text">CTFT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DTFT"><span class="nav-text">DTFT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DFT"><span class="nav-text">DFT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Property"><span class="nav-text">Property</span></a></li></ol></div>
             
 
           </div>
