@@ -112,7 +112,7 @@
 <meta property="og:image" content="http://github.com/assets/Probability/1558864122035.png">
 <meta property="og:image" content="http://github.com/assets/Probability/1558864243712.png">
 <meta property="og:image" content="http://github.com/assets/Probability/1558880242820.png">
-<meta property="og:updated_time" content="2019-05-26T15:47:12.838Z">
+<meta property="og:updated_time" content="2019-05-26T16:01:03.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Probability">
 <meta name="twitter:description" content="Basic Concepts random experimentan experimental procedure and one or more measurements or observations. sample spacethe set of all possible outcomes. discrete sample space if the number of outcomes is">
@@ -404,7 +404,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-26 23:47:12" itemprop="dateModified" datetime="2019-05-26T23:47:12+08:00">2019-05-26</time>
+                <time title="Modified: 2019-05-27 00:01:03" itemprop="dateModified" datetime="2019-05-27T00:01:03+08:00">2019-05-27</time>
               
             
           </span>
@@ -465,7 +465,7 @@
 </li>
 <li><strong>event</strong><br>certain conditions for an outcome. A <em>subset</em> A of the <em>sample space</em> S<ul>
 <li>An event A <em>occurs</em> if the outcome is a member of A.</li>
-<li>the <em>certain event</em>, S, consists of all outcomes.</li>
+<li>the <em>certain event</em>, S, consists of all outcomes. </li>
 <li>the <em>null event</em>, $\phi$, contains no outcomes.</li>
 <li>An <em>elementary event</em> contains only one outcome.</li>
 </ul>
@@ -523,8 +523,8 @@
 <h2 id="Conditional-Probability"><a href="#Conditional-Probability" class="headerlink" title="Conditional Probability"></a>Conditional Probability</h2><ul>
 <li><p><strong>Independence</strong><br>$P[A\cap B]=P[A]P[B]$ also $P[A|B] = P[A]$</p>
 <script type="math/tex; mode=display">P[A_1A_2...A_n]=\prod_{i=1}^n P[A_i]</script></li>
-<li><p><strong>Exclusive</strong><br>$P[A\cup B]=P[A]+P[B]-P[A\cap B] = P[A]+P[B]$ </p>
-<script type="math/tex; mode=display">P[A_1A_2...A_n] = 0</script></li>
+<li><p><strong>Exclusive</strong></p>
+<script type="math/tex; mode=display">P[A\cup B]=P[A]+P[B]-P[A\cap B] = P[A]+P[B]</script><script type="math/tex; mode=display">P[A_1A_2...A_n] = 0</script></li>
 <li><p>Conditional probability<br>$P[A|B]={p[A\cap B]\over p[B]}$ where we assume that $P[B]&gt;0$</p>
 </li>
 <li><p>Total Probability Theorem</p>
@@ -560,14 +560,14 @@
 <ol>
 <li><p>Bernoulli trials<br>an experiment once with two possible outcomes</p>
 </li>
-<li><p>Binomial probability law<br>n independent Bernoulli trials<br>$p_n(k)={n\choose k}p^k(1-p)^{n-k}$</p>
-</li>
-<li><p>Multinomial probability law<br>M partition of sample space, so $p_1…p_M$ mutual exclusive<br>$P[(k_1,k_2,…,k_M)]={n!\over k_1!k_2!…k_M!}p_1^{K_1}p_2^{K_2}…p_M^{K_M}$</p>
-</li>
+<li><p>Binomial probability law<br>n independent Bernoulli trials</p>
+<script type="math/tex; mode=display">p_n(k)={n\choose k}p^k(1-p)^{n-k}</script></li>
+<li><p>Multinomial probability law<br>M partition of sample space, so $p_1…p_M$ mutual exclusive </p>
+<script type="math/tex; mode=display">P[(k_1,k_2,...,k_M)]={n!\over k_1!k_2!...k_M!}p_1^{K_1}p_2^{K_2}...p_M^{K_M}</script></li>
 <li><p>Geometric probability law</p>
 <ul>
-<li>M be the time <strong>until</strong> the first success<br>$p_M(m)=p(1-p)^{m-1}$</li>
-<li>N be the time <strong>before</strong> the first success<br>$p_N(n)=p(1-p)^n$</li>
+<li>M be the time <strong>until</strong> the first success<script type="math/tex; mode=display">p_M(m)=p(1-p)^{m-1}</script></li>
+<li>N be the time <strong>before</strong> the first success<script type="math/tex; mode=display">p_N(n)=p(1-p)^n</script></li>
 <li>Sequences of dependent experiments<br>Referred to as a <a href="https://zh.wikipedia.org/wiki/马尔可夫链" target="_blank" rel="noopener">Markov Chain</a></li>
 </ul>
 </li>
@@ -691,7 +691,7 @@
 </li>
 <li><p>If Y is <em>continuous</em>, there are two appsroaches:</p>
 <ul>
-<li>Find the <strong>CDF</strong> of Y<br>$F_Y(y)=P[Y\le y]=P[\{X:g(X)\le y\}]$</li>
+<li>Find the <strong>CDF</strong> of Y<br>$F_Y(y)=P[Y\le y]=P[\{X:g(X)\le y\}]$  </li>
 <li>Find the <strong>PDF</strong> of Y<br>$f_Y(y_0)=\sum_{x:g(x)=y}{f_X(x_)\over |g’(x)|}$<br><strong>VERY USEFUL</strong>    $\uparrow\uparrow\uparrow\uparrow\uparrow$</li>
 </ul>
 </li>
@@ -704,19 +704,21 @@
 <li>scattergrams<br>visualize the joint behavior of two RVs.</li>
 </ul>
 <h2 id="Pairs"><a href="#Pairs" class="headerlink" title="Pairs"></a>Pairs</h2><h3 id="DT-case"><a href="#DT-case" class="headerlink" title="DT case"></a>DT case</h3><ul>
-<li><p>Joint PMF<br>$p_{X,Y}(j,k)=P[\{X=j\}\cap \{Y=k\}]$</p>
+<li><p>Joint PMF</p>
+<script type="math/tex; mode=display">p_{X,Y}(j,k)=P[\{X=j\}\cap \{Y=k\}]</script></li>
+<li><p>Marginal PMF</p>
+<script type="math/tex; mode=display">p_X(j)=P[X=j,Y=anything]</script><p>The function of $X$ is the sum of all $Y$ along y-axis.</p>
 </li>
-<li><p>Marginal PMF<br>$p_X(j)=P[X=j,Y=anything]$<br>The function of $X$ is the sum of all $Y$ along y-axis.</p>
-</li>
-<li><p>PMF of Function<br>Suppose that  $Z=g(X,Y)$, is an <strong>integer valued function</strong><br>$p_Z(k)=P[\{Z=k\}]=\sum_{(i,j):g(i,j)=k}p_{X,Y}(j,l)$</p>
-</li>
+<li><p>PMF of Function<br>Suppose that  $Z=g(X,Y)$, is an <strong>integer valued function</strong></p>
+<script type="math/tex; mode=display">p_Z(k)=P[\{Z=k\}]=\sum_{(i,j):g(i,j)=k}p_{X,Y}(j,l)</script></li>
 </ul>
 <h3 id="CT-case"><a href="#CT-case" class="headerlink" title="CT case"></a>CT case</h3><ul>
-<li><p>Joint CDF<br>$F_{X,Y}(x,y)=P[\{X&lt;x\}\cap \{Y&lt;y\}]$</p>
-</li>
-<li><p>Joint PDF<br>$f_{X,Y}=\frac {\partial ^2 F_{X,Y}(x,y)}{\partial x\partial y}$</p>
-</li>
-<li><p>Marginal PDF<br>$f_X(x)={dF_X(x)\over dx}={dF_{X,Y}(x,\infty)\over dx}=\int_{-\infty}^\infty f_{X,Y}(x,\alpha)d\alpha$<br>The function of $X$ is the integral of all $Y$ along y-axis.</p>
+<li><p>Joint CDF</p>
+<script type="math/tex; mode=display">F_{X,Y}(x,y)=P[\{X<x\}\cap \{Y<y\}]</script></li>
+<li><p>Joint PDF</p>
+<script type="math/tex; mode=display">f_{X,Y}=\frac {\partial ^2 F_{X,Y}(x,y)}{\partial x\partial y}</script></li>
+<li><p>Marginal PDF</p>
+<script type="math/tex; mode=display">f_X(x)={dF_X(x)\over dx}={dF_{X,Y}(x,\infty)\over dx}=\int_{-\infty}^\infty f_{X,Y}(x,\alpha)d\alpha</script><p>The function of $X$ is the integral of all $Y$ along y-axis.</p>
 </li>
 <li><p>PDF of Function<br>For $Z=g(X,Y)$. To find the $f_Z(z)$ </p>
 <ol>
@@ -730,10 +732,10 @@
 </ul>
 <h2 id="Characteristic-1"><a href="#Characteristic-1" class="headerlink" title="Characteristic"></a>Characteristic</h2><h3 id="Mean-1"><a href="#Mean-1" class="headerlink" title="Mean"></a>Mean</h3><p>for a function $Z=g(X,Y)$</p>
 <script type="math/tex; mode=display">E[Z]=\sum_j \sum_k g(j,k)p_{X,Y}(j,k)\\E[Z] = \int_{-\infty}^\infty \int_{-\infty}^\infty g(x,y)f_{X,Y}(x,y)dxdy</script><ol>
-<li><p>The mean of sum is the sum of mean.<br>$E[X_1+X_2+…+X_n]=E[X_1]+E[X_2]+…+E[X_n]$</p>
-</li>
-<li><p>If $X$ and $Y$ are <strong>independent</strong><br>$E[g_1(X)g_2(Y)]=E[g_1(X)]E[g_2(Y)]$</p>
-</li>
+<li><p>The mean of sum is the sum of mean.</p>
+<script type="math/tex; mode=display">E[X_1+X_2+...+X_n]=E[X_1]+E[X_2]+...+E[X_n]</script></li>
+<li><p>If $X$ and $Y$ are <strong>independent</strong></p>
+<script type="math/tex; mode=display">E[g_1(X)g_2(Y)]=E[g_1(X)]E[g_2(Y)]</script></li>
 </ol>
 <h3 id="Moments-1"><a href="#Moments-1" class="headerlink" title="Moments"></a>Moments</h3><p>The $j^{th},k^{th}$ <strong>moment</strong> of a pair</p>
 <script type="math/tex; mode=display">E[X^jY^k]=\int_{-\infty}^\infty\int_{-\infty}^\infty x^jy^kf(x,y)dxdy</script><p>The $j^{th},k^{th}$ <strong>central moment</strong> of a pair</p>
@@ -766,8 +768,8 @@
 <li><p>Bayes theorem</p>
 <script type="math/tex; mode=display">f_{X|Y}(x|y)={f_{Y|X}(y|x)f_x(x)\over\int_{-\infty}^\infty f_{Y|X}(y|x)f_X(x)dx}</script></li>
 <li><p><strong>Independence</strong></p>
-<script type="math/tex; mode=display">P[\{X\in A_X\}\cap \{Y\in A_Y\}]=P[X\in A_X]P[Y\in A_Y]</script><p>If $X$ and $Y$ are independent then<br>$p_{Y|X}(k|j) = p_Y(k)$</p>
-</li>
+<script type="math/tex; mode=display">P[\{X\in A_X\}\cap \{Y\in A_Y\}]=P[X\in A_X]P[Y\in A_Y]</script><p>If $X$ and $Y$ are independent then</p>
+<script type="math/tex; mode=display">p_{Y|X}(k|j) = p_Y(k)</script></li>
 </ul>
 <h3 id="Conditional-Mean"><a href="#Conditional-Mean" class="headerlink" title="Conditional Mean"></a>Conditional Mean</h3><script type="math/tex; mode=display">E[Y|x]=\int_{-\infty}^\infty yf_{Y|X}(y|x)dy</script><p>The conditional expected value of $Y$ is a <strong>function of</strong> $X$.<br>More general, $E[g(Y)|x]=\int_{-\infty}^\infty g(y)f_{Y|X}(y|x)dy$</p>
 <p>Since $E[Y|X]$ is a function of $X$, it is also a RV.<br>Taking the expectation over $X$, the conditioning disappears!</p>
@@ -991,8 +993,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/21/Fourier-Transform/" rel="next" title="Fourier Transform">
-                <i class="fa fa-chevron-left"></i> Fourier Transform
+              <a href="/2019/03/19/Signal-and-System/" rel="next" title="Signal and System">
+                <i class="fa fa-chevron-left"></i> Signal and System
               </a>
             
           </div>
@@ -1001,8 +1003,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/10/Differential-Equation/" rel="prev" title="Differential Equation">
-                Differential Equation <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/21/Fourier-Transform/" rel="prev" title="Fourier Transform">
+                Fourier Transform <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
