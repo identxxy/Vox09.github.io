@@ -108,11 +108,11 @@
 <meta property="og:image" content="http://github.com/assets/Probability/1558771532535.png">
 <meta property="og:image" content="http://github.com/assets/Probability/1558785116390.png">
 <meta property="og:image" content="http://github.com/assets/Probability/1558771496840.png">
-<meta property="og:image" content="http://github.com/2019/03/21/Probability/assets/Probability/1558857988530.png">
-<meta property="og:image" content="http://github.com/2019/03/21/Probability/assets/Probability/1558864122035.png">
-<meta property="og:image" content="http://github.com/2019/03/21/Probability/assets/Probability/1558864243712.png">
-<meta property="og:image" content="http://github.com/2019/03/21/Probability/assets/Probability/1558880242820.png">
-<meta property="og:updated_time" content="2019-05-26T14:44:15.266Z">
+<meta property="og:image" content="http://github.com/assets/Probability/1558857988530.png">
+<meta property="og:image" content="http://github.com/assets/Probability/1558864122035.png">
+<meta property="og:image" content="http://github.com/assets/Probability/1558864243712.png">
+<meta property="og:image" content="http://github.com/assets/Probability/1558880242820.png">
+<meta property="og:updated_time" content="2019-05-26T14:59:00.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Probability">
 <meta name="twitter:description" content="Basic Concepts random experimentan experimental procedure and one or more measurements or observations. sample spacethe set of all possible outcomes. discrete sample space if the number of outcomes is">
@@ -404,7 +404,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-26 22:44:15" itemprop="dateModified" datetime="2019-05-26T22:44:15+08:00">2019-05-26</time>
+                <time title="Modified: 2019-05-26 22:59:00" itemprop="dateModified" datetime="2019-05-26T22:59:00+08:00">2019-05-26</time>
               
             
           </span>
@@ -724,7 +724,7 @@
 <li>Magnitude is not a good measure of their relationship.</li>
 </ul>
 <p>Useful formula<br>$COV[X,Y]=E[XY]-E[X]E[Y]$<br>If either $X$ or $Y$ is zero mean, the covariance and correlation are identical $COV[X,Y]=E[XY]$</p>
-<h3 id="Correlation"><a href="#Correlation" class="headerlink" title="Correlation"></a>Correlation</h3><p>$X$ and $Y$ are <strong>uncorrelated</strong> if $COV[X,Y]=0$ thus $E[XY]=E[X]E[Y]$<br><img src="assets/Probability/1558857988530.png" alt="1558857988530"></p>
+<h3 id="Correlation"><a href="#Correlation" class="headerlink" title="Correlation"></a>Correlation</h3><p>$X$ and $Y$ are <strong>uncorrelated</strong> if $COV[X,Y]=0$ thus $E[XY]=E[X]E[Y]$<br><img src="/assets/Probability/1558857988530.png" alt="1558857988530"></p>
 <h4 id="correlation-coefficient"><a href="#correlation-coefficient" class="headerlink" title="correlation coefficient"></a>correlation coefficient</h4><p>$\rho_{X,Y}={COV[X,Y]\over \sigma_X\sigma_Y}=\rho_{Y,X}$<br>where $\sigma_x^2 = VAR(X)$</p>
 <ul>
 <li>$|\rho_{X,Y}|\le 1$</li>
@@ -747,14 +747,14 @@
 <p>Since $E[Y|X]$ is a function of $X$, it is also a RV.<br>Taking the expectation over $X$, the conditioning disappears!</p>
 <script type="math/tex; mode=display">E[E[Y|X]] = E[Y]</script><p>more generally, $E[g(Y)]=E[E[g(Y)|X]]$<br>This is an <strong>expectation</strong> version of the total probability theorem</p>
 <h2 id="More-than-two-RVs"><a href="#More-than-two-RVs" class="headerlink" title="More than two RVs"></a>More than two RVs</h2><p>An $N$ dimensional random vector is a mapping from a probability space $S$ to $R^N$. Often we think $n$ RVs as a single n-dimensional <strong>random vector</strong>.</p>
-<h3 id="CDF-PDF-PMF"><a href="#CDF-PDF-PMF" class="headerlink" title="CDF/PDF/PMF"></a>CDF/PDF/PMF</h3><p>$F_{X_1,X_2,…X_n}(x_1,x_2,…x_n) = P[X_1\le x_1,X_2\le x_2,…X_n\le x_n]$<br>$f_{X_1,X_2,…X_n}(x_1,x_2,…x_n)={\part^n\over\part x_1…\part x_n}F_{X_1,X_2,…X_n}(x_1,x_2,…x_n)$<br>$p_{X_1,X_2,…X_n}(x_1,x_2,…x_n)=P[X_1= x_1,X_2= x_2,…X_n= x_n]$</p>
+<h3 id="CDF-PDF-PMF"><a href="#CDF-PDF-PMF" class="headerlink" title="CDF/PDF/PMF"></a>CDF/PDF/PMF</h3><p>$F_{X_1,X_2,…X_n}(x_1,x_2,…x_n) = P[X_1\le x_1,X_2\le x_2,…X_n\le x_n]$<br>$f_{X_1,X_2,…X_n}(x_1,x_2,…x_n)={\partial^n\over\partial x_1…\partial x_n}F_{X_1,X_2,…X_n}(x_1,x_2,…x_n)$<br>$p_{X_1,X_2,…X_n}(x_1,x_2,…x_n)=P[X_1= x_1,X_2= x_2,…X_n= x_n]$</p>
 <h3 id="Multinomial-Distribution"><a href="#Multinomial-Distribution" class="headerlink" title="Multinomial Distribution"></a>Multinomial Distribution</h3><p>A generalization of the binomial distribution.<br>An experiment consists of $n$ independent trials of a sub-experiment with $m$ possible outcomes. $\sum p_i=1$ and $\sum X_i=n$.</p>
 <script type="math/tex; mode=display">p_{X_1,X_2,...X_n}(k_1,k_2,...k_n)={n!\over k_1!k_2!...k_m!}p_1^{k_1}p_2^{k_2}...p_m^{k_m}</script><p>if $k_1+k_2+…+k_m=n$ and $k_i\ge 0$ for all $i$, and zero other wise.</p>
 <h3 id="Marginal-Statistics"><a href="#Marginal-Statistics" class="headerlink" title="Marginal Statistics"></a>Marginal Statistics</h3><p>Eliminate variable from a PDF/PMF by integrating/summing<br>$f_{X_1,X_2,…X_{n-1}}(x_1,x_2,…x_{n-1})=\\\int_{-\infty}^\infty f_{X_1,X_2,…X_n}(x_1,x_2,…x_n)dx_n$<br>$p_{X_1,X_2,…X_{n-1}}(x_1,x_2,…x_{n-1})=\\\sum_{-\infty}^\infty p_{X_1,X_2,…X_n}(k_1,k_2,…k_n)$</p>
 <h3 id="Conditional-1"><a href="#Conditional-1" class="headerlink" title="Conditional"></a>Conditional</h3><p>Conditional PDF<br>$f_{X_1X_2X_3}(x_1,x_2|x_3)={f_{X_1X_2X_3}(x_1,x_2,x_3)\over f_{X_3}(x_3)}\\f_{X_1X_2X_3}(x_1|x_2,x_3)={f_{X_1X_2X_3}(x_1,x_2,x_3)\over f_{X_2X_3}(x_2,x_3)}$</p>
 <p>Conditional PMF<br>$p_{X_1X_2X_3}(k_1,k_2|k_3)={p_{X_1X_2X_3}(k_1,k_2,k_3)\over p_{X_3}(x_3)}\\p_{X_1X_2X_3}(k_1|k_2,k_3)={p_{X_1X_2X_3}(k_1,k_2,k_3)\over p_{X_2X_3}(k_2,k_3)}$</p>
-<h3 id="Correlation-Matrix"><a href="#Correlation-Matrix" class="headerlink" title="Correlation Matrix"></a>Correlation Matrix</h3><p><img src="assets/Probability/1558864122035.png" alt="1558864122035"></p>
-<h3 id="Covariance-Matrix"><a href="#Covariance-Matrix" class="headerlink" title="Covariance Matrix"></a>Covariance Matrix</h3><p><img src="assets/Probability/1558864243712.png" alt="1558864243712"></p>
+<h3 id="Correlation-Matrix"><a href="#Correlation-Matrix" class="headerlink" title="Correlation Matrix"></a>Correlation Matrix</h3><p><img src="/assets/Probability/1558864122035.png" alt="1558864122035"></p>
+<h3 id="Covariance-Matrix"><a href="#Covariance-Matrix" class="headerlink" title="Covariance Matrix"></a>Covariance Matrix</h3><p><img src="/assets/Probability/1558864243712.png" alt="1558864243712"></p>
 <ul>
 <li><strong>Relationship between Correlation and Covariance</strong><script type="math/tex; mode=display">\boldsymbol C=\boldsymbol  R-E[\vec X]E[\vec Y]</script>if the mean vector is zero, then $\boldsymbol C=\boldsymbol R$</li>
 <li>Symmetric</li>
@@ -806,7 +806,7 @@
 </tbody>
 </table>
 </div>
-<p>A random process is uniquely specified by the <strong>collection</strong> of all n-th order distribution or density functions.<br>$F_{X(t_1)X(t_2)…X(t_n)}(x_1,x_2,…,x_n)=P[\bigcap_{i=1}^nX(t_i)\le x_i]$<br>$f_{X(t_1)X(t_2)…X(t_n)}(x_1,x_2,…,x_n)={\part^n\over\part x_1\part x_2…\part x_n}F_X$</p>
+<p>A random process is uniquely specified by the <strong>collection</strong> of all n-th order distribution or density functions.<br>$F_{X(t_1)X(t_2)…X(t_n)}(x_1,x_2,…,x_n)=P[\bigcap_{i=1}^nX(t_i)\le x_i]$<br>$f_{X(t_1)X(t_2)…X(t_n)}(x_1,x_2,…,x_n)={\partial^n\over\partial x_1\partial x_2…\partial x_n}F_X$</p>
 <h3 id="Characteristics"><a href="#Characteristics" class="headerlink" title="Characteristics"></a>Characteristics</h3><h4 id="Mean-function"><a href="#Mean-function" class="headerlink" title="Mean function"></a>Mean function</h4><p>$m_X(t)=E[X(t)]$</p>
 <ul>
 <li>function of time</li>
@@ -876,7 +876,7 @@
 <li>For fixed $t$ and $m$, the distribution of $N_m(t)$ is binomial with parameters $n=\lfloor mt\rfloor$ and $p=\lambda/m$</li>
 <li>The distribution of $N_m(t)$ approaches a Poisson distribution with mean $np=\lfloor mt\rfloor{\lambda\over m}\to\lambda t$</li>
 </ul>
-<h4 id="Counting-Process"><a href="#Counting-Process" class="headerlink" title="Counting Process"></a>Counting Process</h4><p><img src="assets/Probability/1558880242820.png" alt="1558880242820"></p>
+<h4 id="Counting-Process"><a href="#Counting-Process" class="headerlink" title="Counting Process"></a>Counting Process</h4><p><img src="/assets/Probability/1558880242820.png" alt="1558880242820"></p>
 <h5 id="Binomial-Counting-Process"><a href="#Binomial-Counting-Process" class="headerlink" title="Binomial Counting Process"></a>Binomial Counting Process</h5><p>$X_n$ is a sequence of i.i.d. Bernoulli RV with parameter $p$. $S_n$ is the number of 1’s in the first $n$ trials.</p>
 <p>$p_{S_n}(k)={n\choose k}p^k(1-p)^{n-k}$ for $k=0,1,…,n$</p>
 <h5 id="Poisson-Counting-Process"><a href="#Poisson-Counting-Process" class="headerlink" title="Poisson Counting Process"></a>Poisson Counting Process</h5><p>$N(t)$ is the continuous time non-negative integer valued i.s.i. process whose first order density is Poisson.</p>
@@ -958,8 +958,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/19/Signal-and-System/" rel="next" title="Signal and System">
-                <i class="fa fa-chevron-left"></i> Signal and System
+              <a href="/2019/03/21/Fourier-Transform/" rel="next" title="Fourier Transform">
+                <i class="fa fa-chevron-left"></i> Fourier Transform
               </a>
             
           </div>
@@ -968,8 +968,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/21/Fourier-Transform/" rel="prev" title="Fourier Transform">
-                Fourier Transform <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/10/Differential-Equation/" rel="prev" title="Differential Equation">
+                Differential Equation <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
