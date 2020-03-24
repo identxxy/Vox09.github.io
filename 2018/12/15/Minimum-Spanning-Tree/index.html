@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="1544942034490  Uniqueness of MST Cut Lemma Let S be any subset of nodes let e be the min cost edge with exactly one endpoint in S. Then every MST must contain e. Proof Let T* be some MST Consi">
+  <meta name="description" content="HKUST COMP3711 notes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Minimum Spanning Tree">
 <meta property="og:url" content="http://github.com/2018/12/15/Minimum-Spanning-Tree/index.html">
 <meta property="og:site_name" content="Destinxxy">
-<meta property="og:description" content="1544942034490  Uniqueness of MST Cut Lemma Let S be any subset of nodes let e be the min cost edge with exactly one endpoint in S. Then every MST must contain e. Proof Let T* be some MST Consi">
+<meta property="og:description" content="HKUST COMP3711 notes">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://github.com/assets/Minimum-Spanning-Tree/1544942034490.png">
 <meta property="og:image" content="http://github.com/assets/Minimum-Spanning-Tree/1544950977399.png">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="http://github.com/assets/Minimum-Spanning-Tree/1544952591584.png">
 <meta property="og:image" content="http://github.com/assets/Minimum-Spanning-Tree/1544954929318.png">
 <meta property="article:published_time" content="2018-12-15T13:00:00.000Z">
-<meta property="article:modified_time" content="2019-04-09T15:16:59.376Z">
+<meta property="article:modified_time" content="2020-03-24T05:44:51.148Z">
 <meta property="article:author" content="Vox09">
 <meta property="article:tag" content="searching">
 <meta property="article:tag" content="algorithm">
@@ -204,7 +204,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-04-09 23:16:59" itemprop="dateModified" datetime="2019-04-09T23:16:59+08:00">2019-04-09</time>
+                <time title="Modified: 2020-03-24 13:44:51" itemprop="dateModified" datetime="2020-03-24T13:44:51+08:00">2020-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -217,6 +217,7 @@
             </span>
 
           
+            <div class="post-description">HKUST COMP3711 notes</div>
 
         </div>
       </header>
@@ -227,75 +228,58 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <figure>
-<img src="/assets/Minimum-Spanning-Tree/1544942034490.png" alt="1544942034490" /><figcaption>1544942034490</figcaption>
-</figure>
-<h2 id="uniqueness-of-mst">Uniqueness of MST</h2>
-<h3 id="cut-lemma">Cut Lemma</h3>
-<p>Let <code>S</code> be any subset of nodes let <code>e</code> be the <em>min</em> cost edge with exactly one endpoint in <code>S</code>. Then every MST must contain <code>e</code>.</p>
-<h3 id="proof">Proof</h3>
-<p>Let <code>T*</code> be some MST Consider any edge <code>e</code> in <code>T*</code> Removing <code>e</code> from <code>T*</code> breaks <code>T*</code> into two parts <code>S</code>and <code>V-S</code> <code>e</code> must be the min cost edge crossing the cut <code>(S,S-V)</code> Applying the cut lemma on <code>S</code>, every MST must contain <code>e</code> Apply the above arguments to every edge in <code>T*</code>, we have <em>Every edge <code>e</code> in <code>T*</code> must be contained in every MST</em></p>
-<h2 id="prims-algorithm">Prim's Algorithm</h2>
-<figure>
-<img src="/assets/Minimum-Spanning-Tree/1544950977399.png" alt="1544950977399" /><figcaption>1544950977399</figcaption>
-</figure>
-<figure>
-<img src="/assets/Minimum-Spanning-Tree/1544951001949.png" alt="1544951001949" /><figcaption>1544951001949</figcaption>
-</figure>
-<h3 id="idea">Idea</h3>
-<ol type="1">
+        <p><img src="/assets/Minimum-Spanning-Tree/1544942034490.png" alt="1544942034490"></p>
+<h2 id="Uniqueness-of-MST"><a href="#Uniqueness-of-MST" class="headerlink" title="Uniqueness of MST"></a>Uniqueness of MST</h2><h3 id="Cut-Lemma"><a href="#Cut-Lemma" class="headerlink" title="Cut Lemma"></a>Cut Lemma</h3><p>Let <code>S</code> be any subset of nodes<br>let <code>e</code> be the <em>min</em> cost edge with exactly one endpoint in <code>S</code>.<br>Then every MST must contain <code>e</code>.</p>
+<h3 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h3><p>Let <code>T*</code> be some MST<br>Consider any edge <code>e</code> in <code>T*</code><br>Removing <code>e</code> from <code>T*</code> breaks <code>T*</code> into two parts <code>S</code>and <code>V-S</code><br><code>e</code> must be the min cost edge crossing the cut <code>(S,S-V)</code><br>Applying the cut lemma on <code>S</code>, every MST must contain <code>e</code><br>Apply the above arguments to every edge in <code>T*</code>, we have<br>_Every edge <code>e</code> in <code>T*</code> must be contained in every MST_</p>
+<h2 id="Prim’s-Algorithm"><a href="#Prim’s-Algorithm" class="headerlink" title="Prim’s Algorithm"></a>Prim’s Algorithm</h2><p><img src="/assets/Minimum-Spanning-Tree/1544950977399.png" alt="1544950977399"></p>
+<p><img src="/assets/Minimum-Spanning-Tree/1544951001949.png" alt="1544951001949"></p>
+<h3 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h3><ol>
 <li>Initialize explored set <code>S</code> = { <em>any one node</em> }</li>
 <li>Add min cost edge <code>e</code> = <code>(u,n)</code> with <code>u</code> in <code>S</code> and <code>n</code> in <code>V-S</code> to <code>T</code></li>
 <li>Add <code>n</code> to <code>S</code></li>
 <li>Repeat until <code>S = V</code></li>
 </ol>
-<h3 id="feature">Feature</h3>
-<p>Maintain set of explored nodes <code>S</code></p>
-<p>A Min priority queue <code>Q</code> to keep unknown nodes. key is their <strong>cheapest</strong> edge to node in<code>S</code></p>
-<h3 id="pseudocode">pseudocode</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Prim(G,r):</span><br><span class="line">for each n in V do </span><br><span class="line">	n.key &#x3D; inf, n.p &#x3D; nil, n.status &#x3D; unknown</span><br><span class="line">r.key &#x3D; 0</span><br><span class="line">create a min priority queue Q on V</span><br><span class="line">while Q not empty</span><br><span class="line">	u &#x3D; Extract-Min(Q) 	% need O(logV) time</span><br><span class="line">	u.status &#x3D; over</span><br><span class="line">	for each n in Adj(u) do</span><br><span class="line">		if n.status &#x3D; unknown and w(u,n)&lt;n.key then</span><br><span class="line">			n.p &#x3D; u</span><br><span class="line">			n.key &#x3D; w(u,n)</span><br><span class="line">			Decrease-Key(Q,n,w(u,n))</span><br></pre></td></tr></table></figure>
+<h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><p>Maintain set of explored nodes <code>S</code></p>
+<p>A Min priority queue <code>Q</code> to keep unknown nodes.<br>key is their <strong>cheapest</strong> edge to node in<code>S</code></p>
+<h3 id="pseudocode"><a href="#pseudocode" class="headerlink" title="pseudocode"></a>pseudocode</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Prim(G,r):</span><br><span class="line">for each n in V do </span><br><span class="line">	n.key &#x3D; inf, n.p &#x3D; nil, n.status &#x3D; unknown</span><br><span class="line">r.key &#x3D; 0</span><br><span class="line">create a min priority queue Q on V</span><br><span class="line">while Q not empty</span><br><span class="line">	u &#x3D; Extract-Min(Q) 	% need O(logV) time</span><br><span class="line">	u.status &#x3D; over</span><br><span class="line">	for each n in Adj(u) do</span><br><span class="line">		if n.status &#x3D; unknown and w(u,n)&lt;n.key then</span><br><span class="line">			n.p &#x3D; u</span><br><span class="line">			n.key &#x3D; w(u,n)</span><br><span class="line">			Decrease-Key(Q,n,w(u,n))</span><br></pre></td></tr></table></figure>
 <p>Running time: 𝑂(𝐸log𝑉)</p>
-<h2 id="kruskals-algorithm">Kruskal's Algorithm</h2>
-<p><img src="/assets/Minimum-Spanning-Tree/1544951029652.png" alt="1544951029652" /> <img src="/assets/Minimum-Spanning-Tree/1544951067674.png" alt="1544951067674" /></p>
-<h3 id="idea-1">Idea</h3>
-<ol type="1">
+<h2 id="Kruskal’s-Algorithm"><a href="#Kruskal’s-Algorithm" class="headerlink" title="Kruskal’s Algorithm"></a>Kruskal’s Algorithm</h2><p><img src="/assets/Minimum-Spanning-Tree/1544951029652.png" alt="1544951029652"><br><img src="/assets/Minimum-Spanning-Tree/1544951067674.png" alt="1544951067674"></p>
+<h3 id="Idea-1"><a href="#Idea-1" class="headerlink" title="Idea"></a>Idea</h3><ol>
 <li>Start with an empty tree <code>T</code></li>
 <li>Consider edges in ascending order of weight.</li>
-<li>Case 1: If adding <code>e</code> to <code>T</code> create a cycle, discard <code>e</code> Case 2: Otherwise, insert <code>e = (u,v)</code> into <code>T</code> according to <a href="#cut-lemma">cut Lemma</a></li>
+<li>Case 1: If adding <code>e</code> to <code>T</code> create a cycle, discard <code>e</code><br>Case 2: Otherwise, insert <code>e = (u,v)</code> into <code>T</code> according to <a href="#cut-lemma">cut Lemma</a></li>
 </ol>
-<h3 id="union-find-data-structure">Union-Find Data Structure</h3>
-<h4 id="key-question">Key Question</h4>
-<p>How to check whether adding <code>e</code> to <code>T</code> will create a cycle?</p>
+<h3 id="Union-Find-Data-Structure"><a href="#Union-Find-Data-Structure" class="headerlink" title="Union-Find Data Structure"></a>Union-Find Data Structure</h3><h4 id="Key-Question"><a href="#Key-Question" class="headerlink" title="Key Question"></a>Key Question</h4><p>How to check whether adding <code>e</code> to <code>T</code> will create a cycle?</p>
 <ul>
-<li>DFS take 𝑂(𝐸⋅𝑉) time in total. Can we do better in 𝑂(log𝑉) time?</li>
+<li>DFS take 𝑂(𝐸⋅𝑉) time in total.<br>Can we do better in 𝑂(log𝑉) time?</li>
 <li>After an edge <code>e</code> is added, two sets <strong>union</strong> together</li>
-<li>Need such a &quot;union-find&quot;data structure:
-<ul>
+<li>Need such a “union-find”data structure:<ul>
 <li>Find-Set(u): For a given node <code>u</code>, find which <strong>set</strong> this node belongs to.</li>
 <li>Union(u,v): For two given nodes <code>u</code> and <code>v</code>, merge the two <strong>sets</strong> containing <code>u</code> and <code>v</code> together.</li>
-</ul></li>
 </ul>
-<h4 id="set-as-a-tree">Set as A Tree</h4>
-<ul>
-<li><p>The trees in the union-find data structure are <em>NOT</em> the same as the partial MST trees! <img src="/assets/Minimum-Spanning-Tree/1544952591584.png" alt="1544952591584" /></p></li>
-<li><p>The root of the tree is the representative node of all nodes in that tree (i.e., use the root’s ID as the unique ID of the set).</p></li>
+</li>
+</ul>
+<h4 id="Set-as-A-Tree"><a href="#Set-as-A-Tree" class="headerlink" title="Set as A Tree"></a>Set as A Tree</h4><ul>
+<li><p>The trees in the union-find data structure are <em>NOT</em> the same as the partial MST trees!<br><img src="/assets/Minimum-Spanning-Tree/1544952591584.png" alt="1544952591584"></p>
+</li>
+<li><p>The root of the tree is the representative node of all nodes in that tree<br>(i.e., use the root’s ID as the unique ID of the set).</p>
+</li>
 <li><p>Every node (except the root), has a pointer pointing to its parent.</p>
 <ul>
-<li><p>The root has a parent pointer to itself.</p></li>
+<li><p>The root has a parent pointer to itself.</p>
+</li>
 <li><p>No child pointers (unlike BST), so a node can have many children.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Make-Set(x):</span><br><span class="line">x.parent &#x3D; x, x.hight &#x3D; 0</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Find-Set(x):</span><br><span class="line">x.height &#x3D; 0</span><br><span class="line">while x!&#x3D; x.parent do</span><br><span class="line">	x.height &#x3D; x.height + 1</span><br><span class="line">	x&#x3D; x.parent</span><br><span class="line">return x</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Union(x,y):</span><br><span class="line">a &#x3D; Find-Set(x)</span><br><span class="line">b &#x3D; Find-Set(y)</span><br><span class="line">if a.height &lt;&#x3D; b.height then</span><br><span class="line">	if a.height &#x3D; b.height then</span><br><span class="line">		b.height &#x3D; b.height + 1</span><br><span class="line">	a.parent &#x3D; b</span><br><span class="line">else b.parent &#x3D; a</span><br></pre></td></tr></table></figure></li>
-</ul></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Union(x,y):</span><br><span class="line">a &#x3D; Find-Set(x)</span><br><span class="line">b &#x3D; Find-Set(y)</span><br><span class="line">if a.height &lt;&#x3D; b.height then</span><br><span class="line">	if a.height &#x3D; b.height then</span><br><span class="line">		b.height &#x3D; b.height + 1</span><br><span class="line">	a.parent &#x3D; b</span><br><span class="line">else b.parent &#x3D; a</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h5 id="path-compression">Path Compression</h5>
-<p>while <code>Find-Set(x)</code> we can update its <code>parent</code> pointer to compress the path.</p>
-<figure>
-<img src="/assets/Minimum-Spanning-Tree/1544954929318.png" alt="1544954929318" /><figcaption>1544954929318</figcaption>
-</figure>
-<h3 id="pseudocode-1">pseudocode</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MST-Kruskal(G):</span><br><span class="line">for each node n in V</span><br><span class="line">	Make-Set(n)</span><br><span class="line">sort the edges of G into increasing order by weight % O(ElogE)</span><br><span class="line">for each edge (u,n) in E taken in the above order</span><br><span class="line">	if Find-Set(u) !&#x3D; Find-Set(v) then				% O(E)</span><br><span class="line">		output edge (u,n)</span><br><span class="line">		Union(u,n)</span><br></pre></td></tr></table></figure>
-<p>Running time: 𝑂(𝐸log𝐸+𝐸log𝑉)=𝑂(𝐸log𝑉) Note: If edges are already sorted(𝑂(𝐸log𝐸)) and we use <a href="#path-compression">path compression</a>, then the running time is close to 𝑂(𝐸)</p>
+</li>
+</ul>
+<h5 id="Path-Compression"><a href="#Path-Compression" class="headerlink" title="Path Compression"></a>Path Compression</h5><p>while <code>Find-Set(x)</code> we can update its <code>parent</code> pointer to compress the path.</p>
+<p><img src="/assets/Minimum-Spanning-Tree/1544954929318.png" alt="1544954929318"></p>
+<h3 id="pseudocode-1"><a href="#pseudocode-1" class="headerlink" title="pseudocode"></a>pseudocode</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MST-Kruskal(G):</span><br><span class="line">for each node n in V</span><br><span class="line">	Make-Set(n)</span><br><span class="line">sort the edges of G into increasing order by weight % O(ElogE)</span><br><span class="line">for each edge (u,n) in E taken in the above order</span><br><span class="line">	if Find-Set(u) !&#x3D; Find-Set(v) then				% O(E)</span><br><span class="line">		output edge (u,n)</span><br><span class="line">		Union(u,n)</span><br></pre></td></tr></table></figure>
+<p>Running time: 𝑂(𝐸log𝐸+𝐸log𝑉)=𝑂(𝐸log𝑉)<br>Note: If edges are already sorted(𝑂(𝐸log𝐸)) and we use <a href="#path-compression">path compression</a>, then the running time is close to 𝑂(𝐸)</p>
 
     </div>
 
@@ -419,7 +403,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#uniqueness-of-mst"><span class="nav-text">Uniqueness of MST</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cut-lemma"><span class="nav-text">Cut Lemma</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proof"><span class="nav-text">Proof</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#prims-algorithm"><span class="nav-text">Prim&#39;s Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#idea"><span class="nav-text">Idea</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#feature"><span class="nav-text">Feature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pseudocode"><span class="nav-text">pseudocode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kruskals-algorithm"><span class="nav-text">Kruskal&#39;s Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#idea-1"><span class="nav-text">Idea</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#union-find-data-structure"><span class="nav-text">Union-Find Data Structure</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#key-question"><span class="nav-text">Key Question</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#set-as-a-tree"><span class="nav-text">Set as A Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#path-compression"><span class="nav-text">Path Compression</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pseudocode-1"><span class="nav-text">pseudocode</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Uniqueness-of-MST"><span class="nav-text">Uniqueness of MST</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cut-Lemma"><span class="nav-text">Cut Lemma</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Proof"><span class="nav-text">Proof</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Prim’s-Algorithm"><span class="nav-text">Prim’s Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Idea"><span class="nav-text">Idea</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feature"><span class="nav-text">Feature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pseudocode"><span class="nav-text">pseudocode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kruskal’s-Algorithm"><span class="nav-text">Kruskal’s Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Idea-1"><span class="nav-text">Idea</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Union-Find-Data-Structure"><span class="nav-text">Union-Find Data Structure</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Key-Question"><span class="nav-text">Key Question</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set-as-A-Tree"><span class="nav-text">Set as A Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Path-Compression"><span class="nav-text">Path Compression</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pseudocode-1"><span class="nav-text">pseudocode</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -433,7 +417,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -446,7 +430,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

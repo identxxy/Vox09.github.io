@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Static variables Global Scope  created only once in a program. reside on the static data region of the loaded program. have a lifetime across the entire run of a program. still may have limited">
+  <meta name="description" content="HKUST COMP2011&#x2F;2012 notes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Static Variables">
 <meta property="og:url" content="http://github.com/2018/12/05/Static-Variables/index.html">
 <meta property="og:site_name" content="Destinxxy">
-<meta property="og:description" content="Static variables Global Scope  created only once in a program. reside on the static data region of the loaded program. have a lifetime across the entire run of a program. still may have limited">
+<meta property="og:description" content="HKUST COMP2011&#x2F;2012 notes">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-12-05T07:56:53.000Z">
-<meta property="article:modified_time" content="2019-04-09T15:16:59.382Z">
+<meta property="article:modified_time" content="2020-03-24T06:07:18.861Z">
 <meta property="article:author" content="Vox09">
 <meta property="article:tag" content="Cpp">
 <meta property="article:tag" content="static variable">
@@ -195,7 +195,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-04-09 23:16:59" itemprop="dateModified" datetime="2019-04-09T23:16:59+08:00">2019-04-09</time>
+                <time title="Modified: 2020-03-24 14:07:18" itemprop="dateModified" datetime="2020-03-24T14:07:18+08:00">2020-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -203,11 +203,12 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/I-don-t-know-about-C/" itemprop="url" rel="index"><span itemprop="name">I don't know about C++</span></a>
+                  <a href="/categories/C-C/" itemprop="url" rel="index"><span itemprop="name">C/C++</span></a>
                 </span>
             </span>
 
           
+            <div class="post-description">HKUST COMP2011/2012 notes</div>
 
         </div>
       </header>
@@ -218,47 +219,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="static-variables">Static variables</h2>
-<h3 id="global-scope">Global Scope</h3>
-<ul>
+        <h2 id="Static-variables"><a href="#Static-variables" class="headerlink" title="Static variables"></a>Static variables</h2><h3 id="Global-Scope"><a href="#Global-Scope" class="headerlink" title="Global Scope"></a>Global Scope</h3><ul>
 <li>created only once in a program.</li>
 <li>reside on the static data region of the loaded program.</li>
 <li>have a lifetime across the entire run of a program.</li>
 <li>still may have limited scope: file, function, class.</li>
 </ul>
-<h3 id="function-scope">Function Scope</h3>
-<ul>
+<h3 id="Function-Scope"><a href="#Function-Scope" class="headerlink" title="Function Scope"></a>Function Scope</h3><ul>
 <li>initialized only once regardless how many times the function is called.</li>
 <li>retain their values across the function calls.</li>
 <li>can be accessed <strong>only inside the function.</strong></li>
 </ul>
-<h3 id="class-scope">Class Scope</h3>
-<ul>
-<li><p>variables in different objects are actually one variable.</p></li>
-<li><p>initialize variable must be done in <strong>global scope</strong> <strong>cannot initialize it inside the class.</strong></p>
+<h3 id="Class-Scope"><a href="#Class-Scope" class="headerlink" title="Class Scope"></a>Class Scope</h3><ul>
+<li><p>variables in different objects are actually one variable.</p>
+</li>
+<li><p>initialize variable must be done in <strong>global scope</strong><br><strong>cannot initialize it inside the class.</strong></p>
 <blockquote>
-<p><strong>NOT in any function! Not in main(), either!</strong> <strong>NO</strong> keyword <code>static</code> e.g.</p>
+<p><strong>NOT in any function! Not in main(), either!</strong><br><strong>NO</strong> keyword <code>static</code><br>e.g.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><span class="keyword">static</span> <span class="keyword">int</span> a;&#125;;</span><br><span class="line"><span class="keyword">int</span> A::a = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-</blockquote></li>
-<li><p><strong>variable exists even if no class object is created.</strong></p></li>
+</blockquote>
+</li>
+<li><p><strong>variable exists even if no class object is created.</strong></p>
+</li>
 </ul>
-<h2 id="static-functions">Static Functions</h2>
-<h3 id="global-functions">Global Functions</h3>
-<ul>
+<h2 id="Static-Functions"><a href="#Static-Functions" class="headerlink" title="Static Functions"></a>Static Functions</h2><h3 id="Global-Functions"><a href="#Global-Functions" class="headerlink" title="Global Functions"></a>Global Functions</h3><ul>
 <li>almost same as <a href="#global-scope">static variables</a>.</li>
 </ul>
-<h3 id="member-functions">Member Functions</h3>
-<ul>
-<li><p>do not have the implicit this pointer like regular non-static member functions.</p></li>
-<li><p>may be used even when there are <strong>no</strong> objects of the class!</p></li>
-<li><p>can <strong>only</strong> make use of static data members of the class.</p></li>
-<li><p>cannot be <code>const</code> nor <code>virtual</code> functions.</p></li>
+<h3 id="Member-Functions"><a href="#Member-Functions" class="headerlink" title="Member Functions"></a>Member Functions</h3><ul>
+<li><p>do not have the implicit this pointer like regular non-static member functions.</p>
+</li>
+<li><p>may be used even when there are <strong>no</strong> objects of the class!</p>
+</li>
+<li><p>can <strong>only</strong> make use of static data members of the class.</p>
+</li>
+<li><p>cannot be <code>const</code> nor <code>virtual</code> functions.</p>
+</li>
 <li><p>can be defined outside the class declaration</p>
 <blockquote>
 <p><strong>NO</strong> keyword <code>static</code></p>
 <p>e.g.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>;&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">A::f</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-</blockquote></li>
+</blockquote>
+</li>
 </ul>
 
     </div>
@@ -270,13 +272,10 @@
   <div class="popular-posts-header">Related Posts</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2018\11\26\C-Memory-Leak\" rel="bookmark">C++ Memory Leak</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2018\05\27\Cpp-Notes\" rel="bookmark">Cpp Notes</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2018\12\06\AVL-Trees\" rel="bookmark">AVL Trees</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2018\11\26\C-Memory-Leak\" rel="bookmark">C++ Memory Leak</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2018\12\05\Inheritance-and-Polymorphism\" rel="bookmark">Inheritance and Polymorphism</a></div>
@@ -385,7 +384,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#static-variables"><span class="nav-text">Static variables</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#global-scope"><span class="nav-text">Global Scope</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#function-scope"><span class="nav-text">Function Scope</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#class-scope"><span class="nav-text">Class Scope</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static-functions"><span class="nav-text">Static Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#global-functions"><span class="nav-text">Global Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#member-functions"><span class="nav-text">Member Functions</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Static-variables"><span class="nav-text">Static variables</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Global-Scope"><span class="nav-text">Global Scope</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-Scope"><span class="nav-text">Function Scope</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-Scope"><span class="nav-text">Class Scope</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Static-Functions"><span class="nav-text">Static Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Global-Functions"><span class="nav-text">Global Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Member-Functions"><span class="nav-text">Member Functions</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -399,7 +398,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -412,7 +411,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

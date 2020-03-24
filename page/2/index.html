@@ -159,648 +159,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://github.com/2018/12/15/Graph-Basic-and-Algorithm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Vox09">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Destinxxy">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/12/15/Graph-Basic-and-Algorithm/" class="post-title-link" itemprop="url">Graph Basic and Algorithm</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-12-15 20:50:00" itemprop="dateCreated datePublished" datetime="2018-12-15T20:50:00+08:00">2018-12-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-04-09 23:16:59" itemprop="dateModified" datetime="2019-04-09T23:16:59+08:00">2019-04-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm-and-Graph/" itemprop="url" rel="index"><span itemprop="name">Algorithm and Graph</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="basic">Basic</h2>
-<p>node: vertex</p>
-<p>edge: connection between nodes</p>
-<h3 id="undirected">Undirected</h3>
-<ul>
-<li>Edges have no direction (or both directions)</li>
-<li>deg (𝑣) = # edges at 𝑣</li>
-<li>sum of deg(𝑣) = 2𝐸</li>
-</ul>
-<h3 id="directed">Directed</h3>
-<ul>
-<li>Edges have directions</li>
-<li>If an edge has both directions, we will use two edges with opposite directions</li>
-<li>deg<sub>out</sub> (𝑣) = # edge leaving 𝑣; deg<sub>in</sub> (𝑣 ) = # edge entering 𝑣.</li>
-<li>sum of deg𝑜𝑢𝑡(𝑣) = sum of deg𝑖𝑛(𝑣) = 𝐸</li>
-</ul>
-<h3 id="path">Path</h3>
-<blockquote>
-<p>A <strong>path</strong> in a (directed or undirected) graph 𝐺 = (𝑉, 𝐸) is a sequence 𝑃 of nodes 𝑣1, 𝑣2, … , 𝑣𝑘−1, 𝑣𝑘 such that (𝑣𝑖, 𝑣𝑖+1) is an edge. The length of the path is 𝑘 − 1 (i.e., # edges in the path).</p>
-<p>A path is <strong>simple</strong> if all nodes are distinct.</p>
-</blockquote>
-<h3 id="connectivity">Connectivity</h3>
-<blockquote>
-<p>An <em>undirected</em> graph is <strong>connected</strong> if for every pair of nodes 𝑢 and 𝑣, there is a path between 𝑢 and 𝑣.</p>
-<p>Theorem: For a connected graph, 𝐸 ≥ 𝑉 − 1.</p>
-</blockquote>
-<h3 id="cycle">Cycle</h3>
-<blockquote>
-<p>A cycle is a path v<sub>1</sub>, v<sub>2</sub>, … , v<sub>k-1</sub>, v<sub>k</sub> in which v<sub>1</sub> = v<sub>k</sub> , k &gt; 2</p>
-<p>A cycle is simple if the first 𝑘 − 1 nodes are all distinct.</p>
-</blockquote>
-<h3 id="data-structure">Data structure</h3>
-<h4 id="adjacency-nodes">Adjacency Nodes</h4>
-<ul>
-<li>Adjacency List
-<ul>
-<li>A node-indexed array of lists.</li>
-<li>Given node 𝑢, retrieving all neighbors in Θ(deg(𝑢)) time</li>
-<li>Given 𝑢, 𝑣, checking if (𝑢, 𝑣) is an edge takes Θ(deg(𝑢)) time.</li>
-<li>Space: Θ(𝑉 + 𝐸).</li>
-</ul></li>
-<li>Adjacency Matrix
-<ul>
-<li>A 𝑉 × 𝑉 matrix.</li>
-<li>Given node 𝑢, retrieving all neighbors in Θ (𝑉) time</li>
-<li>Given 𝑢, 𝑣, checking if (𝑢, 𝑣) is an edge takes 𝑂(1) time.</li>
-<li>Space: Θ(𝑉2).</li>
-</ul></li>
-</ul>
-<h4 id="trees">Trees</h4>
-<p>connected &amp;&amp; no cycle =&gt; tree no cycle =&gt; forest(several trees)</p>
-<p>After we have run BFS or DFS on an <em>undirected</em> graph, the edges can be classified into 3 types:</p>
-<ul>
-<li><strong>Tree edges:</strong> traversed by the BFS/DFS</li>
-<li><strong>Back edges:</strong> connecting a node with one of its ancestors(other than its parent)</li>
-<li><strong>Cross edges:</strong> connecting two nodes with no ancestor/descendent relationship.</li>
-</ul>
-<h2 id="algorithm">Algorithm</h2>
-<h3 id="bfs">BFS</h3>
-<blockquote>
-<p>span a tree with NO <strong>back</strong> edges</p>
-</blockquote>
-<h4 id="pseudo-code">pseudo-code</h4>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">initialize an empty queue Q</span><br><span class="line">Enqueue(Q,r)</span><br><span class="line">while Q not empty do</span><br><span class="line">	n &#x3D; Dequeue(Q)</span><br><span class="line">	for each v in Adj(n)</span><br><span class="line">		if v.status &#x3D; unknown</span><br><span class="line">			v.status &#x3D; processing</span><br><span class="line">			v.d &#x3D; n.d + 1</span><br><span class="line">			v.p &#x3D; n</span><br><span class="line">			Enqueue(Q,v)</span><br><span class="line">		n.status &#x3D; over</span><br></pre></td></tr></table></figure>
-<p>Running time: Θ(𝑉+𝐸), which is Θ𝐸 if the graph is connected</p>
-<h4 id="application">Application</h4>
-<p>Find connected components.</p>
-<h3 id="dfs">DFS</h3>
-<blockquote>
-<p>span a tree with NO <strong>cross</strong> edges</p>
-</blockquote>
-<h4 id="pseudo-code-1">pseudo-code</h4>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">DFS(G)</span><br><span class="line">for each vertex n in V do</span><br><span class="line">	if n.status &#x3D; unknown then</span><br><span class="line">		DFS-Visit(n)</span><br><span class="line"></span><br><span class="line">DFS-Visit(n):</span><br><span class="line">n.status &#x3D; processing</span><br><span class="line">for each v in Adj(n) do</span><br><span class="line">	if v.status &#x3D; unknown the </span><br><span class="line">		v.p &#x3D; n</span><br><span class="line">		DFS-Vist(v)</span><br><span class="line">n.status &#x3D; over</span><br></pre></td></tr></table></figure>
-<p>Running time: Θ(𝑉+𝐸)</p>
-<h4 id="application-1">Application</h4>
-<p>Cycle detection</p>
-<h3 id="topological-sort">Topological Sort</h3>
-<blockquote>
-<p>A topological ordering of a graph is a linear ordering of the vertices of a DAG(Directed Acyclic Graph) such that if <code>(u,v)</code> is in the graph, <code>u</code> appears before <code>v</code> in the linear ordering.</p>
-</blockquote>
-<h4 id="idea">idea</h4>
-<ol type="1">
-<li>Output a vertex <code>u</code> with in-degree zero in current graph</li>
-<li>Remove <code>u</code> and all edges <code>(u,v)</code> from current graph</li>
-<li>If the graph is not empty, go to step 1</li>
-</ol>
-<h4 id="pseudo-code-2">pseudo-code</h4>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Initialize Q to be an empty queue</span><br><span class="line">for each u in V do </span><br><span class="line">	If inDegree(u) &#x3D; 0 then </span><br><span class="line">		% find all starting vertices</span><br><span class="line">		Enqueue(Q,u)</span><br><span class="line">while Q not empty</span><br><span class="line">	u &#x3D; Dequeue(Q);</span><br><span class="line">	Output u</span><br><span class="line">	for each v in Adj(u) </span><br><span class="line">		% remove u&#39;s outgoing edges</span><br><span class="line">		inDegree(v) &#x3D; inDegree(v) - 1</span><br><span class="line">		if inDegree(v) &#x3D; 0 then </span><br><span class="line">			Enqueque(Q,v)</span><br><span class="line">return</span><br></pre></td></tr></table></figure>
-<p>Running time: 𝑂(𝑉+𝐸)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://github.com/2018/12/15/Dynamic-Programming/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Vox09">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Destinxxy">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/12/15/Dynamic-Programming/" class="post-title-link" itemprop="url">Dynamic Programming</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-12-15 20:48:57" itemprop="dateCreated datePublished" datetime="2018-12-15T20:48:57+08:00">2018-12-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-04-09 23:16:59" itemprop="dateModified" datetime="2019-04-09T23:16:59+08:00">2019-04-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm-and-Graph/" itemprop="url" rel="index"><span itemprop="name">Algorithm and Graph</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Main idea of DP:</p>
-<ol type="1">
-<li><p>Analyze the structure of an optimal solution</p></li>
-<li><p>Recursively define the value of an optimal solution</p></li>
-<li><p>Compute the value of an optimal solution (usually bottom-up)</p></li>
-</ol>
-<p>@[TOC]</p>
-<h1 id="one-dimension">One-Dimension</h1>
-<h2 id="stairs-climbing-1d">Stairs Climbing 1D</h2>
-<blockquote>
-<p>You can climb 1 or 2 stairs with one step. How many different ways can you climb <strong>n</strong> stairs?</p>
-</blockquote>
-<h3 id="recurrence">Recurrence</h3>
-<blockquote>
-<p>F(n) = F(n-1) + F(n-2)</p>
-</blockquote>
-<h3 id="base-case">Base case</h3>
-<blockquote>
-<p>F(1) = 1, F(2) = 2</p>
-</blockquote>
-<h3 id="pseudo-code">pseudo-code</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">F(n):</span><br><span class="line">allocate an array A of size n</span><br><span class="line">A[1] &#x3D; 1</span><br><span class="line">A[2] &#x3D; 2</span><br><span class="line">for i&#x3D;3 to n</span><br><span class="line">	A[i] &#x3D; A[i-1] + A[i-2]</span><br><span class="line">return A[n]</span><br></pre></td></tr></table></figure>
-<h3 id="analyze">Analyze</h3>
-<p>Running time: Θ(𝑛) Space: Θ(𝑛) but can be improved to Θ(1) by freeing array.</p>
-<h2 id="rod-cutting-problem">Rod Cutting Problem</h2>
-<blockquote>
-<p>Given a rod of length <strong>n</strong> and prices <strong>p<sub>i</sub></strong> for i = 1,...,n, where <strong>p<sub>i</sub></strong> is the price of a rod of length <strong>i</strong> . Find a way to cut the rod to maximize total revenue.</p>
-</blockquote>
-<table>
-<thead>
-<tr class="header">
-<th>length i</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>8</th>
-<th>9</th>
-<th>10</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>price p<sub>i</sub></td>
-<td>1</td>
-<td>5</td>
-<td>8</td>
-<td>9</td>
-<td>10</td>
-<td>17</td>
-<td>17</td>
-<td>20</td>
-<td>24</td>
-<td>30</td>
-</tr>
-</tbody>
-</table>
-<h3 id="recurrence-1">Recurrence</h3>
-<p>total <strong>optimal</strong> revenue is price of cut rod and <strong>optimal</strong> revenue of remaining rood.</p>
-<blockquote>
-<p>r<sub>n</sub> = max{p<sub>n</sub>, p<sub>1</sub> + r<sub>n-1</sub>, p<sub>2</sub> + r<sub>n-2</sub>, ..., p<sub>n-1</sub>+r<sub>1</sub>}</p>
-</blockquote>
-<h3 id="base-case-1">Base case</h3>
-<p>Define <strong>r<sub>n</sub></strong> be the maximum revenue obtainable from cutting a rod of length <strong>n</strong>.</p>
-<blockquote>
-<p>r<sub>1</sub> = p<sub>1</sub></p>
-</blockquote>
-<h3 id="pseudo-code-1">pseudo-code</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">cutRod(n):</span><br><span class="line">let r[0...n] and s[0...n] be new arrays</span><br><span class="line">r[0] &#x3D; 0 </span><br><span class="line">for j&#x3D;1 to n		% every optimal length</span><br><span class="line">	q &#x3D; -inf</span><br><span class="line">	for i &#x3D;1 to j 	% every cut length</span><br><span class="line">		if q &lt; p[i] + r[j-i] then</span><br><span class="line">			q &#x3D; p[i]+r[j-i]</span><br><span class="line">			% keep track the optimal cut length</span><br><span class="line">			s[j] &#x3D; i</span><br><span class="line">	r[j] &#x3D; q</span><br><span class="line">j &#x3D; n </span><br><span class="line">while j&gt;0 do </span><br><span class="line">	print s[j]</span><br><span class="line">	j &#x3D; j-s[j]</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr class="header">
-<th>i</th>
-<th>0</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>8</th>
-<th>9</th>
-<th>10</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>p[i]</td>
-<td>0</td>
-<td>1</td>
-<td>5</td>
-<td>8</td>
-<td>9</td>
-<td>10</td>
-<td>17</td>
-<td>17</td>
-<td>20</td>
-<td>24</td>
-<td>30</td>
-</tr>
-<tr class="even">
-<td>r[i]</td>
-<td>0</td>
-<td>1</td>
-<td>5</td>
-<td>8</td>
-<td>9</td>
-<td>13</td>
-<td>17</td>
-<td>18</td>
-<td>22</td>
-<td>25</td>
-<td>30</td>
-</tr>
-<tr class="odd">
-<td>s[i]</td>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>2</td>
-<td>2</td>
-<td>6</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>10</td>
-</tr>
-</tbody>
-</table>
-<h3 id="analysize">Analysize</h3>
-<p>Running time: Θ(𝑛<sup>2</sup>) Space: Θ(𝑛)</p>
-<h2 id="weighted-interval-scheduling-1d">Weighted Interval Scheduling 1D</h2>
-<blockquote>
-<p>Jobs <strong>j</strong> starts at <strong>s<sub>j</sub></strong>, finish at <strong>f<sub>j</sub></strong> and has weight(value) <strong>v<sub>j</sub></strong>. Two jobs compatible if they don't overlap. Goal: find maximum-weight subset if mutually compatible jobs.</p>
-</blockquote>
-<h3 id="recurrence-2">Recurrence</h3>
-<p>Firstly, label all jobs by <strong>finishing time</strong>.</p>
-<p><strong>Maximum</strong> subset is either DO take this job and <strong>maximum</strong> subset of <em>compatible</em> jobs set NOT take this job and <strong>maximum</strong> subset of <em>remaining</em> jobs</p>
-<blockquote>
-<p>V[j] = max{v<sub>j</sub> + V[c(j)], V[j-1]}</p>
-</blockquote>
-<p>function <code>c(j)</code> return the largest index i&lt;j such that job i is compatible job j.</p>
-<h3 id="base-case-2">Base case</h3>
-<p>The goal is to find a subset of a set.</p>
-<blockquote>
-<p>We start from a <strong>empty set</strong>.</p>
-</blockquote>
-<h3 id="pseudo-code-2">pseudo-code</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">schedule():</span><br><span class="line">sort all jobs by finish time</span><br><span class="line">V[0] &#x3D; 0</span><br><span class="line">for i &#x3D; 1 to n</span><br><span class="line">	% DO take job j</span><br><span class="line">	if V[i] + V[c(i)] &gt; V[j-1] then</span><br><span class="line">		V[i] &#x3D; value[i] + V[c(i)]</span><br><span class="line">		keep[i] &#x3D; 1</span><br><span class="line">	% NOT take job j</span><br><span class="line">	else </span><br><span class="line">		V[i] &#x3D; V[i-1]</span><br><span class="line">		keep[i] &#x3D; 0 </span><br><span class="line">i &#x3D; n</span><br><span class="line">while i &gt; 0 do</span><br><span class="line">	if keep[i] &#x3D;1 then print i, i &#x3D; c(i)</span><br><span class="line">	else i &#x3D; i-1</span><br></pre></td></tr></table></figure>
-<h3 id="analyze-1">Analyze</h3>
-<p>Running time: Θ(𝑛log𝑛) Space: Θ(𝑛)</p>
-<h1 id="two-dimension">Two-Dimension</h1>
-<p>Sometimes sub-problem also need to use 1D-DP to solve. Sometimes there are two variables that requires a 2D array.</p>
-<h2 id="the-01-knapsack-problem">The 0/1 Knapsack Problem</h2>
-<blockquote>
-<p>A set of <strong>n</strong> items, where item <strong>i</strong> has weight <strong>w<sub>i</sub></strong> and value <strong>v<sub>i</sub></strong> ,and a knapsack with capacity <strong>W</strong>. Find <strong>x<sub>1</sub>,... ,x<sub>n</sub></strong> (either 0 or 1) such that sum(<strong>x<sub>i</sub>w<sub>i</sub></strong>) &lt;= <strong>W </strong> and <strong>V</strong>=sum(<strong>x<sub>i</sub>v<sub>i</sub></strong>) is maximum</p>
-</blockquote>
-<h3 id="recurrence-3">Recurrence</h3>
-<p>Start to put items into the knapsack.<strong>--1D</strong></p>
-<p><strong>Maximum</strong> V of capacity W is the max among <u>whether</u> take each item. v<sub>i</sub> + <strong>maximum</strong> XV of capacity j-w<sub>i</sub> <em>We found it necessary to consider capacity of knapsack.</em><strong>--2D</strong></p>
-<blockquote>
-<p>V[j] = max{v(i) + V[j-w(i)]} i from 1 to n</p>
-</blockquote>
-<p><strong><em>WRONG: This may pick the same item more than once! Thus, both in v<sub>i</sub> and V[j-w(i)]!</em></strong></p>
-<p>New def: let V[i,j] be the largest obtained value with capacity j, choosing <em>ONLY</em> from the first i items. Below formula truly reflect <u>whether</u>. Left is NOT, right is YES.</p>
-<blockquote>
-<p>V[i,j] = max{V[i-1,j], v<sub>i</sub> + V[i-1,j-w(i)]} i from i to n</p>
-</blockquote>
-<h3 id="base-case-3">Base case</h3>
-<blockquote>
-<p>We start from <strong>take nothing</strong>: i= 0, V[0,j] = 0 and <strong>empty knapsack</strong> j =0, V[i,0] = 0</p>
-</blockquote>
-<h3 id="pseudo-code-3">pseudo-code</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let V[0...n,0...W] and keep[0...n,0...W] be new arrays of all 0	</span><br><span class="line">for i &#x3D; 1 to n do		% put things</span><br><span class="line">	for j &#x3D; 1 to W do 	% each capacity</span><br><span class="line">		if w[i]&lt;&#x3D;j and v[i]+V[i-1,j-w[i]] &gt; V[i-1,j] then</span><br><span class="line">			V[i,j] &#x3D; v[i]+V[i-1,j]</span><br><span class="line">			keep[i,j] &#x3D; 1</span><br><span class="line">		else </span><br><span class="line">			V[i,j] &#x3D; V[i-1,j]</span><br><span class="line">			keelp[i,j] &#x3D; 0</span><br><span class="line">K &#x3D; W</span><br><span class="line">for i &#x3D; n downto 1 do </span><br><span class="line">	if keep[i,K] &#x3D; 1 then </span><br><span class="line">		print i</span><br><span class="line">		K &#x3D; K-w[i]</span><br></pre></td></tr></table></figure>
-<p>input:</p>
-<table>
-<thead>
-<tr class="header">
-<th>i</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>v<sub>i</sub></td>
-<td>10</td>
-<td>40</td>
-<td>30</td>
-<td>50</td>
-</tr>
-<tr class="even">
-<td>w<sub>i</sub></td>
-<td>5</td>
-<td>4</td>
-<td>6</td>
-<td>3</td>
-</tr>
-</tbody>
-</table>
-<p>running:</p>
-<table>
-<thead>
-<tr class="header">
-<th>V[i,j]</th>
-<th>0</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>8</th>
-<th>9</th>
-<th>10</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>i=0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>10</td>
-<td>10</td>
-<td>10</td>
-<td>10</td>
-<td>10</td>
-<td>10</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>40</td>
-<td>40</td>
-<td>40</td>
-<td>40</td>
-<td>40</td>
-<td>40</td>
-<td>40</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>40</td>
-<td>40</td>
-<td>40</td>
-<td>40</td>
-<td>40</td>
-<td>50</td>
-<td>70</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>50</td>
-<td>50</td>
-<td>50</td>
-<td>50</td>
-<td>90</td>
-<td>90</td>
-<td>90</td>
-<td>90</td>
-</tr>
-</tbody>
-</table>
-<h3 id="analyze-2">Analyze</h3>
-<p>Running time: Θ(𝑛𝑊) Space: Θ(𝑛𝑊) without <code>keep</code> array can be improved to Θ(𝑛+𝑊).</p>
-<h2 id="longest-common-subsequence-lcs">Longest Common Subsequence LCS</h2>
-<blockquote>
-<p>Given two sequences <strong>X</strong> = (x<sub>1</sub>,x<sub>2</sub>,...,x<sub>m</sub>) and <strong>Y</strong> = (y<sub>1</sub>,y<sub>2</sub>,...,y<sub>n</sub>), we say that <strong>Z</strong> is a common subsequence of <strong>X</strong> and <strong>Y</strong> if <strong>Z</strong> has a strictly increasing sequence of indices i and j of both <strong>X</strong> and <strong>Y</strong> such that we have x<sub>ip</sub>= y<sub>jp</sub> = z<sub>p</sub> for all p = 1, 2, … , k. The goal is to find the longest common subsequence of <strong>X</strong> and <strong>Y</strong>.</p>
-<figure>
-<img src="/assets/Dynamic-Programming/1544897951063.png" alt="1544897951063" /><figcaption>1544897951063</figcaption>
-</figure>
-</blockquote>
-<h3 id="recurrence-4">Recurrence</h3>
-<p>Let c[i,j] be the length of the <strong>longest</strong> common subsequence of X[1...i] and Y[1...j]. So we need <strong>2D</strong> that i for X and j for Y.</p>
-<p>Firstly, go through i, and then go through j If X[i] = Y[j], we match. c[i,j] = 1 + the <strong>longest</strong> common subsequence of X[1...i-1] and Y[1...j-1]. else , it's max of the <strong>longest</strong> common subsequence of X[1...i-1] and Y[1...j] and the <strong>longest</strong> common subsequence of X[1...i] and Y[1...j-1]</p>
-<blockquote>
-<p>If X[i] = Y[j] , c[i,j] = max{ c[i,i-1], c[i-1,j] }</p>
-<p>else c[i,j]= c[i-1,j-1] +1</p>
-</blockquote>
-<h3 id="base-case-4">Base case</h3>
-<blockquote>
-<p>c[0,j] =0 c[i,0] = 0</p>
-</blockquote>
-<h3 id="pseudo-code-4">pseudo-code</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">LSC(X,Y):</span><br><span class="line">let c[0...m,0...n] and b[0...m,0...n] be new arrys of all 0</span><br><span class="line">for i&#x3D;1 to m</span><br><span class="line">	for j&#x3D;1 to n</span><br><span class="line">		if X(i) &#x3D; Y(i) then</span><br><span class="line">			c[i,j] &#x3D; c[i-1,j-1]+1</span><br><span class="line">			b[i,j] &#x3D; &quot;↖&quot;</span><br><span class="line">		else if c[i-1,j] &gt;&#x3D; c[i,j-1] then</span><br><span class="line">			c[i,j] &#x3D; c[i-1,j]</span><br><span class="line">			b[i,j] &#x3D; &quot;↑&quot;</span><br><span class="line">		else</span><br><span class="line">			c[i,j] &#x3D; c[i,j-1]</span><br><span class="line">			b[i,j] &#x3D; &quot;←&quot;</span><br><span class="line">Print-LCS(b,m,n)</span><br><span class="line"></span><br><span class="line">Print-LCS(b,i,j):</span><br><span class="line">	if i&#x3D;0 or j&#x3D;0 then return </span><br><span class="line">	if b[i,j]&#x3D;&quot;↖&quot; then</span><br><span class="line">		Print-LCS (b,i−1,j−1)</span><br><span class="line">		print X(i)</span><br><span class="line">	else if 𝑏[𝑖,𝑗]&#x3D;&quot;↑&quot;</span><br><span class="line">		Print-LCS( b,i−1,j)</span><br><span class="line">	else Print-LCS( b,i,j−1)</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="/assets/Dynamic-Programming/1544897610939.png" alt="1544897610939" /><figcaption>1544897610939</figcaption>
-</figure>
-<h3 id="analyze-3">Analyze</h3>
-<p>Running time: Θ(𝑚𝑛) Space: Θ(𝑚𝑛) without <code>b</code> array can be improved to Θ(𝑚+𝑛).</p>
-<h2 id="longest-common-substring">Longest Common Substring</h2>
-<blockquote>
-<p>Given two strings <strong>X</strong> = x<sub>1</sub>x<sub>2</sub>...x<sub>m</sub> and <strong>Y</strong> = y<sub>1</sub>y<sub>2</sub>...y<sub>m</sub>, we wish to find their longest common substring <strong>Z</strong>, that is, the largest <strong>k</strong> for which there are indices 𝑖 and 𝑗 with x<sub>i</sub>x<sub>i+1</sub>...x<sub>i+k-1</sub> = y<sub>j</sub>y<sub>j+1</sub>...y<sub>j-k-1</sub></p>
-<figure>
-<img src="/assets/Dynamic-Programming/1544898031881.png" alt="1544898031881" /><figcaption>1544898031881</figcaption>
-</figure>
-</blockquote>
-<h3 id="recurrence-5">Recurrence</h3>
-<p>Let d[i,j] keep track of k, the <strong>longest</strong> string length of X[1...i] Y[1...j]. Firstly go through X and then Y so we need <strong>2D</strong></p>
-<p>If X(i) = Y(j), d[i,j] = 1 + the <strong>longest</strong> string length of X[1...i-1] Y[1...j-1]. else it's 0!</p>
-<blockquote>
-<p>If X(i) = Y(j), d[i,j] = 1 + d[i-1.j-1] else d[i,j] = 0</p>
-</blockquote>
-<h3 id="base-case-5">Base case</h3>
-<blockquote>
-<p>d[0,j] = 0, d[i,0]= 0</p>
-</blockquote>
-<h3 id="pseudo-code-5">pseudo-code</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let d[0...m,0...n] be a new array of all 0</span><br><span class="line">length &#x3D; 0, endIndex &#x3D; 0</span><br><span class="line">for i &#x3D; 1 to m</span><br><span class="line">	for j &#x3D; 1 to n</span><br><span class="line">		if X(i) &#x3D; Y(i) then </span><br><span class="line">			d[i,j] &#x3D; d[i-1,j-1] + 1</span><br><span class="line">			if d[i,j] &gt; length then </span><br><span class="line">				length &#x3D; d[i,j]</span><br><span class="line">				endIndex &#x3D; i</span><br><span class="line">for i &#x3D; endIndex - length + to endIndex</span><br><span class="line">	print X(i)</span><br></pre></td></tr></table></figure>
-<h3 id="analyze-4">Analyze</h3>
-<p>Running time: Θ(𝑚𝑛) Space: Θ(𝑚𝑛) but can be improved to Θ(𝑚+𝑛).</p>
-<h1 id="over-intervals">Over Intervals</h1>
-<ul>
-<li>Goal is to find optimal (min or max ) solution on problem with
-<ul>
-<li>Problem of size n</li>
-<li><em>Ordered</em> input of items 1,2,...n</li>
-</ul></li>
-<li>Define substructures as
-<ul>
-<li><em>Ordered</em> input of items i..j</li>
-<li>Problem of size j-i+1</li>
-</ul></li>
-<li>Recurrence gives optimal solution of subproblem as function of optimal solution of smaller subproblems</li>
-<li>Algorithm fills in DP table from smallest to largest problem size</li>
-<li>Often, final subproblem filled is solution for original problem Sometimes, solution of original problem is min/max over table values</li>
-</ul>
-<h2 id="longest-palindromic-substring">Longest Palindromic Substring</h2>
-<p>A palindrome is a string that reads the same backward or forward.</p>
-<blockquote>
-<p>Given a string <strong>X</strong> = x<sub>1</sub>x<sub>2</sub>...x<sub>n</sub>, find the longest palindromic substring.</p>
-<p>Ex: X =ACCABA Palindromic substrings: CC, ACCA ABA Longest palindromic substrings: ACCA</p>
-</blockquote>
-<h3 id="recurrence-6">Recurrence</h3>
-<p>Let p[i,j] be <em>true</em> if and only if X[i...j] is a palindrome. Obviously, we need <strong>2D</strong>, though i &lt;= j. It's like a half plane.</p>
-<p>If X[i] = X[j], p[i,j] is <strong>true</strong> iff p[i+1,j-1] is <strong>true</strong>.</p>
-<blockquote>
-<p>If X(i) = X(j), p[i,j] = p[i+1,j-1]</p>
-</blockquote>
-<p>Order: from <strong>(i,j)</strong> to <strong>(i+1,j-1)</strong> it's a <strong>diagonal</strong> path.</p>
-<h3 id="base">Base</h3>
-<blockquote>
-<p>If i = j, p[i,j] = true</p>
-</blockquote>
-<h3 id="pseudo-code-6">pseudo-code</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">let p[0...n,0...n] be a new array of all false</span><br><span class="line">max &#x3D; 1 </span><br><span class="line">for i &#x3D; 1 to n-1 do </span><br><span class="line">	p[i,i] &#x3D; true</span><br><span class="line">	if X(i) &#x3D; X(i+1) then </span><br><span class="line">		p[i,i+1] &#x3D; true</span><br><span class="line">		max &#x3D; 2</span><br><span class="line">% updating along diagonal</span><br><span class="line">% started from the third diagonal</span><br><span class="line">for k &#x3D; 3 to n do</span><br><span class="line">	for i &#x3D; 1 to n-k+1 do</span><br><span class="line">		j &#x3D; i+k-1</span><br><span class="line">		if p[i+1,j-1] &#x3D; true and X(i) &#x3D; X(j) then</span><br><span class="line">			p[i,j] &#x3D; true</span><br><span class="line">			max &#x3D; k</span><br><span class="line">return max</span><br></pre></td></tr></table></figure>
-<h3 id="analyze-5">Analyze</h3>
-<p>Running time: 𝑂(𝑛<sup>2</sup>) Space: 𝑂(𝑛<sup>2</sup>) but can be improved to 𝑂(𝑛)</p>
-<h2 id="optimal-bst">Optimal BST</h2>
-<blockquote>
-<p>Given <strong>n</strong> keys a<sub>1</sub> &lt; a<sub>2</sub> &lt; ... &lt; a<sub>n</sub>, with weights f(a<sub>1</sub>), … , f(a<sub>n</sub>), find a binary search tree <strong>T</strong> on these <strong>n</strong> keys such that <strong>B(T)</strong> = sum{ f(a<sub>i</sub>)*(d(a<sub>i</sub>)+1) } i from 1 to n is minimized, where d(a<sub>i</sub>) is the depth of a<sub>i</sub>.</p>
-</blockquote>
-<h3 id="recurrence-7">Recurrence</h3>
-<p>Let T<sub>i,j</sub> be some tree on the subset of nodes a<sub>i</sub> &lt; a<sub>i+1</sub> &lt; ... &lt; a<sub>j</sub> Define w[i,j] = f(a<sub>i</sub>) + ... + f(a<sub>j</sub>) The cost is defined as B(T<sub>i,j</sub>) = sum{ f(a<sub>i</sub>)*(d(a<sub>i</sub>)+1) } from i to j Define e[i,j] = optimal value of B(T<sub>i,j</sub>)</p>
-<p>The <strong>optimal</strong> cost of T<sub>i,j</sub> is The <strong>optimal</strong> cost of left subtree + The <strong>optimal</strong> cost of right subtree + root's weight</p>
-<blockquote>
-<p>e[i,j] = e[i,k-1 + e[k+1,j] +w[i,j]</p>
-</blockquote>
-<p>To find <strong>k</strong>, try every value between <strong>i</strong> and <strong>j</strong> to figure out the min.</p>
-<blockquote>
-<p>e[i,j] = min{ e[i,k-1 + e[k+1,j] +w[i,j] } for i&lt;=k&lt;=j</p>
-</blockquote>
-<p>Order: (i,j) (i,k-1) (k+1,j)<img src="/assets/Dynamic-Programming/BST-k.png" alt="my" /></p>
-<h3 id="base-1">Base</h3>
-<blockquote>
-<p>e[i,j]= 0 for i&gt;j e[i,i] = f(a<sub>i</sub>) for all i</p>
-</blockquote>
-<h3 id="pseudo-code-7">pseudo-code</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Optimal-BST(a,n):</span><br><span class="line">let e[1...n,1...n],w[1...n,1...n],root[1...n,1...n] be new arrays of all 0</span><br><span class="line">for i &#x3D; 1 to n </span><br><span class="line">	w[i,i] &#x3D; f(a(i))</span><br><span class="line">	for j &#x3D; i + 1 to n</span><br><span class="line">		% complete the w[] table</span><br><span class="line">		w[i,j] &#x3D; w[i,j-1] + f(a(i))</span><br><span class="line">for l &#x3D; 1 to n</span><br><span class="line">	for i &#x3D; 1 to n-l+1</span><br><span class="line">		j &#x3D; i+l-1</span><br><span class="line">		e[i,j] &#x3D; inf</span><br><span class="line">		% find k minimizes e[]</span><br><span class="line">		for k &#x3D; i to j</span><br><span class="line">			t &#x3D; e[i,k-1]+e[k+1,j]+w[i,j]</span><br><span class="line">			if t &lt; e[i,j] then</span><br><span class="line">				e[i,j] &#x3D; t</span><br><span class="line">				root[i,j] &#x3D; k</span><br><span class="line">return Construct-BST(root,1,n)</span><br><span class="line"></span><br><span class="line">Construct-BST(root,i,j):</span><br><span class="line">if i &gt; j then return nil</span><br><span class="line">create a node z</span><br><span class="line">z.key &#x3D; a[root[i,j]]</span><br><span class="line">z.left &#x3D; Construct-BST(root,i,root[i,j]-1)</span><br><span class="line">z.right &#x3D; COnstruct-BST(root,root[i,j]+1,j)</span><br><span class="line">return z</span><br></pre></td></tr></table></figure>
-<h3 id="analyze-6">Analyze</h3>
-<p>Running time: Optimal 𝑂(𝑛<sup>3</sup>) Construct 𝑂(𝑛<sup>2</sup>) Space 𝑂(𝑛<sup>2</sup>)</p>
-<p><img src="/assets/Dynamic-Programming/13_BST_页面_02.png" alt="13_BST_页面_02" /> <img src="/assets/Dynamic-Programming/13_BST_页面_03-1544905264572.png" alt="13_BST_页面_03" /><img src="/assets/Dynamic-Programming/13_BST_页面_04.png" alt="13_BST_页面_04" /> <img src="/assets/Dynamic-Programming/13_BST_页面_05.png" alt="13_BST_页面_05" /> <img src="/assets/Dynamic-Programming/13_BST_页面_07.png" alt="13_BST_页面_07" /> <img src="/assets/Dynamic-Programming/13_BST_页面_09.png" alt="13_BST_页面_09" /> <img src="/assets/Dynamic-Programming/13_BST_页面_12.png" alt="13_BST_页面_12" /> <img src="/assets/Dynamic-Programming/13_BST_页面_13.png" alt="13_BST_页面_13" /></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://github.com/2018/12/08/Finite-State-Machine/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -832,7 +190,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-04-09 23:16:59" itemprop="dateModified" datetime="2019-04-09T23:16:59+08:00">2019-04-09</time>
+                <time title="Modified: 2020-03-24 13:44:26" itemprop="dateModified" datetime="2020-03-24T13:44:26+08:00">2020-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -855,69 +213,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="state-machine">State Machine</h2>
-<ul>
-<li><strong>State</strong>: A set of particular condition that the machine is in at a specific time</li>
-<li>FSM is a generic synchronous sequential circuit</li>
-<li>FSM has finite state memory, inputs &amp; outputs</li>
-<li>State <strong>memory</strong> is implemented using <strong>flip-flops</strong></li>
-<li>State <strong>transition logic</strong> implemented using <strong>combinational circuit</strong></li>
-<li>Output logic implemented using combinational circuit
-<ul>
-<li>Output depends on state <strong>only</strong> - <a href="#moore-machine"><strong>Moore</strong></a></li>
-<li>Output depends on state <strong>and</strong> input - <a href="#mealy-machine"><strong>Mealy</strong></a></li>
-</ul></li>
-</ul>
-<h3 id="state-equations">State equations</h3>
-<p>Describe the behavior of a clocked sequential circuit algebraically. e.g.</p>
-<blockquote>
-<p>A(t+1) = D<sub>A</sub>(t) = A(t)x(t) + B(t)x(t) Simple form: A(t+1) = Ax + Bx or A<sup>+</sup> = Ax + Bx</p>
-</blockquote>
-<h3 id="state-diagram-and-transition-tables">State Diagram and Transition Tables</h3>
-<figure>
-<img src="/assets/Finite-State-Machine/1544317606823.png" alt="1544317606823" /><figcaption>1544317606823</figcaption>
-</figure>
-<p>The diagram is a <strong>Mealy Machine</strong></p>
-<h2 id="moore-machine-vs.-mealy-machine">Moore Machine vs. Mealy Machine</h2>
-<h3 id="moore-machine">Moore Machine</h3>
-<p>The output value is inside the state bubbles. Outputs are function <strong>solely</strong> of the current states. Outputs change <strong>synchronously</strong> with states.</p>
-<h3 id="mealy-machine">Mealy Machine</h3>
-<p>The output value is on the transition edge. Outputs depend on state <strong>AND</strong> inputs Change of inputs causes an <strong>immediate change</strong> of outputs.</p>
-<h3 id="example">Example</h3>
-<figure>
-<img src="/assets/Finite-State-Machine/1544320429228.png" alt="1544320429228" /><figcaption>1544320429228</figcaption>
-</figure>
-<h2 id="basic-design-steps-of-fsm">Basic Design Steps of FSM</h2>
-<ol type="1">
-<li>Understand the Specifications with a block diagram</li>
-<li>Obtain an abstract specification of the FSM in state-transition diagram or table</li>
-<li>Perform state reduction <a href="#equivalent-states">equivalent states</a> can be merged</li>
-<li>Perform state assignment assign binary values to the state in a way that next-state logic can be simplified</li>
-<li>Choose FF to implement the FSM state register
-<ul>
-<li>D-FF : Q+ = D</li>
-<li>T-FF : Q<sup>+</sup> = TQ' + T'Q T = 0 hold ;T = 1 toggle;</li>
-<li>JK-FF: Q<sup>+</sup> = JQ' + K'Q | JK | Data | function | | :--: | :--: | :------: | | 0/0 | 1 | hold | | 0/1 | 0 | reset | | 1/0 | Q | set | | 1/1 | Q' | toggle |</li>
-</ul></li>
-<li><a href="#fsm-implementation-procedure">Implement the FSM</a> design of next-state and output logic</li>
-<li>Happy DEBUGGING!!</li>
-</ol>
-<h2 id="fsm-implementation-procedure">FSM Implementation Procedure</h2>
-<ol type="1">
-<li><p>Start with a state diagram (bubble diagram) Describes the Finite State Machine according to the specification</p></li>
-<li><p>Reduce the number of states if necessary/possible (state reduction)</p>
-<h5 id="equivalent-states">equivalent-states</h5>
-<blockquote>
-<p>Two internal states are said to be <strong>equivalent</strong> if for each input combination they give exactly the <strong>same output AND send the circuit to the same(equivalent) state.</strong></p>
-</blockquote></li>
-<li><p>Decide on the State Encoding (how many flip-flops to use and what should be the FF outputs be for each state)</p></li>
-<li><p>Produce the binary-code state table.</p></li>
-<li><p>Decode what kind of FFs to use. D-type FFs are normally used (JK or T are more complicated and may give you smaller circuit if you play with TTLs)</p></li>
-<li><p>Determine the FF input equations (use FF excitation rules for JK and T type FFs) and general output equations from the transition tables</p></li>
-<li><p>Implement the next state logic, output logic using combinational circuit techniques</p></li>
-<li><p>Draw the complete logic diagram</p></li>
-</ol>
-
+          <p>HKUST ELEC2200 notes</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/12/08/Finite-State-Machine/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -967,7 +271,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-04-09 23:16:59" itemprop="dateModified" datetime="2019-04-09T23:16:59+08:00">2019-04-09</time>
+                <time title="Modified: 2020-03-24 13:41:12" itemprop="dateModified" datetime="2020-03-24T13:41:12+08:00">2020-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -990,75 +294,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="entity">Entity</h2>
-<p>Identify a distinct logic block</p>
-<ul>
-<li>Consists of the input and output ports (I/O pins)</li>
-<li>Each port can have several variables</li>
-</ul>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">entity</span> nand2 <span class="keyword">is</span></span><br><span class="line"><span class="keyword">port</span> (a,b : <span class="keyword">in</span> <span class="built_in">std_logic</span>;</span><br><span class="line">		y : <span class="keyword">out</span> <span class="built_in">std_logic</span>);</span><br><span class="line"><span class="keyword">end</span> nand2;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Ports can be in (read), out (write), inout (bi-directional)</li>
-<li>Std_logic is the type of signal being carried at the ports</li>
-</ul>
-<blockquote>
-<ul>
-<li>Std_logic can have values such as ‘0’, ‘1’, ‘X’, ‘Z’, ‘-’ and others. (' z ' means high impedance (tristate))</li>
-</ul>
-</blockquote>
-<ul>
-<li>Another signal type is “bit” which only assumes binary values of ‘0’ and ‘1’.</li>
-</ul>
-<h2 id="architecture">Architecture</h2>
-<p>Follow immediately after the entity declaration, to define the internal operation (function) of the logic module</p>
-<ul>
-<li>Defines the relationship between the input and output signals</li>
-<li>May have <strong>internal signals</strong> in the definition</li>
-<li>AN entity can have <strong>several</strong> different architecture specifications to describe different views or different levels</li>
-</ul>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">entity</span> inverter_gate <span class="keyword">is</span></span><br><span class="line">	<span class="keyword">port</span> (A: <span class="keyword">in</span> <span class="built_in">std_logic</span>;</span><br><span class="line">		Z: <span class="keyword">out</span> <span class="built_in">std_logic</span>);</span><br><span class="line"><span class="keyword">end</span> inverter_gate;</span><br><span class="line"><span class="keyword">architecture</span> DATAFLOW <span class="keyword">of</span> inverter_gate <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">        z &lt;= <span class="keyword">not</span> A <span class="keyword">after</span> <span class="number">10</span> ns;</span><br><span class="line"><span class="keyword">end</span> DATAFLOW;</span><br></pre></td></tr></table></figure>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Entity</span> OR3 <span class="keyword">is</span></span><br><span class="line"><span class="keyword">port</span> (I1,I2,I3: <span class="keyword">in</span> <span class="built_in">std_logic</span>; O: <span class="keyword">out</span> <span class="built_in">std_logic</span>);</span><br><span class="line"><span class="keyword">end</span> OR3;</span><br><span class="line"><span class="keyword">architecture</span> BEHAVIOR <span class="keyword">of</span> OR3 <span class="keyword">is</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	O &lt;= I1 <span class="keyword">or</span> I2 <span class="keyword">or</span> I3;</span><br><span class="line"><span class="keyword">end</span> BEHAVIOR;</span><br></pre></td></tr></table></figure>
-<h3 id="internal-signals">Internal signals</h3>
-<p>used to simplify the model or define connections between sub-components inside the architecture</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">architecture</span> example <span class="keyword">of</span> special_mus <span class="keyword">is</span> </span><br><span class="line">	<span class="keyword">signal</span> control, tmp : <span class="built_in">std_logic</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"><span class="keyword">end</span> example;</span><br></pre></td></tr></table></figure>
-<h3 id="concurrent-statements">Concurrent Statements</h3>
-<ol type="1">
-<li><a href="#signal-assignments">Signal Assignments</a></li>
-<li><a href="#component-Instantiations-for-structural-description">Component Instantiations for structural description)</a></li>
-<li><a href="#processes-in-order">Processes IN ORDER</a></li>
-</ol>
-<h4 id="signal-assignments">Signal Assignments</h4>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C &lt;= <span class="string">'0'</span>;</span><br></pre></td></tr></table></figure>
-<h5 id="delayed">Delayed</h5>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c &lt;= A <span class="keyword">and</span> B <span class="keyword">after</span> <span class="number">10</span>ns; <span class="comment">--Only for simulation.</span></span><br></pre></td></tr></table></figure>
-<h5 id="selected-outside-process">Selected (outside PROCESS)</h5>
-<p>connect target to many cases of <strong>one</strong> source.</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> sel <span class="keyword">select</span></span><br><span class="line">	DAta_out &lt;= a <span class="keyword">when</span> <span class="string">'0'</span>,</span><br><span class="line">                b <span class="keyword">when</span> <span class="string">'1'</span>,</span><br><span class="line">                <span class="string">'X'</span> <span class="keyword">when</span> <span class="keyword">others</span>;</span><br></pre></td></tr></table></figure>
-<h5 id="conditional-outside-process">Conditional (outside PROCESS)</h5>
-<p>connect target to many cases of <strong>several</strong> sources.</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Y &lt;= a <span class="keyword">when</span> en = ‘<span class="number">1</span>’ <span class="keyword">else</span></span><br><span class="line">    ‘Z’ <span class="keyword">when</span> en = ‘<span class="number">0</span>’ <span class="keyword">else</span></span><br><span class="line">        ‘X’;</span><br></pre></td></tr></table></figure>
-<h4 id="component-instantiations-for-structural-description">Component Instantiations for structural description</h4>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">COMPONENT</span> xor_gate</span><br><span class="line">	<span class="keyword">PORT</span> ( A, B: <span class="keyword">IN</span> <span class="built_in">STD_LOGIC</span>; C: <span class="keyword">OUT</span> <span class="built_in">STD_LOGIC</span>);</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">COMPONENT</span>;</span><br></pre></td></tr></table></figure>
-<h4 id="processes-in-order">Processes IN ORDER</h4>
-<h5 id="if-else-branch">If-else Branch</h5>
-<p>many signals many cases. <figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> sth = <span class="string">'0'</span> <span class="keyword">then</span></span><br><span class="line">    A = <span class="string">'1'</span>; B = <span class="string">'0'</span>;	<span class="comment">-- IN-ORDER processes</span></span><br><span class="line"><span class="keyword">elsif</span> sth = <span class="string">'1'</span> <span class="keyword">then</span>	<span class="comment">-- optional</span></span><br><span class="line">    B = <span class="string">'1'</span>; C = <span class="string">'0'</span>;	<span class="comment">-- optional</span></span><br><span class="line"><span class="keyword">else</span>					<span class="comment">-- IMPORTANT!</span></span><br><span class="line">    C = <span class="string">'1'</span>;</span><br><span class="line"><span class="keyword">end</span> <span class="keyword">if</span>；</span><br></pre></td></tr></table></figure></p>
-<h5 id="case-when-branch">case-when Branch</h5>
-<p>one signal many cases. <figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span>  sth  <span class="keyword">is</span></span><br><span class="line">    <span class="keyword">when</span> <span class="string">'0'</span> =&gt; A = <span class="string">'1'</span>; B = <span class="string">'0'</span>;</span><br><span class="line">	<span class="keyword">when</span> <span class="string">'1'</span> =&gt; B = <span class="string">'1'</span>; C = <span class="string">'0'</span>;</span><br><span class="line">	<span class="keyword">when</span> <span class="keyword">others</span> =&gt; C = <span class="string">'1'</span>;	<span class="comment">-- IMPORTANT!</span></span><br><span class="line"><span class="keyword">end</span> <span class="keyword">case</span>;</span><br></pre></td></tr></table></figure></p>
-<h5 id="variable-and-signal">Variable and Signal</h5>
-<p>The <strong>variable</strong> is updated without any delay as soon as the statement is executed. Variables must be declared inside a process (and are local to the process). <strong>Assignment <code>:=</code> executed sequentially!</strong></p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">architecture</span> VAR <span class="keyword">of</span> EXAMPLE <span class="keyword">is</span></span><br><span class="line">	<span class="keyword">signal</span> TRIGGER, RESULT: <span class="built_in">integer</span> :=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">process</span></span><br><span class="line">		<span class="keyword">variable</span> variable1: <span class="built_in">integer</span> := <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">variable</span> variable2: <span class="built_in">integer</span> := <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">variable</span> variable3: <span class="built_in">integer</span> := <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">begin</span> </span><br><span class="line">		<span class="keyword">wait</span> <span class="keyword">on</span> TRIGGER;</span><br><span class="line">		variable1 := variable2;	<span class="comment">--2</span></span><br><span class="line">		variable2 := variable1 + variable3; <span class="comment">--2+3=5</span></span><br><span class="line">		variable3 := variable2; <span class="comment">--5</span></span><br><span class="line">		RESULT &lt;= variable1 + variable2 + variable3; <span class="comment">--2+5+5</span></span><br><span class="line">	<span class="keyword">end</span> <span class="keyword">process</span>;</span><br><span class="line"><span class="keyword">end</span> VAR;</span><br></pre></td></tr></table></figure>
-<p>The <strong>signal</strong> is updated after a time delay (delta delay if no delay is specified). Signals must be declared outside the process. <strong>Assignment <code>&lt;=</code> executed concurrently!</strong></p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">architecture</span> SIGN <span class="keyword">of</span> EXAMPLE <span class="keyword">is</span></span><br><span class="line">	<span class="keyword">signal</span> TRIGGER, RESULT: <span class="built_in">integer</span> :=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">signal</span> signal1: <span class="built_in">integer</span> := <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">signal</span> signal2: <span class="built_in">integer</span> := <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">signal</span> signal3: <span class="built_in">integer</span> := <span class="number">3</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">process</span></span><br><span class="line">	<span class="keyword">begin</span> </span><br><span class="line">		<span class="keyword">wait</span> <span class="keyword">on</span> TRIGGER;</span><br><span class="line">		signal1 &lt;= signal2;	<span class="comment">--2</span></span><br><span class="line">		signal2 &lt;= signal1 + signal3; <span class="comment">--1+3</span></span><br><span class="line">		signal3 &lt;= signal2; <span class="comment">--2</span></span><br><span class="line">		RESULT &lt;= signal1 + signal2 + signal3; <span class="comment">--1+2+3</span></span><br><span class="line">	<span class="keyword">end</span> <span class="keyword">process</span>;</span><br><span class="line"><span class="keyword">end</span> VAR;</span><br></pre></td></tr></table></figure>
-<h3 id="dataflow-architecture">Dataflow architecture</h3>
-<p>Specify input/output relations in Boolean expression or conditional statements</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ENTITY</span> <span class="number">2_</span>to_4_decoder <span class="keyword">IS</span></span><br><span class="line">	<span class="keyword">PORT</span> (A, B, E: <span class="keyword">IN</span> <span class="built_in">STD_LOGIC</span>;</span><br><span class="line">		D: <span class="keyword">OUT</span> <span class="built_in">STD_LOGIC_VECTOR</span> (<span class="number">3</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">END</span> <span class="number">2_</span>to_4_decoder;</span><br><span class="line"><span class="keyword">ARCHITECTURE</span> dataflow <span class="keyword">OF</span> <span class="number">2_</span>to_4_decoder <span class="keyword">IS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">	D(<span class="number">0</span>) &lt;=‘<span class="number">0</span>’ <span class="keyword">WHEN</span> (A=‘<span class="number">0</span>’ <span class="keyword">AND</span> B=‘<span class="number">0</span>’ <span class="keyword">AND</span> E=‘<span class="number">0</span>’) <span class="keyword">ELSE</span> ‘<span class="number">1</span>’;</span><br><span class="line">	D(<span class="number">1</span>) &lt;=‘<span class="number">0</span>’ <span class="keyword">WHEN</span> (A=‘<span class="number">0</span>’ <span class="keyword">AND</span> B=‘<span class="number">1</span>’ <span class="keyword">AND</span> E=‘<span class="number">0</span>’) <span class="keyword">ELSE</span> ‘<span class="number">1</span>’;</span><br><span class="line">	D(<span class="number">2</span>) &lt;=‘<span class="number">0</span>’ <span class="keyword">WHEN</span> (A=‘<span class="number">1</span>’ <span class="keyword">AND</span> B=‘<span class="number">0</span>’ <span class="keyword">AND</span> E=‘<span class="number">0</span>’) <span class="keyword">ELSE</span> ‘<span class="number">1</span>’;</span><br><span class="line">	D(<span class="number">3</span>) &lt;=‘<span class="number">0</span>’ <span class="keyword">WHEN</span> (A=‘<span class="number">1</span>’ <span class="keyword">AND</span> B=‘<span class="number">1</span>’ <span class="keyword">AND</span> E=‘<span class="number">0</span>’) <span class="keyword">ELSE</span> ‘<span class="number">1</span>’;</span><br><span class="line"><span class="keyword">END</span> dataflow;</span><br></pre></td></tr></table></figure>
-<h3 id="structural-architecture">Structural architecture</h3>
-<p>Describes a set of interconnected components.</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ARCHITECTURE</span> structural <span class="keyword">OF</span> four_bit_adder_sub <span class="keyword">IS</span></span><br><span class="line">	<span class="keyword">COMPONENT</span> four_bit_adder</span><br><span class="line">		<span class="keyword">PORT</span> ( A: <span class="keyword">IN</span> <span class="built_in">STD_LOGIC_VECTOR</span> (<span class="number">3</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">			B: <span class="keyword">IN</span> <span class="built_in">STD_LOGIC_VECTOR</span> (<span class="number">3</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">			C0: <span class="keyword">IN</span> <span class="built_in">STD_LOGIC</span>; C4: <span class="keyword">OUT</span> <span class="built_in">STD_LOGIC</span>;</span><br><span class="line">			S: <span class="keyword">OUT</span> <span class="built_in">STD_LOGIC_VECTOR</span> (<span class="number">3</span> <span class="keyword">downto</span> <span class="number">0</span>));</span><br><span class="line">	<span class="keyword">END</span> <span class="keyword">COMPONENT</span>;</span><br><span class="line">	<span class="keyword">COMPONENT</span> xor_arrays</span><br><span class="line">	<span class="keyword">PORT</span> ( X: <span class="keyword">IN</span> <span class="built_in">STD_LOGIC_VECTOR</span> (<span class="number">3</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">		Z: <span class="keyword">IN</span> <span class="built_in">STD_LOGIC</span>;</span><br><span class="line">		Y: <span class="keyword">OUT</span> <span class="built_in">STD_LOGIC_VECTOR</span> (<span class="number">3</span> <span class="keyword">downto</span> <span class="number">0</span>));</span><br><span class="line">	<span class="keyword">END</span> <span class="keyword">COMPONENT</span>;</span><br><span class="line">	<span class="keyword">signal</span> Y: <span class="built_in">STD_LOGIC_VECTOR</span> (<span class="number">3</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">	Block1: xor_arrays <span class="keyword">PORT</span> <span class="keyword">MAP</span> (B, M, Y);</span><br><span class="line">	Block2: four_bit_adder <span class="keyword">PORT</span> <span class="keyword">MAP</span> (A, Y, M, C, S);</span><br><span class="line"><span class="keyword">END</span> structural;</span><br></pre></td></tr></table></figure>
-<h3 id="behavioral-architecture">Behavioral architecture</h3>
-<p>Any change in the values of <strong>Sensitivity List</strong> will cause immediate execution of the process</p>
-<figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ENTITY</span> mux4 <span class="keyword">IS</span></span><br><span class="line"><span class="keyword">PORT</span> ( S: <span class="keyword">IN</span> <span class="built_in">STD_LOGIC_VECTOR</span> (<span class="number">1</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">		I: <span class="keyword">IN</span> <span class="built_in">STD_LOGIC_VECTOR</span> (<span class="number">3</span> <span class="keyword">downto</span> <span class="number">0</span>);</span><br><span class="line">		Y: <span class="keyword">OUT</span> <span class="built_in">STD_LOGIC</span>);</span><br><span class="line"><span class="keyword">END</span> mux4;</span><br><span class="line"><span class="keyword">ARCHITECTURE</span> behavioral <span class="keyword">OF</span> mux4 <span class="keyword">IS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">	<span class="keyword">PROCESS</span> (S, I)		<span class="comment">-- Sensitivity List</span></span><br><span class="line">	<span class="keyword">BEGIN</span></span><br><span class="line">		<span class="keyword">CASE</span> S <span class="keyword">IS</span></span><br><span class="line">			<span class="keyword">WHEN</span> “<span class="number">00</span>” =&gt; Y &lt;= I(<span class="number">0</span>);</span><br><span class="line">			<span class="keyword">WHEN</span> “<span class="number">01</span>” =&gt; Y &lt;= I(<span class="number">1</span>);</span><br><span class="line">			<span class="keyword">WHEN</span> “<span class="number">10</span>” =&gt; Y &lt;= I(<span class="number">2</span>);</span><br><span class="line">			<span class="keyword">WHEN</span> “<span class="number">11</span>” =&gt; Y &lt;= I(<span class="number">3</span>);</span><br><span class="line">		<span class="keyword">END</span> <span class="keyword">CASE</span>;</span><br><span class="line">	<span class="keyword">END</span> <span class="keyword">PROCESS</span>;</span><br><span class="line"><span class="keyword">END</span> behavioral;</span><br></pre></td></tr></table></figure>
-
+          <p>HKUST ELEC2200 notes</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/12/08/VHDL/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1108,7 +352,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-04-09 23:16:59" itemprop="dateModified" datetime="2019-04-09T23:16:59+08:00">2019-04-09</time>
+                <time title="Modified: 2020-03-24 13:53:22" itemprop="dateModified" datetime="2020-03-24T13:53:22+08:00">2020-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1131,184 +375,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>@[TOC]</p>
-<h2 id="arithmetic-for-computers">Arithmetic for Computers</h2>
-<h3 id="overflow-detection">Overflow Detection</h3>
-<table>
-<thead>
-<tr class="header">
-<th>Operation</th>
-<th>Sign bit of X</th>
-<th>Sign Bit of Y</th>
-<th>Sign Bit of Result</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>X+Y</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>X+Y</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>X-Y</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>X-Y</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-<h3 id="multiplication">Multiplication</h3>
-<figure>
-<img src="/assets/COMP2611-Final-Review/1544252231121.png" alt="1544252231121" /><figcaption>1544252231121</figcaption>
-</figure>
-<figure>
-<img src="/assets/COMP2611-Final-Review/1544252074288.png" alt="1544252074288" /><figcaption>1544252074288</figcaption>
-</figure>
-<h3 id="division">Division</h3>
-<figure>
-<img src="/assets/COMP2611-Final-Review/1544252200005.png" alt="1544252200005" /><figcaption>1544252200005</figcaption>
-</figure>
-<figure>
-<img src="/assets/COMP2611-Final-Review/1544252118812.png" alt="1544252118812" /><figcaption>1544252118812</figcaption>
-</figure>
-<h2 id="pipeline">Pipeline</h2>
-<h3 id="stages">Stages:</h3>
-<p><strong>IF</strong> : Fetch the instructions from meomry<br />
-<strong>ID</strong> : Instruction decode &amp; register read<br />
-<strong>EX</strong> : Perform ALU operation<br />
-<strong>MEM</strong> : Memory access (if necessary) <strong>WB</strong> : Write result back to register</p>
-<h3 id="registers">Registers:</h3>
-<p>located between the stages: ​ IF/ID, ID/EX, EX/MEM, MEM/WB</p>
-<h3 id="control">Control:</h3>
-<p><strong>IF</strong> : no control signals <strong>ID</strong> : no control signals <strong>EX</strong> : <em>RegDst, ALUOP, ALUSrc</em> <strong>MEM</strong> : <em>Branch, MemRead, MemWrite</em> <strong>WB</strong> : <em>MenToReg, RegWrite</em></p>
-<h3 id="hazards">Hazards:</h3>
-<p>cause: Data dependence and Control dependence. types: Structural hazards, Data hazards, Control hazards</p>
-<h4 id="structural-hazards">Structural hazards</h4>
-<p>Conflict for use of memory(MEM/IF) and registers(WB/ID).</p>
-<p>Solution:</p>
-<ol type="1">
-<li>separate instruction and data memories</li>
-<li><strong>Fact: Register very fast.</strong> Registers can Write during 1st half of clock cycle and Read during 2nd half.</li>
-</ol>
-<h4 id="data-hazards">Data hazards</h4>
-<blockquote>
-<p>add $s0, $t0, $t1 sub $t2, $s0, $t3</p>
-</blockquote>
-<p>Solution:</p>
-<ol type="1">
-<li><p>Forwarding (partial, can't solve below code)</p>
-<blockquote>
-<p>lw <span class="math inline">\(s0, 20\)</span>(t1) sub $t2, $s0, $t3</p>
-</blockquote></li>
-<li><p>Scheduling (assume forwarding is used)</p></li>
-</ol>
-<h4 id="control-hazards">Control hazards</h4>
-<p>When we need to <code>beq</code> , <code>bne</code> operations</p>
-<p>Solution:</p>
-<ol type="1">
-<li>Fetch instruction after branch. If wrong, flush them away.</li>
-<li>Add comparator to compare earlier</li>
-</ol>
-<h3 id="datapath-with-hazards">Datapath with Hazards</h3>
-<h4 id="data-forwarding">Data forwarding</h4>
-<p>Two types forwarding: EX/MEM -&gt; ID/EX and MEM/WB -&gt; ID/EX Using two <strong>multiplexers</strong> to decide what is the input of operands A and B of the ALU. note: A is for Rs. B is for Rt.</p>
-<p>EX forwarding: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (EX&#x2F;MEM.RegWrite and (EX&#x2F;MEM.RegisterRd ≠ 0) </span><br><span class="line">and (EX&#x2F;MEM.RegisterRd &#x3D; ID&#x2F;EX.RegisterRs )) </span><br><span class="line">	ForwardA &#x3D; 10 </span><br><span class="line">if (EX&#x2F;MEM.RegWrite and (EX&#x2F;MEM.RegisterRd ≠ 0) </span><br><span class="line">and (EX&#x2F;MEM.RegisterRd &#x3D; ID&#x2F;EX.RegisterRt )) </span><br><span class="line">	ForwardB &#x3D; 10</span><br></pre></td></tr></table></figure> MEM forwarding (only when <strong>NOT</strong> EX forwarding ): <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if (MEM&#x2F;WB.RegWrite and (MEM&#x2F;WB.RegisterRd ≠ 0) </span><br><span class="line">and not (EX&#x2F;MEM.RegWrite and (EX&#x2F;MEM.RegisterRd ≠ 0) </span><br><span class="line">		and (EX&#x2F;MEM.RegisterRd &#x3D; ID&#x2F;EX.RegisterRs ))</span><br><span class="line">and (MEM&#x2F;WB.RegisterRd &#x3D; ID&#x2F;EX.RegisterRs )) </span><br><span class="line">	ForwardA &#x3D; 01 </span><br><span class="line">if (MEM&#x2F;WB.RegWrite and (MEM&#x2F;WB.RegisterRd ≠ 0) </span><br><span class="line">and not (EX&#x2F;MEM.RegWrite and (EX&#x2F;MEM.RegisterRd ≠ 0) </span><br><span class="line">		and (EX&#x2F;MEM.RegisterRd &#x3D; ID&#x2F;EX.RegisterRt ))</span><br><span class="line">and (MEM&#x2F;WB.RegisterRd &#x3D; ID&#x2F;EX.RegisterRt )) </span><br><span class="line">	ForwardB &#x3D; 01</span><br></pre></td></tr></table></figure></p>
-<h4 id="load-use-detection">Load-use detection</h4>
-<p>When Load-use hazard occur, we can do nothing but stall a clock cycle. To detect it:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Load-use hazard &#x3D; ID&#x2F;EX.MemRead and </span><br><span class="line">((ID&#x2F;EX.RegisterRt &#x3D; IF&#x2F;ID.RegisterRs ) or </span><br><span class="line">(ID&#x2F;EX.RegisterRt &#x3D; IF&#x2F;ID.RegisterRt ))</span><br></pre></td></tr></table></figure>
-<h4 id="how-to-stall">How to Stall</h4>
-<ol type="1">
-<li>Force control values in ID/EX register to 0 : ​ EX, MEM and WB do EX, MEM and WB do nop (no -operation)</li>
-<li>Prevent update of PC and IF/ID register Using instruction is decoded again Following instruction is fetched again 1-cycle stall allows MEM to read data for <code>lw</code> (with forwarding)</li>
-</ol>
-<h4 id="data-hazard-when-branch">Data Hazard when branch</h4>
-<p>In pipeline datapath, branch target address calculation is executed in <strong>another ALU NOT in EXE stage</strong>. It is <strong>executed during ID staged.</strong></p>
-<p>ID Stage: Target address calculator, Register file, Register comparator.</p>
-<blockquote>
-<p>add $1, $2, $3 add $4, $5, $6 add $7, $8, $9 # another instruction beq $1, $4, target</p>
-</blockquote>
-<p>Can resolve using forwarding. From <strong>MEM/WB</strong> and <strong>EXE/MEM</strong> to <strong>ID</strong></p>
-<blockquote>
-<p>add $1, $2, $3 add $4, $5, $6 beq stalled... beq $1, $4, target</p>
-</blockquote>
-<p>Need one cycle stalled.</p>
-<blockquote>
-<p>lw $1,addr<br />
-beq stalled... beq stalled... beq $1, $0, target</p>
-</blockquote>
-<p>Need two cycles stalled.</p>
-<h2 id="memory">Memory</h2>
-<p>RAM(Random Access Memory) technology includes two types: 1. Static RAM -- mostly used for <strong>cache</strong> 0.5ns-2.5ns, $2000 -$5000 per GB consists only <strong>Transistors</strong> 2. Dynamic RAM(DRAM) -- mostly used for <strong>main memory</strong> 50ns - 70ns, $20-$75 per GB consists of <strong>Transistor</strong> and <strong>Capacitor</strong></p>
-<p>Magnetic disk: 5ms - 20ms, $0.2-$2 per GB</p>
-<h3 id="disk-sectors-and-accesses">Disk Sectors and Accesses</h3>
-<p><strong>Each sector records:</strong> Sector ID Data (512 bytes, 4096 bytes proposed) Error correcting code (ECC) Synchronization fields and gaps</p>
-<p><strong>Access to a sector involves:</strong> Queuing delay if other accesses are pending Seek: move the heads Rotational latency Data transfer Controller overhead</p>
-<h3 id="principle-of-locality">Principle of Locality</h3>
-<blockquote>
-<p>Programs access a small proportion of their address space at any time</p>
-</blockquote>
-<ol type="1">
-<li><p><strong>Temporal locality</strong></p>
-<p>Items accessed recently are likely to be accessed again soon</p></li>
-<li><p><strong>Spatial locality</strong> Items near those accessed recently are likely to be accessed soon</p></li>
-</ol>
-<p><strong>This property is the KEY to memory hierarchy!</strong></p>
-<h3 id="memory-hierachy">Memory Hierachy</h3>
-<p>Initially, Instructions and data are loaded into <strong>DRAM</strong> from disk.</p>
-<p>Upon first access, A copy of the referenced instruction or data item is kept in <strong>cache</strong></p>
-<p>In subsequent accesses, First, look for the requested item in the cache ​ If the item is in the cache, return the item to the CPU ​ If NOT in the cache, look it up in the memory</p>
-<p>We can say:</p>
-<blockquote>
-<p>If not found in this level, look it up at next level until found Keep (cache) a copy of the found item at this level after use</p>
-</blockquote>
-<h3 id="cache">Cache</h3>
-<p><strong>Each memory locations is mapped to ONE location in the cache.</strong></p>
-<blockquote>
-<p>average latency = hit + miss = r*t1 + ((1-r)t1 + rt2) = t1 + (1-r)t2 <strong>NOT</strong> r*t1 + (1-r)t2</p>
-</blockquote>
-<p>Three basic organizations:</p>
-<ol type="1">
-<li>Direct-mapped( one memory block to one possible cache block)</li>
-<li>Set-mapped( one memory block to one set of possible cache blocks)</li>
-<li>Fully-mapped( one memory block to all possible cache blocks)</li>
-</ol>
-<h4 id="direct-mapped-cache">Direct Mapped Cache</h4>
-<p>If the number of cache blocks (N) is a power of 2; <strong>N=2^m</strong> cache_location = the low-order <strong>m</strong> bits of block address e.g. map the value1200 to a 8 blocks, 32 byte/block cache.</p>
-<blockquote>
-<p>Block address = 1200/32 = 37 Block number = 37 % 8 = 5</p>
-</blockquote>
-<p>Disadvantage: block access sequence: 100011, 001011, 100011 later arrival will <strong>kill out</strong> previous one. called <strong>cache conflict.</strong></p>
-<h4 id="tags-and-valid-bits">Tags and Valid Bits</h4>
-<p><strong>Tags:</strong> decide which particular block is stored in a cache location. Store block address as well as the data. Only need the high-order bits. <strong>tags size= original address size- block size- blocks number(binary) - 1(valid bit)</strong></p>
-<p><strong>Valid Bits:</strong> decide whether the data exists. Initially 0.</p>
-<p>Consider a direct-mapped cache with 8 cache frames and a block size of 32 bytes Memory (byte) address generated by CPU|Block address|Hit or miss|Assigned cache block ---|---|--|--- 0010 1100 0010|0010 110|Miss|110 0011 0100 0000|0011 010|Miss|010 0010 1100 0100|0010 110|Hit|110 0010 1100 0010|0010 110|Hit|110 0010 0000 1000|0010 000|Miss|000 0000 0110 0000|0000 011|Miss|011 0010 0001 0000|0010 000|Hit|000 0010 0100 0001|0010 010|Miss|010</p>
-<h4 id="associate-cache">Associate Cache</h4>
-<p>Fully associative(FA): Each block can be placed <strong>anywhere</strong> in the cache. pros: No cache conflict. But still have misses due to size. cons: Costly (hardware and time)</p>
-<p>N-way Set associative(SA): Each block can be placed in a <strong>certain number(N)</strong> of cache locations. A good compromise between DM &amp; FA</p>
-<h4 id="block-replacement">Block Replacement</h4>
-<ol type="1">
-<li>Random</li>
-<li>Least recently used(LRU): Upon miss: Replace the LRU with missed address -&gt; Move the miss address to MRU position Upon hit: Move the hit address to MRU position -&gt; Pack the rest</li>
-</ol>
-<h4 id="deal-with-dirty-data">Deal with Dirty Data</h4>
-<h5 id="write-back">Write-back</h5>
-<p>CPU only write to cache. CPU can write individual words at the rate of the cache. Multiple writes to a block are merged into one write to main memory. <em>more and more caches use this strategy.</em></p>
-<h5 id="write-through">Write-through</h5>
-<p>CPU write both on cache and memory.(memory always up-to-date)</p>
-
+          <p>HKUST COMP2611 notes</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/12/07/COMP2611-Final-Review/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1358,7 +433,7 @@ beq stalled... beq stalled... beq $1, $0, target</p>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-04-09 23:16:59" itemprop="dateModified" datetime="2019-04-09T23:16:59+08:00">2019-04-09</time>
+                <time title="Modified: 2020-03-24 13:54:53" itemprop="dateModified" datetime="2020-03-24T13:54:53+08:00">2020-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1366,7 +441,7 @@ beq stalled... beq stalled... beq $1, $0, target</p>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/School-Notes/" itemprop="url" rel="index"><span itemprop="name">School Notes</span></a>
+                  <a href="/categories/Data-Structure/" itemprop="url" rel="index"><span itemprop="name">Data Structure</span></a>
                 </span>
             </span>
 
@@ -1381,58 +456,15 @@ beq stalled... beq stalled... beq $1, $0, target</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="hash-table">Hash Table</h1>
-<p>A hash table is an array of some <strong>fixed size</strong>, containing all the data items.<br />
-Each item has a <strong>key</strong> search is performed based on the keys.<br />
-Each key is <strong>mapped</strong> into some position in the array in the range 0 to m − 1, where m is the array size.<br />
-The mapping is called <strong>hash function</strong>.</p>
-<p>Hashing table is a data structure that supports: 1. searching 2. insertion 3. deletion</p>
-<p>The implementation of hash tables is called <strong>hashing</strong>.<br />
-Hashing is a technique which allows the executions of above operations in <strong>constant time</strong> on average.<br />
-Unlike other data structures such as linked list or binary trees, data items are generally <strong>not</strong> ordered in hash tables.<br />
-As a consequence, hash tables don't support the following operations:</p>
-<ol type="1">
-<li>find_min and find_max</li>
-<li>finding successor and predecessor</li>
-<li>reporting data with a given range</li>
-<li>listing out the data in order</li>
-</ol>
-<h1 id="hashing-function">Hashing Function</h1>
-<h2 id="design">Design</h2>
-<p>A simple and reasonable strategy: <code>h(k) = k mod m.</code></p>
-<p>Its a good practice to set the table size m to a prime number.<br />
-&gt; h(key) =(key[0] + 37*key[1] + 37^2*key[2] + ... ) mod <strong>m</strong></p>
-<h2 id="handling-collision">Handling collision</h2>
-<p><strong>Make hash table an array of linked lists</strong></p>
-<h3 id="seperate-chaining">Seperate Chaining</h3>
-<h4 id="insertion">Insertion</h4>
-<p>To insert a key <strong>k</strong>:<br />
-&gt; Compute h(k)<br />
-&gt; If T(h(k)) contains <code>nullptr</code> , initial this table entry to point to linked list node of <code>kk</code> .<br />
-&gt; If T(h(k)) contains <code>non-nullptr</code>, add <code>k</code> to the beginning of the list.</p>
-<h4 id="deletion">Deletion</h4>
-<p>To delete a key <strong>k</strong>:<br />
-&gt; Compute h(k) to determine which list to traverse.<br />
-&gt; Search for the key <code>k</code>, in the list that T(h(k)) points to.<br />
-&gt; Delete the item with key <code>k</code> if it is found.</p>
-<h3 id="open-addressing">Open addressing</h3>
-<p>Instead of putting keys of the same hash table into a chain, open addressing will <strong>relocate</strong> the key k to be inserted if it collides with an existing key. #### Linear probing &gt; f(i) = i<br />
-&gt; hi(k) = (hash(k) + i) mod m</p>
-<p>Disadvantage: fall into cluster<br />
-#### quadratic probing</p>
-<blockquote>
-<p>f(i) = i<sup>2</sup><br />
-hi(k) = (hash(k) + i<sup>2</sup>) mod m</p>
-</blockquote>
-<p>Disadvantage: second cluster... same key same probe steps.<br />
-#### double hashing</p>
-<blockquote>
-<p>f (i) = i × hash2(k)<br />
-h<sub>i</sub>(k) = (hash(k) + i × hash<sub>2</sub>(k)) mod m</p>
-</blockquote>
-<p>hash<sub>2</sub>(k) must be <strong>relatively prime</strong> to the table size m.<br />
-Otherwise, we will only be able to examine a fraction of the table entries.</p>
-
+          <p>HKUST COMP2011/2012 notes</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/12/07/Hashing/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1482,7 +514,7 @@ Otherwise, we will only be able to examine a fraction of the table entries.</p>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-04-09 23:16:59" itemprop="dateModified" datetime="2019-04-09T23:16:59+08:00">2019-04-09</time>
+                <time title="Modified: 2020-03-24 13:51:41" itemprop="dateModified" datetime="2020-03-24T13:51:41+08:00">2020-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1490,7 +522,7 @@ Otherwise, we will only be able to examine a fraction of the table entries.</p>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/I-don-t-know-about-C/" itemprop="url" rel="index"><span itemprop="name">I don't know about C++</span></a>
+                  <a href="/categories/Data-Structure/" itemprop="url" rel="index"><span itemprop="name">Data Structure</span></a>
                 </span>
             </span>
 
@@ -1505,35 +537,15 @@ Otherwise, we will only be able to examine a fraction of the table entries.</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><em>(All codes below are written by Dr. Desmond)</em> # AVL(Adelson-Velsky and Landis) Trees Every sub-tree of an AVL tree is itself an AVL tree.(An empty tree is an AVL tree too.)<br />
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">AVLNode</span>&#123;</span>  </span><br><span class="line">    T data;  </span><br><span class="line">    <span class="keyword">int</span> height;     <span class="comment">// Important!</span></span><br><span class="line">    AVLNode* left;  </span><br><span class="line">    AVLNode* right;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="avl-tree-searching">AVL Tree Searching</h2>
-<p>same as BST searching ## AVL Tree Insertion Insertion may violate the AVL tree property in 4 cases: 1. Insertion into the <strong>right</strong> sub-tree of the <strong>right</strong> child<br />
-Left(anti-clockwise) rotation [single rotation]<br />
-2. Insertion into the <strong>left</strong> sub-tree of the <strong>left</strong> child<br />
-Right(clockwise) rotation [single rotation]<br />
-3. Insertion into the <strong>right</strong> sub-tree of the <strong>left</strong> child<br />
-Left-right rotation [double rotation]<br />
-4. Insertion into the <strong>left</strong> sub-tree of the <strong>right</strong> child<br />
-Right-left rotation [double rotation]</p>
-<p><strong>!!! Distinguish L/R of subtree or L/R of child !!!</strong></p>
-<p><strong>First insert the node to right place, then balance it by rotation.</strong><br />
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::insert(AVLNode&lt;T&gt;* p, <span class="keyword">const</span> T&amp; d)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>( !p ) <span class="keyword">return</span> <span class="keyword">new</span> AVLNode&lt;T&gt;(d);  <span class="comment">// Empty AVL tree</span></span><br><span class="line">    <span class="keyword">if</span>( d &lt; p-&gt;data )</span><br><span class="line">        p-&gt;left = insert(p-&gt;left, d);   <span class="comment">// Recursion on the left sub-tree</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        p-&gt;right = insert(p-&gt;right, d); <span class="comment">// Recursion on the right sub-tree</span></span><br><span class="line">    <span class="keyword">return</span> balance(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> ### Rotation Single rotation operate on the <strong>node</strong>, replace original node by its child<br />
-Double rotation first operate on the <strong>child</strong>, then on the <strong>node</strong>, replace original node by its grandchild.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::rotateRight(AVLNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">    AVLNode&lt;T&gt;* pl = p-&gt;left;</span><br><span class="line">    p-&gt;left = pl-&gt;right;</span><br><span class="line">    pl-&gt;right = p;</span><br><span class="line">    updateHeight(p);</span><br><span class="line">    updateHeight(pl);</span><br><span class="line">    <span class="keyword">return</span> pl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::rotateRightLeft(AVLNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">    rotateRight(p-&gt;right);</span><br><span class="line">    <span class="keyword">return</span> rotateLeft(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::balance(AVLNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">    h-&gt;height = max(h-&gt;right-&gt;height,h-&gt;left-&gt;height);</span><br><span class="line">    <span class="comment">// heightDiff() return (right subtree height) - (left subtree height)</span></span><br><span class="line">    <span class="keyword">if</span>( heightDiff(p) == <span class="number">2</span> )&#123;</span><br><span class="line">        <span class="keyword">if</span>( heightDiff(p-&gt;right) &lt; <span class="number">0</span> )  <span class="comment">// if need double rotation</span></span><br><span class="line">            p-&gt;right = rotateRight(p-&gt;right);</span><br><span class="line">        <span class="keyword">return</span> rotateLeft(p);           <span class="comment">// single rotation</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>( heightDiff(p) == <span class="number">-2</span> )&#123;</span><br><span class="line">        <span class="keyword">if</span>( heightDiff(p-&gt;left) &gt; <span class="number">0</span> )   <span class="comment">// if need double rotation</span></span><br><span class="line">            p-&gt;left = rotateLeft(p-&gt;left);</span><br><span class="line">        <span class="keyword">return</span> rotateRight(p);          <span class="comment">// single rotation</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="avl-tree-deletion">AVL Tree Deletion</h2>
-<p>The idea is same as BST.<br />
-When delete node with two children, the following code <strong>delete the node and rise the min node up</strong>.<br />
-Then balance the whole tree. <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::findMin(AVLNode&lt;T&gt;* p) <span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> p-&gt;left ? findMin(p-&gt;left) : p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// NOT delete the Min-node!!</span></span><br><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::removeMin(AVLNode&lt;T&gt;* p)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(p-&gt;left == <span class="number">0</span>)                    <span class="comment">// If it's the min node, not return itself</span></span><br><span class="line">        <span class="keyword">return</span> p-&gt;right;                <span class="comment">// Return the second min means removeMin!</span></span><br><span class="line">    p-&gt;left = removeMin(p-&gt;left);       <span class="comment">// Recursion on the left sub-tree</span></span><br><span class="line">    <span class="keyword">return</span> balance(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AVLNode&lt;T&gt;* AVL&lt;T&gt;::remove(AVLNode&lt;T&gt;* p, <span class="keyword">const</span> T&amp; d) </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>( !p ) <span class="keyword">return</span> <span class="number">0</span>;                  <span class="comment">// Item is not found; do nothing</span></span><br><span class="line">    <span class="keyword">if</span>( d &lt; p-&gt;data )</span><br><span class="line">        p-&gt;left = remove(p-&gt;left,d);    <span class="comment">// Recursion on the left sub-tree</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>( d &gt; p-&gt;data )</span><br><span class="line">        p-&gt;right = remove(p-&gt;right,d);  <span class="comment">// Recursion on the right sub-tree</span></span><br><span class="line">    <span class="keyword">else</span> &#123;                              <span class="comment">// Item is found</span></span><br><span class="line">        AVLNode&lt;T&gt;* pl = p-&gt;left;</span><br><span class="line">        AVLNode&lt;T&gt;* pr = p-&gt;right;</span><br><span class="line">        <span class="keyword">delete</span> p;                       <span class="comment">// Remove the node with value d</span></span><br><span class="line">        <span class="keyword">if</span>( !pr ) <span class="keyword">return</span> pl;            <span class="comment">// Return left sub-tree if no right sub-tree</span></span><br><span class="line">        AVLNode&lt;T&gt;* min = findMin(pr);  <span class="comment">// Find min. node of the right sub-tree</span></span><br><span class="line">        min-&gt;right = removeMin(pr);     <span class="comment">// Did NOT delete the min node on right sub-tree </span></span><br><span class="line">        min-&gt;left = pl;</span><br><span class="line">        <span class="keyword">return</span> balance(min);            <span class="comment">// Balance this node</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> balance(p);                  <span class="comment">// Balance this node</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> ##### Explanation <code>p-&gt;left = remove(p-&gt;left,d);</code><br />
-Connect between parent and child. So no need to store parent pointer.<br />
-<code>delete p;</code><br />
-Truly delete node with required data. But store its left and right nodes.<br />
-Later return min of right sub-tree to its parent node. No memory leak.<br />
-<code>min-&gt;right = removeMin(pr);</code><br />
-Return from the second min node and balanced from bottom up to the deleted node's right child.<br />
-Did not truly delete the min node. <strong>It should already be stored by <code>findMin()</code> function.</strong></p>
-<p>Also refer <a href="https://blog.csdn.net/u010442302/article/details/52713585" target="_blank" rel="noopener">here</a></p>
-
+          <p>HKUST COMP2011/2012 notes</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/12/06/AVL-Trees/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1583,7 +595,7 @@ Did not truly delete the min node. <strong>It should already be stored by <code>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-04-09 23:16:59" itemprop="dateModified" datetime="2019-04-09T23:16:59+08:00">2019-04-09</time>
+                <time title="Modified: 2020-03-24 13:51:22" itemprop="dateModified" datetime="2020-03-24T13:51:22+08:00">2020-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1591,7 +603,7 @@ Did not truly delete the min node. <strong>It should already be stored by <code>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/I-don-t-know-about-C/" itemprop="url" rel="index"><span itemprop="name">I don't know about C++</span></a>
+                  <a href="/categories/Data-Structure/" itemprop="url" rel="index"><span itemprop="name">Data Structure</span></a>
                 </span>
             </span>
 
@@ -1606,46 +618,15 @@ Did not truly delete the min node. <strong>It should already be stored by <code>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="binary-tree">Binary Tree</h1>
-<p>Inorder traversal<br />
-preorder traversal<br />
-postorder traversal</p>
-<h1 id="binary-search-tree">Binary Search Tree</h1>
-<h2 id="bst-insertion">BST Insertion</h2>
-<p>Always insert element at bottom as leaf.<br />
-Remember to check if the element already exists in the tree.</p>
-<h3 id="recursion">Recursion</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">insert</span><span class="params">(<span class="keyword">const</span> T&amp; x, Node*&amp; n )</span>	<span class="comment">// pass by reference</span></span></span><br><span class="line"><span class="function">Node* <span class="title">insert</span><span class="params">(<span class="keyword">const</span> T&amp; x, Node* n )</span>	<span class="comment">// pass by value need return pointer</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// base case 1: reach the node beyond leaf</span></span><br><span class="line">    <span class="keyword">if</span>(!n) &#123;n-&gt;x = <span class="keyword">new</span> T(x);<span class="keyword">return</span> <span class="literal">true</span> / <span class="keyword">new</span> T(x);&#125;</span><br><span class="line">    <span class="comment">// base case 2: the data already exists</span></span><br><span class="line">    <span class="keyword">if</span>(n-&gt;x == x) <span class="keyword">return</span> <span class="literal">false</span> / <span class="literal">nullptr</span> ;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; n-&gt;x) <span class="keyword">return</span> insert(x,n-&gt;left);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> insert(x,n-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>The insert function parameter <code>Node*&amp;</code> is a <strong>reference</strong>. We always pass <strong>reference</strong> to it, thought the <strong>value</strong> of the reference may be <code>nullptr</code>. e.g. <code>insert(x,t-&gt;left)</code> .In this case, <code>t</code> always refers to a <code>Node*</code>.</p>
-<h3 id="iteration">Iteration</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">insertIterative</span><span class="params">(<span class="keyword">const</span> T&amp; x, Node* p )</span>	<span class="comment">// pass by value</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// A new pointer to refer to the leaf</span></span><br><span class="line">    Node* pp = <span class="literal">nullptr</span>;</span><br><span class="line">	<span class="keyword">for</span>(;p!=<span class="literal">nullptr</span>;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// already exists</span></span><br><span class="line">        <span class="keyword">if</span>(p-&gt;x == x) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line">        pp = p; <span class="comment">// save parent for reference</span></span><br><span class="line">    	<span class="keyword">if</span>(p &lt; p-&gt;x) p = p-&gt; left;</span><br><span class="line">    	<span class="keyword">else</span> p = p-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// root is nullptr</span></span><br><span class="line">    <span class="keyword">if</span>(!pp) root = <span class="keyword">new</span> T(x);</span><br><span class="line">    <span class="keyword">else</span> pp = <span class="keyword">new</span> T(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>We only need to know the <strong>value</strong> of the <code>root</code> of the tree. But we need to record the reference of the parent of the insertion node.</p>
-<h2 id="bst-search">BST Search</h2>
-<p><em>public</em> interface:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">contain</span><span class="params">(<span class="keyword">const</span> T&amp; x)</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line"> 	Node* p = root;</span><br><span class="line">    Node* pp = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="comment">// Non-recursion method COMMON</span></span><br><span class="line">    <span class="keyword">return</span> search(x,p,pp);</span><br><span class="line">    <span class="comment">// Recursion method</span></span><br><span class="line">    <span class="keyword">return</span> searchRecur(x,p) != <span class="literal">nullptr</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>The implementation of <code>search(x,p)</code> and <code>searchIterative(x,p,pp)</code> is as below.</p>
-<h3 id="recursion-1">Recursion</h3>
-<p>can <strong>NOT</strong> keep track of the parent node pointer. <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Node* <span class="title">searchRecur</span><span class="params">(<span class="keyword">const</span> T&amp; x, Node* n )</span>	<span class="comment">// pass by value</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// base case 1: reach the node beyond leaf</span></span><br><span class="line">    <span class="keyword">if</span>(!n) &#123;<span class="keyword">return</span> <span class="literal">nullptr</span>;&#125;</span><br><span class="line">    <span class="comment">// base case 2: find the data</span></span><br><span class="line">    <span class="keyword">if</span>(n-&gt;x == x) <span class="keyword">return</span> n;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; n-&gt;x) <span class="keyword">return</span> search(x,n-&gt;left);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> search(x,n-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="iteration-1">Iteration</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">search</span><span class="params">(<span class="keyword">const</span> T&amp; x, Node*&amp; n, Node*&amp; pn )</span><span class="comment">// pass by reference</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	<span class="keyword">for</span>(;n!=<span class="literal">nullptr</span>;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n-&gt;x == x) &#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;</span><br><span class="line">        pn = n;</span><br><span class="line">    	<span class="keyword">if</span>(x &lt; n-&gt;x) n = n-&gt; left;</span><br><span class="line">    	<span class="keyword">else</span> n = n-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Can keep track of parent node pointer. Note the <code>Node*&amp; n</code> and <code>Node*&amp; pn</code> is pas by <strong>reference</strong>. They must be created before calling the function</p>
-<h2 id="bst-deletion">BST deletion</h2>
-<p>need <code>findMin()</code> function to help.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Node* <span class="title">findMin</span><span class="params">(Node* p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!p)<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;left)p=p-&gt;left;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol type="1">
-<li><p>Delete a node with no child :</p>
-pointer: <code>current</code> <code>parent</code> Simply delete it and make its parent's original pointer to it <code>nullptr</code></li>
-<li><p>Delete a node with one child :</p>
-pointer: <code>current</code> <code>parent</code> <code>child</code> Pass its pointer to the only child to its parent's pointer to it. Then delete it.</li>
-<li><p>Delete a node with two child :</p>
-<p>pointer: <code>current</code> <code>min/max</code> <code>parent of min/max</code> <strong>Override</strong> its data to the <em>max</em> of <em>left</em> or <em>min</em> of <em>right</em><br />
-<strong>Actually delete</strong> the min/max node of the BST, which has no child</p></li>
-</ol>
-<h3 id="recursion-2">Recursion</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">remove</span><span class="params">(<span class="keyword">const</span> T&amp; x,Node*&amp; n)</span>	<span class="comment">// pass by reference</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Base case: NOT found</span></span><br><span class="line">    <span class="keyword">if</span>(!n) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">// Recursive steps</span></span><br><span class="line">    <span class="keyword">if</span>(x&lt;n-&gt;x) <span class="keyword">return</span> remove(x,n-&gt;left);</span><br><span class="line">    <span class="keyword">if</span>(x&gt;n-&gt;x) <span class="keyword">return</span> remove(x,n-&gt;right);</span><br><span class="line">    <span class="comment">// node with no child</span></span><br><span class="line">    <span class="keyword">if</span>(!n-&gt;left &amp;&amp; !n-&gt;right)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">delete</span> n;</span><br><span class="line">        n = <span class="literal">nullptr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// node with two children</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(n-&gt;left &amp;&amp; n-&lt;right)</span><br><span class="line">    &#123;</span><br><span class="line">        Node* rightMin = findMin(n-&gt;right);</span><br><span class="line">        n-&gt;x = rightMin-&gt;x;</span><br><span class="line">        <span class="comment">// always true</span></span><br><span class="line">        remove(n-&gt;x,rightMin);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// node with only one child</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        Node* child = root-&gt;left?root-&gt;left:root-&gt;right;</span><br><span class="line">        <span class="comment">// save &amp;n to curr, later delete</span></span><br><span class="line">        Node* curr = n;</span><br><span class="line">        n = n-&gt;child;</span><br><span class="line">        <span class="keyword">delete</span> curr;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="iteration-2">Iteration</h3>
-<p>Need the parent node pointer of <em>Min</em> node. Hard to implement.</p>
-
+          <p>HKUST COMP2011/2012 notes</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/12/05/Trees-Binary-Trees-Binary-Search-Trees/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1695,7 +676,7 @@ pointer: <code>current</code> <code>parent</code> <code>child</code> Pass its po
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-04-09 23:16:59" itemprop="dateModified" datetime="2019-04-09T23:16:59+08:00">2019-04-09</time>
+                <time title="Modified: 2020-03-24 14:07:18" itemprop="dateModified" datetime="2020-03-24T14:07:18+08:00">2020-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1703,7 +684,7 @@ pointer: <code>current</code> <code>parent</code> <code>child</code> Pass its po
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/I-don-t-know-about-C/" itemprop="url" rel="index"><span itemprop="name">I don't know about C++</span></a>
+                  <a href="/categories/C-C/" itemprop="url" rel="index"><span itemprop="name">C/C++</span></a>
                 </span>
             </span>
 
@@ -1718,49 +699,15 @@ pointer: <code>current</code> <code>parent</code> <code>child</code> Pass its po
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="static-variables">Static variables</h2>
-<h3 id="global-scope">Global Scope</h3>
-<ul>
-<li>created only once in a program.</li>
-<li>reside on the static data region of the loaded program.</li>
-<li>have a lifetime across the entire run of a program.</li>
-<li>still may have limited scope: file, function, class.</li>
-</ul>
-<h3 id="function-scope">Function Scope</h3>
-<ul>
-<li>initialized only once regardless how many times the function is called.</li>
-<li>retain their values across the function calls.</li>
-<li>can be accessed <strong>only inside the function.</strong></li>
-</ul>
-<h3 id="class-scope">Class Scope</h3>
-<ul>
-<li><p>variables in different objects are actually one variable.</p></li>
-<li><p>initialize variable must be done in <strong>global scope</strong> <strong>cannot initialize it inside the class.</strong></p>
-<blockquote>
-<p><strong>NOT in any function! Not in main(), either!</strong> <strong>NO</strong> keyword <code>static</code> e.g.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><span class="keyword">static</span> <span class="keyword">int</span> a;&#125;;</span><br><span class="line"><span class="keyword">int</span> A::a = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-</blockquote></li>
-<li><p><strong>variable exists even if no class object is created.</strong></p></li>
-</ul>
-<h2 id="static-functions">Static Functions</h2>
-<h3 id="global-functions">Global Functions</h3>
-<ul>
-<li>almost same as <a href="#global-scope">static variables</a>.</li>
-</ul>
-<h3 id="member-functions">Member Functions</h3>
-<ul>
-<li><p>do not have the implicit this pointer like regular non-static member functions.</p></li>
-<li><p>may be used even when there are <strong>no</strong> objects of the class!</p></li>
-<li><p>can <strong>only</strong> make use of static data members of the class.</p></li>
-<li><p>cannot be <code>const</code> nor <code>virtual</code> functions.</p></li>
-<li><p>can be defined outside the class declaration</p>
-<blockquote>
-<p><strong>NO</strong> keyword <code>static</code></p>
-<p>e.g.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>;&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">A::f</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-</blockquote></li>
-</ul>
-
+          <p>HKUST COMP2011/2012 notes</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/12/05/Static-Variables/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1810,7 +757,7 @@ pointer: <code>current</code> <code>parent</code> <code>child</code> Pass its po
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-04-09 23:16:59" itemprop="dateModified" datetime="2019-04-09T23:16:59+08:00">2019-04-09</time>
+                <time title="Modified: 2020-03-24 14:06:37" itemprop="dateModified" datetime="2020-03-24T14:06:37+08:00">2020-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1818,7 +765,7 @@ pointer: <code>current</code> <code>parent</code> <code>child</code> Pass its po
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/I-don-t-know-about-C/" itemprop="url" rel="index"><span itemprop="name">I don't know about C++</span></a>
+                  <a href="/categories/C-C/" itemprop="url" rel="index"><span itemprop="name">C/C++</span></a>
                 </span>
             </span>
 
@@ -1833,70 +780,177 @@ pointer: <code>current</code> <code>parent</code> <code>child</code> Pass its po
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="inheritance">Inheritance</h2>
-<p><em>Inheritance</em>: describe &quot;is-a relationship&quot;<br />
-<em>Polymorphism</em>: derived class can perform like base class(object,pointer,reference)</p>
-<p><strong><em>Construction Order</em>: from inner to outer<br />
-<em>Destruction Order</em>: from outer to inner</strong></p>
-<h3 id="member-access-control">member access control</h3>
-<p><em>public</em>:</p>
-<p>member functions of the class(inner)<br />
-any member funtions of other classes(other class)<br />
-any global functions(outside)</p>
-<p><em>protected</em>:</p>
-<p>member functions and <em>friends</em> of the class member functions and <em>friends</em> of its <em>derived classes</em> <strong>NOT</strong> for outside functions</p>
-<p><em>private</em>:</p>
-<p>member functions and friends of the class</p>
-<blockquote>
-<p>Without inheritance, private and protected have exactly the same meaning.</p>
-</blockquote>
-<h3 id="public-protected-private-inheritance">public protected private inheritance</h3>
-<table>
-<thead>
-<tr class="header">
-<th>inheritance</th>
-<th>public</th>
-<th>protected</th>
-<th>private</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>public inheritance</td>
-<td>public</td>
-<td>protected</td>
-<td>private</td>
-</tr>
-<tr class="even">
-<td>protected inheritance</td>
-<td>protected</td>
-<td>protected</td>
-<td>private</td>
-</tr>
-<tr class="odd">
-<td>private inheritance</td>
-<td>private</td>
-<td>private</td>
-<td>private</td>
-</tr>
-</tbody>
-</table>
-<p>Public inheritance implements the &quot;is-a&quot; relationship</p>
-<p>Private inheritance is similar to &quot;has-a&quot; relationship</p>
-<h3 id="friend">Friend</h3>
-<p>friend of <code>Base</code> is not friend of <code>Derived</code></p>
-<h2 id="polymorphism">Polymorphism</h2>
-<h3 id="dynamic-bindingvirtual-function">Dynamic Binding&amp;Virtual Function</h3>
-<p><em>Once a method is declared <strong>virtual</strong> in the base class, it is automatically <strong>virtual</strong> in all directly and indirectly derived classes.</em></p>
-<p><strong>Even if derived classed do not announce it's virtual functions.</strong></p>
-<p>Virtual destructor can make deleting a base pointer to derived object operate correctly.</p>
-<p>Do not rely on the virtual function mechanism during the execution of a constructor.</p>
-<p>Similarly, if a virtual function is called inside the base class destructor, it represents base class’ virtual function: when a derived class is being deleted, the derived-specific portion has already been deleted before the base class destructor is called.</p>
-<h3 id="abstract-base-classabc">Abstract Base Class(ABC):</h3>
-<p><strong>NO</strong> object of ABC can be created</p>
-<p>Its <strong>derived classes</strong> must implement the pure virtual functions.</p>
-<p>ABC is just an interface.</p>
+          <p>HKUST COMP2011/2012 notes</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/12/05/Inheritance-and-Polymorphism/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
 
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/11/26/C-Memory-Leak/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/11/26/C-Memory-Leak/" class="post-title-link" itemprop="url">C++ Memory Leak</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-11-26 02:40:12" itemprop="dateCreated datePublished" datetime="2018-11-26T02:40:12+08:00">2018-11-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-24 14:06:25" itemprop="dateModified" datetime="2020-03-24T14:06:25+08:00">2020-03-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C-C/" itemprop="url" rel="index"><span itemprop="name">C/C++</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Method of detecting memory leak</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/11/26/C-Memory-Leak/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2018/06/28/AI-Chap-3-Searching/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/06/28/AI-Chap-3-Searching/" class="post-title-link" itemprop="url">AI Chap.3 Searching</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-06-28 18:15:57" itemprop="dateCreated datePublished" datetime="2018-06-28T18:15:57+08:00">2018-06-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-24 13:39:57" itemprop="dateModified" datetime="2020-03-24T13:39:57+08:00">2020-03-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Artificial-Intelligence/" itemprop="url" rel="index"><span itemprop="name">Artificial Intelligence</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>HKUST UROP study notes</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/06/28/AI-Chap-3-Searching/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1981,7 +1035,7 @@ any global functions(outside)</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1994,7 +1048,7 @@ any global functions(outside)</p>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

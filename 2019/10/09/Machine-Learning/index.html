@@ -21,18 +21,18 @@
     var CONFIG = {"hostname":"github.com","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Basic Naive Bayes Classifier Bayes Rule \(P(A|B)&#x3D;{P(A\and B)\over P(B)}&#x3D;{P(B|A)P(A)\over P(B)}\) When \(h\) stands for hypothesis, \(D\) stands for data \(P(h|D) &#x3D; {P(D|h)P(h)\over P(D)}&#x3D;{P(D|h)P">
+  <meta name="description" content="HKUST COMP4211 notes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Machine Learning">
 <meta property="og:url" content="http://github.com/2019/10/09/Machine-Learning/index.html">
 <meta property="og:site_name" content="Destinxxy">
-<meta property="og:description" content="Basic Naive Bayes Classifier Bayes Rule \(P(A|B)&#x3D;{P(A\and B)\over P(B)}&#x3D;{P(B|A)P(A)\over P(B)}\) When \(h\) stands for hypothesis, \(D\) stands for data \(P(h|D) &#x3D; {P(D|h)P(h)\over P(D)}&#x3D;{P(D|h)P">
+<meta property="og:description" content="HKUST COMP4211 notes">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://github.com/assets/Machine-Learning/image-20191029162522774.png">
 <meta property="og:image" content="http://github.com/assets/Machine-Learning/image-20191029162412552.png">
 <meta property="og:image" content="http://github.com/assets/Machine-Learning/image-20191029183428636.png">
 <meta property="article:published_time" content="2019-10-09T14:00:00.000Z">
-<meta property="article:modified_time" content="2020-03-20T18:30:03.264Z">
+<meta property="article:modified_time" content="2020-03-24T06:09:21.281Z">
 <meta property="article:author" content="Vox09">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="ML">
@@ -201,7 +201,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-21 02:30:03" itemprop="dateModified" datetime="2020-03-21T02:30:03+08:00">2020-03-21</time>
+                <time title="Modified: 2020-03-24 14:09:21" itemprop="dateModified" datetime="2020-03-24T14:09:21+08:00">2020-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -214,6 +214,7 @@
             </span>
 
           
+            <div class="post-description">HKUST COMP4211 notes</div>
 
         </div>
       </header>
@@ -224,125 +225,110 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="basic">Basic</h1>
-<h2 id="naive-bayes-classifier">Naive Bayes Classifier</h2>
-<h3 id="bayes-rule">Bayes Rule</h3>
-<p><span class="math inline">\(P(A|B)={P(A\and B)\over P(B)}={P(B|A)P(A)\over P(B)}\)</span></p>
-<p>When <span class="math inline">\(h\)</span> stands for hypothesis, <span class="math inline">\(D\)</span> stands for data</p>
-<p><span class="math inline">\(P(h|D) = {P(D|h)P(h)\over P(D)}={P(D|h)P(h)\over \sum_hP(D|h)P(h)}\)</span></p>
+        <h1 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h1><h2 id="Naive-Bayes-Classifier"><a href="#Naive-Bayes-Classifier" class="headerlink" title="Naive Bayes Classifier"></a>Naive Bayes Classifier</h2><h3 id="Bayes-Rule"><a href="#Bayes-Rule" class="headerlink" title="Bayes Rule"></a>Bayes Rule</h3><p>$P(A|B)={P(A\and B)\over P(B)}={P(B|A)P(A)\over P(B)}$</p>
+<p>When $h$ stands for hypothesis, $D$ stands for data </p>
+<p> $P(h|D) = {P(D|h)P(h)\over P(D)}={P(D|h)P(h)\over \sum_hP(D|h)P(h)}$</p>
 <ul>
-<li><span class="math inline">\(P(h)\)</span> <strong>prior probability</strong> of <span class="math inline">\(h\)</span>. Initial probability before observing.</li>
-<li><span class="math inline">\(P(h|D)\)</span> <strong>posterior probability</strong> of <span class="math inline">\(h\)</span> after observing the data <span class="math inline">\(D\)</span></li>
-<li><span class="math inline">\(P(D|h)\)</span> <strong>likelihood</strong> of observing the data <span class="math inline">\(D\)</span> given hypothesis <span class="math inline">\(h\)</span></li>
-<li><span class="math inline">\(P(D)\)</span> <strong>observed probability</strong> that training data <span class="math inline">\(D\)</span> will be observed</li>
+<li>$P(h)$     <strong>prior probability</strong> of $h$. Initial probability before observing.</li>
+<li>$P(h|D)$ <strong>posterior probability</strong> of $h$ after observing the data $D$</li>
+<li>$P(D|h)$ <strong>likelihood</strong> of observing the data $D$ given hypothesis $h$</li>
+<li>$P(D)$    <strong>observed probability</strong> that training data $D$ will be observed  </li>
 </ul>
-<h3 id="independence-and-conditional-independence">Independence and Conditional Independence</h3>
-<p>Two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent if <span class="math inline">\(P(X|Y)=P(X)\)</span> or <span class="math inline">\(P(Y|X)=P(Y)\)</span></p>
-<p>Two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are conditionally independent given <span class="math inline">\(Z\)</span> if <span class="math inline">\(P(X|Y,Z)=P(X,Z)\)</span></p>
-<h3 id="naive-bayes-classifier-1">Naive Bayes Classifier</h3>
-<p>Assumption: Attributes are conditionally independent of each other given the class variable Objective: Maximum the posterior probability given the data.</p>
-<p><span class="math inline">\(v_{NB} = arg\ max_{v_j\in V}P(v_j)\Pi^n_{i=1}P(a_i|v_j)\)</span> where <span class="math inline">\(a\)</span> is the attribute, <span class="math inline">\(v\)</span> is the class variable.</p>
-<p>What if <span class="math inline">\(P(a_i|v_j)\)</span> is zero?</p>
-<h4 id="laplace-correction">Laplace correction</h4>
-<p>Add a virtual count of 1 to each attribute value. change <span class="math inline">\({n_c\over n}\to{n_c+1\over n+|a|}\)</span></p>
-<h2 id="overfit">Overfit</h2>
-<p>hypothesis <span class="math inline">\(h\in H\)</span> overfits the training data if there is an alternative hypothesis <span class="math inline">\(h_0\in H\)</span> such that <span class="math inline">\(h\)</span> has a <strong>smaller</strong> error than <span class="math inline">\(h_0\)</span> over the <strong>training</strong> examples, <span class="math inline">\(h\)</span> has a <strong>larger</strong> error than <span class="math inline">\(h_0\)</span> over the <strong>test</strong> examples (entire distribution of instances)</p>
-<p>k-fold cross-validation Divide m examples to k fold. Each time use one fold for validation, others for training. Repeat k times.</p>
-<p>k-fold stratified cross-validation partition the m examples into k folds such that each class is uniformly distributed among the k folds.</p>
-<h1 id="artificial-neural-network">Artificial Neural Network</h1>
-<h2 id="perceptron">Perceptron</h2>
-<ul>
-<li>inputs <span class="math inline">\(x_1,x_2...\)</span> or <span class="math inline">\(\vec x\)</span></li>
-<li>weights <span class="math inline">\(w_1,w_2....\)</span> or <span class="math inline">\(\vec w\)</span></li>
-<li>bias <span class="math inline">\(b\)</span> or threshold <span class="math inline">\(t\)</span></li>
-<li>activation function <span class="math inline">\(f(x)\)</span></li>
-<li>output <span class="math inline">\(o = f(\vec x\vec w -b)\)</span></li>
+<h3 id="Independence-and-Conditional-Independence"><a href="#Independence-and-Conditional-Independence" class="headerlink" title="Independence and Conditional Independence"></a>Independence and Conditional Independence</h3><p>Two random variables $X$ and $Y$ are independent if $P(X|Y)=P(X)$ or $P(Y|X)=P(Y)$</p>
+<p>Two random variables $X$ and $Y$ are conditionally independent given $Z$ if $P(X|Y,Z)=P(X,Z)$</p>
+<h3 id="Naive-Bayes-Classifier-1"><a href="#Naive-Bayes-Classifier-1" class="headerlink" title="Naive Bayes Classifier"></a>Naive Bayes Classifier</h3><p>Assumption: Attributes are conditionally independent of each other given the class variable<br>Objective: Maximum the posterior probability given the data.</p>
+<p>$v_{NB} = arg\ max_{v_j\in V}P(v_j)\Pi^n_{i=1}P(a_i|v_j)$ where $a$ is the attribute, $v$ is the class variable.</p>
+<p>What if $P(a_i|v_j)$ is zero? </p>
+<h4 id="Laplace-correction"><a href="#Laplace-correction" class="headerlink" title="Laplace correction"></a>Laplace correction</h4><p>Add a virtual count of 1 to each attribute value. change ${n_c\over n}\to{n_c+1\over n+|a|}$</p>
+<h2 id="Overfit"><a href="#Overfit" class="headerlink" title="Overfit"></a>Overfit</h2><p>hypothesis $h\in H$ overfits the training data if there is an alternative hypothesis $h_0\in H$ such that<br>$h$ has a <strong>smaller</strong> error than $h_0$ over the <strong>training</strong> examples,<br>$h$ has a <strong>larger</strong> error than $h_0$ over the <strong>test</strong> examples (entire distribution of instances)</p>
+<p>k-fold cross-validation<br>Divide m examples to k fold. Each time use one fold for validation, others for training. Repeat k times. </p>
+<p>k-fold stratified cross-validation<br>partition the m examples into k folds such that each class is uniformly distributed among the k folds.</p>
+<h1 id="Artificial-Neural-Network"><a href="#Artificial-Neural-Network" class="headerlink" title="Artificial Neural Network"></a>Artificial Neural Network</h1><h2 id="Perceptron"><a href="#Perceptron" class="headerlink" title="Perceptron"></a>Perceptron</h2><ul>
+<li>inputs $x_1,x_2…$ or $\vec x$</li>
+<li>weights $w_1,w_2….$ or $\vec w$</li>
+<li>bias $b$ or threshold $t$</li>
+<li>activation function $f(x)$</li>
+<li>output $o = f(\vec x\vec w -b)$</li>
 </ul>
-<h2 id="adaline">Adaline</h2>
-<p>A feed-forward network with one layer of adjustable weights connected to one or more linear units (as output units)</p>
-<p><span class="math inline">\(o = \sum^n_{i=0}w_ix_i = \vec x\vec w\)</span></p>
-<p>target output for training data <span class="math inline">\(d: t_d\)</span> output for the training data <span class="math inline">\(d: o_d\)</span> squared training error : <span class="math inline">\(E(\vec w) = {1\over 2}\sum_{d\in D}(t_d-o_D)^2\)</span></p>
-<p>Gradient Descent <span class="math inline">\(\Delta E(\vec w) = [{\part E\over\part w_0},{\part E\over\part w_1},...{\part E\over\part w_n}]\)</span></p>
-<p>we update the <span class="math inline">\(\vec w\)</span> with learning rate <span class="math inline">\(\eta\)</span> by <span class="math inline">\(w\leftarrow w+\Delta w\)</span> where <span class="math inline">\(\Delta w = -\eta\nabla E(\vec w)=\eta\sum(t_d-o_d)x_d\)</span></p>
-<h2 id="hidden-layer">Hidden Layer</h2>
-<p>MLP Multi-layer perceptron</p>
+<h2 id="Adaline"><a href="#Adaline" class="headerlink" title="Adaline"></a>Adaline</h2><p>A feed-forward network with one layer of adjustable weights connected to one or more linear units (as output units)</p>
+<p>$o = \sum^n_{i=0}w_ix_i = \vec x\vec w$ </p>
+<p>target output for training data $d: t_d$<br>output for the training data $d: o_d$<br>squared training error : $E(\vec w) = {1\over 2}\sum_{d\in D}(t_d-o_D)^2$</p>
+<p>Gradient Descent<br>$\Delta E(\vec w) = [{\part E\over\part w_0},{\part E\over\part w_1},…{\part E\over\part w_n}]$ </p>
+<p>we update the $\vec w$ with learning rate $\eta$ by $w\leftarrow  w+\Delta w$<br>where $\Delta w = -\eta\nabla E(\vec w)=\eta\sum(t_d-o_d)x_d$   </p>
+<h2 id="Hidden-Layer"><a href="#Hidden-Layer" class="headerlink" title="Hidden Layer"></a>Hidden Layer</h2><p>MLP Multi-layer perceptron</p>
 <p>If hidden units were linear, then multi-layer is no better than a single layer. We need nonlinearity, to make the network perform better.</p>
 <p>Common activation function and derivative:</p>
 <ul>
-<li>Sigmoid <span class="math inline">\(f = {1\over 1+e^{-x}}\)</span> derivative <span class="math inline">\(f&#39; = f(1-f)\)</span></li>
-<li>Radial basis function network(RBF) <span class="math inline">\(f =exp(-{(x-w_j)^T(x-w_j)\over2\sigma_j^2})\)</span> Gaussian distribution.</li>
-<li>ReLU <span class="math inline">\(f = max(0,x)\)</span> derivative <span class="math inline">\(f&#39; = (x&gt;0)?1:0\)</span></li>
-<li>tanh <span class="math inline">\(f=tanh(x)\)</span> derivative <span class="math inline">\(f&#39;=1-tanh^2(x)\)</span></li>
+<li>Sigmoid $f = {1\over 1+e^{-x}}$ derivative $f’ = f(1-f)$</li>
+<li>Radial basis function network(RBF) $f =exp(-{(x-w_j)^T(x-w_j)\over2\sigma_j^2})$ Gaussian distribution.</li>
+<li>ReLU $f = max(0,x)$ derivative $f’ = (x&gt;0)?1:0$</li>
+<li>tanh $f=tanh(x)$ derivative $f’=1-tanh^2(x)$</li>
 </ul>
-<h2 id="back-propagation">Back-Propagation</h2>
-<p><span class="math inline">\({\part E\over \part w_i} = {\part\over\part w_i}{1\over 2}(t-o)^2 = -(t-o)({\part o\over \part w_i}) = -(t-o){\part o\over\part f_a}{\part f_a\over\part w_i}\)</span></p>
-<p>where <span class="math inline">\(f_a\)</span> is the <strong>input</strong> of the activation function, and <span class="math inline">\({\part f_a\over\part w_i} = x_i\)</span></p>
-<p><span class="math inline">\({\part E\over \part w_i} =-(t-o){\part o\over \part f_a}x_i = -\delta x_i\)</span> where <span class="math inline">\(\delta = (t-o){\part o \over \part f_a}\)</span></p>
-<p>Weight update <span class="math inline">\(w_{ji}\leftarrow w_{ji}+\Delta w_{ji}=w+\eta\delta_jx_i\)</span> - <strong>batch</strong> gradient descent: use <strong>all</strong> examples in each iteration - <strong>stochastic</strong> gradient descent: use <strong>1</strong> example in each iteration - <strong>mini-batch</strong> gradient descent: use <strong>b</strong> examples in each iteration</p>
-<p>To speed up the BP algorithm, we can use the <strong>momentum</strong> term <span class="math inline">\(\Delta w(t+1)=-\eta{\part E\over\part w}+\alpha\Delta w(t)\)</span>.</p>
+<h2 id="Back-Propagation"><a href="#Back-Propagation" class="headerlink" title="Back-Propagation"></a>Back-Propagation</h2><p>${\part E\over \part w_i} = {\part\over\part w_i}{1\over 2}(t-o)^2 = -(t-o)({\part o\over \part w_i}) = -(t-o){\part o\over\part f_a}{\part f_a\over\part w_i}$ </p>
+<p>where $f_a$ is the <strong>input</strong> of the activation function, and ${\part f_a\over\part w_i} = x_i$ </p>
+<p>${\part E\over \part w_i} =-(t-o){\part o\over \part f_a}x_i = -\delta x_i$<br>where $\delta = (t-o){\part o \over \part f_a}$</p>
+<p>Weight update $w_{ji}\leftarrow w_{ji}+\Delta w_{ji}=w+\eta\delta_jx_i$ </p>
+<ul>
+<li><strong>batch</strong> gradient descent: use <strong>all</strong> examples in each iteration</li>
+<li><strong>stochastic</strong> gradient descent: use <strong>1</strong> example in each iteration</li>
+<li><strong>mini-batch</strong> gradient descent: use <strong>b</strong> examples in each iteration</li>
+</ul>
+<p>To speed up the BP algorithm, we can use the <strong>momentum</strong> term<br> $\Delta w(t+1)=-\eta{\part E\over\part w}+\alpha\Delta w(t)$. </p>
 <p>To avoid get in stuck in local minima, we can train multiple networks using the same data, but initialize each with different random weights.</p>
-<h2 id="cnn">CNN</h2>
-<ol type="1">
+<h2 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h2><ol>
 <li>Nonlinearity is from ReLU.</li>
 <li>Zero padding each layer to avoid data shrinking.</li>
 <li>Max pooling to extract features and approximately locate their location.</li>
 </ol>
-<h3 id="x1-convolution">1x1 Convolution</h3>
-<p><span class="math inline">\(D_K\)</span> is the dimension of kernel, <span class="math inline">\(D_F\)</span> is the dimension of features, <span class="math inline">\(M\)</span> is the input data channel, <span class="math inline">\(N\)</span> is the output feature channel</p>
-<p>original cost of convolution <span class="math inline">\(D_K^2MND_F^2\)</span></p>
-<p>depth-wise convolution <span class="math inline">\(D_K^2M\)</span> One filter per channel. Combine information from channels. 1 x 1 convolution: <span class="math inline">\(M\)</span> a total <span class="math inline">\(D_K^2MD_F^2+MND_F^2\)</span></p>
-<p>speed up <span class="math inline">\(D_K^2N/(D_K^2+N)\)</span> Empirically, 9 times less work with the same accuracy.</p>
-<h2 id="rnn">RNN</h2>
-<p>Hidden layers and output depend from <strong>previous</strong> states of the hidden layers and the <strong>current</strong> inputs. The same weights are used for different instances of the artificial neurons at different time stamps.</p>
-<figure>
-<img src="/assets/Machine-Learning/image-20191029162522774.png" alt="image-20191029162522774" /><figcaption>image-20191029162522774</figcaption>
-</figure>
-<p>Problems: - vanishing gradients gradient signal get so small that learning stops. - exploding gradients gradients signal is so large that it can cause learning to diverge.</p>
-<h3 id="lstm">LSTM</h3>
-<p>Long Short-Term Memory</p>
-<figure>
-<img src="/assets/Machine-Learning/image-20191029162412552.png" alt="image-20191029162412552" /><figcaption>image-20191029162412552</figcaption>
-</figure>
-<figure>
-<img src="/assets/Machine-Learning/image-20191029183428636.png" alt="image-20191029183428636" /><figcaption>image-20191029183428636</figcaption>
-</figure>
-<p><span class="math inline">\(\odot\)</span> stands for element wise multifaction forget gate <span class="math inline">\(f_t=\sigma(W_f[h_{t-1},x_t]+b_f)\)</span> input gate <span class="math inline">\(i_t=\sigma(W_i[h_{t-1},x_t]+b_i)\)</span> Internal State<span class="math inline">\(\bar C_t=tanh(W_C[h_{t-1},x_t]+b_C)\quad C_t= f_t\odot C_{t-1}+i_t\odot\bar C_t\)</span> Output gate <span class="math inline">\(o_t=\sigma(W_o[h_{t-1},x_t]+b_o)\quad h_t=o_t\odot tanh(C_t)\)</span></p>
-<h1 id="reinforcement-learning">Reinforcement Learning</h1>
-<p>Learning Paradigms</p>
-<ol type="1">
-<li>Supervised earning the learner is provided with a set of inputs together with the corresponding desired outputs.</li>
-<li>Unsupervised learning training examples as inputs patterns, with no associated output patterns</li>
-<li>Reinforcement learning Only input and evaluative out are given</li>
-</ol>
-<h2 id="concept">Concept</h2>
+<h3 id="1x1-Convolution"><a href="#1x1-Convolution" class="headerlink" title="1x1 Convolution"></a>1x1 Convolution</h3><p>$D_K$ is the dimension of kernel, $D_F$ is the dimension of features,<br>$M$ is the input data channel, $N$ is the output feature channel</p>
+<p>original cost of convolution $D_K^2MND_F^2$</p>
+<p>depth-wise convolution $D_K^2M$  One filter per channel. Combine information from channels.<br>1 x 1 convolution: $M$  a<br>total $D_K^2MD_F^2+MND_F^2$</p>
+<p>speed up $D_K^2N/(D_K^2+N)$<br>Empirically, 9 times less work with the same accuracy.</p>
+<h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><p>Hidden layers and output depend from <strong>previous</strong> states of the hidden layers and the <strong>current</strong> inputs. The same weights are used for different instances of the artificial neurons at different time stamps.</p>
+<p><img src="/assets/Machine-Learning/image-20191029162522774.png" alt=""></p>
+<p>Problems:</p>
 <ul>
-<li><p>Goal</p></li>
-<li><p>States <span class="math inline">\(s_i\)</span></p></li>
-<li><p>Actions <span class="math inline">\(a_i\)</span></p></li>
-<li><p>Rewards <span class="math inline">\(r_i\)</span></p></li>
+<li>vanishing gradients<br>gradient signal get so small that learning stops.</li>
+<li>exploding gradients<br>gradients signal is so large that it can cause learning to diverge.</li>
 </ul>
-<ol type="1">
-<li>Markov Assumption: <span class="math inline">\(s_{t+1}\)</span> and <span class="math inline">\(r_t\)</span> depend only on current state and action</li>
-<li>Non-Deterministic: Action may have uncertain outcomes. <span class="math inline">\(P(s,s&#39;,a)\)</span> <strong>probability</strong> of transition from <span class="math inline">\(s\)</span> to <span class="math inline">\(s&#39;\)</span> given action <span class="math inline">\(a\)</span> <span class="math inline">\(R(s,s&#39;,a)\)</span> <strong>expected</strong> reward on transition <span class="math inline">\(s\)</span> to <span class="math inline">\(s&#39;\)</span> given action <span class="math inline">\(a\)</span></li>
-<li>Discounted Rewards: A reward in the future is not worth quite as much as a reward now. Introduce a <strong>discount factor</strong> for future reward discounted rewards = <span class="math inline">\(r_t+\gamma r_{t+1}+\gamma^2 r_{t+2}+...\)</span> where <span class="math inline">\(0\le\gamma\le1\)</span>. shortsighted <span class="math inline">\(0\leftarrow\gamma\to1\)</span> farsighted</li>
+<h3 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h3><p>Long Short-Term Memory</p>
+<p><img src="/assets/Machine-Learning/image-20191029162412552.png" alt=""></p>
+<p><img src="/assets/Machine-Learning/image-20191029183428636.png" alt=""></p>
+<p>$\odot$ stands for element wise multifaction<br>forget gate $f_t=\sigma(W_f[h_{t-1},x_t]+b_f)$<br>input gate $i_t=\sigma(W_i[h_{t-1},x_t]+b_i)$<br>Internal State$\bar C_t=tanh(W_C[h_{t-1},x_t]+b_C)\quad C_t= f_t\odot C_{t-1}+i_t\odot\bar C_t$<br>Output gate $o_t=\sigma(W_o[h_{t-1},x_t]+b_o)\quad h_t=o_t\odot tanh(C_t)$</p>
+<h1 id="Reinforcement-Learning"><a href="#Reinforcement-Learning" class="headerlink" title="Reinforcement Learning"></a>Reinforcement Learning</h1><p>Learning Paradigms</p>
+<ol>
+<li>Supervised earning<br>the learner is provided with a set of inputs together with the corresponding desired outputs.</li>
+<li>Unsupervised learning<br>training examples as inputs patterns, with no associated output patterns</li>
+<li>Reinforcement learning<br>Only input and evaluative out are given</li>
 </ol>
-<h2 id="policy">Policy</h2>
-<p>Policy is denoted by <span class="math inline">\(\pi\)</span></p>
-<p>Learn action policy <span class="math inline">\(\pi\)</span> that maximizes the expected future reward <span class="math inline">\(V^\pi(s)\equiv E[r_t+\gamma r_{t=1}+\gamma^2r_{t+2}+...]\)</span></p>
-<h3 id="deterministic">Deterministic</h3>
-<p><span class="math inline">\(V^\pi(s)\equiv E[r_t+\gamma r_{t=1}+\gamma^2r_{t+2}+...] = r_t+\gamma r_{t=1}+\gamma^2r_{t+2}+...\)</span></p>
-<p>At state <span class="math inline">\(s\)</span>, take action <span class="math inline">\(a\)</span> immediate reward <span class="math inline">\(r(s,a)\)</span> value of the immediate successor state <span class="math inline">\(V^\pi(\delta(s,a))\)</span></p>
-<p><span class="math inline">\(V^\pi(s) = r(s,a) +\gamma V^\pi(\delta(s,a))\)</span> (<strong>Bellman equation</strong>)</p>
-<h3 id="nondeterministic">Nondeterministic</h3>
-<p>At state <span class="math inline">\(s\)</span>, take action <span class="math inline">\(a\)</span> with probability <span class="math inline">\(\pi(s,a)\)</span> from <span class="math inline">\(s\)</span>, take action <span class="math inline">\(a\)</span>, probability of transition to <span class="math inline">\(s&#39;:\ P(s,s&#39;,s)\)</span> expected reward on transition given action <span class="math inline">\(a:\ R(s,s&#39;,a))\)</span></p>
-<p><span class="math inline">\(V^\pi(s) = \sum_a\pi(s,a)\sum_{s&#39;}P(s,s&#39;,a)[R(s,s&#39;,a)+\gamma V^\pi(s&#39;)]\)</span></p>
-<h3 id="iterative-evaluation">Iterative Evaluation</h3>
-<p>Instead of solving the linear system, we can also use an iterative method!</p>
-<ul>
-<li>Initialize <span class="math inline">\(V_0\)</span></li>
-<li><span class="math inline">\(V_0\to V_1\to V_2\to ...V_k\to V_{k+1}...\to V^\pi\)</span></li>
+<h2 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h2><ul>
+<li><p>Goal</p>
+</li>
+<li><p>States $s_i$</p>
+</li>
+<li><p>Actions $a_i$</p>
+</li>
+<li><p>Rewards $r_i$</p>
+</li>
 </ul>
-<p>Update Rule: <span class="math inline">\(V_{k+1}(s) = \sum_a\pi(s,a)\sum_{s&#39;}P(s,s&#39;,a)[R(s,s&#39;,a)+\gamma V_k(s&#39;)]\)</span></p>
+<ol>
+<li>Markov Assumption:<br>$s_{t+1}$ and $r_t$ depend only on current state and action </li>
+<li>Non-Deterministic:<br>Action may have uncertain outcomes.<br>$P(s,s’,a)$ <strong>probability</strong> of transition from $s$ to $s’$ given action $a$<br>$R(s,s’,a)$ <strong>expected</strong> reward on transition $s$ to $s’$ given action $a$</li>
+<li>Discounted Rewards:<br>A reward in the future is not worth quite as much as a reward now.<br>Introduce a <strong>discount factor</strong> for future reward<br>discounted rewards = $r_t+\gamma r_{t+1}+\gamma^2 r_{t+2}+…$<br>where $0\le\gamma\le1$. shortsighted $0\leftarrow\gamma\to1$ farsighted</li>
+</ol>
+<h2 id="Policy"><a href="#Policy" class="headerlink" title="Policy"></a>Policy</h2><p>Policy is denoted by $\pi$</p>
+<p>Learn action policy $\pi$ that maximizes the expected future reward<br>$V^\pi(s)\equiv E[r_t+\gamma r_{t=1}+\gamma^2r_{t+2}+…]$</p>
+<h3 id="Deterministic"><a href="#Deterministic" class="headerlink" title="Deterministic"></a>Deterministic</h3><p>$V^\pi(s)\equiv E[r_t+\gamma r_{t=1}+\gamma^2r_{t+2}+…] = r_t+\gamma r_{t=1}+\gamma^2r_{t+2}+…$</p>
+<p>At state $s$, take action $a$<br>immediate reward $r(s,a)$<br>value of the immediate successor state $V^\pi(\delta(s,a))$</p>
+<p>$V^\pi(s) = r(s,a) +\gamma V^\pi(\delta(s,a))$ (<strong>Bellman equation</strong>)</p>
+<h3 id="Nondeterministic"><a href="#Nondeterministic" class="headerlink" title="Nondeterministic"></a>Nondeterministic</h3><p>At state $s$, take action $a$ with probability $\pi(s,a)$<br>from $s$, take action $a$, probability of transition to $s’:\ P(s,s’,s)$<br>expected reward on transition given action  $a:\ R(s,s’,a))$</p>
+<p>$V^\pi(s) = \sum_a\pi(s,a)\sum_{s’}P(s,s’,a)[R(s,s’,a)+\gamma V^\pi(s’)]$</p>
+<h3 id="Iterative-Evaluation"><a href="#Iterative-Evaluation" class="headerlink" title="Iterative Evaluation"></a>Iterative Evaluation</h3><p>Instead of solving the linear system, we can also use an iterative method!</p>
+<ul>
+<li>Initialize $V_0$</li>
+<li>$V_0\to V_1\to V_2\to …V_k\to V_{k+1}…\to V^\pi$</li>
+</ul>
+<p>Update Rule:<br>$V_{k+1}(s) = \sum_a\pi(s,a)\sum_{s’}P(s,s’,a)[R(s,s’,a)+\gamma V_k(s’)]$</p>
 
     </div>
 
@@ -392,8 +378,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/10/09/PHYS1003/" rel="prev" title="PHYS1003">
-      <i class="fa fa-chevron-left"></i> PHYS1003
+    <a href="/2019/07/07/Database/" rel="prev" title="Database">
+      <i class="fa fa-chevron-left"></i> Database
     </a></div>
       <div class="post-nav-item"></div>
     </div>
@@ -455,7 +441,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#basic"><span class="nav-text">Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#naive-bayes-classifier"><span class="nav-text">Naive Bayes Classifier</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bayes-rule"><span class="nav-text">Bayes Rule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#independence-and-conditional-independence"><span class="nav-text">Independence and Conditional Independence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#naive-bayes-classifier-1"><span class="nav-text">Naive Bayes Classifier</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#laplace-correction"><span class="nav-text">Laplace correction</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#overfit"><span class="nav-text">Overfit</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#artificial-neural-network"><span class="nav-text">Artificial Neural Network</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#perceptron"><span class="nav-text">Perceptron</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#adaline"><span class="nav-text">Adaline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hidden-layer"><span class="nav-text">Hidden Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#back-propagation"><span class="nav-text">Back-Propagation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cnn"><span class="nav-text">CNN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#x1-convolution"><span class="nav-text">1x1 Convolution</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rnn"><span class="nav-text">RNN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lstm"><span class="nav-text">LSTM</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reinforcement-learning"><span class="nav-text">Reinforcement Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#concept"><span class="nav-text">Concept</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#policy"><span class="nav-text">Policy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#deterministic"><span class="nav-text">Deterministic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nondeterministic"><span class="nav-text">Nondeterministic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iterative-evaluation"><span class="nav-text">Iterative Evaluation</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic"><span class="nav-text">Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Naive-Bayes-Classifier"><span class="nav-text">Naive Bayes Classifier</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bayes-Rule"><span class="nav-text">Bayes Rule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Independence-and-Conditional-Independence"><span class="nav-text">Independence and Conditional Independence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Naive-Bayes-Classifier-1"><span class="nav-text">Naive Bayes Classifier</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Laplace-correction"><span class="nav-text">Laplace correction</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Overfit"><span class="nav-text">Overfit</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Artificial-Neural-Network"><span class="nav-text">Artificial Neural Network</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Perceptron"><span class="nav-text">Perceptron</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adaline"><span class="nav-text">Adaline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hidden-Layer"><span class="nav-text">Hidden Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Back-Propagation"><span class="nav-text">Back-Propagation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN"><span class="nav-text">CNN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1x1-Convolution"><span class="nav-text">1x1 Convolution</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN"><span class="nav-text">RNN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM"><span class="nav-text">LSTM</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reinforcement-Learning"><span class="nav-text">Reinforcement Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Concept"><span class="nav-text">Concept</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Policy"><span class="nav-text">Policy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Deterministic"><span class="nav-text">Deterministic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nondeterministic"><span class="nav-text">Nondeterministic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterative-Evaluation"><span class="nav-text">Iterative Evaluation</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -469,7 +455,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -482,7 +468,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
