@@ -1,127 +1,51 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="en">
+<head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.1">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '7.1.1',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="Signals What is signal?A signal is some measurable quantity that varies over time and/or space.  What are systems?We define system to be anything that takes input signals and produces output signals.">
-<meta name="keywords" content="Fourier,signal,system">
+  <meta name="description" content="Signals  What is signal? A signal is some measurable quantity that varies over time and&#x2F;or space. What are systems? We define system to be anything that takes input signals and produces output sign">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Signal and System">
 <meta property="og:url" content="http://github.com/2019/03/19/Signal-and-System/index.html">
 <meta property="og:site_name" content="Destinxxy">
-<meta property="og:description" content="Signals What is signal?A signal is some measurable quantity that varies over time and/or space.  What are systems?We define system to be anything that takes input signals and produces output signals.">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-23T13:34:47.994Z">
+<meta property="og:description" content="Signals  What is signal? A signal is some measurable quantity that varies over time and&#x2F;or space. What are systems? We define system to be anything that takes input signals and produces output sign">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-03-19T15:00:00.000Z">
+<meta property="article:modified_time" content="2019-05-23T13:34:47.994Z">
+<meta property="article:author" content="Vox09">
+<meta property="article:tag" content="Fourier">
+<meta property="article:tag" content="signal">
+<meta property="article:tag" content="system">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Signal and System">
-<meta name="twitter:description" content="Signals What is signal?A signal is some measurable quantity that varies over time and/or space.  What are systems?We define system to be anything that takes input signals and produces output signals.">
+
+<link rel="canonical" href="http://github.com/2019/03/19/Signal-and-System/">
 
 
-
-
-
-  
-  
-  <link rel="canonical" href="http://github.com/2019/03/19/Signal-and-System/">
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
 
@@ -133,15 +57,8 @@
 
 
 
-
-
-
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -150,9 +67,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -166,277 +82,136 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
-
-  
-  
-    
-  
-
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
 
-    <div class="custom-logo-site-title">
+  <div class="site-meta">
+
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Destinxxy</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
-      
         <p class="site-subtitle">Life should be hard</p>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
-
 
 
 <nav class="site-nav">
   
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-tags">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
+  </ul>
 
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
 </nav>
-
-
-
-  
-
-
-
 </div>
     </header>
 
     
-  
-  
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
-  
-
-  <a href="https://github.com/vox09" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+  <a href="https://github.com/vox09" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
-
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
+  <div class="posts-expand">
+      
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="http://github.com/2019/03/19/Signal-and-System/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vox09">
-      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Destinxxy">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Signal and System
-
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Signal and System
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2019-03-19 23:00:00" itemprop="dateCreated datePublished" datetime="2019-03-19T23:00:00+08:00">2019-03-19</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
+                <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-05-23 21:34:47" itemprop="dateModified" datetime="2019-05-23T21:34:47+08:00">2019-05-23</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Signal-is-Everything/" itemprop="url" rel="index"><span itemprop="name">Signal is Everything</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Signal-is-Everything/" itemprop="url" rel="index"><span itemprop="name">Signal is Everything</span></a>
+                </span>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -444,573 +219,361 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <h1 id="Signals"><a href="#Signals" class="headerlink" title="Signals"></a>Signals</h1><ul>
-<li>What is signal?<br>A signal is some measurable <strong>quantity</strong> that varies over <strong>time</strong> and/or <strong>space</strong>. </li>
-<li>What are systems?<br>We define system to be anything that takes input signals and produces output signals.</li>
+        <h1 id="signals">Signals</h1>
+<ul>
+<li>What is signal? A signal is some measurable <strong>quantity</strong> that varies over <strong>time</strong> and/or <strong>space</strong>.</li>
+<li>What are systems? We define system to be anything that takes input signals and produces output signals.</li>
 </ul>
-<h2 id="Basic-Characterization-and-Manipulation"><a href="#Basic-Characterization-and-Manipulation" class="headerlink" title="Basic Characterization and Manipulation"></a>Basic Characterization and Manipulation</h2><h3 id="Manipulation"><a href="#Manipulation" class="headerlink" title="Manipulation"></a>Manipulation</h3><ol>
+<h2 id="basic-characterization-and-manipulation">Basic Characterization and Manipulation</h2>
+<h3 id="manipulation">Manipulation</h3>
+<ol type="1">
 <li>multiplying signal by constant</li>
-<li>adding/multiplying signals together<ul>
+<li>adding/multiplying signals together
+<ul>
 <li>Multiplying two straight line segments produces a quadratic curve</li>
-</ul>
-</li>
-<li>transformation of the independent variable<ol>
-<li>time shifting $x(t)\to x(t-t_0)$<br>Minus = Left = Delay</li>
-<li>time reflection/reversal $x(t)\to x(-t)$</li>
-<li>time scaling $x(t)\to x(at)$</li>
+</ul></li>
+<li>transformation of the independent variable
+<ol type="1">
+<li>time shifting <span class="math inline">\(x(t)\to x(t-t_0)\)</span> Minus = Left = Delay</li>
+<li>time reflection/reversal <span class="math inline">\(x(t)\to x(-t)\)</span></li>
+<li>time scaling <span class="math inline">\(x(t)\to x(at)\)</span></li>
+</ol></li>
 </ol>
-</li>
-</ol>
-<p>Combination of shifting and time scaling<br>Shift first and scale is easier. First scale requires we also scale the shift.</p>
-<h3 id="Characterization"><a href="#Characterization" class="headerlink" title="Characterization"></a>Characterization</h3><ol>
-<li>Even signal $x(-t)=-x(t)$<br>Odd signal $x(-t)=x(t)$<br>Any signal can be viewed as the sum of an even part and an odd part $x_{even}={x(t)+x(-t)\over 2}\quad x_{odd}={x(t)-x(-t)\over 2}$</li>
-<li>infinite duration &amp; finite duration<ul>
+<p>Combination of shifting and time scaling Shift first and scale is easier. First scale requires we also scale the shift.</p>
+<h3 id="characterization">Characterization</h3>
+<ol type="1">
+<li>Even signal <span class="math inline">\(x(-t)=-x(t)\)</span> Odd signal <span class="math inline">\(x(-t)=x(t)\)</span> Any signal can be viewed as the sum of an even part and an odd part <span class="math inline">\(x_{even}={x(t)+x(-t)\over 2}\quad x_{odd}={x(t)-x(-t)\over 2}\)</span></li>
+<li>infinite duration &amp; finite duration
+<ul>
 <li>A finite duration DT signal is a sequence of N complex numbers. We can treat it as a complex N-vector.</li>
-</ul>
-</li>
-<li>right-sided &amp; left-sided<br>right-sided $u(t-c)$ left-sided $u(-t-c)$</li>
+</ul></li>
+<li>right-sided &amp; left-sided right-sided <span class="math inline">\(u(t-c)\)</span> left-sided <span class="math inline">\(u(-t-c)\)</span></li>
 </ol>
-<h2 id="Fundamental-Signals"><a href="#Fundamental-Signals" class="headerlink" title="Fundamental Signals"></a>Fundamental Signals</h2><h3 id="CT"><a href="#CT" class="headerlink" title="CT"></a>CT</h3><h4 id="Complex-Exponential"><a href="#Complex-Exponential" class="headerlink" title="Complex Exponential"></a>Complex Exponential</h4><script type="math/tex; mode=display">e^{st} = e^{(\sigma+j\omega)t} = e^{\sigma t}e^{j\omega t}</script><p>Where $e^{\sigma t}$ is purely real. $\sigma&gt;0$ amplitude grows, $\sigma&lt;0$ amplitude decays.<br>$e^{j\omega t}$ is purely imaginary and called Complex Sinusoids</p>
-<h4 id="Complex-Sinusoids"><a href="#Complex-Sinusoids" class="headerlink" title="Complex Sinusoids"></a>Complex Sinusoids</h4><p>$e^{j\omega t} = cos\omega t +j sin\omega t$</p>
-<h4 id="Unit-Function"><a href="#Unit-Function" class="headerlink" title="Unit Function"></a>Unit Function</h4><p>$ u(t) = 1$ when $t\ge 0$<br>$ u(t) = 0$ when $t\lt 0$</p>
-<h4 id="Impulse-Signal"><a href="#Impulse-Signal" class="headerlink" title="Impulse Signal"></a>Impulse Signal</h4><p>Denoted by $\delta(t)$</p>
-<script type="math/tex; mode=display">u(t) = \int_{-\infty}^{t} \delta(\tau)d\tau \\ \delta(t) = {du(t)\over dt}</script><ol>
-<li>Zero everywhere else, infinite at $t=0$</li>
-<li>Unit total area $\int_{-\infty}^{\infty} \delta(t)dt = 1$</li>
-<li>Integral is the unit step  $u(t) = \int_{-\infty}^{\infty} \delta(\tau)d\tau$</li>
-<li>Scaled impulse k$\delta(t)$ has total area k.  $\int_{-\infty}^{\infty} k\delta(t)dt = k\int_{-\infty}^{\infty}\delta(t)dt = k $</li>
-<li>Sampling property<br>$x(t)\delta(t-t_0) = x(t_0)\delta(t-t_0)$ <strong>a scaled delta function</strong></li>
-<li>Sifting property<br> $\int_{-\infty}^{\infty}x(t)\delta(t-t_0)dt = x(t_0)$ <strong>a value at t~0~</strong></li>
-<li>Infinite energy. Therefore $\delta(t)$ is an idealization that cannot physically exist.</li>
-<li>Time Scaling corresponds to Magnitude Scaling $\delta(\alpha t) = {\delta(t)\over \left|{\alpha}\right|}$</li>
+<h2 id="fundamental-signals">Fundamental Signals</h2>
+<h3 id="ct">CT</h3>
+<h4 id="complex-exponential">Complex Exponential</h4>
+<p><span class="math display">\[e^{st} = e^{(\sigma+j\omega)t} = e^{\sigma t}e^{j\omega t}\]</span> Where <span class="math inline">\(e^{\sigma t}\)</span> is purely real. <span class="math inline">\(\sigma&gt;0\)</span> amplitude grows, <span class="math inline">\(\sigma&lt;0\)</span> amplitude decays. <span class="math inline">\(e^{j\omega t}\)</span> is purely imaginary and called Complex Sinusoids</p>
+<h4 id="complex-sinusoids">Complex Sinusoids</h4>
+<p><span class="math inline">\(e^{j\omega t} = cos\omega t +j sin\omega t\)</span></p>
+<h4 id="unit-function">Unit Function</h4>
+<p>$ u(t) = 1$ when <span class="math inline">\(t\ge 0\)</span> $ u(t) = 0$ when <span class="math inline">\(t\lt 0\)</span></p>
+<h4 id="impulse-signal">Impulse Signal</h4>
+<p>Denoted by <span class="math inline">\(\delta(t)\)</span> <span class="math display">\[ u(t) = \int_{-\infty}^{t} \delta(\tau)d\tau \\ \delta(t) = {du(t)\over dt}\]</span></p>
+<ol type="1">
+<li>Zero everywhere else, infinite at <span class="math inline">\(t=0\)</span></li>
+<li>Unit total area <span class="math inline">\(\int_{-\infty}^{\infty} \delta(t)dt = 1\)</span></li>
+<li>Integral is the unit step <span class="math inline">\(u(t) = \int_{-\infty}^{\infty} \delta(\tau)d\tau\)</span></li>
+<li>Scaled impulse k<span class="math inline">\(\delta(t)\)</span> has total area k. $<em>{-}^{} k(t)dt = k</em>{-}^{}(t)dt = k $</li>
+<li>Sampling property <span class="math inline">\(x(t)\delta(t-t_0) = x(t_0)\delta(t-t_0)\)</span> <strong>a scaled delta function</strong></li>
+<li>Sifting property <span class="math inline">\(\int_{-\infty}^{\infty}x(t)\delta(t-t_0)dt = x(t_0)\)</span> <strong>a value at t<sub>0</sub></strong></li>
+<li>Infinite energy. Therefore <span class="math inline">\(\delta(t)\)</span> is an idealization that cannot physically exist.</li>
+<li>Time Scaling corresponds to Magnitude Scaling <span class="math inline">\(\delta(\alpha t) = {\delta(t)\over \left|{\alpha}\right|}\)</span></li>
 </ol>
-<h3 id="DT"><a href="#DT" class="headerlink" title="DT"></a>DT</h3><h4 id="Real-Exponential"><a href="#Real-Exponential" class="headerlink" title="Real Exponential"></a>Real Exponential</h4><p>$ \alpha^n = e^{an} $ where $\alpha = e^a$</p>
-<p>$\alpha&gt;1$ growing exponential<br>$0&lt;\alpha&lt;1$ decaying exponential<br>$-1&lt;\alpha&lt;0$ decaying oscillating<br>$\alpha&lt;-1$ growing oscillating</p>
-<h4 id="Real-Sinusoids"><a href="#Real-Sinusoids" class="headerlink" title="Real Sinusoids"></a>Real Sinusoids</h4><p>$cos(\omega n) = cos(2\pi fn)$</p>
-<ol>
-<li>Periodic only if its ordinary frequency $f$ is rational number</li>
-<li>$f$ and $f\pm m(integer)$ are the same frequency.<br> $\omega$ and $\omega\pm m2\pi$ are the same frequency</li>
-<li><em>The fastest rate at which a DT signal can oscillate is at an ordinary frequency of $f={1\over2}$ or angular frequency of $\omega = \pi$</em><h4 id="Complex-Exponential-1"><a href="#Complex-Exponential-1" class="headerlink" title="Complex Exponential"></a>Complex Exponential</h4></li>
+<h3 id="dt">DT</h3>
+<h4 id="real-exponential">Real Exponential</h4>
+<p>$ ^n = e^{an} $ where <span class="math inline">\(\alpha = e^a\)</span></p>
+<p><span class="math inline">\(\alpha&gt;1\)</span> growing exponential <span class="math inline">\(0&lt;\alpha&lt;1\)</span> decaying exponential <span class="math inline">\(-1&lt;\alpha&lt;0\)</span> decaying oscillating <span class="math inline">\(\alpha&lt;-1\)</span> growing oscillating</p>
+<h4 id="real-sinusoids">Real Sinusoids</h4>
+<p><span class="math inline">\(cos(\omega n) = cos(2\pi fn)\)</span></p>
+<ol type="1">
+<li>Periodic only if its ordinary frequency <span class="math inline">\(f\)</span> is rational number</li>
+<li><span class="math inline">\(f\)</span> and <span class="math inline">\(f\pm m(integer)\)</span> are the same frequency. <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\omega\pm m2\pi\)</span> are the same frequency</li>
+<li><em>The fastest rate at which a DT signal can oscillate is at an ordinary frequency of <span class="math inline">\(f={1\over2}\)</span> or angular frequency of <span class="math inline">\(\omega = \pi\)</span></em> #### Complex Exponential</li>
 </ol>
-<p>$z^n$ where $z = e^s = e^{\sigma + j\omega} = e^\sigma e^{j\omega}$</p>
-<p>$z^n = \left|z\right|^n e^{j\omega n}$<br>$\left|z\right|^n$is real exponential $ e^{j\omega n}$ is complex sinusoid</p>
-<h4 id="Complex-Sinusoid"><a href="#Complex-Sinusoid" class="headerlink" title="Complex Sinusoid"></a>Complex Sinusoid</h4><p>$x[n] = e^{j\omega n} = cos \omega n + j sin \omega n$</p>
-<ol>
-<li>Periodic <strong>iff</strong> $\omega = {m2\pi \over N}$</li>
-<li>$e^{j\omega n} = e^{j(\omega +2k\pi)n}$ frequency is periodic for DT signal, and the highest angular frequency is $\pi$</li>
+<p><span class="math inline">\(z^n\)</span> where <span class="math inline">\(z = e^s = e^{\sigma + j\omega} = e^\sigma e^{j\omega}\)</span></p>
+<p><span class="math inline">\(z^n = \left|z\right|^n e^{j\omega n}\)</span> <span class="math inline">\(\left|z\right|^n\)</span>is real exponential $ e^{jn}$ is complex sinusoid</p>
+<h4 id="complex-sinusoid">Complex Sinusoid</h4>
+<p><span class="math inline">\(x[n] = e^{j\omega n} = cos \omega n + j sin \omega n\)</span></p>
+<ol type="1">
+<li>Periodic <strong>iff</strong> <span class="math inline">\(\omega = {m2\pi \over N}\)</span></li>
+<li><span class="math inline">\(e^{j\omega n} = e^{j(\omega +2k\pi)n}\)</span> frequency is periodic for DT signal, and the highest angular frequency is <span class="math inline">\(\pi\)</span></li>
 </ol>
-<h4 id="Unit-Step"><a href="#Unit-Step" class="headerlink" title="Unit Step"></a>Unit Step</h4><p>$u[n] = 1$ when $n\ge 0$<br>$u[n] = 0$ when $n\lt 0$</p>
-<h4 id="Unit-Impulse"><a href="#Unit-Impulse" class="headerlink" title="Unit Impulse"></a>Unit Impulse</h4><p>$\delta[0] = 1$ other place 0.<br>Property same as CT.</p>
+<h4 id="unit-step">Unit Step</h4>
+<p><span class="math inline">\(u[n] = 1\)</span> when <span class="math inline">\(n\ge 0\)</span> <span class="math inline">\(u[n] = 0\)</span> when <span class="math inline">\(n\lt 0\)</span></p>
+<h4 id="unit-impulse">Unit Impulse</h4>
+<p><span class="math inline">\(\delta[0] = 1\)</span> other place 0. Property same as CT.</p>
 <p>Relations with Unit step</p>
-<ol>
-<li>the first difference between two unit step signals.<br>$\delta[n] = u[n]-u[n-1]$</li>
-<li>unit step can be expressed as a sum of impulse by two ways<ol>
-<li>$u[n]\sum_{m=-\infty} ^n \delta[m]$</li>
-<li>$u[n]\sum_{k=0}^\infty \delta[n-k]$</li>
+<ol type="1">
+<li>the first difference between two unit step signals. <span class="math inline">\(\delta[n] = u[n]-u[n-1]\)</span></li>
+<li>unit step can be expressed as a sum of impulse by two ways
+<ol type="1">
+<li><span class="math inline">\(u[n]\sum_{m=-\infty} ^n \delta[m]\)</span></li>
+<li><span class="math inline">\(u[n]\sum_{k=0}^\infty \delta[n-k]\)</span></li>
+</ol></li>
+<li>the sampling property for <span class="math inline">\(\delta[n]\)</span> when multiply <span class="math inline">\(x[n]\)</span> and <span class="math inline">\(\delta[n]\)</span>, only one sampled value, not a continuous function anymore.</li>
 </ol>
-</li>
-<li>the sampling property for $\delta[n]$<br>when multiply $x[n]$ and $\delta[n]$, only one sampled value, not a continuous function anymore.</li>
-</ol>
-<h3 id="Complex-Frequency"><a href="#Complex-Frequency" class="headerlink" title="Complex Frequency"></a>Complex Frequency</h3><p>CT and DT Complex Frequency $z = e^s = e^{\sigma+ j\omega}$</p>
-<div class="table-container">
+<h3 id="complex-frequency">Complex Frequency</h3>
+<p>CT and DT Complex Frequency <span class="math inline">\(z = e^s = e^{\sigma+ j\omega}\)</span></p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th></th>
 <th>DT</th>
 <th>CT</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>Growing</td>
-<td>$</td>
-<td>z</td>
-<td>&gt;1$</td>
-<td>$\sigma&gt;0$</td>
+<td><span class="math inline">\(|z|&gt;1\)</span></td>
+<td><span class="math inline">\(\sigma&gt;0\)</span></td>
 </tr>
-<tr>
+<tr class="even">
 <td>Decaying</td>
-<td>$</td>
-<td>z</td>
-<td>&lt;1$</td>
-<td>$\sigma&lt;0$</td>
+<td><span class="math inline">\(|z|&lt;1\)</span></td>
+<td><span class="math inline">\(\sigma&lt;0\)</span></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Oscillatory frequency</td>
-<td>$\ang z$</td>
-<td>$\omega$</td>
+<td><span class="math inline">\(\ang z\)</span></td>
+<td><span class="math inline">\(\omega\)</span></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h1 id="System"><a href="#System" class="headerlink" title="System"></a>System</h1><h2 id="Basic-System-Characterization"><a href="#Basic-System-Characterization" class="headerlink" title="Basic System Characterization"></a>Basic System Characterization</h2><ol>
-<li><strong>Memoryless</strong>: instantaneous </li>
+<h1 id="system">System</h1>
+<h2 id="basic-system-characterization">Basic System Characterization</h2>
+<ol type="1">
+<li><strong>Memoryless</strong>: instantaneous</li>
 <li><strong>Causality</strong>: does not depend on future</li>
 <li><strong>Stability</strong>: BIBO(Bounded-Input Bounded Output)</li>
 <li><strong>Invertibility</strong>: distinct inputs lead to distinct outputs</li>
 <li><a href="#time-invariance">Time-invariant</a></li>
 <li><a href="#linearity">Linearity</a></li>
 </ol>
-<h3 id="Time-Invariance"><a href="#Time-Invariance" class="headerlink" title="Time Invariance"></a>Time Invariance</h3><p>Shifted input shifted output.</p>
+<h3 id="time-invariance">Time Invariance</h3>
+<p>Shifted input shifted output.</p>
 <p>Operation of time does not depends on time.</p>
-<p>$ y(t) = \int_{t-3}^{t+2} x(\tau)d\tau$  <strong>YES</strong> : 3 time before and 2 later<br>$ y(t) = \int_{0}^{t} x(\tau)d\tau$  <strong>NO</strong>:  has a beginning point 0</p>
-<h3 id="Linearity"><a href="#Linearity" class="headerlink" title="Linearity"></a>Linearity</h3><p>superposition property can be decomposed into two</p>
-<ol>
-<li>Additive property: $x_1(t) \to x_2(t) = y_1(t) \to y_2(t)$</li>
-<li>Homogeneity (scaling): $ax_1(t) \to ay_1(t)$</li>
+<p>$ y(t) = <em>{t-3}^{t+2} x()d$ <strong>YES</strong> : 3 time before and 2 later $ y(t) = </em>{0}^{t} x()d$ <strong>NO</strong>: has a beginning point 0</p>
+<h3 id="linearity">Linearity</h3>
+<p>superposition property can be decomposed into two</p>
+<ol type="1">
+<li>Additive property: <span class="math inline">\(x_1(t) \to x_2(t) = y_1(t) \to y_2(t)\)</span></li>
+<li>Homogeneity (scaling): <span class="math inline">\(ax_1(t) \to ay_1(t)\)</span></li>
 </ol>
-<p>LTI must satisfy <em>zero-input/zero-output</em> </p>
+<p>LTI must satisfy <em>zero-input/zero-output</em></p>
 <p><strong>Elementary Linear Operation:</strong></p>
-<ol>
-<li><em>Differentiation and integration:</em> $x^{(k)}(t)$ ( LTI! )</li>
-<li><em>Time shifting:</em>$x(t-\tau)$ ( LTI! )</li>
-<li>Multiply by a function: $g(t)x(t)$ (not TI unless $g(t)$ is constant)</li>
+<ol type="1">
+<li><em>Differentiation and integration:</em> <span class="math inline">\(x^{(k)}(t)\)</span> ( LTI! )</li>
+<li><em>Time shifting:</em><span class="math inline">\(x(t-\tau)\)</span> ( LTI! )</li>
+<li>Multiply by a function: <span class="math inline">\(g(t)x(t)\)</span> (not TI unless <span class="math inline">\(g(t)\)</span> is constant)</li>
 <li>time reversal, time scaling ( not TI because there is a origin)</li>
 </ol>
-<h2 id="Impulse-Response"><a href="#Impulse-Response" class="headerlink" title="Impulse Response"></a>Impulse Response</h2><p>Denoted by $h(t)$ or $h[n]$, is the output of $\delta(t)/\delta[t]$ in a LTI system.</p>
-<p>If the output of a system is given by convolving the input with a $h[n]$, then the system is LTI! <strong>Convolution is LTI</strong></p>
-<p>Typical Examples:</p>
-<ol>
-<li>$h[n] = \delta[n]$ identity function. Do nothing.</li>
-<li>$h[n] = \delta[n-m]$ delay system. Delay the input by m.</li>
-<li>$h[n] = \delta[n]+0.3\delta[n-4]$ echo system. With echo volume 0.3.</li>
-<li>$h[n] = u[n]$ first sum system. $y[n] = \sum_{-\infty}^n x[k]$</li>
-<li>$h[n] = {1\over 3} (u[n] - u[n-3]) = {1\over 3}(h[n] + h[h-1] + h[n-2])$ window smoother.</li>
-<li>$h[n] = \delta[n] -\delta[n-1]$ first difference system.</li>
-</ol>
-<h2 id="LTI-Systems"><a href="#LTI-Systems" class="headerlink" title="LTI Systems"></a>LTI Systems</h2><p><strong>Linearity</strong> ensure that<br>If $\delta[n-k]\to h_k[n]$ we can imply<br>$x[n] = \sum_{k=-\infty}^{\infty} x[k]\delta[n-k]\to y[n] = \sum_{k=-\infty}^{\infty} x[k]h_k[n-k]$</p>
-<p><strong>Time Invariance</strong> ensure that<br>In fact $h_k[n]=h[n-k]$<br>$x[n] = \sum_{k=-\infty}^{\infty} x[k]\delta[n-k]\quad y[n] = \sum_{k=-\infty}^{\infty} x[k]h[n-k]$</p>
-<p>For CT case<br>$x(t) = \int_{-\infty}^{\infty}x(\tau)\delta(t-\tau)d\tau\quad y(t) = \int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau$<br>we use $<em>$ to denote it.<br>$y(t)=x(t)</em>h(t)$</p>
-<p>Convolution/LTI properties: </p>
-<ol>
-<li>commutative $x(t) \ast h(t) = h(t) \ast x(t)$</li>
-<li>distributive $x(t) \ast\{h_1(t) + h_2(t)\} = x(t)\ast h_1(t) +x(t) \ast h_2(t)$</li>
-<li>associative$\{x(t)\ast h_1(t)\}\ast h_2(t) = x(t)<em>\{h_1(t)</em>h_2(t)\}$</li>
-</ol>
-<p>Charactering LTI system by Impulse Responses:</p>
-<ol>
-<li>Memoryless &lt;=&gt; $h[n] = 0 $ for $n\ne0$</li>
-<li>Causality &lt;=&gt; $h[n] =0$ for $n\lt0$</li>
-<li>Stability &lt;=&gt;impulse response is <em>absolute integrable/summable</em><br> $\int_{-\infty}^{\infty}\left|h(t)\right|dt \lt \infty$ or $\sum_{n=-\infty}^{\infty}\left|h(t)\right|dt \lt \infty$ </li>
-</ol>
+<h2 id="impulse-response">Impulse Response</h2>
+<p>Denoted by <span class="math inline">\(h(t)\)</span> or <span class="math inline">\(h[n]\)</span>, is the output of <span class="math inline">\(\delta(t)/\delta[t]\)</span> in a LTI system.</p>
+<p>If the output of a system is given by convolving the input with a <span class="math inline">\(h[n]\)</span>, then the system is LTI! <strong>Convolution is LTI</strong></p>
+<p>Typical Examples: 1. <span class="math inline">\(h[n] = \delta[n]\)</span> identity function. Do nothing. 2. <span class="math inline">\(h[n] = \delta[n-m]\)</span> delay system. Delay the input by m. 3. <span class="math inline">\(h[n] = \delta[n]+0.3\delta[n-4]\)</span> echo system. With echo volume 0.3. 4. <span class="math inline">\(h[n] = u[n]\)</span> first sum system. <span class="math inline">\(y[n] = \sum_{-\infty}^n x[k]\)</span> 5. <span class="math inline">\(h[n] = {1\over 3} (u[n] - u[n-3]) = {1\over 3}(h[n] + h[h-1] + h[n-2])\)</span> window smoother. 6. <span class="math inline">\(h[n] = \delta[n] -\delta[n-1]\)</span> first difference system.</p>
+<h2 id="lti-systems">LTI Systems</h2>
+<p><strong>Linearity</strong> ensure that<br />
+If <span class="math inline">\(\delta[n-k]\to h_k[n]\)</span> we can imply <span class="math inline">\(x[n] = \sum_{k=-\infty}^{\infty} x[k]\delta[n-k]\to y[n] = \sum_{k=-\infty}^{\infty} x[k]h_k[n-k]\)</span></p>
+<p><strong>Time Invariance</strong> ensure that In fact <span class="math inline">\(h_k[n]=h[n-k]\)</span> <span class="math inline">\(x[n] = \sum_{k=-\infty}^{\infty} x[k]\delta[n-k]\quad y[n] = \sum_{k=-\infty}^{\infty} x[k]h[n-k]\)</span></p>
+<p>For CT case <span class="math inline">\(x(t) = \int_{-\infty}^{\infty}x(\tau)\delta(t-\tau)d\tau\quad y(t) = \int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau\)</span> we use <span class="math inline">\(*\)</span> to denote it. <span class="math inline">\(y(t)=x(t)*h(t)\)</span></p>
+<p>Convolution/LTI properties: 1. commutative <span class="math inline">\(x(t) \ast h(t) = h(t) \ast x(t)\)</span> 2. distributive <span class="math inline">\(x(t) \ast\{h_1(t) + h_2(t)\} = x(t)\ast h_1(t) +x(t) \ast h_2(t)\)</span> 3. associative<span class="math inline">\(\{x(t)\ast h_1(t)\}\ast h_2(t) = x(t)*\{h_1(t)*h_2(t)\}\)</span></p>
+<p>Charactering LTI system by Impulse Responses: 1. Memoryless &lt;=&gt; $h[n] = 0 $ for <span class="math inline">\(n\ne0\)</span> 2. Causality &lt;=&gt; <span class="math inline">\(h[n] =0\)</span> for <span class="math inline">\(n\lt0\)</span> 3. Stability &lt;=&gt;impulse response is <em>absolute integrable/summable</em> <span class="math inline">\(\int_{-\infty}^{\infty}\left|h(t)\right|dt \lt \infty\)</span> or <span class="math inline">\(\sum_{n=-\infty}^{\infty}\left|h(t)\right|dt \lt \infty\)</span></p>
 <p>If the impulse response of the system is a unit step function, the system is a integral/first sum system.</p>
-<h3 id="Conceptually-computing"><a href="#Conceptually-computing" class="headerlink" title="Conceptually computing"></a>Conceptually computing</h3><p>For the DT convolution $y[n]=x[n]*h[n]=\sum_{k=-\infty}^\infty x[k]h[n-k]$</p>
-<ol>
-<li>draw the original $x[k]$ and $h[k]$ with variable $k$</li>
-<li>flip $h[k]$ to get $h[-k]$, the <strong>convolution kernel</strong></li>
-<li>shift $h[-k]$ right by $n$ to obtain $h[n-k]$</li>
-<li>Multiple $x[k]$ by $h[n-k]$ and sum over all results</li>
+<h3 id="conceptually-computing">Conceptually computing</h3>
+<p>For the DT convolution <span class="math inline">\(y[n]=x[n]*h[n]=\sum_{k=-\infty}^\infty x[k]h[n-k]\)</span></p>
+<ol type="1">
+<li>draw the original <span class="math inline">\(x[k]\)</span> and <span class="math inline">\(h[k]\)</span> with variable <span class="math inline">\(k\)</span></li>
+<li>flip <span class="math inline">\(h[k]\)</span> to get <span class="math inline">\(h[-k]\)</span>, the <strong>convolution kernel</strong></li>
+<li>shift <span class="math inline">\(h[-k]\)</span> right by <span class="math inline">\(n\)</span> to obtain <span class="math inline">\(h[n-k]\)</span></li>
+<li>Multiple <span class="math inline">\(x[k]\)</span> by <span class="math inline">\(h[n-k]\)</span> and sum over all results</li>
 </ol>
-<h2 id="System-Function-and-Frequency-Response"><a href="#System-Function-and-Frequency-Response" class="headerlink" title="System Function and Frequency Response"></a>System Function and Frequency Response</h2><h3 id="System-Function"><a href="#System-Function" class="headerlink" title="System Function"></a>System Function</h3><script type="math/tex; mode=display">y[n] = \sum_{k=-\infty}^\infty h[k]x[n-k] = H(z)x[n] \\ H(z) = \sum_{k=-\infty}^{\infty} h[k]z^{-k}</script><script type="math/tex; mode=display">y(t) = \int_{\tau=-\infty}^\infty h(\tau)x(t-\tau) = H(s)x(t) \\H(s) = \int_{-\infty}^{\infty}h(\tau)e^{-s\tau}d\tau</script><p>$z^n $/$ e^{sn}$ is an <strong>eigenfunction</strong> of DT/CT LTI systems. $H(z)$ or $H(s)$ is the <strong>eigenvalue</strong> that depends on the complex frequency $z$. They are also called <strong>system function</strong> of CT/DT LTI systems.</p>
-<p>$H(s)$ is a <em>Laplace Transform</em> of the CT impulse response $h(t)$<br>$H(z)$ is a <em>z-transform</em> of the DT impulse response $h[n]$ </p>
-<h3 id="Frequency-Response"><a href="#Frequency-Response" class="headerlink" title="Frequency Response"></a>Frequency Response</h3><p>For LTI System, the eigenvalue at different oscillation frequency $\omega$ is called <strong>frequency response</strong>. </p>
-<p>$H(s)e^{st} = H(j\omega)e^{j\omega t}$ when $s=\sigma + j\omega$ and $\sigma=0$<br>where $H(j\omega)$ is the cross-section of $H(s)$ along $j\omega$ axis.</p>
-<p>$H(z)z^{n} = H(e^{j\omega})e^{j\omega n}$ when $|z|= 1$ and $\ang z=\omega$<br>where $H(e^{j\omega})$is the value of system function $H(z)$ along the unit circle $z=e^{j\omega}$</p>
-<p>$H(j\omega)=H(s)$ given that $s=j\omega$<br>$H(e^{j\omega})=H(z)$ given that $|z|=1;z=e^{j\omega}$</p>
+<h2 id="system-function-and-frequency-response">System Function and Frequency Response</h2>
+<h3 id="system-function">System Function</h3>
+<p><span class="math display">\[y[n] = \sum_{k=-\infty}^\infty h[k]x[n-k] = H(z)x[n] \\ H(z) = \sum_{k=-\infty}^{\infty} h[k]z^{-k}\]</span> <span class="math display">\[y(t) = \int_{\tau=-\infty}^\infty h(\tau)x(t-\tau) = H(s)x(t) \\H(s) = \int_{-\infty}^{\infty}h(\tau)e^{-s\tau}d\tau\]</span></p>
+<p>$z^n <span class="math inline">\(/\)</span> e^{sn}$ is an <strong>eigenfunction</strong> of DT/CT LTI systems. <span class="math inline">\(H(z)\)</span> or <span class="math inline">\(H(s)\)</span> is the <strong>eigenvalue</strong> that depends on the complex frequency <span class="math inline">\(z\)</span>. They are also called <strong>system function</strong> of CT/DT LTI systems.</p>
+<p><span class="math inline">\(H(s)\)</span> is a <em>Laplace Transform</em> of the CT impulse response <span class="math inline">\(h(t)\)</span> <span class="math inline">\(H(z)\)</span> is a <em>z-transform</em> of the DT impulse response <span class="math inline">\(h[n]\)</span></p>
+<h3 id="frequency-response">Frequency Response</h3>
+<p>For LTI System, the eigenvalue at different oscillation frequency <span class="math inline">\(\omega\)</span> is called <strong>frequency response</strong>.</p>
+<p><span class="math inline">\(H(s)e^{st} = H(j\omega)e^{j\omega t}\)</span> when <span class="math inline">\(s=\sigma + j\omega\)</span> and <span class="math inline">\(\sigma=0\)</span> where <span class="math inline">\(H(j\omega)\)</span> is the cross-section of <span class="math inline">\(H(s)\)</span> along <span class="math inline">\(j\omega\)</span> axis.</p>
+<p><span class="math inline">\(H(z)z^{n} = H(e^{j\omega})e^{j\omega n}\)</span> when <span class="math inline">\(|z|= 1\)</span> and <span class="math inline">\(\ang z=\omega\)</span> where <span class="math inline">\(H(e^{j\omega})\)</span>is the value of system function <span class="math inline">\(H(z)\)</span> along the unit circle <span class="math inline">\(z=e^{j\omega}\)</span></p>
+<p><span class="math inline">\(H(j\omega)=H(s)\)</span> given that <span class="math inline">\(s=j\omega\)</span> <span class="math inline">\(H(e^{j\omega})=H(z)\)</span> given that <span class="math inline">\(|z|=1;z=e^{j\omega}\)</span></p>
 
-      
     </div>
 
     
-
     
-    
-    
-
-    
-
     
       
-    
-    
-      <div>
-        <div id="reward-container">
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2019\03\21\Fourier-Transform\" rel="bookmark">Fourier Transform</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
   <div>Talk is cheap. Show me the money.</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
     Donate
   </button>
   <div id="qr" style="display: none;">
-
-    
       
-      
-        
-      
-      <div style="display: inline-block">
+      <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="Vox09 WeChat Pay">
         <p>WeChat Pay</p>
       </div>
-    
       
-      
-        
-      
-      <div style="display: inline-block">
+      <div style="display: inline-block;">
         <img src="/images/alipay.jpg" alt="Vox09 Alipay">
         <p>Alipay</p>
       </div>
-    
 
   </div>
 </div>
 
-      </div>
-    
 
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Fourier/" rel="tag"># Fourier</a>
-          
-            <a href="/tags/signal/" rel="tag"># signal</a>
-          
-            <a href="/tags/system/" rel="tag"># system</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/01/30/Micro-Economics/" rel="next" title="Micro Economics">
-                <i class="fa fa-chevron-left"></i> Micro Economics
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Fourier/" rel="tag"># Fourier</a>
+              <a href="/tags/signal/" rel="tag"># signal</a>
+              <a href="/tags/system/" rel="tag"># system</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/21/Fourier-Transform/" rel="prev" title="Fourier Transform">
-                Fourier Transform <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/01/30/Micro-Economics/" rel="prev" title="Micro Economics">
+      <i class="fa fa-chevron-left"></i> Micro Economics
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/03/21/Probability/" rel="next" title="Probability">
+      Probability <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
+  
+  
+  
 
   </div>
 
 
           </div>
           
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Vox09</p>
-              <div class="site-description motion-element" itemprop="description"></div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">27</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">9</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">29</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/vox09" title="GitHub &rarr; https://github.com/vox09"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Signals"><span class="nav-text">Signals</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-Characterization-and-Manipulation"><span class="nav-text">Basic Characterization and Manipulation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Manipulation"><span class="nav-text">Manipulation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Characterization"><span class="nav-text">Characterization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fundamental-Signals"><span class="nav-text">Fundamental Signals</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CT"><span class="nav-text">CT</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Complex-Exponential"><span class="nav-text">Complex Exponential</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Complex-Sinusoids"><span class="nav-text">Complex Sinusoids</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unit-Function"><span class="nav-text">Unit Function</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Impulse-Signal"><span class="nav-text">Impulse Signal</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DT"><span class="nav-text">DT</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Real-Exponential"><span class="nav-text">Real Exponential</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Real-Sinusoids"><span class="nav-text">Real Sinusoids</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Complex-Exponential-1"><span class="nav-text">Complex Exponential</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Complex-Sinusoid"><span class="nav-text">Complex Sinusoid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unit-Step"><span class="nav-text">Unit Step</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unit-Impulse"><span class="nav-text">Unit Impulse</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complex-Frequency"><span class="nav-text">Complex Frequency</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System"><span class="nav-text">System</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-System-Characterization"><span class="nav-text">Basic System Characterization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Time-Invariance"><span class="nav-text">Time Invariance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linearity"><span class="nav-text">Linearity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Impulse-Response"><span class="nav-text">Impulse Response</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LTI-Systems"><span class="nav-text">LTI Systems</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Conceptually-computing"><span class="nav-text">Conceptually computing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#System-Function-and-Frequency-Response"><span class="nav-text">System Function and Frequency Response</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#System-Function"><span class="nav-text">System Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Frequency-Response"><span class="nav-text">Frequency Response</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-  
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Vox09</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
-
-    
-
-    
-
-    
-  </div>
-
-  
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#signals"><span class="nav-text">Signals</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-characterization-and-manipulation"><span class="nav-text">Basic Characterization and Manipulation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#manipulation"><span class="nav-text">Manipulation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#characterization"><span class="nav-text">Characterization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fundamental-signals"><span class="nav-text">Fundamental Signals</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ct"><span class="nav-text">CT</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#complex-exponential"><span class="nav-text">Complex Exponential</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#complex-sinusoids"><span class="nav-text">Complex Sinusoids</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unit-function"><span class="nav-text">Unit Function</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#impulse-signal"><span class="nav-text">Impulse Signal</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dt"><span class="nav-text">DT</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#real-exponential"><span class="nav-text">Real Exponential</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#real-sinusoids"><span class="nav-text">Real Sinusoids</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#complex-sinusoid"><span class="nav-text">Complex Sinusoid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unit-step"><span class="nav-text">Unit Step</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unit-impulse"><span class="nav-text">Unit Impulse</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#complex-frequency"><span class="nav-text">Complex Frequency</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#system"><span class="nav-text">System</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-system-characterization"><span class="nav-text">Basic System Characterization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#time-invariance"><span class="nav-text">Time Invariance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linearity"><span class="nav-text">Linearity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#impulse-response"><span class="nav-text">Impulse Response</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lti-systems"><span class="nav-text">LTI Systems</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#conceptually-computing"><span class="nav-text">Conceptually computing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#system-function-and-frequency-response"><span class="nav-text">System Function and Frequency Response</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#system-function"><span class="nav-text">System Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#frequency-response"><span class="nav-text">Frequency Response</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Vox09</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/vox09" title="GitHub → https://github.com/vox09"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vox09</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.2
+  </div>
+
+        
 
 
 
@@ -1019,8 +582,31 @@
 
 
 
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
 
 
 
@@ -1037,166 +623,61 @@
 
 
   
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.1"></script>
-
-  <script src="/js/motion.js?v=7.1.1"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.1"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.1"></script>
-<script src="/js/post-details.js?v=7.1.1"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.1"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-
-  
-
-
-
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
       
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 <script>
-  $('.highlight').not('.gist .highlight').each(function(i, e) {
-    var $wrap = $('<div>').addClass('highlight-wrap');
-    $(e).after($wrap);
-    $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
-      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-        return $(e).text();
-      }).toArray().join('\n');
-      var ta = document.createElement('textarea');
-      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-      ta.style.top = yPosition + 'px'; // Prevent page scroll
-      ta.style.position = 'absolute';
-      ta.style.opacity = '0';
-      ta.readOnly = true;
-      ta.value = code;
-      document.body.appendChild(ta);
-      ta.select();
-      ta.setSelectionRange(0, code.length);
-      ta.readOnly = false;
-      var result = document.execCommand('copy');
-      
-      ta.blur(); // For iOS
-      $(this).blur();
-    })).on('mouseleave', function(e) {
-      var $b = $(this).find('.copy-btn');
-      setTimeout(function() {
-        $b.text('Copy');
-      }, 300);
-    }).append(e);
-  })
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
 </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-  
+    
 
   
 

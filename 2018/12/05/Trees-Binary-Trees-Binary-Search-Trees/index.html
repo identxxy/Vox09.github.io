@@ -1,127 +1,50 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="en">
+<head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.1">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '7.1.1',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="Binary TreeInorder traversalpreorder traversalpostorder traversal   Binary Search TreeBST InsertionAlways insert element at bottom as leaf.Remember to check if the element already exists in the tree.">
-<meta name="keywords" content="data structure,Cpp">
+  <meta name="description" content="Binary Tree Inorder traversal preorder traversal postorder traversal Binary Search Tree BST Insertion Always insert element at bottom as leaf. Remember to check if the element already exists in">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Trees, Binary Trees, Binary Search Trees">
 <meta property="og:url" content="http://github.com/2018/12/05/Trees-Binary-Trees-Binary-Search-Trees/index.html">
 <meta property="og:site_name" content="Destinxxy">
-<meta property="og:description" content="Binary TreeInorder traversalpreorder traversalpostorder traversal   Binary Search TreeBST InsertionAlways insert element at bottom as leaf.Remember to check if the element already exists in the tree.">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-09T15:16:59.384Z">
+<meta property="og:description" content="Binary Tree Inorder traversal preorder traversal postorder traversal Binary Search Tree BST Insertion Always insert element at bottom as leaf. Remember to check if the element already exists in">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-12-05T08:40:12.000Z">
+<meta property="article:modified_time" content="2019-04-09T15:16:59.384Z">
+<meta property="article:author" content="Vox09">
+<meta property="article:tag" content="Cpp">
+<meta property="article:tag" content="data structure">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Trees, Binary Trees, Binary Search Trees">
-<meta name="twitter:description" content="Binary TreeInorder traversalpreorder traversalpostorder traversal   Binary Search TreeBST InsertionAlways insert element at bottom as leaf.Remember to check if the element already exists in the tree.">
+
+<link rel="canonical" href="http://github.com/2018/12/05/Trees-Binary-Trees-Binary-Search-Trees/">
 
 
-
-
-
-  
-  
-  <link rel="canonical" href="http://github.com/2018/12/05/Trees-Binary-Trees-Binary-Search-Trees/">
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
 
@@ -133,15 +56,8 @@
 
 
 
-
-
-
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -150,9 +66,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -166,277 +81,136 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
-
-  
-  
-    
-  
-
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
 
-    <div class="custom-logo-site-title">
+  <div class="site-meta">
+
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Destinxxy</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
-      
         <p class="site-subtitle">Life should be hard</p>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
-
 
 
 <nav class="site-nav">
   
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-tags">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
+  </ul>
 
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
 </nav>
-
-
-
-  
-
-
-
 </div>
     </header>
 
     
-  
-  
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
-  
-
-  <a href="https://github.com/vox09" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+  <a href="https://github.com/vox09" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
-
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
+  <div class="posts-expand">
+      
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="http://github.com/2018/12/05/Trees-Binary-Trees-Binary-Search-Trees/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vox09">
-      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Destinxxy">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Trees, Binary Trees, Binary Search Trees
-
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Trees, Binary Trees, Binary Search Trees
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-12-05 16:40:12" itemprop="dateCreated datePublished" datetime="2018-12-05T16:40:12+08:00">2018-12-05</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
+                <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-04-09 23:16:59" itemprop="dateModified" datetime="2019-04-09T23:16:59+08:00">2019-04-09</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/I-don-t-know-about-C/" itemprop="url" rel="index"><span itemprop="name">I don't know about C++</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/I-don-t-know-about-C/" itemprop="url" rel="index"><span itemprop="name">I don't know about C++</span></a>
+                </span>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -444,434 +218,242 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <h1 id="Binary-Tree"><a href="#Binary-Tree" class="headerlink" title="Binary Tree"></a>Binary Tree</h1><p>Inorder traversal<br>preorder traversal<br>postorder traversal  </p>
-<h1 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h1><h2 id="BST-Insertion"><a href="#BST-Insertion" class="headerlink" title="BST Insertion"></a>BST Insertion</h2><p>Always insert element at bottom as leaf.<br>Remember to check if the element already exists in the tree.</p>
-<h3 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a>Recursion</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">insert</span><span class="params">(<span class="keyword">const</span> T&amp; x, Node*&amp; n )</span>	<span class="comment">// pass by reference</span></span></span><br><span class="line"><span class="function">Node* <span class="title">insert</span><span class="params">(<span class="keyword">const</span> T&amp; x, Node* n )</span>	<span class="comment">// pass by value need return pointer</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// base case 1: reach the node beyond leaf</span></span><br><span class="line">    <span class="keyword">if</span>(!n) &#123;n-&gt;x = <span class="keyword">new</span> T(x);<span class="keyword">return</span> <span class="literal">true</span> / <span class="keyword">new</span> T(x);&#125;</span><br><span class="line">    <span class="comment">// base case 2: the data already exists</span></span><br><span class="line">    <span class="keyword">if</span>(n-&gt;x == x) <span class="keyword">return</span> <span class="literal">false</span> / <span class="literal">nullptr</span> ;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; n-&gt;x) <span class="keyword">return</span> insert(x,n-&gt;left);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> insert(x,n-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>The insert function parameter <code>Node*&amp;</code> is a <strong>reference</strong>.<br>We always pass <strong>reference</strong> to it, thought the <strong>value</strong> of the reference may be <code>nullptr</code>.<br>e.g. <code>insert(x,t-&gt;left)</code> .In this case, <code>t</code> always refers to a <code>Node*</code>.</p>
-<h3 id="Iteration"><a href="#Iteration" class="headerlink" title="Iteration"></a>Iteration</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">insertIterative</span><span class="params">(<span class="keyword">const</span> T&amp; x, Node* p )</span>	<span class="comment">// pass by value</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// A new pointer to refer to the leaf</span></span><br><span class="line">    Node* pp = <span class="literal">nullptr</span>;</span><br><span class="line">	<span class="keyword">for</span>(;p!=<span class="literal">nullptr</span>;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// already exists</span></span><br><span class="line">        <span class="keyword">if</span>(p-&gt;x == x) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line">        pp = p; <span class="comment">// save parent for reference</span></span><br><span class="line">    	<span class="keyword">if</span>(p &lt; p-&gt;x) p = p-&gt; left;</span><br><span class="line">    	<span class="keyword">else</span> p = p-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// root is nullptr</span></span><br><span class="line">    <span class="keyword">if</span>(!pp) root = <span class="keyword">new</span> T(x);</span><br><span class="line">    <span class="keyword">else</span> pp = <span class="keyword">new</span> T(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>We only need to know the <strong>value</strong> of the <code>root</code> of the tree.<br>But we need to record the reference of the parent of the insertion node.</p>
-<h2 id="BST-Search"><a href="#BST-Search" class="headerlink" title="BST Search"></a>BST Search</h2><p><em>public</em> interface:</p>
+        <h1 id="binary-tree">Binary Tree</h1>
+<p>Inorder traversal<br />
+preorder traversal<br />
+postorder traversal</p>
+<h1 id="binary-search-tree">Binary Search Tree</h1>
+<h2 id="bst-insertion">BST Insertion</h2>
+<p>Always insert element at bottom as leaf.<br />
+Remember to check if the element already exists in the tree.</p>
+<h3 id="recursion">Recursion</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">insert</span><span class="params">(<span class="keyword">const</span> T&amp; x, Node*&amp; n )</span>	<span class="comment">// pass by reference</span></span></span><br><span class="line"><span class="function">Node* <span class="title">insert</span><span class="params">(<span class="keyword">const</span> T&amp; x, Node* n )</span>	<span class="comment">// pass by value need return pointer</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// base case 1: reach the node beyond leaf</span></span><br><span class="line">    <span class="keyword">if</span>(!n) &#123;n-&gt;x = <span class="keyword">new</span> T(x);<span class="keyword">return</span> <span class="literal">true</span> / <span class="keyword">new</span> T(x);&#125;</span><br><span class="line">    <span class="comment">// base case 2: the data already exists</span></span><br><span class="line">    <span class="keyword">if</span>(n-&gt;x == x) <span class="keyword">return</span> <span class="literal">false</span> / <span class="literal">nullptr</span> ;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; n-&gt;x) <span class="keyword">return</span> insert(x,n-&gt;left);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> insert(x,n-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The insert function parameter <code>Node*&amp;</code> is a <strong>reference</strong>. We always pass <strong>reference</strong> to it, thought the <strong>value</strong> of the reference may be <code>nullptr</code>. e.g. <code>insert(x,t-&gt;left)</code> .In this case, <code>t</code> always refers to a <code>Node*</code>.</p>
+<h3 id="iteration">Iteration</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">insertIterative</span><span class="params">(<span class="keyword">const</span> T&amp; x, Node* p )</span>	<span class="comment">// pass by value</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// A new pointer to refer to the leaf</span></span><br><span class="line">    Node* pp = <span class="literal">nullptr</span>;</span><br><span class="line">	<span class="keyword">for</span>(;p!=<span class="literal">nullptr</span>;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// already exists</span></span><br><span class="line">        <span class="keyword">if</span>(p-&gt;x == x) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line">        pp = p; <span class="comment">// save parent for reference</span></span><br><span class="line">    	<span class="keyword">if</span>(p &lt; p-&gt;x) p = p-&gt; left;</span><br><span class="line">    	<span class="keyword">else</span> p = p-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// root is nullptr</span></span><br><span class="line">    <span class="keyword">if</span>(!pp) root = <span class="keyword">new</span> T(x);</span><br><span class="line">    <span class="keyword">else</span> pp = <span class="keyword">new</span> T(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>We only need to know the <strong>value</strong> of the <code>root</code> of the tree. But we need to record the reference of the parent of the insertion node.</p>
+<h2 id="bst-search">BST Search</h2>
+<p><em>public</em> interface:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">contain</span><span class="params">(<span class="keyword">const</span> T&amp; x)</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line"> 	Node* p = root;</span><br><span class="line">    Node* pp = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="comment">// Non-recursion method COMMON</span></span><br><span class="line">    <span class="keyword">return</span> search(x,p,pp);</span><br><span class="line">    <span class="comment">// Recursion method</span></span><br><span class="line">    <span class="keyword">return</span> searchRecur(x,p) != <span class="literal">nullptr</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>The implementation of <code>search(x,p)</code> and <code>searchIterative(x,p,pp)</code> is as below.</p>
-<h3 id="Recursion-1"><a href="#Recursion-1" class="headerlink" title="Recursion"></a>Recursion</h3><p>can <strong>NOT</strong> keep track of the parent node pointer.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Node* <span class="title">searchRecur</span><span class="params">(<span class="keyword">const</span> T&amp; x, Node* n )</span>	<span class="comment">// pass by value</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// base case 1: reach the node beyond leaf</span></span><br><span class="line">    <span class="keyword">if</span>(!n) &#123;<span class="keyword">return</span> <span class="literal">nullptr</span>;&#125;</span><br><span class="line">    <span class="comment">// base case 2: find the data</span></span><br><span class="line">    <span class="keyword">if</span>(n-&gt;x == x) <span class="keyword">return</span> n;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; n-&gt;x) <span class="keyword">return</span> search(x,n-&gt;left);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> search(x,n-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="Iteration-1"><a href="#Iteration-1" class="headerlink" title="Iteration"></a>Iteration</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">search</span><span class="params">(<span class="keyword">const</span> T&amp; x, Node*&amp; n, Node*&amp; pn )</span><span class="comment">// pass by reference</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	<span class="keyword">for</span>(;n!=<span class="literal">nullptr</span>;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n-&gt;x == x) &#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;</span><br><span class="line">        pn = n;</span><br><span class="line">    	<span class="keyword">if</span>(x &lt; n-&gt;x) n = n-&gt; left;</span><br><span class="line">    	<span class="keyword">else</span> n = n-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Can keep track of parent node pointer.<br>Note the <code>Node*&amp; n</code> and <code>Node*&amp; pn</code> is pas by <strong>reference</strong>.<br>They must be created before calling the function</p>
-<h2 id="BST-deletion"><a href="#BST-deletion" class="headerlink" title="BST deletion"></a>BST deletion</h2><p>need <code>findMin()</code> function to help.</p>
+<h3 id="recursion-1">Recursion</h3>
+<p>can <strong>NOT</strong> keep track of the parent node pointer. <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Node* <span class="title">searchRecur</span><span class="params">(<span class="keyword">const</span> T&amp; x, Node* n )</span>	<span class="comment">// pass by value</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// base case 1: reach the node beyond leaf</span></span><br><span class="line">    <span class="keyword">if</span>(!n) &#123;<span class="keyword">return</span> <span class="literal">nullptr</span>;&#125;</span><br><span class="line">    <span class="comment">// base case 2: find the data</span></span><br><span class="line">    <span class="keyword">if</span>(n-&gt;x == x) <span class="keyword">return</span> n;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; n-&gt;x) <span class="keyword">return</span> search(x,n-&gt;left);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> search(x,n-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="iteration-1">Iteration</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">search</span><span class="params">(<span class="keyword">const</span> T&amp; x, Node*&amp; n, Node*&amp; pn )</span><span class="comment">// pass by reference</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	<span class="keyword">for</span>(;n!=<span class="literal">nullptr</span>;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n-&gt;x == x) &#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;</span><br><span class="line">        pn = n;</span><br><span class="line">    	<span class="keyword">if</span>(x &lt; n-&gt;x) n = n-&gt; left;</span><br><span class="line">    	<span class="keyword">else</span> n = n-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Can keep track of parent node pointer. Note the <code>Node*&amp; n</code> and <code>Node*&amp; pn</code> is pas by <strong>reference</strong>. They must be created before calling the function</p>
+<h2 id="bst-deletion">BST deletion</h2>
+<p>need <code>findMin()</code> function to help.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Node* <span class="title">findMin</span><span class="params">(Node* p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!p)<span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;left)p=p-&gt;left;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
+<ol type="1">
 <li><p>Delete a node with no child :</p>
-<p>pointer: <code>current</code> <code>parent</code><br>Simply delete it and make its parent’s original pointer to it <code>nullptr</code></p>
-</li>
+pointer: <code>current</code> <code>parent</code> Simply delete it and make its parent's original pointer to it <code>nullptr</code></li>
 <li><p>Delete a node with one child :</p>
-<p>pointer: <code>current</code> <code>parent</code> <code>child</code><br>Pass its pointer to the only child to its parent’s pointer to it. Then delete it.</p>
-</li>
+pointer: <code>current</code> <code>parent</code> <code>child</code> Pass its pointer to the only child to its parent's pointer to it. Then delete it.</li>
 <li><p>Delete a node with two child :</p>
-<p>pointer: <code>current</code> <code>min/max</code> <code>parent of min/max</code><br><strong>Override</strong> its data to the <em>max</em> of <em>left</em> or <em>min</em> of <em>right</em><br><strong>Actually delete</strong> the min/max node of the BST, which has no child </p>
-</li>
+<p>pointer: <code>current</code> <code>min/max</code> <code>parent of min/max</code> <strong>Override</strong> its data to the <em>max</em> of <em>left</em> or <em>min</em> of <em>right</em><br />
+<strong>Actually delete</strong> the min/max node of the BST, which has no child</p></li>
 </ol>
-<h3 id="Recursion-2"><a href="#Recursion-2" class="headerlink" title="Recursion"></a>Recursion</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">remove</span><span class="params">(<span class="keyword">const</span> T&amp; x,Node*&amp; n)</span>	<span class="comment">// pass by reference</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Base case: NOT found</span></span><br><span class="line">    <span class="keyword">if</span>(!n) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">// Recursive steps</span></span><br><span class="line">    <span class="keyword">if</span>(x&lt;n-&gt;x) <span class="keyword">return</span> remove(x,n-&gt;left);</span><br><span class="line">    <span class="keyword">if</span>(x&gt;n-&gt;x) <span class="keyword">return</span> remove(x,n-&gt;right);</span><br><span class="line">    <span class="comment">// node with no child</span></span><br><span class="line">    <span class="keyword">if</span>(!n-&gt;left &amp;&amp; !n-&gt;right)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">delete</span> n;</span><br><span class="line">        n = <span class="literal">nullptr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// node with two children</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(n-&gt;left &amp;&amp; n-&lt;right)</span><br><span class="line">    &#123;</span><br><span class="line">        Node* rightMin = findMin(n-&gt;right);</span><br><span class="line">        n-&gt;x = rightMin-&gt;x;</span><br><span class="line">        <span class="comment">// always true</span></span><br><span class="line">        remove(n-&gt;x,rightMin);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// node with only one child</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        Node* child = root-&gt;left?root-&gt;left:root-&gt;right;</span><br><span class="line">        <span class="comment">// save &amp;n to curr, later delete</span></span><br><span class="line">        Node* curr = n;</span><br><span class="line">        n = n-&gt;child;</span><br><span class="line">        <span class="keyword">delete</span> curr;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Iteration-2"><a href="#Iteration-2" class="headerlink" title="Iteration"></a>Iteration</h3><p>Need the parent node pointer of <em>Min</em> node.<br>Hard to implement.</p>
+<h3 id="recursion-2">Recursion</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">remove</span><span class="params">(<span class="keyword">const</span> T&amp; x,Node*&amp; n)</span>	<span class="comment">// pass by reference</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Base case: NOT found</span></span><br><span class="line">    <span class="keyword">if</span>(!n) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">// Recursive steps</span></span><br><span class="line">    <span class="keyword">if</span>(x&lt;n-&gt;x) <span class="keyword">return</span> remove(x,n-&gt;left);</span><br><span class="line">    <span class="keyword">if</span>(x&gt;n-&gt;x) <span class="keyword">return</span> remove(x,n-&gt;right);</span><br><span class="line">    <span class="comment">// node with no child</span></span><br><span class="line">    <span class="keyword">if</span>(!n-&gt;left &amp;&amp; !n-&gt;right)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">delete</span> n;</span><br><span class="line">        n = <span class="literal">nullptr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// node with two children</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(n-&gt;left &amp;&amp; n-&lt;right)</span><br><span class="line">    &#123;</span><br><span class="line">        Node* rightMin = findMin(n-&gt;right);</span><br><span class="line">        n-&gt;x = rightMin-&gt;x;</span><br><span class="line">        <span class="comment">// always true</span></span><br><span class="line">        remove(n-&gt;x,rightMin);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// node with only one child</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        Node* child = root-&gt;left?root-&gt;left:root-&gt;right;</span><br><span class="line">        <span class="comment">// save &amp;n to curr, later delete</span></span><br><span class="line">        Node* curr = n;</span><br><span class="line">        n = n-&gt;child;</span><br><span class="line">        <span class="keyword">delete</span> curr;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="iteration-2">Iteration</h3>
+<p>Need the parent node pointer of <em>Min</em> node. Hard to implement.</p>
 
-      
     </div>
 
     
-
     
-    
-    
-
-    
-
     
       
-    
-    
-      <div>
-        <div id="reward-container">
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2018\12\06\AVL-Trees\" rel="bookmark">AVL Trees</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2018\11\26\C-Memory-Leak\" rel="bookmark">C++ Memory Leak</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2018\05\27\Cpp-Notes\" rel="bookmark">Cpp Notes</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2018\12\05\Inheritance-and-Polymorphism\" rel="bookmark">Inheritance and Polymorphism</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2018\12\05\Static-Variables\" rel="bookmark">Static Variables</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
   <div>Talk is cheap. Show me the money.</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
     Donate
   </button>
   <div id="qr" style="display: none;">
-
-    
       
-      
-        
-      
-      <div style="display: inline-block">
+      <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="Vox09 WeChat Pay">
         <p>WeChat Pay</p>
       </div>
-    
       
-      
-        
-      
-      <div style="display: inline-block">
+      <div style="display: inline-block;">
         <img src="/images/alipay.jpg" alt="Vox09 Alipay">
         <p>Alipay</p>
       </div>
-    
 
   </div>
 </div>
 
-      </div>
-    
 
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/data-structure/" rel="tag"># data structure</a>
-          
-            <a href="/tags/Cpp/" rel="tag"># Cpp</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/12/05/Static-Variables/" rel="next" title="Static Variables">
-                <i class="fa fa-chevron-left"></i> Static Variables
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Cpp/" rel="tag"># Cpp</a>
+              <a href="/tags/data-structure/" rel="tag"># data structure</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/06/AVL-Trees/" rel="prev" title="AVL Trees">
-                AVL Trees <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/05/Static-Variables/" rel="prev" title="Static Variables">
+      <i class="fa fa-chevron-left"></i> Static Variables
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/06/AVL-Trees/" rel="next" title="AVL Trees">
+      AVL Trees <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
+  
+  
+  
 
   </div>
 
 
           </div>
           
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Vox09</p>
-              <div class="site-description motion-element" itemprop="description"></div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">27</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">9</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">29</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/vox09" title="GitHub &rarr; https://github.com/vox09"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Binary-Tree"><span class="nav-text">Binary Tree</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Binary-Search-Tree"><span class="nav-text">Binary Search Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BST-Insertion"><span class="nav-text">BST Insertion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Recursion"><span class="nav-text">Recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iteration"><span class="nav-text">Iteration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BST-Search"><span class="nav-text">BST Search</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Recursion-1"><span class="nav-text">Recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iteration-1"><span class="nav-text">Iteration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BST-deletion"><span class="nav-text">BST deletion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Recursion-2"><span class="nav-text">Recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iteration-2"><span class="nav-text">Iteration</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-  
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Vox09</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
-
-    
-
-    
-
-    
-  </div>
-
-  
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#binary-tree"><span class="nav-text">Binary Tree</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#binary-search-tree"><span class="nav-text">Binary Search Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bst-insertion"><span class="nav-text">BST Insertion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#recursion"><span class="nav-text">Recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iteration"><span class="nav-text">Iteration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bst-search"><span class="nav-text">BST Search</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#recursion-1"><span class="nav-text">Recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iteration-1"><span class="nav-text">Iteration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bst-deletion"><span class="nav-text">BST deletion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#recursion-2"><span class="nav-text">Recursion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iteration-2"><span class="nav-text">Iteration</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Vox09</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/vox09" title="GitHub → https://github.com/vox09"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vox09</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.2
+  </div>
+
+        
 
 
 
@@ -880,8 +462,31 @@
 
 
 
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
 
 
 
@@ -898,166 +503,61 @@
 
 
   
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.1"></script>
-
-  <script src="/js/motion.js?v=7.1.1"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.1"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.1"></script>
-<script src="/js/post-details.js?v=7.1.1"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.1"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-
-  
-
-
-
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
       
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 <script>
-  $('.highlight').not('.gist .highlight').each(function(i, e) {
-    var $wrap = $('<div>').addClass('highlight-wrap');
-    $(e).after($wrap);
-    $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
-      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-        return $(e).text();
-      }).toArray().join('\n');
-      var ta = document.createElement('textarea');
-      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-      ta.style.top = yPosition + 'px'; // Prevent page scroll
-      ta.style.position = 'absolute';
-      ta.style.opacity = '0';
-      ta.readOnly = true;
-      ta.value = code;
-      document.body.appendChild(ta);
-      ta.select();
-      ta.setSelectionRange(0, code.length);
-      ta.readOnly = false;
-      var result = document.execCommand('copy');
-      
-      ta.blur(); // For iOS
-      $(this).blur();
-    })).on('mouseleave', function(e) {
-      var $b = $(this).find('.copy-btn');
-      setTimeout(function() {
-        $b.text('Copy');
-      }, 300);
-    }).append(e);
-  })
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
 </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-  
+    
 
   
 

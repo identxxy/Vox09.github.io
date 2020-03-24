@@ -1,109 +1,33 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="en">
+<head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.1">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '7.1.1',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="Algorithm Comments Graph Rep Running time Space Used     Bellman-Ford Single-Source Adj List 𝑂(𝑉𝐸) 𝑂(𝑉)   In DAG Out DAG Single-Source DAG Adj List 𝑂(𝑉+𝐸) 𝑂(𝑉)   Dijkstra Single-SourceNo">
-<meta name="keywords" content="searching,algorithm,graph">
+  <meta name="description" content="Algorithm Comments Graph Rep Running time Space Used     Bellman-Ford Single-Source Adj List 𝑂(𝑉𝐸) 𝑂(𝑉)   In DAG Out DAG Single-Source DAG Adj List 𝑂(𝑉+𝐸) 𝑂(𝑉)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shortest Paths and Flow">
 <meta property="og:url" content="http://github.com/2018/12/15/Shortest-Paths-and-Flow/index.html">
 <meta property="og:site_name" content="Destinxxy">
-<meta property="og:description" content="Algorithm Comments Graph Rep Running time Space Used     Bellman-Ford Single-Source Adj List 𝑂(𝑉𝐸) 𝑂(𝑉)   In DAG Out DAG Single-Source DAG Adj List 𝑂(𝑉+𝐸) 𝑂(𝑉)   Dijkstra Single-SourceNo">
-<meta property="og:locale" content="en">
+<meta property="og:description" content="Algorithm Comments Graph Rep Running time Space Used     Bellman-Ford Single-Source Adj List 𝑂(𝑉𝐸) 𝑂(𝑉)   In DAG Out DAG Single-Source DAG Adj List 𝑂(𝑉+𝐸) 𝑂(𝑉)">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://github.com/assets/Shortest-Paths-and-Flow/1544956501161.png">
 <meta property="og:image" content="http://github.com/assets/Shortest-Paths-and-Flow/1545052561597.png">
 <meta property="og:image" content="http://github.com/assets/Shortest-Paths-and-Flow/1545052597485.png">
@@ -120,25 +44,25 @@
 <meta property="og:image" content="http://github.com/assets/Shortest-Paths-and-Flow/1544973114900.png">
 <meta property="og:image" content="http://github.com/assets/Shortest-Paths-and-Flow/1544973389780.png">
 <meta property="og:image" content="http://github.com/assets/Shortest-Paths-and-Flow/1544973553493.png">
-<meta property="og:updated_time" content="2019-04-09T15:16:59.380Z">
+<meta property="article:published_time" content="2018-12-15T13:18:00.000Z">
+<meta property="article:modified_time" content="2019-04-09T15:16:59.380Z">
+<meta property="article:author" content="Vox09">
+<meta property="article:tag" content="searching">
+<meta property="article:tag" content="algorithm">
+<meta property="article:tag" content="graph">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shortest Paths and Flow">
-<meta name="twitter:description" content="Algorithm Comments Graph Rep Running time Space Used     Bellman-Ford Single-Source Adj List 𝑂(𝑉𝐸) 𝑂(𝑉)   In DAG Out DAG Single-Source DAG Adj List 𝑂(𝑉+𝐸) 𝑂(𝑉)   Dijkstra Single-SourceNo">
 <meta name="twitter:image" content="http://github.com/assets/Shortest-Paths-and-Flow/1544956501161.png">
 
+<link rel="canonical" href="http://github.com/2018/12/15/Shortest-Paths-and-Flow/">
 
 
-
-
-  
-  
-  <link rel="canonical" href="http://github.com/2018/12/15/Shortest-Paths-and-Flow/">
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
 
@@ -150,15 +74,8 @@
 
 
 
-
-
-
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -167,9 +84,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -183,277 +99,136 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
-
-  
-  
-    
-  
-
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
 
-    <div class="custom-logo-site-title">
+  <div class="site-meta">
+
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Destinxxy</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
-      
         <p class="site-subtitle">Life should be hard</p>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
-
 
 
 <nav class="site-nav">
   
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-tags">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
+  </ul>
 
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
 </nav>
-
-
-
-  
-
-
-
 </div>
     </header>
 
     
-  
-  
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
-  
-
-  <a href="https://github.com/vox09" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+  <a href="https://github.com/vox09" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
-
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
+  <div class="posts-expand">
+      
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="http://github.com/2018/12/15/Shortest-Paths-and-Flow/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vox09">
-      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Destinxxy">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Shortest Paths and Flow
-
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Shortest Paths and Flow
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-12-15 21:18:00" itemprop="dateCreated datePublished" datetime="2018-12-15T21:18:00+08:00">2018-12-15</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
+                <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-04-09 23:16:59" itemprop="dateModified" datetime="2019-04-09T23:16:59+08:00">2019-04-09</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Algorithm-and-Graph/" itemprop="url" rel="index"><span itemprop="name">Algorithm and Graph</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm-and-Graph/" itemprop="url" rel="index"><span itemprop="name">Algorithm and Graph</span></a>
+                </span>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -461,13 +236,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <div class="table-container">
-<table>
+        <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Algorithm</th>
 <th>Comments</th>
 <th>Graph Rep</th>
@@ -476,101 +247,117 @@
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td><a href="#bellman-ford-algorithm">Bellman-Ford</a></td>
 <td>Single-Source</td>
 <td>Adj List</td>
 <td>𝑂(𝑉𝐸)</td>
 <td>𝑂(𝑉)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><a href="#shortest-paths-in-a-dag">In DAG Out DAG</a></td>
 <td>Single-Source DAG</td>
 <td>Adj List</td>
 <td>𝑂(𝑉+𝐸)</td>
 <td>𝑂(𝑉)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><a href="#dijkstra-algorithm">Dijkstra</a></td>
-<td>Single-Source<br>Non-Neg Weights</td>
+<td>Single-Source<br />Non-Neg Weights</td>
 <td>Adj List</td>
 <td>𝑂((𝑉 + 𝐸)log𝑉)</td>
 <td>𝑂(𝑉)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><a href="#first-dp-formulation">All-pairs 1</a></td>
 <td>All-Pairs</td>
 <td>Adj Matrix</td>
-<td>𝑂(𝑉^4^)</td>
-<td>𝑂(𝑉^2^)</td>
+<td>𝑂(𝑉<sup>4</sup>)</td>
+<td>𝑂(𝑉<sup>2</sup>)</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><a href="#second-dp-formulation">All-pairs 2</a></td>
 <td>All-Pairs</td>
 <td>Adj Matrix</td>
-<td>𝑂(𝑉^3^log𝑉)</td>
-<td>𝑂(𝑉^2^)</td>
+<td>𝑂(𝑉<sup>3</sup>log𝑉)</td>
+<td>𝑂(𝑉<sup>2</sup>)</td>
 </tr>
-<tr>
+<tr class="even">
 <td><a href="#floyd-warshall">Floyd-Warshall</a></td>
 <td>All-Pairs</td>
 <td>Adj Matrix</td>
-<td>𝑂(𝑉^3^)</td>
-<td>𝑂(𝑉^2^)</td>
+<td>𝑂(𝑉<sup>3</sup>)</td>
+<td>𝑂(𝑉<sup>2</sup>)</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h1 id="Shortest-Paths"><a href="#Shortest-Paths" class="headerlink" title="Shortest Paths"></a>Shortest Paths</h1><blockquote>
-<p> All algorithms, except <strong>Dijkstra</strong>, allow <strong>negative weights</strong>,<br>but there can <em>NOT</em> be <strong>negative cycle</strong>. </p>
+<h1 id="shortest-paths">Shortest Paths</h1>
+<blockquote>
+<p>All algorithms, except <strong>Dijkstra</strong>, allow <strong>negative weights</strong>, but there can <em>NOT</em> be <strong>negative cycle</strong>.</p>
 </blockquote>
 <p><strong>Shortest path problem:</strong> Find the shortest path from <code>s</code> to <code>t</code>.</p>
 <p><strong>Single-source shortest path:</strong> Find the shortest path from <code>s</code> to every node.</p>
-<div id="cut-and-paste-argument"> </div>
+<div id="cut-and-paste-argument">
 
-<p><strong>Lemma (Cut and Paste Argument):</strong> </p>
+</div>
+<p><strong>Lemma (Cut and Paste Argument):</strong></p>
 <blockquote>
-<p>Let 𝑃 = (𝑠, … , 𝑢, … , 𝑡) be the shortest 𝑠 − 𝑡 path.  The n the subpaths 𝑃~1~ = (𝑠, … , 𝑢) and 𝑃2= (𝑢, . . 𝑡) must also be, respectively, shortest 𝑠 − 𝑢 and 𝑢 − 𝑡 paths.</p>
+<p>Let 𝑃 = (𝑠, … , 𝑢, ... , 𝑡) be the shortest 𝑠 − 𝑡 path. The n the subpaths 𝑃<sub>1</sub> = (𝑠, … , 𝑢) and 𝑃2= (𝑢, . . 𝑡) must also be, respectively, shortest 𝑠 − 𝑢 and 𝑢 − 𝑡 paths.</p>
 </blockquote>
 <p><strong>Relaxation:</strong></p>
 <blockquote>
 <p>Let v.d be the shortest distance found so far from the starting node s to node v, and v.p be the last node in the current shortest path from s to node v.</p>
-<p><img src="/assets/Shortest-Paths-and-Flow/1544956501161.png" alt="1544956501161"></p>
+<figure>
+<img src="/assets/Shortest-Paths-and-Flow/1544956501161.png" alt="1544956501161" /><figcaption>1544956501161</figcaption>
+</figure>
 </blockquote>
-<h2 id="Single-Source-Shortest-Path"><a href="#Single-Source-Shortest-Path" class="headerlink" title="Single Source Shortest Path"></a>Single Source Shortest Path</h2><p>Let <code>ss(s,v)</code> store shortest path distance from <code>s</code> to <code>v</code></p>
-<h3 id="Bellman-Ford-Algorithm"><a href="#Bellman-Ford-Algorithm" class="headerlink" title="Bellman-Ford Algorithm"></a>Bellman-Ford Algorithm</h3><p>Initially, set <code>n.d</code> = inf for all nodes. Except starting node <code>s.d</code> = 0<br>Relax all edges once … path length maximum 1<br>Relax all edges second time … path length maximum 2</p>
-<p>A path may have  at most <code>V-1</code> edges. So we it <code>V-1</code> times.</p>
+<h2 id="single-source-shortest-path">Single Source Shortest Path</h2>
+<p>Let <code>ss(s,v)</code> store shortest path distance from <code>s</code> to <code>v</code></p>
+<h3 id="bellman-ford-algorithm">Bellman-Ford Algorithm</h3>
+<p>Initially, set <code>n.d</code> = inf for all nodes. Except starting node <code>s.d</code> = 0 Relax all edges once ... path length maximum 1 Relax all edges second time ... path length maximum 2</p>
+<p>A path may have at most <code>V-1</code> edges. So we it <code>V-1</code> times.</p>
 <p>Finally, <code>n.d</code> is the <strong>actual</strong> shortest distance from <code>s</code> to <code>n</code></p>
-<h4 id="Basic-Implementation"><a href="#Basic-Implementation" class="headerlink" title="Basic Implementation"></a>Basic Implementation</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Shortest-Path(G,s):</span><br><span class="line">for each node n in V do</span><br><span class="line">	n.d = inf</span><br><span class="line">s.d = 0</span><br><span class="line">for i = 1 to V-1</span><br><span class="line">	for each edge (u,n) in E</span><br><span class="line">		Relax(u,n)</span><br></pre></td></tr></table></figure>
-<p>Running time: Θ(𝑉𝐸)<br>Space: Θ(𝑉)</p>
-<h4 id="Efficient-Implementation"><a href="#Efficient-Implementation" class="headerlink" title="Efficient Implementation"></a>Efficient Implementation</h4><p>Take advantage of dynamic programming.</p>
-<p><strong>Recurrence:</strong><br>Suppose <code>(u,n)</code> is the last edge of shortest path of length at most <code>i</code> from <code>s</code> to <code>n</code>. By <a href="#cut-and-paste-argument">cut and paste argument</a>, the subpath from <code>s</code> to <code>u</code> must be a shortest path of length at most i - 1, followed by <code>(u,n)</code>.<br>So, for all <code>i</code> &gt; 0 and <code>n</code> != <code>s</code></p>
+<h4 id="basic-implementation">Basic Implementation</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Shortest-Path(G,s):</span><br><span class="line">for each node n in V do</span><br><span class="line">	n.d &#x3D; inf</span><br><span class="line">s.d &#x3D; 0</span><br><span class="line">for i &#x3D; 1 to V-1</span><br><span class="line">	for each edge (u,n) in E</span><br><span class="line">		Relax(u,n)</span><br></pre></td></tr></table></figure>
+<p>Running time: Θ(𝑉𝐸) Space: Θ(𝑉)</p>
+<h4 id="efficient-implementation">Efficient Implementation</h4>
+<p>Take advantage of dynamic programming.</p>
+<p><strong>Recurrence:</strong> Suppose <code>(u,n)</code> is the last edge of shortest path of length at most <code>i</code> from <code>s</code> to <code>n</code>. By <a href="#cut-and-paste-argument">cut and paste argument</a>, the subpath from <code>s</code> to <code>u</code> must be a shortest path of length at most i - 1, followed by <code>(u,n)</code>. So, for all <code>i</code> &gt; 0 and <code>n</code> != <code>s</code></p>
 <blockquote>
-<p>n.d[i] = min{ u.d[i-1] + w(u,n) }     u in V, (u,n) in E</p>
+<p>n.d[i] = min{ u.d[i-1] + w(u,n) } u in V, (u,n) in E</p>
 </blockquote>
 <p>Final solution: <code>n.d[m-1]</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Bellman-Ford(G,s):</span><br><span class="line">for each node n in V</span><br><span class="line">	n.d = inf, n.p = nil</span><br><span class="line">s.d = 0</span><br><span class="line">for i = 1 to V-1</span><br><span class="line">	for each node u in V</span><br><span class="line">		if u.d changed in previous iteration then </span><br><span class="line">			for each un in Adj(u)</span><br><span class="line">				Relax(u,un)</span><br><span class="line">	if no un.d changed in this iteration =&gt; terminate</span><br></pre></td></tr></table></figure>
-<p>Running time: Θ(𝑉𝐸)<br>Space: Θ(𝑉)</p>
-<h3 id="Shortest-Paths-in-a-DAG"><a href="#Shortest-Paths-in-a-DAG" class="headerlink" title="Shortest Paths in a DAG"></a>Shortest Paths in a DAG</h3><p>By subpath optimality, we have</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Bellman-Ford(G,s):</span><br><span class="line">for each node n in V</span><br><span class="line">	n.d &#x3D; inf, n.p &#x3D; nil</span><br><span class="line">s.d &#x3D; 0</span><br><span class="line">for i &#x3D; 1 to V-1</span><br><span class="line">	for each node u in V</span><br><span class="line">		if u.d changed in previous iteration then </span><br><span class="line">			for each un in Adj(u)</span><br><span class="line">				Relax(u,un)</span><br><span class="line">	if no un.d changed in this iteration &#x3D;&gt; terminate</span><br></pre></td></tr></table></figure>
+<p>Running time: Θ(𝑉𝐸) Space: Θ(𝑉)</p>
+<h3 id="shortest-paths-in-a-dag">Shortest Paths in a DAG</h3>
+<p>By subpath optimality, we have</p>
 <blockquote>
-<p>ss(s,n) = min { ss(s,u) + w(u,n)  } u in V, (u,v) in Es</p>
+<p>ss(s,n) = min { ss(s,u) + w(u,n) } u in V, (u,v) in Es</p>
 </blockquote>
 <p>Unlike <a href="#bellman-ford-algorithm">Bellman-Ford</a>, each edge will only be relaxed once.</p>
-<p>We need to ensure that when  <code>n</code> is processed, ALL <code>u</code> with <code>(u,n)</code> in <code>E</code> have already been processed. We can do that by processing <code>n</code> (also <code>ss(s,n)</code>) in the <a href="../Graph-Basic-and-Algorithm/#topological-sort">topological</a> order of the nodes.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DAG-Shortest-Path(G,s)</span><br><span class="line">topologically sort the vertices of G</span><br><span class="line">for each vertex n in V</span><br><span class="line">	n.d = inf</span><br><span class="line">	n.p = nil</span><br><span class="line">s.d = 0</span><br><span class="line">for each vertex u in topological order </span><br><span class="line">	for each vertex un in Adj(u)</span><br><span class="line">		Relax(u,un)</span><br></pre></td></tr></table></figure>
+<p>We need to ensure that when <code>n</code> is processed, ALL <code>u</code> with <code>(u,n)</code> in <code>E</code> have already been processed. We can do that by processing <code>n</code> (also <code>ss(s,n)</code>) in the <a href="../Graph-Basic-and-Algorithm/#topological-sort">topological</a> order of the nodes.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DAG-Shortest-Path(G,s)</span><br><span class="line">topologically sort the vertices of G</span><br><span class="line">for each vertex n in V</span><br><span class="line">	n.d &#x3D; inf</span><br><span class="line">	n.p &#x3D; nil</span><br><span class="line">s.d &#x3D; 0</span><br><span class="line">for each vertex u in topological order </span><br><span class="line">	for each vertex un in Adj(u)</span><br><span class="line">		Relax(u,un)</span><br></pre></td></tr></table></figure>
 <p>Running time: Θ(𝑉+𝐸)</p>
-<p><img src="/assets/Shortest-Paths-and-Flow/1545052561597.png" alt="1545052561597"></p>
-<h3 id="Dijkstra-Algorithm"><a href="#Dijkstra-Algorithm" class="headerlink" title="Dijkstra Algorithm"></a>Dijkstra Algorithm</h3><p><em>NOT</em> allow <strong>negative</strong> weights.</p>
-<p>Maintain a set of <strong>explored nodes</strong> <code>S</code> for which we know <code>u.d = ss(s,u)</code>by variable <code>status</code><br> Initialize <code>S = {s}</code>, <code>s.d = 0</code>, <code>v.d = inf</code></p>
+<figure>
+<img src="/assets/Shortest-Paths-and-Flow/1545052561597.png" alt="1545052561597" /><figcaption>1545052561597</figcaption>
+</figure>
+<h3 id="dijkstra-algorithm">Dijkstra Algorithm</h3>
+<p><em>NOT</em> allow <strong>negative</strong> weights.</p>
+<p>Maintain a set of <strong>explored nodes</strong> <code>S</code> for which we know <code>u.d = ss(s,u)</code>by variable <code>status</code> Initialize <code>S = {s}</code>, <code>s.d = 0</code>, <code>v.d = inf</code></p>
 <p>Use a <strong>Min priority queue</strong><code>Q</code> on <code>V</code> with <code>d</code> as key</p>
-<h4 id="Key-Lemma"><a href="#Key-Lemma" class="headerlink" title="Key Lemma"></a>Key Lemma</h4><blockquote>
+<h4 id="key-lemma">Key Lemma</h4>
+<blockquote>
 <p>If all edges leaving <code>S</code> are relaxed, then <code>v.d = ss(s,v)</code>,where <code>v</code> is the vertex in <code>V-S</code> with the minimum <code>v.d</code></p>
 <p>So this <code>v</code> can be added to <code>S</code>, then repeat</p>
 </blockquote>
-<h4 id="pseudocode"><a href="#pseudocode" class="headerlink" title="pseudocode"></a>pseudocode</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Dijkstra(G,s):</span><br><span class="line">for each node n in V do</span><br><span class="line">	n.d = inf, n.p = nil, n.status = unknown</span><br><span class="line">s.d = 0</span><br><span class="line">create a min priority queue Q onV with d as key</span><br><span class="line">while Q not empty	% E times</span><br><span class="line">	u = Extract-Min(Q) % O(logV) time</span><br><span class="line">	u.status = over</span><br><span class="line">	for each un in Adj(u) do</span><br><span class="line">		if un.status = unknown then</span><br><span class="line">			Relax(u,un)</span><br><span class="line">			Decrease-Key(Q,un,un.d)</span><br></pre></td></tr></table></figure>
-<p>Running time: 𝑂(𝐸log𝑉)<br>Very similar to <a href="../Minimum-Spanning-Tree/#prims-algorithm">Prim’s algorithm</a></p>
-<p><img src="/assets/Shortest-Paths-and-Flow/1545052597485.png" alt="1545052597485"></p>
-<h2 id="All-Pairs-Shortest-Paths"><a href="#All-Pairs-Shortest-Paths" class="headerlink" title="All-Pairs Shortest Paths"></a>All-Pairs Shortest Paths</h2><p><strong>Input</strong>:</p>
+<h4 id="pseudocode">pseudocode</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Dijkstra(G,s):</span><br><span class="line">for each node n in V do</span><br><span class="line">	n.d &#x3D; inf, n.p &#x3D; nil, n.status &#x3D; unknown</span><br><span class="line">s.d &#x3D; 0</span><br><span class="line">create a min priority queue Q onV with d as key</span><br><span class="line">while Q not empty	% E times</span><br><span class="line">	u &#x3D; Extract-Min(Q) % O(logV) time</span><br><span class="line">	u.status &#x3D; over</span><br><span class="line">	for each un in Adj(u) do</span><br><span class="line">		if un.status &#x3D; unknown then</span><br><span class="line">			Relax(u,un)</span><br><span class="line">			Decrease-Key(Q,un,un.d)</span><br></pre></td></tr></table></figure>
+<p>Running time: 𝑂(𝐸log𝑉) Very similar to <a href="../Minimum-Spanning-Tree/#prims-algorithm">Prim's algorithm</a></p>
+<figure>
+<img src="/assets/Shortest-Paths-and-Flow/1545052597485.png" alt="1545052597485" /><figcaption>1545052597485</figcaption>
+</figure>
+<h2 id="all-pairs-shortest-paths">All-Pairs Shortest Paths</h2>
+<p><strong>Input</strong>:</p>
 <ul>
 <li>Directed graph <code>G = (V,E)</code></li>
 <li>Weight <code>w(e)</code> = length of edge <code>e</code></li>
@@ -578,48 +365,65 @@
 <p><strong>Output:</strong></p>
 <ul>
 <li><code>ss(u,v)</code>, for all pairs of nodes <code>u</code>, <code>v</code></li>
-<li>A data structure from which the shortest path from <code>𝑢</code> to <code>𝑣</code> can be extracted efficiently, for any pair of nodes <code>𝑢</code>, <code>𝑣</code><ul>
-<li>Note: Storing all shortest paths explicitly for all pairs requires 𝑂(𝑉^3^) space.</li>
-</ul>
-</li>
+<li>A data structure from which the shortest path from <code>𝑢</code> to <code>𝑣</code> can be extracted efficiently, for any pair of nodes <code>𝑢</code>, <code>𝑣</code>
+<ul>
+<li>Note: Storing all shortest paths explicitly for all pairs requires 𝑂(𝑉<sup>3</sup>) space.</li>
+</ul></li>
 </ul>
 <p><strong>Graph Representation:</strong></p>
 <ul>
-<li>Assume adjacency matrix:<ul>
+<li>Assume adjacency matrix:
+<ul>
 <li><code>𝑤(𝑢, 𝑣)</code> can be extracted in 𝑂(1) time.</li>
 <li><code>𝑤(𝑢, 𝑢)= 0</code>, <code>𝑤(𝑢, 𝑣)= ∞</code>if there is no edge from <code>𝑢</code> to <code>𝑣</code>.</li>
-</ul>
-</li>
+</ul></li>
 <li>If the graph is stored in adjacency lists format, can convert to adjacency matrix in 𝑂(𝑉2) time.</li>
 </ul>
-<h3 id="Using-Previous-Algorithms"><a href="#Using-Previous-Algorithms" class="headerlink" title="Using Previous Algorithms"></a>Using Previous Algorithms</h3><p>NOT negative cost edges: <a href="#dijkstra-algorithm">Dijkstra’s algorithm</a><br>Running time: 𝑂(𝐸 log 𝑉), totally 𝑂(𝑉𝐸 log 𝑉)<br>Space: 𝑂 (𝑛^3^ log 𝑛 ) for <a href="https://en.wikipedia.org/wiki/Dense_graph" target="_blank" rel="noopener">dense graphs</a></p>
-<p>HAVE negative cost edges: <a href="#bellman-ford-algorithm">Bellman-Ford</a><br>Running time: 𝑂(𝑉𝐸), totally 𝑂(𝑉^2^𝐸)<br>Space: 𝑂 (𝑛^4^) for <a href="https://en.wikipedia.org/wiki/Dense_graph" target="_blank" rel="noopener">dense graphs</a></p>
-<hr>
-<h3 id="First-DP-Formulation"><a href="#First-DP-Formulation" class="headerlink" title="First DP Formulation"></a>First DP Formulation</h3><h4 id="Define"><a href="#Define" class="headerlink" title="Define"></a>Define</h4><p> <code>d(i,j,m)</code> = length of the shortest path from <code>i</code> to <code>j</code> that <strong>contains at most <code>m</code> edges</strong>.<br>Use <code>D[m]</code> to denote the matrix <code>[d(i,j,m)]</code><br><img src="/assets/Shortest-Paths-and-Flow/1544967538439.png" alt="1544967538439"></p>
-<h4 id="Recurrence-essentially-the-same-as-in-Bellman-Ford"><a href="#Recurrence-essentially-the-same-as-in-Bellman-Ford" class="headerlink" title="Recurrence( essentially the same as in Bellman-Ford):"></a>Recurrence( essentially the same as in <a href="bellman-ford-algorithm">Bellman-Ford</a>):</h4><blockquote>
-<p>d(i,j,m)  = min { d(i,k,m-1) + w(k,j) }    k from 1 to n<br>initially d(i,j,1) = w(i,j)</p>
+<h3 id="using-previous-algorithms">Using Previous Algorithms</h3>
+<p>NOT negative cost edges: <a href="#dijkstra-algorithm">Dijkstra's algorithm</a> Running time: 𝑂(𝐸 log 𝑉), totally 𝑂(𝑉𝐸 log 𝑉) Space: 𝑂 (𝑛<sup>3</sup> log 𝑛 ) for <a href="https://en.wikipedia.org/wiki/Dense_graph" target="_blank" rel="noopener">dense graphs</a></p>
+<p>HAVE negative cost edges: <a href="#bellman-ford-algorithm">Bellman-Ford</a> Running time: 𝑂(𝑉𝐸), totally 𝑂(𝑉<sup>2</sup>𝐸) Space: 𝑂 (𝑛<sup>4</sup>) for <a href="https://en.wikipedia.org/wiki/Dense_graph" target="_blank" rel="noopener">dense graphs</a></p>
+<hr />
+<h3 id="first-dp-formulation">First DP Formulation</h3>
+<h4 id="define">Define</h4>
+<p><code>d(i,j,m)</code> = length of the shortest path from <code>i</code> to <code>j</code> that <strong>contains at most <code>m</code> edges</strong>. Use <code>D[m]</code> to denote the matrix <code>[d(i,j,m)]</code> <img src="/assets/Shortest-Paths-and-Flow/1544967538439.png" alt="1544967538439" /></p>
+<h4 id="recurrence-essentially-the-same-as-in-bellman-ford">Recurrence( essentially the same as in <a href="bellman-ford-algorithm">Bellman-Ford</a>):</h4>
+<blockquote>
+<p>d(i,j,m) = min { d(i,k,m-1) + w(k,j) } k from 1 to n initially d(i,j,1) = w(i,j)</p>
 </blockquote>
-<h4 id="pseudocode-1"><a href="#pseudocode-1" class="headerlink" title="pseudocode"></a>pseudocode</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Slow-All-Pairs-Shortest-Paths(G):</span><br><span class="line">d(i,j,1) = w(i,j) for all 1&lt;=i,j&lt;=n</span><br><span class="line">for m = 2 to n-1</span><br><span class="line">	let D[m] be a new n*n matrix</span><br><span class="line">	for i = 1 to n</span><br><span class="line">		for j = 1 to n</span><br><span class="line">			d(i,j,m) = inf</span><br><span class="line">			for l =1 to n</span><br><span class="line">				if d(i,k,m-1) + w(k,j) &lt; d(i,j,m) then</span><br><span class="line">					d(i,j,m) = d(i,k,m-1) + w(k,j)</span><br><span class="line">return D[n-1]</span><br></pre></td></tr></table></figure>
-<p>Running time: 𝑂(𝑛^4^)<br>Space: 𝑂(𝑛^3^) can be improved to 𝑂(𝑛^2^)</p>
-<hr>
-<h3 id="Second-DP-Formulation"><a href="#Second-DP-Formulation" class="headerlink" title="Second DP Formulation"></a>Second DP Formulation</h3><h4 id="Observation"><a href="#Observation" class="headerlink" title="Observation"></a>Observation</h4><p>To compute <code>d(i,j,m)</code>, instead of looking at the last stop before <code>j</code>, we look at the <em>middle point</em>. This cuts down the problem size by half. Thus, to calculate <code>D[1]</code>,<code>D[2]</code>,<code>D[4]</code>,<code>D[8]</code>,…</p>
-<p><em>Note that overshooting <code>D[n-1]</code> is OK. Since <code>D[n&#39;]</code> , <code>n&#39;&gt;n -1</code> has the shortest paths with up to <code>n&#39;</code> edges. It will not miss any shortest path with up to n-1 edges.</em></p>
-<h4 id="Recurrence"><a href="#Recurrence" class="headerlink" title="Recurrence"></a>Recurrence</h4><blockquote>
-<p>d(i,j,2s)  = min { d(i,k,s) + d(k,j,s) }    k from 1 to n<br>initially d(i,j,1) = w(i,j)</p>
+<h4 id="pseudocode-1">pseudocode</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Slow-All-Pairs-Shortest-Paths(G):</span><br><span class="line">d(i,j,1) &#x3D; w(i,j) for all 1&lt;&#x3D;i,j&lt;&#x3D;n</span><br><span class="line">for m &#x3D; 2 to n-1</span><br><span class="line">	let D[m] be a new n*n matrix</span><br><span class="line">	for i &#x3D; 1 to n</span><br><span class="line">		for j &#x3D; 1 to n</span><br><span class="line">			d(i,j,m) &#x3D; inf</span><br><span class="line">			for l &#x3D;1 to n</span><br><span class="line">				if d(i,k,m-1) + w(k,j) &lt; d(i,j,m) then</span><br><span class="line">					d(i,j,m) &#x3D; d(i,k,m-1) + w(k,j)</span><br><span class="line">return D[n-1]</span><br></pre></td></tr></table></figure>
+<p>Running time: 𝑂(𝑛<sup>4</sup>) Space: 𝑂(𝑛<sup>3</sup>) can be improved to 𝑂(𝑛<sup>2</sup>)</p>
+<hr />
+<h3 id="second-dp-formulation">Second DP Formulation</h3>
+<h4 id="observation">Observation</h4>
+<p>To compute <code>d(i,j,m)</code>, instead of looking at the last stop before <code>j</code>, we look at the <em>middle point</em>. This cuts down the problem size by half. Thus, to calculate <code>D[1]</code>,<code>D[2]</code>,<code>D[4]</code>,<code>D[8]</code>,...</p>
+<p><em>Note that overshooting <code>D[n-1]</code> is OK. Since <code>D[n']</code> , <code>n'&gt;n -1</code> has the shortest paths with up to <code>n'</code> edges. It will not miss any shortest path with up to n-1 edges.</em></p>
+<h4 id="recurrence">Recurrence</h4>
+<blockquote>
+<p>d(i,j,2s) = min { d(i,k,s) + d(k,j,s) } k from 1 to n initially d(i,j,1) = w(i,j)</p>
 </blockquote>
-<h4 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze"></a>Analyze</h4><p>Running time: 𝑂(𝑛^3^) for each matrix , totally 𝑂(𝑛^3^log𝑛)</p>
-<hr>
-<h3 id="Floyd-Warshall"><a href="#Floyd-Warshall" class="headerlink" title="Floyd-Warshall"></a>Floyd-Warshall</h3><h4 id="Define-1"><a href="#Define-1" class="headerlink" title="Define"></a>Define</h4><p><code>d(i,j,k)</code> = length of the shortest path from <code>i</code> to <code>j</code> that all intermediate vertices on the path (if any) are <strong>in the set <code>{1,2,...,k}</code></strong><br><img src="/assets/Shortest-Paths-and-Flow/1544967564935.png" alt="1544967564935"></p>
-<h4 id="Observation-1"><a href="#Observation-1" class="headerlink" title="Observation"></a>Observation</h4><p>When computing <code>d(i,j,k)</code> there are two cases:</p>
-<ol>
-<li><code>k</code> is not a node on the shortest path from <code>i</code> to <code>j</code><br>=&gt; then the path uses only vertices in <code>{1,2,...,k-1}</code></li>
-<li><code>k</code> is an intermediate node on the shortest path from <code>i</code> to <code>j</code><br>=&gt; path can be spilt into shortest subpath from <code>i</code> to <code>k</code> and a subpath from <code>k</code> to <code>j</code><br>Both subpaths use only vertices in <code>{1,2,...,k-1}</code></li>
+<h4 id="analyze">Analyze</h4>
+<p>Running time: 𝑂(𝑛<sup>3</sup>) for each matrix , totally 𝑂(𝑛<sup>3</sup>log𝑛)</p>
+<hr />
+<h3 id="floyd-warshall">Floyd-Warshall</h3>
+<h4 id="define-1">Define</h4>
+<p><code>d(i,j,k)</code> = length of the shortest path from <code>i</code> to <code>j</code> that all intermediate vertices on the path (if any) are <strong>in the set <code>{1,2,...,k}</code></strong> <img src="/assets/Shortest-Paths-and-Flow/1544967564935.png" alt="1544967564935" /></p>
+<h4 id="observation-1">Observation</h4>
+<p>When computing <code>d(i,j,k)</code> there are two cases:</p>
+<ol type="1">
+<li><code>k</code> is not a node on the shortest path from <code>i</code> to <code>j</code> =&gt; then the path uses only vertices in <code>{1,2,...,k-1}</code></li>
+<li><code>k</code> is an intermediate node on the shortest path from <code>i</code> to <code>j</code> =&gt; path can be spilt into shortest subpath from <code>i</code> to <code>k</code> and a subpath from <code>k</code> to <code>j</code> Both subpaths use only vertices in <code>{1,2,...,k-1}</code></li>
 </ol>
-<h4 id="Recurrence-1"><a href="#Recurrence-1" class="headerlink" title="Recurrence"></a>Recurrence</h4><p><img src="/assets/Shortest-Paths-and-Flow/1544967760217.png" alt="1544967760217"></p>
-<h4 id="pseudocode-2"><a href="#pseudocode-2" class="headerlink" title="pseudocode"></a>pseudocode</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Floyd-Warshall(G):</span><br><span class="line">d(i,j,0) = w(i,j) for all 1&lt;=i,j&lt;=n</span><br><span class="line">for k=1 to n</span><br><span class="line">	let D[k] be a new n*n matrix</span><br><span class="line">	for i = 1 to n</span><br><span class="line">		for j = 1 to n</span><br><span class="line">			if d(i,k,k-1) + d(k,j,k-1) &lt; d(i,j,k-1) then</span><br><span class="line">				d(i,j,k) = d(i,k,k-1) + d(k,j,k-1)</span><br><span class="line">			else </span><br><span class="line">				d(i,j,k) = d(i,j,k-1)</span><br><span class="line">return D[n]</span><br></pre></td></tr></table></figure>
-<p>Running time: 𝑂(𝑛^3^)<br>Space: 𝑂(𝑛^3^) but can be improved to 𝑂(𝑛^2^)<br>Surprising discovery: If we just drop all third dimension. i.e. the algorithm just uses n*n array <code>D</code>, the algorithm still works!</p>
-<hr>
-<h1 id="Maximum-Flow"><a href="#Maximum-Flow" class="headerlink" title="Maximum Flow"></a>Maximum Flow</h1><p><strong>Input:</strong> A directed connected graph <code>𝐺 =(𝑉, 𝐸)</code> , where</p>
+<h4 id="recurrence-1">Recurrence</h4>
+<figure>
+<img src="/assets/Shortest-Paths-and-Flow/1544967760217.png" alt="1544967760217" /><figcaption>1544967760217</figcaption>
+</figure>
+<h4 id="pseudocode-2">pseudocode</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Floyd-Warshall(G):</span><br><span class="line">d(i,j,0) &#x3D; w(i,j) for all 1&lt;&#x3D;i,j&lt;&#x3D;n</span><br><span class="line">for k&#x3D;1 to n</span><br><span class="line">	let D[k] be a new n*n matrix</span><br><span class="line">	for i &#x3D; 1 to n</span><br><span class="line">		for j &#x3D; 1 to n</span><br><span class="line">			if d(i,k,k-1) + d(k,j,k-1) &lt; d(i,j,k-1) then</span><br><span class="line">				d(i,j,k) &#x3D; d(i,k,k-1) + d(k,j,k-1)</span><br><span class="line">			else </span><br><span class="line">				d(i,j,k) &#x3D; d(i,j,k-1)</span><br><span class="line">return D[n]</span><br></pre></td></tr></table></figure>
+<p>Running time: 𝑂(𝑛<sup>3</sup>) Space: 𝑂(𝑛<sup>3</sup>) but can be improved to 𝑂(𝑛<sup>2</sup>) Surprising discovery: If we just drop all third dimension. i.e. the algorithm just uses n*n array <code>D</code>, the algorithm still works!</p>
+<hr />
+<h1 id="maximum-flow">Maximum Flow</h1>
+<p><strong>Input:</strong> A directed connected graph <code>𝐺 =(𝑉, 𝐸)</code> , where</p>
 <ul>
 <li>every edge <code>𝑒 ∈ 𝐸</code> has a <strong>capacity</strong> <code>𝑐(𝑒)</code>;</li>
 <li>a source vertex <code>𝑠</code> and a target vertex <code>𝑡</code>.</li>
@@ -629,43 +433,66 @@
 <li>For each <code>𝑒 ∈ 𝐸, 0 ≤ 𝑓(𝑒) ≤ 𝑐(𝑒)</code> (capacity)</li>
 <li>For each <code>𝒗 ∈ 𝑽 − {𝒔, 𝒕}</code>, <code>sumOut( 𝒇(𝒆) ) = sumInto( 𝒇(𝒆) )</code>(conservation)、</li>
 </ul>
-<p><strong>Define:</strong><br>The value of a flow is <code>|𝑓| = sum(𝑓(𝑠, 𝑣))= sum(𝑓(𝑣, 𝑡))</code> where <code>𝑣</code> in <code>V</code></p>
-<h2 id="s-t-Cut"><a href="#s-t-Cut" class="headerlink" title="s-t Cut"></a>s-t Cut</h2><p><img src="/assets/Shortest-Paths-and-Flow/1544969825169.png" alt="1544969825169"></p>
-<h2 id="Residual-Graph"><a href="#Residual-Graph" class="headerlink" title="Residual Graph"></a>Residual Graph</h2><p><img src="/assets/Shortest-Paths-and-Flow/1544970376338.png" alt="1544970376338"></p>
-<h2 id="Ford-Fulkerson-Algorithm"><a href="#Ford-Fulkerson-Algorithm" class="headerlink" title="Ford Fulkerson Algorithm"></a>Ford Fulkerson Algorithm</h2><ol>
+<p><strong>Define:</strong> The value of a flow is <code>|𝑓| = sum(𝑓(𝑠, 𝑣))= sum(𝑓(𝑣, 𝑡))</code> where <code>𝑣</code> in <code>V</code></p>
+<h2 id="s-t-cut">s-t Cut</h2>
+<figure>
+<img src="/assets/Shortest-Paths-and-Flow/1544969825169.png" alt="1544969825169" /><figcaption>1544969825169</figcaption>
+</figure>
+<h2 id="residual-graph">Residual Graph</h2>
+<figure>
+<img src="/assets/Shortest-Paths-and-Flow/1544970376338.png" alt="1544970376338" /><figcaption>1544970376338</figcaption>
+</figure>
+<h2 id="ford-fulkerson-algorithm">Ford Fulkerson Algorithm</h2>
+<ol type="1">
 <li>Start with <code>f(e) = 0</code> for all edges <code>e</code> in <code>E</code></li>
-<li>Construct Residual Graph G~f~ for current flow <code>f(e) = 0</code></li>
-<li>while there exists some s-t path <code>P</code> in G~f~</li>
-<li>Let capacity of flow <code>cf(p)</code> = min { <code>cf(e)</code>: <code>e</code> in <code>P</code>}<br>This is the maximum amount of flow that can be pushed through residual capacity of <code>P</code>‘s edges</li>
+<li>Construct Residual Graph G<sub>f</sub> for current flow <code>f(e) = 0</code></li>
+<li>while there exists some s-t path <code>P</code> in G<sub>f</sub></li>
+<li>Let capacity of flow <code>cf(p)</code> = min { <code>cf(e)</code>: <code>e</code> in <code>P</code>} This is the maximum amount of flow that can be pushed through residual capacity of <code>P</code>'s edges</li>
 <li>Push <code>c(f,p)</code> units of flow along the edges <code>e</code> in <code>P</code> by adding <code>cf(p)</code> to <code>f(e)</code> for every <code>e</code> in <code>P</code></li>
-<li>Construct Residual Graph G~f~ for new current flow <code>f(e)</code></li>
+<li>Construct Residual Graph G<sub>f</sub> for new current flow <code>f(e)</code></li>
 </ol>
 <p><em>When algorithm gets stuck, current flow is maximal!</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Ford-Fulkerson(G,s,t):</span><br><span class="line">for each (u,n) in E do</span><br><span class="line">	f(u,n) = 0</span><br><span class="line">	cf(u,n) = c(e)</span><br><span class="line">	cf(n,u) = 0</span><br><span class="line">while there exists path P in residual graph Gf do</span><br><span class="line">	cf(p) = min &#123;cf(e):e in P&#125;</span><br><span class="line">	for each edge (u,n) in P do</span><br><span class="line">		if (u,n) in E then</span><br><span class="line">			f(u,n) = f(u,n) + cf(p)</span><br><span class="line">			cf(u,n) = cf(u,n) - cf(p)</span><br><span class="line">			cf(n,u) = cf(n,u) + cf(p)</span><br><span class="line">		else</span><br><span class="line">			f(n,u) = f(n,u) - cf(p)</span><br><span class="line">			cf(n,u) = cf(n,u) + cf(p)</span><br><span class="line">			cf(u,n) = cf(u,n) - cf(p)</span><br></pre></td></tr></table></figure>
-<p><img src="/assets/Shortest-Paths-and-Flow/1544971779763.png" alt="1544971779763"></p>
-<p>Construct Residual Graph <strong>G~f~</strong></p>
-<p><img src="/assets/Shortest-Paths-and-Flow/1544971840720.png" alt="1544971840720"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Ford-Fulkerson(G,s,t):</span><br><span class="line">for each (u,n) in E do</span><br><span class="line">	f(u,n) &#x3D; 0</span><br><span class="line">	cf(u,n) &#x3D; c(e)</span><br><span class="line">	cf(n,u) &#x3D; 0</span><br><span class="line">while there exists path P in residual graph Gf do</span><br><span class="line">	cf(p) &#x3D; min &#123;cf(e):e in P&#125;</span><br><span class="line">	for each edge (u,n) in P do</span><br><span class="line">		if (u,n) in E then</span><br><span class="line">			f(u,n) &#x3D; f(u,n) + cf(p)</span><br><span class="line">			cf(u,n) &#x3D; cf(u,n) - cf(p)</span><br><span class="line">			cf(n,u) &#x3D; cf(n,u) + cf(p)</span><br><span class="line">		else</span><br><span class="line">			f(n,u) &#x3D; f(n,u) - cf(p)</span><br><span class="line">			cf(n,u) &#x3D; cf(n,u) + cf(p)</span><br><span class="line">			cf(u,n) &#x3D; cf(u,n) - cf(p)</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/assets/Shortest-Paths-and-Flow/1544971779763.png" alt="1544971779763" /><figcaption>1544971779763</figcaption>
+</figure>
+<p>Construct Residual Graph <strong>G<sub>f</sub></strong></p>
+<figure>
+<img src="/assets/Shortest-Paths-and-Flow/1544971840720.png" alt="1544971840720" /><figcaption>1544971840720</figcaption>
+</figure>
 <p>capacity of flow in 8, write back to <strong>G</strong></p>
-<p><img src="/assets/Shortest-Paths-and-Flow/1544971890428.png" alt="1544971890428"></p>
-<p>The <strong>G~f~</strong> in next iteration is</p>
-<p><img src="/assets/Shortest-Paths-and-Flow/1544971927243.png" alt="1544971927243"></p>
-<p>Until there is <strong>no s-t path in G~f~.</strong> Current flow is optimally maximal.</p>
-<h2 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h2><p>he Max Flow setup can model (surprisingly) many (seemingly) unrelated problems.  </p>
+<figure>
+<img src="/assets/Shortest-Paths-and-Flow/1544971890428.png" alt="1544971890428" /><figcaption>1544971890428</figcaption>
+</figure>
+<p>The <strong>G<sub>f</sub></strong> in next iteration is</p>
+<figure>
+<img src="/assets/Shortest-Paths-and-Flow/1544971927243.png" alt="1544971927243" /><figcaption>1544971927243</figcaption>
+</figure>
+<p>Until there is <strong>no s-t path in G<sub>f</sub>.</strong> Current flow is optimally maximal.</p>
+<h2 id="applications">Applications</h2>
+<p>he Max Flow setup can model (surprisingly) many (seemingly) unrelated problems.</p>
 <p>The idea is to express the problem as a max flow and then feed individual instances into out max flow solver.</p>
 <p>The examples below all share the property that they are integer flow problems, e.g., al capacities are integral, so running-time analyses can use FF bound for integral flows.</p>
-<h3 id="Edge-Disjoint-Paths"><a href="#Edge-Disjoint-Paths" class="headerlink" title="Edge-Disjoint Paths"></a>Edge-Disjoint Paths</h3><blockquote>
+<h3 id="edge-disjoint-paths">Edge-Disjoint Paths</h3>
+<blockquote>
 <p><strong>Define:</strong> Two paths are edge-disjoint if they have no edge in common.</p>
 </blockquote>
-<p><img src="/assets/Shortest-Paths-and-Flow/1544972200654.png" alt="1544972200654"></p>
-<h3 id="Circulations-with-Demands"><a href="#Circulations-with-Demands" class="headerlink" title="Circulations with Demands"></a>Circulations with Demands</h3><blockquote>
-<p>Given a number of source vertices 𝑠1, 𝑠2, …, each with a supply of 𝑠𝑢𝑝(𝑠𝑖)<br>and a number of target vertices 𝑡1, 𝑡2, …, each with a demand of 𝑑𝑒𝑚 𝑡𝑖 ;<br>sum of supply &gt;= sum of demand</p>
+<figure>
+<img src="/assets/Shortest-Paths-and-Flow/1544972200654.png" alt="1544972200654" /><figcaption>1544972200654</figcaption>
+</figure>
+<h3 id="circulations-with-demands">Circulations with Demands</h3>
+<blockquote>
+<p>Given a number of source vertices 𝑠1, 𝑠2, …, each with a supply of 𝑠𝑢𝑝(𝑠𝑖) and a number of target vertices 𝑡1, 𝑡2, …, each with a demand of 𝑑𝑒𝑚 𝑡𝑖 ; sum of supply &gt;= sum of demand</p>
 <p>Need a flow meets all demands.</p>
 </blockquote>
-<p>Solution:<br>Add a <strong>super source</strong> and a <strong>super target</strong></p>
-<h3 id="Maximum-Bipartite-Matching"><a href="#Maximum-Bipartite-Matching" class="headerlink" title="Maximum Bipartite Matching"></a>Maximum Bipartite Matching</h3><blockquote>
-<p>A Matching is a subset M ⊆ E such that:<br>∀v ∈ V at most one edge in M is incident upon v.</p>
+<p>Solution: Add a <strong>super source</strong> and a <strong>super target</strong></p>
+<h3 id="maximum-bipartite-matching">Maximum Bipartite Matching</h3>
+<blockquote>
+<p>A Matching is a subset M ⊆ E such that: ∀v ∈ V at most one edge in M is incident upon v.</p>
 <p>The Size |M| is the number of edges in M.</p>
-<p>A Maximum Matching is matching M such that:<br>every other matching Mʹ satisfies |Mʹ | ≤ M.</p>
+<p>A Maximum Matching is matching M such that: every other matching Mʹ satisfies |Mʹ | ≤ M.</p>
+</blockquote>
+<blockquote>
 <p>Given bipartite graph G, find a Maximum Matching.</p>
 </blockquote>
 <p>Formulation:</p>
@@ -676,426 +503,226 @@
 <li>Add target 𝑡, and unit capacity edges from each node in 𝑌 to 𝑡.</li>
 </ul>
 <p>Theorem: Max cardinality matching in 𝐺 = value of max flow in 𝐺′.</p>
-<p><img src="/assets/Shortest-Paths-and-Flow/1544973114900.png" alt="1544973114900"></p>
+<figure>
+<img src="/assets/Shortest-Paths-and-Flow/1544973114900.png" alt="1544973114900" /><figcaption>1544973114900</figcaption>
+</figure>
 <p>Running time: 𝑂(𝑉𝐸)</p>
-<h3 id="Baseball-Elimination"><a href="#Baseball-Elimination" class="headerlink" title="Baseball Elimination"></a>Baseball Elimination</h3><p><img src="/assets/Shortest-Paths-and-Flow/1544973389780.png" alt="1544973389780"></p>
+<h3 id="baseball-elimination">Baseball Elimination</h3>
+<figure>
+<img src="/assets/Shortest-Paths-and-Flow/1544973389780.png" alt="1544973389780" /><figcaption>1544973389780</figcaption>
+</figure>
 <p><strong>Input：</strong></p>
 <ul>
-<li><p>𝑛 teams: 1, 2, … , 𝑛</p>
-</li>
-<li><p>One particular team, say 𝑛 (without loss of generality)</p>
-</li>
-<li>Team 𝑖 has won 𝑤~𝑖~ games already</li>
-<li>Team 𝑖 and 𝑗 still need to play 𝑟~𝑖𝑗~ games, 𝑟~𝑖𝑗~ = 0 or 1.</li>
-<li>Team 𝑖 has a total of 𝑟𝑖 = sum(𝑟~𝑖𝑗~: 𝑗) games to play</li>
+<li><p>𝑛 teams: 1, 2, … , 𝑛</p></li>
+<li>One particular team, say 𝑛 (without loss of generality)</li>
+<li>Team 𝑖 has won 𝑤<sub>𝑖</sub> games already</li>
+<li>Team 𝑖 and 𝑗 still need to play 𝑟<sub>𝑖𝑗</sub> games, 𝑟<sub>𝑖𝑗</sub> = 0 or 1.</li>
+<li><p>Team 𝑖 has a total of 𝑟𝑖 = sum(𝑟<sub>𝑖𝑗</sub>: 𝑗) games to play</p></li>
 </ul>
 <p><strong>Output:</strong></p>
 <ul>
 <li>“Yes”, if there is an outcome for each remaining game such that team 𝑛 finishes with the most wins (tie is OK).</li>
 <li>“No”, if no such possibilities.</li>
 </ul>
-<p><img src="/assets/Shortest-Paths-and-Flow/1544973553493.png" alt="1544973553493"></p>
+<figure>
+<img src="/assets/Shortest-Paths-and-Flow/1544973553493.png" alt="1544973553493" /><figcaption>1544973553493</figcaption>
+</figure>
 <p><strong>Claim: There is a way for team <code>n</code> to finish in the first place iff the max flow has value of the sum of supply from source <code>s</code></strong></p>
 
-      
     </div>
 
     
-
     
-    
-    
-
-    
-
     
       
-    
-    
-      <div>
-        <div id="reward-container">
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2018\12\15\Graph-Basic-and-Algorithm\" rel="bookmark">Graph Basic and Algorithm</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2018\12\15\Minimum-Spanning-Tree\" rel="bookmark">Minimum Spanning Tree</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2018\06\28\AI-Chap-3-Searching\" rel="bookmark">AI Chap.3 Searching</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2018\12\15\Dynamic-Programming\" rel="bookmark">Dynamic Programming</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
   <div>Talk is cheap. Show me the money.</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
     Donate
   </button>
   <div id="qr" style="display: none;">
-
-    
       
-      
-        
-      
-      <div style="display: inline-block">
+      <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="Vox09 WeChat Pay">
         <p>WeChat Pay</p>
       </div>
-    
       
-      
-        
-      
-      <div style="display: inline-block">
+      <div style="display: inline-block;">
         <img src="/images/alipay.jpg" alt="Vox09 Alipay">
         <p>Alipay</p>
       </div>
-    
 
   </div>
 </div>
 
-      </div>
-    
 
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/searching/" rel="tag"># searching</a>
-          
-            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
-          
-            <a href="/tags/graph/" rel="tag"># graph</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/12/15/Minimum-Spanning-Tree/" rel="next" title="Minimum Spanning Tree">
-                <i class="fa fa-chevron-left"></i> Minimum Spanning Tree
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/searching/" rel="tag"># searching</a>
+              <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+              <a href="/tags/graph/" rel="tag"># graph</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/30/Micro-Economics/" rel="prev" title="Micro Economics">
-                Micro Economics <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/15/Minimum-Spanning-Tree/" rel="prev" title="Minimum Spanning Tree">
+      <i class="fa fa-chevron-left"></i> Minimum Spanning Tree
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/01/30/Micro-Economics/" rel="next" title="Micro Economics">
+      Micro Economics <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
+  
+  
+  
 
   </div>
 
 
           </div>
           
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Vox09</p>
-              <div class="site-description motion-element" itemprop="description"></div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">27</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">9</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">29</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/vox09" title="GitHub &rarr; https://github.com/vox09"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Shortest-Paths"><span class="nav-text">Shortest Paths</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Single-Source-Shortest-Path"><span class="nav-text">Single Source Shortest Path</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bellman-Ford-Algorithm"><span class="nav-text">Bellman-Ford Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Basic-Implementation"><span class="nav-text">Basic Implementation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Efficient-Implementation"><span class="nav-text">Efficient Implementation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shortest-Paths-in-a-DAG"><span class="nav-text">Shortest Paths in a DAG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dijkstra-Algorithm"><span class="nav-text">Dijkstra Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Key-Lemma"><span class="nav-text">Key Lemma</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pseudocode"><span class="nav-text">pseudocode</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#All-Pairs-Shortest-Paths"><span class="nav-text">All-Pairs Shortest Paths</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-Previous-Algorithms"><span class="nav-text">Using Previous Algorithms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#First-DP-Formulation"><span class="nav-text">First DP Formulation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Define"><span class="nav-text">Define</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Recurrence-essentially-the-same-as-in-Bellman-Ford"><span class="nav-text">Recurrence( essentially the same as in Bellman-Ford):</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pseudocode-1"><span class="nav-text">pseudocode</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Second-DP-Formulation"><span class="nav-text">Second DP Formulation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Observation"><span class="nav-text">Observation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Recurrence"><span class="nav-text">Recurrence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Analyze"><span class="nav-text">Analyze</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Floyd-Warshall"><span class="nav-text">Floyd-Warshall</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Define-1"><span class="nav-text">Define</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Observation-1"><span class="nav-text">Observation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Recurrence-1"><span class="nav-text">Recurrence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pseudocode-2"><span class="nav-text">pseudocode</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Maximum-Flow"><span class="nav-text">Maximum Flow</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#s-t-Cut"><span class="nav-text">s-t Cut</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Residual-Graph"><span class="nav-text">Residual Graph</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ford-Fulkerson-Algorithm"><span class="nav-text">Ford Fulkerson Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Applications"><span class="nav-text">Applications</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Edge-Disjoint-Paths"><span class="nav-text">Edge-Disjoint Paths</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Circulations-with-Demands"><span class="nav-text">Circulations with Demands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maximum-Bipartite-Matching"><span class="nav-text">Maximum Bipartite Matching</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Baseball-Elimination"><span class="nav-text">Baseball Elimination</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-  
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Vox09</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
-
-    
-
-    
-
-    
-  </div>
-
-  
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#shortest-paths"><span class="nav-text">Shortest Paths</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#single-source-shortest-path"><span class="nav-text">Single Source Shortest Path</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bellman-ford-algorithm"><span class="nav-text">Bellman-Ford Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#basic-implementation"><span class="nav-text">Basic Implementation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#efficient-implementation"><span class="nav-text">Efficient Implementation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shortest-paths-in-a-dag"><span class="nav-text">Shortest Paths in a DAG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dijkstra-algorithm"><span class="nav-text">Dijkstra Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#key-lemma"><span class="nav-text">Key Lemma</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pseudocode"><span class="nav-text">pseudocode</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#all-pairs-shortest-paths"><span class="nav-text">All-Pairs Shortest Paths</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#using-previous-algorithms"><span class="nav-text">Using Previous Algorithms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#first-dp-formulation"><span class="nav-text">First DP Formulation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#define"><span class="nav-text">Define</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#recurrence-essentially-the-same-as-in-bellman-ford"><span class="nav-text">Recurrence( essentially the same as in Bellman-Ford):</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pseudocode-1"><span class="nav-text">pseudocode</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#second-dp-formulation"><span class="nav-text">Second DP Formulation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#observation"><span class="nav-text">Observation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#recurrence"><span class="nav-text">Recurrence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#analyze"><span class="nav-text">Analyze</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#floyd-warshall"><span class="nav-text">Floyd-Warshall</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#define-1"><span class="nav-text">Define</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#observation-1"><span class="nav-text">Observation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#recurrence-1"><span class="nav-text">Recurrence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pseudocode-2"><span class="nav-text">pseudocode</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#maximum-flow"><span class="nav-text">Maximum Flow</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#s-t-cut"><span class="nav-text">s-t Cut</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#residual-graph"><span class="nav-text">Residual Graph</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ford-fulkerson-algorithm"><span class="nav-text">Ford Fulkerson Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#applications"><span class="nav-text">Applications</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#edge-disjoint-paths"><span class="nav-text">Edge-Disjoint Paths</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#circulations-with-demands"><span class="nav-text">Circulations with Demands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#maximum-bipartite-matching"><span class="nav-text">Maximum Bipartite Matching</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#baseball-elimination"><span class="nav-text">Baseball Elimination</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Vox09</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/vox09" title="GitHub → https://github.com/vox09"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vox09</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.2
+  </div>
+
+        
 
 
 
@@ -1104,8 +731,31 @@
 
 
 
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
 
 
 
@@ -1122,166 +772,61 @@
 
 
   
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.1"></script>
-
-  <script src="/js/motion.js?v=7.1.1"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.1"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.1"></script>
-<script src="/js/post-details.js?v=7.1.1"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.1"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-
-  
-
-
-
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
       
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 <script>
-  $('.highlight').not('.gist .highlight').each(function(i, e) {
-    var $wrap = $('<div>').addClass('highlight-wrap');
-    $(e).after($wrap);
-    $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
-      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-        return $(e).text();
-      }).toArray().join('\n');
-      var ta = document.createElement('textarea');
-      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-      ta.style.top = yPosition + 'px'; // Prevent page scroll
-      ta.style.position = 'absolute';
-      ta.style.opacity = '0';
-      ta.readOnly = true;
-      ta.value = code;
-      document.body.appendChild(ta);
-      ta.select();
-      ta.setSelectionRange(0, code.length);
-      ta.readOnly = false;
-      var result = document.execCommand('copy');
-      
-      ta.blur(); // For iOS
-      $(this).blur();
-    })).on('mouseleave', function(e) {
-      var $b = $(this).find('.copy-btn');
-      setTimeout(function() {
-        $b.text('Copy');
-      }, 300);
-    }).append(e);
-  })
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
 </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-  
+    
 
   
 

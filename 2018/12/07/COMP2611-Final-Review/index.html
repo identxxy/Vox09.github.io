@@ -1,132 +1,55 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="en">
+<head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.1">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '7.1.1',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="@[TOC] Arithmetic for ComputersOverflow Detection    Operation Sign bit of X Sign Bit of Y Sign Bit of Result     X+Y 0 0 1   X+Y 1 1 0   X-Y 0 1 1   X-Y 1 0 0     Multiplication  Division  PipelineSt">
-<meta name="keywords" content="MIPS,assemble">
+  <meta name="description" content="@[TOC] Arithmetic for Computers Overflow Detection    Operation Sign bit of X Sign Bit of Y Sign Bit of Result     X+Y 0 0 1   X+Y 1 1 0   X-Y 0 1 1   X-Y 1 0 0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="COMP2611 Final Review">
 <meta property="og:url" content="http://github.com/2018/12/07/COMP2611-Final-Review/index.html">
 <meta property="og:site_name" content="Destinxxy">
-<meta property="og:description" content="@[TOC] Arithmetic for ComputersOverflow Detection    Operation Sign bit of X Sign Bit of Y Sign Bit of Result     X+Y 0 0 1   X+Y 1 1 0   X-Y 0 1 1   X-Y 1 0 0     Multiplication  Division  PipelineSt">
-<meta property="og:locale" content="en">
+<meta property="og:description" content="@[TOC] Arithmetic for Computers Overflow Detection    Operation Sign bit of X Sign Bit of Y Sign Bit of Result     X+Y 0 0 1   X+Y 1 1 0   X-Y 0 1 1   X-Y 1 0 0">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://github.com/assets/COMP2611-Final-Review/1544252231121.png">
 <meta property="og:image" content="http://github.com/assets/COMP2611-Final-Review/1544252074288.png">
 <meta property="og:image" content="http://github.com/assets/COMP2611-Final-Review/1544252200005.png">
 <meta property="og:image" content="http://github.com/assets/COMP2611-Final-Review/1544252118812.png">
-<meta property="og:updated_time" content="2019-04-09T15:16:59.363Z">
+<meta property="article:published_time" content="2018-12-07T08:02:45.000Z">
+<meta property="article:modified_time" content="2019-04-09T15:16:59.363Z">
+<meta property="article:author" content="Vox09">
+<meta property="article:tag" content="MIPS">
+<meta property="article:tag" content="assemble">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="COMP2611 Final Review">
-<meta name="twitter:description" content="@[TOC] Arithmetic for ComputersOverflow Detection    Operation Sign bit of X Sign Bit of Y Sign Bit of Result     X+Y 0 0 1   X+Y 1 1 0   X-Y 0 1 1   X-Y 1 0 0     Multiplication  Division  PipelineSt">
 <meta name="twitter:image" content="http://github.com/assets/COMP2611-Final-Review/1544252231121.png">
 
+<link rel="canonical" href="http://github.com/2018/12/07/COMP2611-Final-Review/">
 
 
-
-
-  
-  
-  <link rel="canonical" href="http://github.com/2018/12/07/COMP2611-Final-Review/">
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
   };
 </script>
 
@@ -138,15 +61,8 @@
 
 
 
-
-
-
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -155,9 +71,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -171,277 +86,136 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
-
-  
-  
-    
-  
-
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
 
-    <div class="custom-logo-site-title">
+  <div class="site-meta">
+
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Destinxxy</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
-      
         <p class="site-subtitle">Life should be hard</p>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
-
 
 
 <nav class="site-nav">
   
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-tags">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
+  </ul>
 
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
 </nav>
-
-
-
-  
-
-
-
 </div>
     </header>
 
     
-  
-  
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
-  
-
-  <a href="https://github.com/vox09" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+  <a href="https://github.com/vox09" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
-
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
+  <div class="posts-expand">
+      
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="http://github.com/2018/12/07/COMP2611-Final-Review/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Vox09">
-      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Destinxxy">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">COMP2611 Final Review
-
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          COMP2611 Final Review
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">Posted on</span>
 
               <time title="Created: 2018-12-07 16:02:45" itemprop="dateCreated datePublished" datetime="2018-12-07T16:02:45+08:00">2018-12-07</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
+                <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2019-04-09 23:16:59" itemprop="dateModified" datetime="2019-04-09T23:16:59+08:00">2019-04-09</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/School-Notes/" itemprop="url" rel="index"><span itemprop="name">School Notes</span></a></span>
-
-                
-                
-              
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/School-Notes/" itemprop="url" rel="index"><span itemprop="name">School Notes</span></a>
+                </span>
             </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -449,14 +223,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <p>@[TOC]</p>
-<h2 id="Arithmetic-for-Computers"><a href="#Arithmetic-for-Computers" class="headerlink" title="Arithmetic for Computers"></a>Arithmetic for Computers</h2><h3 id="Overflow-Detection"><a href="#Overflow-Detection" class="headerlink" title="Overflow Detection"></a>Overflow Detection</h3><div class="table-container">
+<h2 id="arithmetic-for-computers">Arithmetic for Computers</h2>
+<h3 id="overflow-detection">Overflow Detection</h3>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Operation</th>
 <th>Sign bit of X</th>
 <th>Sign Bit of Y</th>
@@ -464,25 +236,25 @@
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>X+Y</td>
 <td>0</td>
 <td>0</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>X+Y</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>X-Y</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
 </tr>
-<tr>
+<tr class="even">
 <td>X-Y</td>
 <td>1</td>
 <td>0</td>
@@ -490,513 +262,323 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="Multiplication"><a href="#Multiplication" class="headerlink" title="Multiplication"></a>Multiplication</h3><p><img src="/assets/COMP2611-Final-Review/1544252231121.png" alt="1544252231121"></p>
-<p><img src="/assets/COMP2611-Final-Review/1544252074288.png" alt="1544252074288"></p>
-<h3 id="Division"><a href="#Division" class="headerlink" title="Division"></a>Division</h3><p><img src="/assets/COMP2611-Final-Review/1544252200005.png" alt="1544252200005"></p>
-<p><img src="/assets/COMP2611-Final-Review/1544252118812.png" alt="1544252118812"></p>
-<h2 id="Pipeline"><a href="#Pipeline" class="headerlink" title="Pipeline"></a>Pipeline</h2><h3 id="Stages"><a href="#Stages" class="headerlink" title="Stages:"></a>Stages:</h3><p><strong>IF</strong> : Fetch the instructions from meomry<br><strong>ID</strong> : Instruction decode &amp; register read<br><strong>EX</strong> : Perform ALU operation<br><strong>MEM</strong> : Memory access (if necessary)<br><strong>WB</strong> : Write result back to register</p>
-<h3 id="Registers"><a href="#Registers" class="headerlink" title="Registers:"></a>Registers:</h3><p>located between the stages:<br>​    IF/ID, ID/EX, EX/MEM, MEM/WB</p>
-<h3 id="Control"><a href="#Control" class="headerlink" title="Control:"></a>Control:</h3><p><strong>IF</strong> : no control signals<br><strong>ID</strong> : no control signals<br><strong>EX</strong> : <em>RegDst, ALUOP, ALUSrc</em><br><strong>MEM</strong> : <em>Branch, MemRead, MemWrite</em><br><strong>WB</strong> : <em>MenToReg, RegWrite</em></p>
-<h3 id="Hazards"><a href="#Hazards" class="headerlink" title="Hazards:"></a>Hazards:</h3><p>cause: Data dependence and Control dependence.<br>types: Structural hazards, Data hazards, Control hazards</p>
-<h4 id="Structural-hazards"><a href="#Structural-hazards" class="headerlink" title="Structural hazards"></a>Structural hazards</h4><p>Conflict for use of memory(MEM/IF) and registers(WB/ID).</p>
+<h3 id="multiplication">Multiplication</h3>
+<figure>
+<img src="/assets/COMP2611-Final-Review/1544252231121.png" alt="1544252231121" /><figcaption>1544252231121</figcaption>
+</figure>
+<figure>
+<img src="/assets/COMP2611-Final-Review/1544252074288.png" alt="1544252074288" /><figcaption>1544252074288</figcaption>
+</figure>
+<h3 id="division">Division</h3>
+<figure>
+<img src="/assets/COMP2611-Final-Review/1544252200005.png" alt="1544252200005" /><figcaption>1544252200005</figcaption>
+</figure>
+<figure>
+<img src="/assets/COMP2611-Final-Review/1544252118812.png" alt="1544252118812" /><figcaption>1544252118812</figcaption>
+</figure>
+<h2 id="pipeline">Pipeline</h2>
+<h3 id="stages">Stages:</h3>
+<p><strong>IF</strong> : Fetch the instructions from meomry<br />
+<strong>ID</strong> : Instruction decode &amp; register read<br />
+<strong>EX</strong> : Perform ALU operation<br />
+<strong>MEM</strong> : Memory access (if necessary) <strong>WB</strong> : Write result back to register</p>
+<h3 id="registers">Registers:</h3>
+<p>located between the stages: ​ IF/ID, ID/EX, EX/MEM, MEM/WB</p>
+<h3 id="control">Control:</h3>
+<p><strong>IF</strong> : no control signals <strong>ID</strong> : no control signals <strong>EX</strong> : <em>RegDst, ALUOP, ALUSrc</em> <strong>MEM</strong> : <em>Branch, MemRead, MemWrite</em> <strong>WB</strong> : <em>MenToReg, RegWrite</em></p>
+<h3 id="hazards">Hazards:</h3>
+<p>cause: Data dependence and Control dependence. types: Structural hazards, Data hazards, Control hazards</p>
+<h4 id="structural-hazards">Structural hazards</h4>
+<p>Conflict for use of memory(MEM/IF) and registers(WB/ID).</p>
 <p>Solution:</p>
-<ol>
+<ol type="1">
 <li>separate instruction and data memories</li>
-<li><strong>Fact: Register very fast.</strong> Registers can Write during 1st half of clock cycle and Read during 2nd half.  </li>
+<li><strong>Fact: Register very fast.</strong> Registers can Write during 1st half of clock cycle and Read during 2nd half.</li>
 </ol>
-<h4 id="Data-hazards"><a href="#Data-hazards" class="headerlink" title="Data hazards"></a>Data hazards</h4><blockquote>
-<p>add $s0, $t0, $t1<br>sub $t2, $s0, $t3  </p>
-</blockquote>
-<p>Solution:</p>
-<ol>
-<li><p>Forwarding (partial, can’t solve below code)</p>
+<h4 id="data-hazards">Data hazards</h4>
 <blockquote>
-<p>lw $s0, 20$(t1)<br>sub $t2, $s0, $t3</p>
+<p>add $s0, $t0, $t1 sub $t2, $s0, $t3</p>
 </blockquote>
-</li>
-<li><p>Scheduling (assume forwarding is used)</p>
-</li>
-</ol>
-<h4 id="Control-hazards"><a href="#Control-hazards" class="headerlink" title="Control hazards"></a>Control hazards</h4><p>When we need to <code>beq</code> , <code>bne</code> operations</p>
 <p>Solution:</p>
-<ol>
+<ol type="1">
+<li><p>Forwarding (partial, can't solve below code)</p>
+<blockquote>
+<p>lw <span class="math inline">\(s0, 20\)</span>(t1) sub $t2, $s0, $t3</p>
+</blockquote></li>
+<li><p>Scheduling (assume forwarding is used)</p></li>
+</ol>
+<h4 id="control-hazards">Control hazards</h4>
+<p>When we need to <code>beq</code> , <code>bne</code> operations</p>
+<p>Solution:</p>
+<ol type="1">
 <li>Fetch instruction after branch. If wrong, flush them away.</li>
 <li>Add comparator to compare earlier</li>
 </ol>
-<h3 id="Datapath-with-Hazards"><a href="#Datapath-with-Hazards" class="headerlink" title="Datapath with Hazards"></a>Datapath with Hazards</h3><h4 id="Data-forwarding"><a href="#Data-forwarding" class="headerlink" title="Data forwarding"></a>Data forwarding</h4><p>Two types forwarding: EX/MEM -&gt; ID/EX        and        MEM/WB -&gt; ID/EX<br>Using two <strong>multiplexers</strong> to decide what is the input of operands A and B of the ALU.<br>note: A is for Rs. B is for Rt.</p>
-<p>EX forwarding:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0) </span><br><span class="line">and (EX/MEM.RegisterRd = ID/EX.RegisterRs )) </span><br><span class="line">	ForwardA = 10 </span><br><span class="line">if (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0) </span><br><span class="line">and (EX/MEM.RegisterRd = ID/EX.RegisterRt )) </span><br><span class="line">	ForwardB = 10</span><br></pre></td></tr></table></figure></p>
-<p>MEM forwarding (only when <strong>NOT</strong> EX forwarding ):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if (MEM/WB.RegWrite and (MEM/WB.RegisterRd ≠ 0) </span><br><span class="line">and not (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0) </span><br><span class="line">		and (EX/MEM.RegisterRd = ID/EX.RegisterRs ))</span><br><span class="line">and (MEM/WB.RegisterRd = ID/EX.RegisterRs )) </span><br><span class="line">	ForwardA = 01 </span><br><span class="line">if (MEM/WB.RegWrite and (MEM/WB.RegisterRd ≠ 0) </span><br><span class="line">and not (EX/MEM.RegWrite and (EX/MEM.RegisterRd ≠ 0) </span><br><span class="line">		and (EX/MEM.RegisterRd = ID/EX.RegisterRt ))</span><br><span class="line">and (MEM/WB.RegisterRd = ID/EX.RegisterRt )) </span><br><span class="line">	ForwardB = 01</span><br></pre></td></tr></table></figure></p>
-<h4 id="Load-use-detection"><a href="#Load-use-detection" class="headerlink" title="Load-use detection"></a>Load-use detection</h4><p>When Load-use hazard occur, we can do nothing but stall a clock cycle.<br>To detect it:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Load-use hazard = ID/EX.MemRead and </span><br><span class="line">((ID/EX.RegisterRt = IF/ID.RegisterRs ) or </span><br><span class="line">(ID/EX.RegisterRt = IF/ID.RegisterRt ))</span><br></pre></td></tr></table></figure>
-<h4 id="How-to-Stall"><a href="#How-to-Stall" class="headerlink" title="How to Stall"></a>How to Stall</h4><ol>
-<li>Force control values in ID/EX register to 0 :<br>​    EX, MEM and WB do EX, MEM and WB do nop (no -operation)</li>
-<li>Prevent update of PC and IF/ID register<br>Using instruction is decoded again<br>Following instruction is fetched again<br>1-cycle stall allows MEM to read data for <code>lw</code> (with forwarding)</li>
+<h3 id="datapath-with-hazards">Datapath with Hazards</h3>
+<h4 id="data-forwarding">Data forwarding</h4>
+<p>Two types forwarding: EX/MEM -&gt; ID/EX and MEM/WB -&gt; ID/EX Using two <strong>multiplexers</strong> to decide what is the input of operands A and B of the ALU. note: A is for Rs. B is for Rt.</p>
+<p>EX forwarding: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (EX&#x2F;MEM.RegWrite and (EX&#x2F;MEM.RegisterRd ≠ 0) </span><br><span class="line">and (EX&#x2F;MEM.RegisterRd &#x3D; ID&#x2F;EX.RegisterRs )) </span><br><span class="line">	ForwardA &#x3D; 10 </span><br><span class="line">if (EX&#x2F;MEM.RegWrite and (EX&#x2F;MEM.RegisterRd ≠ 0) </span><br><span class="line">and (EX&#x2F;MEM.RegisterRd &#x3D; ID&#x2F;EX.RegisterRt )) </span><br><span class="line">	ForwardB &#x3D; 10</span><br></pre></td></tr></table></figure> MEM forwarding (only when <strong>NOT</strong> EX forwarding ): <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if (MEM&#x2F;WB.RegWrite and (MEM&#x2F;WB.RegisterRd ≠ 0) </span><br><span class="line">and not (EX&#x2F;MEM.RegWrite and (EX&#x2F;MEM.RegisterRd ≠ 0) </span><br><span class="line">		and (EX&#x2F;MEM.RegisterRd &#x3D; ID&#x2F;EX.RegisterRs ))</span><br><span class="line">and (MEM&#x2F;WB.RegisterRd &#x3D; ID&#x2F;EX.RegisterRs )) </span><br><span class="line">	ForwardA &#x3D; 01 </span><br><span class="line">if (MEM&#x2F;WB.RegWrite and (MEM&#x2F;WB.RegisterRd ≠ 0) </span><br><span class="line">and not (EX&#x2F;MEM.RegWrite and (EX&#x2F;MEM.RegisterRd ≠ 0) </span><br><span class="line">		and (EX&#x2F;MEM.RegisterRd &#x3D; ID&#x2F;EX.RegisterRt ))</span><br><span class="line">and (MEM&#x2F;WB.RegisterRd &#x3D; ID&#x2F;EX.RegisterRt )) </span><br><span class="line">	ForwardB &#x3D; 01</span><br></pre></td></tr></table></figure></p>
+<h4 id="load-use-detection">Load-use detection</h4>
+<p>When Load-use hazard occur, we can do nothing but stall a clock cycle. To detect it:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Load-use hazard &#x3D; ID&#x2F;EX.MemRead and </span><br><span class="line">((ID&#x2F;EX.RegisterRt &#x3D; IF&#x2F;ID.RegisterRs ) or </span><br><span class="line">(ID&#x2F;EX.RegisterRt &#x3D; IF&#x2F;ID.RegisterRt ))</span><br></pre></td></tr></table></figure>
+<h4 id="how-to-stall">How to Stall</h4>
+<ol type="1">
+<li>Force control values in ID/EX register to 0 : ​ EX, MEM and WB do EX, MEM and WB do nop (no -operation)</li>
+<li>Prevent update of PC and IF/ID register Using instruction is decoded again Following instruction is fetched again 1-cycle stall allows MEM to read data for <code>lw</code> (with forwarding)</li>
 </ol>
-<h4 id="Data-Hazard-when-branch"><a href="#Data-Hazard-when-branch" class="headerlink" title="Data Hazard when branch"></a>Data Hazard when branch</h4><p>In pipeline datapath, branch target address calculation is executed in <strong>another ALU NOT in EXE stage</strong>. It is <strong>executed during ID staged.</strong></p>
+<h4 id="data-hazard-when-branch">Data Hazard when branch</h4>
+<p>In pipeline datapath, branch target address calculation is executed in <strong>another ALU NOT in EXE stage</strong>. It is <strong>executed during ID staged.</strong></p>
 <p>ID Stage: Target address calculator, Register file, Register comparator.</p>
 <blockquote>
-<p>add $1, $2, $3<br>add $4, $5, $6<br>add $7, $8, $9    # another instruction<br>beq $1, $4, target    </p>
+<p>add $1, $2, $3 add $4, $5, $6 add $7, $8, $9 # another instruction beq $1, $4, target</p>
 </blockquote>
 <p>Can resolve using forwarding. From <strong>MEM/WB</strong> and <strong>EXE/MEM</strong> to <strong>ID</strong></p>
 <blockquote>
-<p>add $1, $2, $3<br>add $4, $5, $6<br>beq stalled…<br>beq $1, $4, target    </p>
+<p>add $1, $2, $3 add $4, $5, $6 beq stalled... beq $1, $4, target</p>
 </blockquote>
 <p>Need one cycle stalled.</p>
 <blockquote>
-<p>lw $1,addr<br>beq stalled…<br>beq stalled…<br>beq $1, $0, target</p>
+<p>lw $1,addr<br />
+beq stalled... beq stalled... beq $1, $0, target</p>
 </blockquote>
 <p>Need two cycles stalled.</p>
-<h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><p>RAM(Random Access Memory) technology includes two types:</p>
-<ol>
-<li>Static RAM — mostly used for <strong>cache</strong><br>0.5ns-2.5ns, $2000 -$5000 per GB<br>consists only <strong>Transistors</strong></li>
-<li>Dynamic RAM(DRAM) — mostly used for <strong>main memory</strong><br> 50ns - 70ns, $20-$75 per GB<br> consists of <strong>Transistor</strong> and <strong>Capacitor</strong></li>
-</ol>
+<h2 id="memory">Memory</h2>
+<p>RAM(Random Access Memory) technology includes two types: 1. Static RAM -- mostly used for <strong>cache</strong> 0.5ns-2.5ns, $2000 -$5000 per GB consists only <strong>Transistors</strong> 2. Dynamic RAM(DRAM) -- mostly used for <strong>main memory</strong> 50ns - 70ns, $20-$75 per GB consists of <strong>Transistor</strong> and <strong>Capacitor</strong></p>
 <p>Magnetic disk: 5ms - 20ms, $0.2-$2 per GB</p>
-<h3 id="Disk-Sectors-and-Accesses"><a href="#Disk-Sectors-and-Accesses" class="headerlink" title="Disk Sectors and Accesses"></a>Disk Sectors and Accesses</h3><p><strong>Each sector records:</strong><br>Sector ID<br>Data (512 bytes, 4096 bytes proposed)<br>Error correcting code (ECC)<br>Synchronization fields and gaps</p>
-<p><strong>Access to a sector involves:</strong><br>Queuing delay if other accesses are pending<br>Seek: move the heads<br>Rotational latency<br>Data transfer<br>Controller overhead</p>
-<h3 id="Principle-of-Locality"><a href="#Principle-of-Locality" class="headerlink" title="Principle of Locality"></a>Principle of Locality</h3><blockquote>
+<h3 id="disk-sectors-and-accesses">Disk Sectors and Accesses</h3>
+<p><strong>Each sector records:</strong> Sector ID Data (512 bytes, 4096 bytes proposed) Error correcting code (ECC) Synchronization fields and gaps</p>
+<p><strong>Access to a sector involves:</strong> Queuing delay if other accesses are pending Seek: move the heads Rotational latency Data transfer Controller overhead</p>
+<h3 id="principle-of-locality">Principle of Locality</h3>
+<blockquote>
 <p>Programs access a small proportion of their address space at any time</p>
 </blockquote>
-<ol>
+<ol type="1">
 <li><p><strong>Temporal locality</strong></p>
-<p>Items accessed recently are likely to be accessed again soon</p>
-</li>
-<li><p><strong>Spatial locality</strong><br>Items near those accessed recently are likely to be accessed soon</p>
-</li>
+<p>Items accessed recently are likely to be accessed again soon</p></li>
+<li><p><strong>Spatial locality</strong> Items near those accessed recently are likely to be accessed soon</p></li>
 </ol>
 <p><strong>This property is the KEY to memory hierarchy!</strong></p>
-<h3 id="Memory-Hierachy"><a href="#Memory-Hierachy" class="headerlink" title="Memory Hierachy"></a>Memory Hierachy</h3><p>Initially,<br>Instructions and data are loaded into <strong>DRAM</strong> from disk.</p>
-<p>Upon first access,<br>A copy of the referenced instruction or data item is kept in <strong>cache</strong> </p>
-<p>In subsequent accesses,<br>First, look for the requested item in the cache<br>​    If the item is in the cache, return the item to the CPU<br>​    If NOT in the cache, look it up in the memory</p>
+<h3 id="memory-hierachy">Memory Hierachy</h3>
+<p>Initially, Instructions and data are loaded into <strong>DRAM</strong> from disk.</p>
+<p>Upon first access, A copy of the referenced instruction or data item is kept in <strong>cache</strong></p>
+<p>In subsequent accesses, First, look for the requested item in the cache ​ If the item is in the cache, return the item to the CPU ​ If NOT in the cache, look it up in the memory</p>
 <p>We can say:</p>
 <blockquote>
-<p>If not found in this level, look it up at next level until found<br>Keep (cache) a copy of the found item at this level after use</p>
+<p>If not found in this level, look it up at next level until found Keep (cache) a copy of the found item at this level after use</p>
 </blockquote>
-<h3 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h3><p><strong>Each memory locations is mapped to ONE location in the cache.</strong></p>
+<h3 id="cache">Cache</h3>
+<p><strong>Each memory locations is mapped to ONE location in the cache.</strong></p>
 <blockquote>
-<p>average latency = hit + miss<br>= r*t1 + ((1-r)t1 + rt2) = t1 + (1-r)t2<br><strong>NOT</strong> r*t1 + (1-r)t2</p>
+<p>average latency = hit + miss = r*t1 + ((1-r)t1 + rt2) = t1 + (1-r)t2 <strong>NOT</strong> r*t1 + (1-r)t2</p>
 </blockquote>
 <p>Three basic organizations:</p>
-<ol>
+<ol type="1">
 <li>Direct-mapped( one memory block to one possible cache block)</li>
 <li>Set-mapped( one memory block to one set of possible cache blocks)</li>
 <li>Fully-mapped( one memory block to all possible cache blocks)</li>
 </ol>
-<h4 id="Direct-Mapped-Cache"><a href="#Direct-Mapped-Cache" class="headerlink" title="Direct Mapped Cache"></a>Direct Mapped Cache</h4><p>If the number of cache blocks (N) is a power of 2; <strong>N=2^m</strong><br>cache_location = the low-order <strong>m</strong> bits of block address<br>e.g. map the value1200 to a 8 blocks, 32 byte/block cache.</p>
+<h4 id="direct-mapped-cache">Direct Mapped Cache</h4>
+<p>If the number of cache blocks (N) is a power of 2; <strong>N=2^m</strong> cache_location = the low-order <strong>m</strong> bits of block address e.g. map the value1200 to a 8 blocks, 32 byte/block cache.</p>
 <blockquote>
-<p>Block address = 1200/32 = 37<br>Block number = 37 % 8 = 5</p>
+<p>Block address = 1200/32 = 37 Block number = 37 % 8 = 5</p>
 </blockquote>
-<p>Disadvantage:<br>block access sequence: 100011, 001011, 100011<br>later arrival will <strong>kill out</strong> previous one. called <strong>cache conflict.</strong></p>
-<h4 id="Tags-and-Valid-Bits"><a href="#Tags-and-Valid-Bits" class="headerlink" title="Tags and Valid Bits"></a>Tags and Valid Bits</h4><p><strong>Tags:</strong> decide which particular block is stored in a cache location.<br>Store block address as well as the data.<br>Only need the high-order bits.<br><strong>tags size= original address size- block size- blocks number(binary) - 1(valid bit)</strong></p>
+<p>Disadvantage: block access sequence: 100011, 001011, 100011 later arrival will <strong>kill out</strong> previous one. called <strong>cache conflict.</strong></p>
+<h4 id="tags-and-valid-bits">Tags and Valid Bits</h4>
+<p><strong>Tags:</strong> decide which particular block is stored in a cache location. Store block address as well as the data. Only need the high-order bits. <strong>tags size= original address size- block size- blocks number(binary) - 1(valid bit)</strong></p>
 <p><strong>Valid Bits:</strong> decide whether the data exists. Initially 0.</p>
-<p>Consider a direct-mapped cache with 8 cache frames and a block size of 32 bytes<br>Memory (byte) address generated by CPU|Block address|Hit or miss|Assigned cache block<br>—-|—-|—|—-<br>0010 1100 0010|0010 110|Miss|110<br>0011 0100 0000|0011 010|Miss|010<br>0010 1100 0100|0010 110|Hit|110<br>0010 1100 0010|0010 110|Hit|110<br>0010 0000 1000|0010 000|Miss|000<br>0000 0110 0000|0000 011|Miss|011<br>0010 0001 0000|0010 000|Hit|000<br>0010 0100 0001|0010 010|Miss|010</p>
-<h4 id="Associate-Cache"><a href="#Associate-Cache" class="headerlink" title="Associate Cache"></a>Associate Cache</h4><p>Fully associative(FA):<br>Each block can be placed <strong>anywhere</strong> in the cache.<br>pros: No cache conflict. But still have misses due to size.<br>cons: Costly (hardware and time)</p>
-<p>N-way Set associative(SA):<br>Each block can be placed in a <strong>certain number(N)</strong> of cache locations.<br>A good compromise between DM &amp; FA </p>
-<h4 id="Block-Replacement"><a href="#Block-Replacement" class="headerlink" title="Block Replacement"></a>Block Replacement</h4><ol>
+<p>Consider a direct-mapped cache with 8 cache frames and a block size of 32 bytes Memory (byte) address generated by CPU|Block address|Hit or miss|Assigned cache block ---|---|--|--- 0010 1100 0010|0010 110|Miss|110 0011 0100 0000|0011 010|Miss|010 0010 1100 0100|0010 110|Hit|110 0010 1100 0010|0010 110|Hit|110 0010 0000 1000|0010 000|Miss|000 0000 0110 0000|0000 011|Miss|011 0010 0001 0000|0010 000|Hit|000 0010 0100 0001|0010 010|Miss|010</p>
+<h4 id="associate-cache">Associate Cache</h4>
+<p>Fully associative(FA): Each block can be placed <strong>anywhere</strong> in the cache. pros: No cache conflict. But still have misses due to size. cons: Costly (hardware and time)</p>
+<p>N-way Set associative(SA): Each block can be placed in a <strong>certain number(N)</strong> of cache locations. A good compromise between DM &amp; FA</p>
+<h4 id="block-replacement">Block Replacement</h4>
+<ol type="1">
 <li>Random</li>
-<li>Least recently used(LRU):<br>Upon miss:<br>Replace the LRU with missed address -&gt; Move the miss address to MRU position<br>Upon hit:<br>Move the hit address to MRU position -&gt; Pack the rest</li>
+<li>Least recently used(LRU): Upon miss: Replace the LRU with missed address -&gt; Move the miss address to MRU position Upon hit: Move the hit address to MRU position -&gt; Pack the rest</li>
 </ol>
-<h4 id="Deal-with-Dirty-Data"><a href="#Deal-with-Dirty-Data" class="headerlink" title="Deal with Dirty Data"></a>Deal with Dirty Data</h4><h5 id="Write-back"><a href="#Write-back" class="headerlink" title="Write-back"></a>Write-back</h5><p>CPU only write  to cache.<br>CPU can write individual words at the rate of the cache.<br>Multiple writes to a block are merged into one write to main memory.<br><em>more and more caches use this strategy.</em></p>
-<h5 id="Write-through"><a href="#Write-through" class="headerlink" title="Write-through"></a>Write-through</h5><p>CPU write both on cache and memory.(memory always up-to-date)</p>
+<h4 id="deal-with-dirty-data">Deal with Dirty Data</h4>
+<h5 id="write-back">Write-back</h5>
+<p>CPU only write to cache. CPU can write individual words at the rate of the cache. Multiple writes to a block are merged into one write to main memory. <em>more and more caches use this strategy.</em></p>
+<h5 id="write-through">Write-through</h5>
+<p>CPU write both on cache and memory.(memory always up-to-date)</p>
 
-      
     </div>
 
     
-
     
-    
-    
-
-    
-
     
       
-    
-    
-      <div>
-        <div id="reward-container">
+
+        <div class="reward-container">
   <div>Talk is cheap. Show me the money.</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
     Donate
   </button>
   <div id="qr" style="display: none;">
-
-    
       
-      
-        
-      
-      <div style="display: inline-block">
+      <div style="display: inline-block;">
         <img src="/images/wechatpay.jpg" alt="Vox09 WeChat Pay">
         <p>WeChat Pay</p>
       </div>
-    
       
-      
-        
-      
-      <div style="display: inline-block">
+      <div style="display: inline-block;">
         <img src="/images/alipay.jpg" alt="Vox09 Alipay">
         <p>Alipay</p>
       </div>
-    
 
   </div>
 </div>
 
-      </div>
-    
 
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/MIPS/" rel="tag"># MIPS</a>
-          
-            <a href="/tags/assemble/" rel="tag"># assemble</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/12/07/Hashing/" rel="next" title="Hashing">
-                <i class="fa fa-chevron-left"></i> Hashing
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/MIPS/" rel="tag"># MIPS</a>
+              <a href="/tags/assemble/" rel="tag"># assemble</a>
           </div>
 
-          <span class="post-nav-divider"></span>
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/08/VHDL/" rel="prev" title="VHDL">
-                VHDL <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/07/Hashing/" rel="prev" title="Hashing">
+      <i class="fa fa-chevron-left"></i> Hashing
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/08/VHDL/" rel="next" title="VHDL">
+      VHDL <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
+  
+  
+  
 
   </div>
 
 
           </div>
           
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Vox09</p>
-              <div class="site-description motion-element" itemprop="description"></div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">27</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">9</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">29</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/vox09" title="GitHub &rarr; https://github.com/vox09"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Arithmetic-for-Computers"><span class="nav-text">Arithmetic for Computers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overflow-Detection"><span class="nav-text">Overflow Detection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multiplication"><span class="nav-text">Multiplication</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Division"><span class="nav-text">Division</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pipeline"><span class="nav-text">Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stages"><span class="nav-text">Stages:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Registers"><span class="nav-text">Registers:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Control"><span class="nav-text">Control:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hazards"><span class="nav-text">Hazards:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Structural-hazards"><span class="nav-text">Structural hazards</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-hazards"><span class="nav-text">Data hazards</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Control-hazards"><span class="nav-text">Control hazards</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Datapath-with-Hazards"><span class="nav-text">Datapath with Hazards</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-forwarding"><span class="nav-text">Data forwarding</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Load-use-detection"><span class="nav-text">Load-use detection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#How-to-Stall"><span class="nav-text">How to Stall</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-Hazard-when-branch"><span class="nav-text">Data Hazard when branch</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Memory"><span class="nav-text">Memory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Disk-Sectors-and-Accesses"><span class="nav-text">Disk Sectors and Accesses</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Principle-of-Locality"><span class="nav-text">Principle of Locality</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Memory-Hierachy"><span class="nav-text">Memory Hierachy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cache"><span class="nav-text">Cache</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Direct-Mapped-Cache"><span class="nav-text">Direct Mapped Cache</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tags-and-Valid-Bits"><span class="nav-text">Tags and Valid Bits</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Associate-Cache"><span class="nav-text">Associate Cache</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Block-Replacement"><span class="nav-text">Block Replacement</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Deal-with-Dirty-Data"><span class="nav-text">Deal with Dirty Data</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Write-back"><span class="nav-text">Write-back</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Write-through"><span class="nav-text">Write-through</span></a></li></ol></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-  
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Vox09</span>
-
-  
-
-  
-</div>
-
-
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
-
-    
-
-    
-
-    
-  </div>
-
-  
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#arithmetic-for-computers"><span class="nav-text">Arithmetic for Computers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#overflow-detection"><span class="nav-text">Overflow Detection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#multiplication"><span class="nav-text">Multiplication</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#division"><span class="nav-text">Division</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pipeline"><span class="nav-text">Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#stages"><span class="nav-text">Stages:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#registers"><span class="nav-text">Registers:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#control"><span class="nav-text">Control:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hazards"><span class="nav-text">Hazards:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#structural-hazards"><span class="nav-text">Structural hazards</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#data-hazards"><span class="nav-text">Data hazards</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#control-hazards"><span class="nav-text">Control hazards</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#datapath-with-hazards"><span class="nav-text">Datapath with Hazards</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#data-forwarding"><span class="nav-text">Data forwarding</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#load-use-detection"><span class="nav-text">Load-use detection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#how-to-stall"><span class="nav-text">How to Stall</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#data-hazard-when-branch"><span class="nav-text">Data Hazard when branch</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#memory"><span class="nav-text">Memory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#disk-sectors-and-accesses"><span class="nav-text">Disk Sectors and Accesses</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#principle-of-locality"><span class="nav-text">Principle of Locality</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#memory-hierachy"><span class="nav-text">Memory Hierachy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cache"><span class="nav-text">Cache</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#direct-mapped-cache"><span class="nav-text">Direct Mapped Cache</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tags-and-valid-bits"><span class="nav-text">Tags and Valid Bits</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#associate-cache"><span class="nav-text">Associate Cache</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#block-replacement"><span class="nav-text">Block Replacement</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#deal-with-dirty-data"><span class="nav-text">Deal with Dirty Data</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#write-back"><span class="nav-text">Write-back</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#write-through"><span class="nav-text">Write-through</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Vox09</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/vox09" title="GitHub → https://github.com/vox09"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vox09</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.2
+  </div>
+
+        
 
 
 
@@ -1005,8 +587,31 @@
 
 
 
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
 
 
 
@@ -1023,166 +628,61 @@
 
 
   
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.1"></script>
-
-  <script src="/js/motion.js?v=7.1.1"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.1"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.1"></script>
-<script src="/js/post-details.js?v=7.1.1"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.1"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-
-  
-
-
-
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
       
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 <script>
-  $('.highlight').not('.gist .highlight').each(function(i, e) {
-    var $wrap = $('<div>').addClass('highlight-wrap');
-    $(e).after($wrap);
-    $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
-      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-        return $(e).text();
-      }).toArray().join('\n');
-      var ta = document.createElement('textarea');
-      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-      ta.style.top = yPosition + 'px'; // Prevent page scroll
-      ta.style.position = 'absolute';
-      ta.style.opacity = '0';
-      ta.readOnly = true;
-      ta.value = code;
-      document.body.appendChild(ta);
-      ta.select();
-      ta.setSelectionRange(0, code.length);
-      ta.readOnly = false;
-      var result = document.execCommand('copy');
-      
-      ta.blur(); // For iOS
-      $(this).blur();
-    })).on('mouseleave', function(e) {
-      var $b = $(this).find('.copy-btn');
-      setTimeout(function() {
-        $b.text('Copy');
-      }, 300);
-    }).append(e);
-  })
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
 </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-
-  
+    
 
   
 
