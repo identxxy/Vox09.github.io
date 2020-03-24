@@ -90,8 +90,3 @@ encrypt:
 toc:
   maxDepth: 3   
 
-math:
-  engine: 'mathjax'
-  mathjax: 
-    src: ../MathJax
-    config: ../MathJax/config 
