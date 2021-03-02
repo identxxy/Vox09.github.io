@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="HKUST COMP4421 notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Image Processing">
+<meta property="og:url" content="http://github.com/2020/12/10/Image-Processing/index.html">
+<meta property="og:site_name" content="Destinxxy">
+<meta property="og:description" content="HKUST COMP4421 notes">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://github.com/2020/12/10/Image-Processing/assets/Image-Processing/image-20201210222109983.png">
+<meta property="og:image" content="http://github.com/2020/12/10/Image-Processing/assets/Image-Processing/image-20201210222121720.png">
+<meta property="og:image" content="http://github.com/2020/12/10/Image-Processing/assets/Image-Processing/image-20201210231102294.png">
+<meta property="og:image" content="http://github.com/2020/12/10/Image-Processing/assets/Image-Processing/image-20201210231046304.png">
+<meta property="og:image" content="http://github.com/2020/12/10/Image-Processing/assets/Image-Processing/image-20201211021853706.png">
+<meta property="og:image" content="http://github.com/2020/12/10/Image-Processing/assets/Image-Processing/image-20201211021906949.png">
+<meta property="article:published_time" content="2020-12-10T14:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-11T04:18:40.640Z">
+<meta property="article:author" content="Vox09">
+<meta property="article:tag" content="Image Processing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://github.com/2020/12/10/Image-Processing/assets/Image-Processing/image-20201210222109983.png">
+
+<link rel="canonical" href="http://github.com/2020/12/10/Image-Processing/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Image Processing | Destinxxy</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Destinxxy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Life should be hard</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/vox09" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://github.com/2020/12/10/Image-Processing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Vox09">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Destinxxy">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Image Processing
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-12-10 22:00:00" itemprop="dateCreated datePublished" datetime="2020-12-10T22:00:00+08:00">2020-12-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-11 12:18:40" itemprop="dateModified" datetime="2020-12-11T12:18:40+08:00">2020-12-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Image-Processing/" itemprop="url" rel="index"><span itemprop="name">Image Processing</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">HKUST COMP4421 notes</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="enhancement-in-the-spatial-domain">Enhancement in the Spatial Domain</h1>
+<h2 id="log-transformations">Log Transformations</h2>
+<p><span class="math inline">\(s=c*log(1+r)\)</span></p>
+<h2 id="powerlaw-gamma-transformations">Power‐Law (Gamma) Transformations</h2>
+<p><span class="math inline">\(s=c*r^\gamma\)</span></p>
+<h2 id="histogram-equalization">Histogram Equalization</h2>
+<p><span class="math inline">\(s = \int _0^rp_r(w)dw\)</span> for continuous</p>
+<p><span class="math inline">\(s_k=\sum_{j=0}^rn_j/N =\sum_{j=0}^rp_r(r_k)\)</span></p>
+<h2 id="logic-operators">Logic operators</h2>
+<ol type="1">
+<li>NOT. inverse</li>
+<li>OR. union.</li>
+<li>AND. conjunction.</li>
+<li>XOR. difference.</li>
+</ol>
+<h2 id="image-averaging">Image Averaging</h2>
+<p>For <span class="math inline">\(k\)</span> repeated image, <span class="math inline">\(\bar{g}(x,y)={1\over k}\sum_{i=1}^kg_i(x,y)\)</span></p>
+<h2 id="filtering">Filtering</h2>
+<h3 id="low-pass-spatial-filter">Low-pass spatial filter</h3>
+<p>Average filter. Blurring, noise reduction. <span class="math display">\[1/9*\matrix{1&amp;1&amp;1\\1&amp;1&amp;1\\1&amp;1&amp;1}\]</span></p>
+<h3 id="median-filter">Median Filter</h3>
+<p>converge. Choose the median over a spatial filter.</p>
+<h3 id="sharpening">Sharpening</h3>
+<p><span class="math display">\[\matrix{-1&amp;-1&amp;-1\\-1&amp;8&amp;-1\\-1&amp;-1&amp;-1}\]</span> Result may be negative. Need to scale and/or clip.</p>
+<h3 id="gradient">Gradient</h3>
+<p><span class="math inline">\(mag(\nabla f)=[({\part f\over \part x})^2 + ({\part f\over \part y})^2]^{1/2}\)</span> can be quickly computed as difference between neighbor pixels,</p>
+<h4 id="prewitt">Prewitt</h4>
+<p><span class="math display">\[\matrix{-1&amp;0&amp;1\\-1&amp;0&amp;1\\-1&amp;0&amp;1}\]</span> for vertical or its transpose for horizontal.</p>
+<h4 id="sobel">Sobel</h4>
+<p><span class="math display">\[\matrix{-1&amp;0&amp;1\\-2&amp;0&amp;2\\-1&amp;0&amp;1}\]</span> for vertical or its transpose for horizontal.</p>
+<h1 id="enhancement-in-the-frequency-domain">Enhancement in the Frequency Domain</h1>
+<p>2D DFT and IDFT</p>
+<p><span class="math display">\[F(u,v)={1\over MN}\sum_{x=0}^{M-1}\sum_{y=0}^{N-1}f(x,y)e^{-j2\pi(ux/M+vy/N)}\\f(x,y)=\sum_{x=0}^{M-1}\sum_{y=0}^{N-1}F(u,v)e^{j2\pi(ux/M+vy/N)}\]</span></p>
+<h2 id="filtering-1">Filtering</h2>
+<h3 id="notch-filter">Notch filter</h3>
+<p><span class="math inline">\(H(u,v) = 0\)</span> if <span class="math inline">\((u,v)=(0,0)\)</span> otherwise <span class="math inline">\(H(u,v) = 1\)</span> The origin can also locate at (M/2, N/2) for a M*N image matrix</p>
+<h3 id="lowpass-filter">Lowpass filter</h3>
+<p>mainly background.</p>
+<ol type="1">
+<li>Ideal filter</li>
+<li>Butterworth Lowpass Filter (BLPF) <span class="math display">\[H(u,v) ={1\over1+[D(u,v)/D_0]^{2n}}\]</span>
+<ul>
+<li>slight variation</li>
+<li><span class="math display">\[H(u,v) ={1\over1+\alpha[D(u,v)/D_0]^{2n}}\]</span></li>
+</ul></li>
+<li>Gaussian Lowpass Filter (GLPF) <span class="math display">\[H(u,v) = e^{-D^2(u,v)/2D_0^2}\]</span></li>
+</ol>
+<h3 id="highpass-filter">Highpass filter</h3>
+<p>mainly outline.</p>
+<ol type="1">
+<li><p>Ideal filter</p></li>
+<li><p>Butterworth Highpass Filter (BHPF) <span class="math display">\[H(u,v) ={1\over1+[D_0/D(u,v)]^{2n}}\]</span></p>
+<ul>
+<li><p>slight variation</p>
+<p><span class="math display">\[H(u,v) ={1\over1+\alpha[D_0/D(u,v)]^{2n}}\]</span></p></li>
+</ul></li>
+<li><p>Gaussian Highpass Filter (GHPF) <span class="math display">\[H(u,v) = 1- e^{-D^2(u,v)/2D_0^2}\]</span></p></li>
+<li><p><strong>High Frequency Emphasis</strong> for <span class="math inline">\(0\le a\le1,\ b&gt;a\)</span><span class="math display">\[H(u,v) = a + b{1\over1+[D_0/D(u,v)]^{2n}}\]</span></p></li>
+</ol>
+<h2 id="image-power">Image Power</h2>
+<p><span class="math display">\[P(u,v)=R(u,v)^2 + I(u,v)^2\\\beta = \sum_u\sum_v{P(u,v)\over P_{total}}\]</span></p>
+<h1 id="restoration-filtering">Restoration Filtering</h1>
+<h2 id="noise">Noise</h2>
+<ol type="1">
+<li>Gaussian Random Noise</li>
+<li>Rayleigh Random Noise</li>
+<li>Gamma Random Noise</li>
+<li>Exponential Random Noise</li>
+<li>Uniform Random Noise</li>
+<li>Impulse (salt-and-pepper) Random Noise</li>
+<li>Periodic Noise</li>
+</ol>
+<p><img src="assets/Image-Processing/image-20201210222109983.png" alt="image-20201210222109983" style="zoom: 50%;" /></p>
+<p><img src="assets/Image-Processing/image-20201210222121720.png" alt="image-20201210222121720" style="zoom: 50%;" /></p>
+<h2 id="spatial-filter">Spatial Filter</h2>
+<h3 id="mean-filters">Mean Filters</h3>
+<p>for a filter in area S and <span class="math inline">\((s,t) \in S_{xy}\)</span></p>
+<ol type="1">
+<li>Arithmetic mean filter <span class="math display">\[f(x,y) = {1\over mn}\sum g(s,t)\]</span></li>
+<li>Geometric mean filter <span class="math display">\[f(x,y) = [\Pi g(s,t)]^{1\over mn}\]</span></li>
+<li>Harmonic mean filter <span class="math display">\[f(x,y) = {mn\over \sum {1\over g(s,t)}}\]</span></li>
+<li>Contraharmonic mean filter <span class="math display">\[f(x,y) = {\sum g(s,t)^{Q+1}\over \sum g(s,t)^Q}\]</span> Q is called the order of the filter
+<ul>
+<li><span class="math inline">\(Q&gt;0\)</span> eliminates pepper noise.</li>
+<li><span class="math inline">\(Q&lt;0\)</span> eliminates salt noise.</li>
+<li><span class="math inline">\(Q=0\)</span> becomes arithmetic mean filter.</li>
+<li><span class="math inline">\(Q=1\)</span> becomes harmonic mean filter.</li>
+</ul></li>
+</ol>
+<h3 id="order-statistics-filters">Order Statistics Filters</h3>
+<ol type="1">
+<li>Median filter</li>
+<li>Max and min filters</li>
+<li>Midpoint filter <span class="math inline">\(0.5*(max+min)\)</span></li>
+<li>Alpha-trimmed mean filter delete <span class="math inline">\(d/2\)</span> lowest and <span class="math inline">\(d/2\)</span> highest and get the mean of remaining.</li>
+</ol>
+<h3 id="adaptive-filters">Adaptive Filters</h3>
+<ol type="1">
+<li>adaptive local noise reduction filter <span class="math inline">\(\sigma_\eta^2\)</span> is the variance of the noise. <span class="math inline">\(m_L,\sigma_L^2\)</span> is the mean and variance for the filter. <span class="math display">\[f(x,y)=g(x,y) - {\sigma_\eta^2\over\sigma_L^2} [g(x,y)-m_L]\]</span></li>
+<li>adaptive median filter
+<ol type="1">
+<li>increase the window size until <span class="math inline">\(Z_{min} &lt; Z_{med} &lt; Z_{max}\)</span> or size reach the max size.</li>
+<li>only set the pixel to median is it is the max or the min.</li>
+</ol></li>
+</ol>
+<h2 id="frequency-domain-filter">Frequency Domain Filter</h2>
+<h3 id="bandreject-and-bandpass-filters">Bandreject and Bandpass Filters</h3>
+<p>Band filter remove/pass a band of frequencies about the origin of the frequency representation, with width <span class="math inline">\(W\)</span> and raidal center <span class="math inline">\(D_0\)</span>. Two types of filter have the relation <span class="math inline">\(H_{bp}(u,v) = 1 - H_{br}(u,v)\)</span>.</p>
+<figure>
+<img src="assets/Image-Processing/image-20201210231102294.png" alt="image-20201210231102294" /><figcaption aria-hidden="true">image-20201210231102294</figcaption>
+</figure>
+<ol type="1">
+<li>Ideal band reject.</li>
+<li>Butterworth band reject <span class="math display">\[H(u,v) ={1\over1+[WD_0/D(u,v)-D_0^2]^{2n}}\]</span></li>
+<li>Gaussian band reject <span class="math display">\[H(u,v) = 1- e^{(D_0^2-D^2(u,v))/2WD(u,v)^2}\]</span></li>
+</ol>
+<h3 id="notch-filters">Notch Filters</h3>
+<p>Notch filter remove/pass frequencies in a predefined neighborhood about a center frequency <span class="math inline">\((u_0,v_0)\)</span>. Two types of filter have the relation <span class="math inline">\(H_{np}(u,v) = 1 - H_{nr}(u,v)\)</span></p>
+<figure>
+<img src="assets/Image-Processing/image-20201210231046304.png" alt="image-20201210231046304" /><figcaption aria-hidden="true">image-20201210231046304</figcaption>
+</figure>
+<ol type="1">
+<li>Ideal notch reject <span class="math inline">\(H_{nr}(u,v)=0\)</span> if <span class="math inline">\(D_1(u,v)\le D_0\)</span> or <span class="math inline">\(D_2(u,v)\le D_0\)</span> where <span class="math inline">\(D_1=\sqrt{(u-u_0)^2+(v-v_0)^2}\)</span> and <span class="math inline">\(D_2=\sqrt{(u+u_0)^2+(v+v_0)^2}\)</span></li>
+<li>Butterworth notch reject <span class="math display">\[H_{nr}(u,v) ={1\over1+[D_0^2/D(u,v)D_0]^{n}}\]</span></li>
+<li>Gaussian notch reject <span class="math display">\[H_{nr}(u,v) = 1- e^{-(D_1^2(u,v)D_2^2(u,v))/2D(u,v)^2}\]</span></li>
+</ol>
+<h2 id="degradation-function">Degradation Function</h2>
+<h3 id="inverse-filtering">Inverse filtering</h3>
+<p>given the degradation function H. <span class="math inline">\(F&#39;(u,v)=F(u,v) + {N(u,v)\over H(u,v)}\)</span></p>
+<h3 id="minimum-mean-square-error-wiener-filtering">Minimum mean square error (Wiener) filtering</h3>
+<p>Assumptions:</p>
+<ol type="1">
+<li>noise not related to true image</li>
+<li>noise has zero mean</li>
+<li>degradation function known as <span class="math inline">\(H(u,v)\)</span> is linear</li>
+<li>power spectrum of the noise <span class="math inline">\(S_\eta(u,v) =|N(u,v)|^2\)</span> is known</li>
+<li>power spectrum of the truth <span class="math inline">\(S_f(u,v) =|F(u,v)|^2\)</span> is known</li>
+</ol>
+<figure>
+<img src="assets/Image-Processing/image-20201211021853706.png" alt="image-20201211021853706" /><figcaption aria-hidden="true">image-20201211021853706</figcaption>
+</figure>
+<p><span class="math inline">\(H*\)</span> is the conjugate transpose of <span class="math inline">\(H\)</span>, meaning conjugate and transpose.</p>
+<h3 id="geometric-mean-filter">Geometric mean filter</h3>
+<figure>
+<img src="assets/Image-Processing/image-20201211021906949.png" alt="image-20201211021906949" /><figcaption aria-hidden="true">image-20201211021906949</figcaption>
+</figure>
+<h2 id="geometric-transformation">Geometric Transformation</h2>
+<ol type="1">
+<li>Spatial Transformation <span class="math inline">\(x&#39; = c_1x+c_2y+c_3xy+c_4\\y&#39; = c_5x+c_6y+c_7xy+c_8\)</span> 4 points to solve</li>
+<li>Grey-level Assignments
+<ul>
+<li>nearest neighbor</li>
+<li>bilinear interpolation</li>
+</ul></li>
+</ol>
+<h2 id="non-linear-filtering">Non-linear Filtering</h2>
+<ul>
+<li>Concept of diffusion
+<ol type="1">
+<li>mass flux is proportional to the concentration gradient</li>
+<li>the rate of flux is is proportional to the concentration gradient</li>
+</ol></li>
+<li>Equation
+<ol type="1">
+<li>1D <span class="math inline">\({\part u\over\part} t = D{\part^2u\over\part x^2}\)</span></li>
+<li>2D <span class="math inline">\({\part u\over\part t} = div(D \nabla u)\)</span></li>
+</ol></li>
+</ul>
+<h3 id="linear-diffusion-filtering">Linear Diffusion Filtering</h3>
+<p>assume <span class="math inline">\(D=I\)</span></p>
+<p><span class="math display">\[{\part u\over\part t} = {\part^2 u\over\part x^2}\]</span></p>
+<p>Initial <span class="math inline">\(u(x,t=0)=I(x)\)</span> If both left and right flow to mid,</p>
+<p><span class="math display">\[u(x,t+\Delta t) = u(x,t)+{\Delta t\over(\Delta x )^2}(u(x,t-\Delta t)-2u(x,t)+u(x,t+\Delta t))\]</span></p>
+<h3 id="non-linear-isotropic-diffusion-filtering">Non-linear Isotropic Diffusion Filtering</h3>
+<p><span class="math inline">\(D=g(|\nabla u|)\)</span></p>
+<h3 id="non-linear-anisotropic-diffusion-filtering">Non-linear Anisotropic Diffusion Filtering</h3>
+<h3 id="edge-enhancing-anisotropic-diffusion-filtering">Edge-enhancing anisotropic diffusion filtering</h3>
+<h1 id="morphological-operation">Morphological Operation</h1>
+<h2 id="binary-images">Binary Images</h2>
+<h3 id="dilation">Dilation</h3>
+<p>extend <span class="math inline">\(A{\oplus}B\)</span></p>
+<h3 id="erosion">Erosion</h3>
+<p>shrink <span class="math inline">\(A\ominus B\)</span></p>
+<h3 id="opening">Opening</h3>
+<p>first erosion then dilation <span class="math inline">\(A\circ B = (A\ominus B)\oplus B\)</span></p>
+<h3 id="closing">Closing</h3>
+<p>first dilation then erosion <span class="math inline">\(A\bullet B = (A\oplus B)\ominus B\)</span></p>
+<h3 id="boundary-extraction">Boundary Extraction</h3>
+<p><span class="math inline">\(\beta(A) =A-(A\ominus B)\)</span> where B is a small mask.</p>
+<h3 id="region-filling">Region Filling</h3>
+<p>Iterative process.</p>
+<p><span class="math inline">\(X_k = (X_{k-1}\oplus B)\and A^C\)</span> where <span class="math inline">\(B=\matrix {0&amp;1&amp;0\\1&amp;1&amp;1\\0&amp;1&amp;0}\)</span></p>
+<h3 id="connected-components">Connected Components</h3>
+<p>Iterative process.</p>
+<p><span class="math inline">\(X_k = (X_{k-1}\oplus B)\and A\)</span> where <span class="math inline">\(B=\matrix {1&amp;1&amp;1\\1&amp;1&amp;1\\1&amp;1&amp;1}\)</span></p>
+<h2 id="gray-scale">Gray-Scale</h2>
+<p>Similar to binary picture.</p>
+
+    </div>
+
+    
+    
+    
+      
+
+        <div class="reward-container">
+  <div>Talk is cheap. Show me the money.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="Vox09 WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="Vox09 Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Image-Processing/" rel="tag"># Image Processing</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/10/09/Machine-Learning/" rel="prev" title="Machine Learning">
+      <i class="fa fa-chevron-left"></i> Machine Learning
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#enhancement-in-the-spatial-domain"><span class="nav-text">Enhancement in the Spatial Domain</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#log-transformations"><span class="nav-text">Log Transformations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#powerlaw-gamma-transformations"><span class="nav-text">Power‐Law (Gamma) Transformations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#histogram-equalization"><span class="nav-text">Histogram Equalization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#logic-operators"><span class="nav-text">Logic operators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#image-averaging"><span class="nav-text">Image Averaging</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filtering"><span class="nav-text">Filtering</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#low-pass-spatial-filter"><span class="nav-text">Low-pass spatial filter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#median-filter"><span class="nav-text">Median Filter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sharpening"><span class="nav-text">Sharpening</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gradient"><span class="nav-text">Gradient</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#prewitt"><span class="nav-text">Prewitt</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sobel"><span class="nav-text">Sobel</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#enhancement-in-the-frequency-domain"><span class="nav-text">Enhancement in the Frequency Domain</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#filtering-1"><span class="nav-text">Filtering</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#notch-filter"><span class="nav-text">Notch filter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lowpass-filter"><span class="nav-text">Lowpass filter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#highpass-filter"><span class="nav-text">Highpass filter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#image-power"><span class="nav-text">Image Power</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#restoration-filtering"><span class="nav-text">Restoration Filtering</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#noise"><span class="nav-text">Noise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spatial-filter"><span class="nav-text">Spatial Filter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mean-filters"><span class="nav-text">Mean Filters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#order-statistics-filters"><span class="nav-text">Order Statistics Filters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#adaptive-filters"><span class="nav-text">Adaptive Filters</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#frequency-domain-filter"><span class="nav-text">Frequency Domain Filter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bandreject-and-bandpass-filters"><span class="nav-text">Bandreject and Bandpass Filters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#notch-filters"><span class="nav-text">Notch Filters</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#degradation-function"><span class="nav-text">Degradation Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#inverse-filtering"><span class="nav-text">Inverse filtering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#minimum-mean-square-error-wiener-filtering"><span class="nav-text">Minimum mean square error (Wiener) filtering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#geometric-mean-filter"><span class="nav-text">Geometric mean filter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#geometric-transformation"><span class="nav-text">Geometric Transformation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#non-linear-filtering"><span class="nav-text">Non-linear Filtering</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linear-diffusion-filtering"><span class="nav-text">Linear Diffusion Filtering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#non-linear-isotropic-diffusion-filtering"><span class="nav-text">Non-linear Isotropic Diffusion Filtering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#non-linear-anisotropic-diffusion-filtering"><span class="nav-text">Non-linear Anisotropic Diffusion Filtering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#edge-enhancing-anisotropic-diffusion-filtering"><span class="nav-text">Edge-enhancing anisotropic diffusion filtering</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#morphological-operation"><span class="nav-text">Morphological Operation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#binary-images"><span class="nav-text">Binary Images</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dilation"><span class="nav-text">Dilation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#erosion"><span class="nav-text">Erosion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#opening"><span class="nav-text">Opening</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#closing"><span class="nav-text">Closing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#boundary-extraction"><span class="nav-text">Boundary Extraction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#region-filling"><span class="nav-text">Region Filling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#connected-components"><span class="nav-text">Connected Components</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gray-scale"><span class="nav-text">Gray-Scale</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Vox09</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/vox09" title="GitHub → https://github.com/vox09"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Vox09</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.2
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+
+  
+
+</body>
+</html>
