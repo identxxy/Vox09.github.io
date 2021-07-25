@@ -106,10 +106,10 @@ deploy:
   repo: git@github.com:Vox09/Vox09.github.io.git
   branch: master
 
-# Security
-##
-encrypt:
-  enable: true
+# # Security
+# ##
+# encrypt:
+#   enable: true
 
 # Table of Content
 toc:
